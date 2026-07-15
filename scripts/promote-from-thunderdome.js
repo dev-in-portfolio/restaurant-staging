@@ -45,7 +45,7 @@ Options:
 
 const slug = args.restaurant;
 const updateMode = !!args.update;
-const dryRun = !!args.dry-run;
+const dryRun = !!args["dry-run"];
 const thunderdomeRoot = path.resolve(args.source || '../restaurants');
 const sourceDir = path.join(thunderdomeRoot, slug);
 const stagingRoot = path.resolve(__dirname, '..');
@@ -130,8 +130,10 @@ collectFiles(sourceDir);
 let copiedCount = 0;
 let skippedCount = 0;
 const copiedFilesList = [];
+let destExistedBefore = false;
 
 if (!dryRun) {
+  destExistedBefore = fs.existsSync(destDir);
   fs.mkdirSync(destDir, { recursive: true });
   filesToCopy.forEach(file => {
     const relative = path.relative(sourceDir, file);
@@ -147,6 +149,14 @@ if (!dryRun) {
     copiedFilesList.push(relative);
     copiedCount++;
   });
+}
+
+// Helper to clean up a newly created destination on failure
+function cleanupDestOnFailure() {
+  if (!dryRun && !destExistedBefore && fs.existsSync(destDir)) {
+    fs.rmSync(destDir, { recursive: true, force: true });
+    console.log(`Cleaned up incomplete destination '${destDir}'`);
+  }
 }
 
 // 7. Generate or validate restaurant.json
@@ -181,12 +191,14 @@ const metadata = {
   promotedToStagingAt: existingMetadata.promotedToStagingAt || new Date().toISOString(),
   promotedToShowcaseAt: existingMetadata.promotedToShowcaseAt || null,
   desktopReviewed: existingMetadata.desktopReviewed || false,
+  tabletReviewed: existingMetadata.tabletReviewed || false,
   mobileReviewed: existingMetadata.mobileReviewed || false,
   linksVerified: existingMetadata.linksVerified || false,
   contentVerified: existingMetadata.contentVerified || false,
   performanceReviewed: existingMetadata.performanceReviewed || false,
   accessibilityReviewed: existingMetadata.accessibilityReviewed || false,
   comparisonButtonAdded: existingMetadata.comparisonButtonAdded || false,
+  comparisonButtonNotApplicable: existingMetadata.comparisonButtonNotApplicable || false,
   productionBuildPassed: existingMetadata.productionBuildPassed || false,
   approvedForPresentation: existingMetadata.approvedForPresentation || false,
   notes: existingMetadata.notes || ["Initial promotion metadata generated automatically from Thunderdome override source."]
@@ -222,9 +234,8 @@ if (htmlFiles.length < 6) {
 if (validationErrors.length > 0) {
   console.error('\nValidation Errors:');
   validationErrors.forEach(err => console.error(`  - ${err}`));
-  if (!dryRun) {
-    process.exit(1);
-  }
+  cleanupDestOnFailure();
+  process.exit(1);
 } else {
   console.log('Static directory structure matches staging specifications.');
 }
@@ -233,4 +244,8 @@ console.log(`\n--- Summary ---`);
 console.log(`Copied/Processed: ${copiedCount} files`);
 console.log(`Skipped:          ${skippedCount} files`);
 console.log(`Staging status:   ready-for-polish`);
-console.log('Promotion completed successfully.');
+if (dryRun) {
+  console.log('Dry run completed. No files were written.');
+} else {
+  console.log('Promotion completed successfully.');
+}

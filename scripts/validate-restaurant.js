@@ -88,9 +88,9 @@ if (!fs.existsSync(metadataPath)) {
 
     // Review checks
     const reviewChecks = [
-      'desktopReviewed', 'mobileReviewed', 'linksVerified', 'contentVerified',
+      'desktopReviewed', 'tabletReviewed', 'mobileReviewed', 'linksVerified', 'contentVerified',
       'performanceReviewed', 'accessibilityReviewed', 'comparisonButtonAdded',
-      'productionBuildPassed', 'approvedForPresentation'
+      'comparisonButtonNotApplicable', 'productionBuildPassed', 'approvedForPresentation'
     ];
     reviewChecks.forEach(check => {
       if (typeof metadata[check] !== 'boolean') {
