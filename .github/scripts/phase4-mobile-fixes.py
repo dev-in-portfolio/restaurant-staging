@@ -13,6 +13,7 @@ files = [
     root / 'restaurants' / 'hathaways-fried-chicken' / 'about.html',
     root / 'restaurants' / 'the-dive-n' / 'about.html',
     root / 'restaurants' / 'portrait-gallery' / 'about.html',
+    root / 'restaurants' / 'lang-van' / 'about.html',
 ]
 
 style = '''
