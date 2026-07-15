@@ -33,6 +33,11 @@
     .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
     @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
   </style>
+
+<style data-phase2-responsive>
+html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
+@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
+</style>
 </head>
 <body>
   <nav class="site-nav" aria-label="Main navigation">
@@ -46,7 +51,7 @@
       <a href="pasta-pairing.html" aria-current="page">Pasta Pairing</a>
     </div>
   </nav>
-  <main>
+  <main id="main">
     <p class="eyebrow">SAUCE, SHAPE, FINISH</p>
     <h1>Plan a Pasta Pairing</h1>
     <p class="lede">Build a demonstration pasta route around texture and mood, then confirm the restaurant’s current offerings.</p>
@@ -87,7 +92,17 @@
         <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
       </div>
     </section>
-  </main>
+  
+<!-- PHASE2-CONTENT-EXPANSION -->
+<section class="phase2-expanded-content" aria-labelledby="phase2-flourshoppastapairinghtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
+  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
+  <h2 id="phase2-flourshoppastapairinghtml" style="margin:.1rem 0 1rem;">Pair by sauce, texture, and pace</h2>
+  <p>A useful pasta pairing at Flour Shop starts with structure. Consider whether the sauce is light or rich, whether the pasta is delicate or sturdy, and whether the meal should feel bright, comforting, or celebratory. Matching those elements creates balance and helps a beverage or side support the plate rather than compete with it.</p>
+  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
+  <ul><li>Pair delicate sauces with a lighter overall meal and richer sauces with enough acidity or freshness.</li><li>Use texture as a guide: tender, crisp, creamy, chewy, or slow-cooked.</li><li>Confirm current menu details before planning around a particular preparation.</li></ul>
+  <p>This page is organized around matching pasta styles, sauce weight, seasonal ingredients, and beverage choices. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+</section>
+</main>
   <script>
     (() => {
       const button = document.getElementById('build-plan');

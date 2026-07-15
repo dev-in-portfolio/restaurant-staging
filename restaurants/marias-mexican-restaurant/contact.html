@@ -11,6 +11,11 @@
 <style>
 :root{--birria:#8b1a1a;--gold:#d4a045;--cream:#fdf8f0;--charcoal:#1a1a1a}.page-hero{background:linear-gradient(135deg,#1a0a0a,var(--birria) 50%);color:var(--cream);padding:5rem 24px 3rem;text-align:center}.page-hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:.5rem}.page-hero p{opacity:.8;max-width:550px;margin:0 auto}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}.contact-card{background:var(--white);border-radius:8px;padding:1.5rem;box-shadow:var(--shadow);border-top:4px solid var(--gold)}.contact-card .icon{font-size:2rem;margin-bottom:.5rem}.contact-card h3{color:var(--birria);font-size:1.1rem;margin-bottom:.5rem}.contact-card p{font-size:.9rem;color:var(--medium-gray);margin:0 0 .25rem}.contact-card a{color:var(--birria);font-weight:600;text-decoration:none}.contact-card a:hover{text-decoration:underline}.hours-grid{display:grid;gap:.5rem;margin-top:1rem}.hours-row{display:flex;justify-content:space-between;font-size:.9rem;padding:.35rem 0;border-bottom:1px solid rgba(0,0,0,.06)}.hours-row .day{font-weight:600;color:var(--dark)}.hours-row .time{color:var(--medium-gray)}.map-placeholder{background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:240px;color:var(--medium-gray);font-size:.9rem;margin-top:1rem}
 </style>
+
+<style data-phase2-responsive>
+html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
+@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -27,8 +32,10 @@
 </nav>
 </div>
 </header>
+<main id="main">
 
-<section class="page-hero" id="main">
+
+<section class="page-hero" id="phase2-legacy-main-1">
 <h1>Contact Us</h1>
 <p>Stop by South Boulevard, give us a call, or send us a message — ¡Make it Maria's!</p>
 </section>
@@ -82,6 +89,8 @@ Map: 5234 South Blvd, Charlotte, NC 28217
 </div>
 </section>
 
+
+</main>
 <footer class="section" style="padding:2rem 24px;background:var(--charcoal);color:var(--cream);text-align:center">
 <div class="container">
 <p style="opacity:.8">&copy; 2026 Maria's Mexican Restaurant — Charlotte, NC</p>

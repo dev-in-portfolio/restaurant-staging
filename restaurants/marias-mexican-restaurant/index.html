@@ -11,6 +11,11 @@
 <style>
 :root{--birria:#8b1a1a;--gold:#d4a045;--cream:#fdf8f0;--green:#2d7a3a;--charcoal:#1a1a1a;--salsa:#e85d3a}.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1a0a0a,var(--birria) 50%,#2d1a0a);color:var(--cream);padding:2rem 24px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="3" fill="%23d4a045" opacity="0.06"/><circle cx="160" cy="70" r="2" fill="%23d4a045" opacity="0.05"/></svg>')repeat;pointer-events:none}.hero h1{color:var(--cream);font-size:clamp(2.5rem,6vw,4.2rem);margin-bottom:.25rem}.hero h1 span{color:var(--gold)}.hero .tagline{font-size:1.05rem;opacity:.8;margin-bottom:1.5rem}.hero p{font-size:1.05rem;max-width:550px;margin:0 auto 2rem;opacity:.9}.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-cta .btn{background:var(--gold);color:var(--charcoal);font-weight:700}.hero-cta .btn-outline{background:transparent;color:var(--cream);border-color:var(--cream)}.hero-specials{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-special{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1.25rem;font-size:.85rem}.hero-special .label{color:var(--gold);font-weight:700}.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}.feature-card{background:var(--white);border-radius:8px;padding:2rem;text-align:center;box-shadow:var(--shadow);border-bottom:4px solid var(--gold);transition:transform .2s}.feature-card:hover{transform:translateY(-4px)}.feature-card .icon{font-size:2.5rem;margin-bottom:.75rem}.feature-card h3{color:var(--birria)}.feature-card p{font-size:.9rem;color:var(--medium-gray)}.specialty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem}.specialty-card{background:var(--white);border-radius:8px;padding:1.5rem;box-shadow:var(--shadow);border-left:4px solid var(--birria)}.specialty-card h4{color:var(--birria);margin-bottom:.35rem}.specialty-card .price{color:var(--gold);font-weight:700;font-size:.9rem}.specialty-card p{font-size:.85rem;color:var(--medium-gray);margin-bottom:.5rem}
 </style>
+
+<style data-phase2-responsive>
+html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
+@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -27,8 +32,10 @@
 </nav>
 </div>
 </header>
+<main id="main">
 
-<section class="hero" id="main">
+
+<section class="hero" id="phase2-legacy-main-1">
 <div>
 <p class="tagline">Authentic Mexican Since 2008 · Famous for Birria</p>
 <h1>Maria's <span>Mexican Restaurant</span></h1>
@@ -135,6 +142,8 @@
 </div>
 </section>
 
+
+</main>
 <footer class="section" style="padding:2rem 24px;background:var(--charcoal);color:var(--cream);text-align:center">
 <div class="container">
 <p style="opacity:.8">&copy; 2026 Maria's Mexican Restaurant — Charlotte, NC</p>

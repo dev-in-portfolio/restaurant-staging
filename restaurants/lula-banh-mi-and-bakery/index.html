@@ -11,6 +11,11 @@
 <style>
 :root{--brick:#c0392b;--cream:#fdf8f0;--matcha:#5a8a3c;--gold:#d4a045;--charcoal:#1a1a1a;--macaron:#e8a0b4}.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1a0f0a,var(--brick) 55%,#2d1a0a);color:var(--cream);padding:2rem 24px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="3" fill="%23d4a045" opacity="0.06"/><circle cx="160" cy="70" r="2" fill="%23d4a045" opacity="0.05"/><circle cx="100" cy="150" r="4" fill="%23d4a045" opacity="0.04"/></svg>')repeat;pointer-events:none}.hero h1{color:var(--cream);font-size:clamp(2.5rem,6vw,4.2rem);margin-bottom:.25rem}.hero h1 span{color:var(--gold)}.hero .tagline{font-size:1.05rem;opacity:.8;margin-bottom:1.5rem}.hero p{font-size:1.05rem;max-width:550px;margin:0 auto 2rem;opacity:.9}.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-cta .btn{background:var(--gold);color:var(--charcoal);font-weight:700}.hero-cta .btn-outline{background:transparent;color:var(--cream);border-color:var(--cream)}.hero-specials{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-special{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1.25rem;font-size:.85rem}.hero-special .label{color:var(--gold);font-weight:700}.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}.cat-card{background:var(--white);border-radius:8px;padding:2rem;text-align:center;box-shadow:var(--shadow);border-bottom:4px solid var(--matcha);transition:transform .2s}.cat-card:hover{transform:translateY(-4px)}.cat-card .icon{font-size:2.5rem;margin-bottom:.75rem}.cat-card h3{color:var(--brick)}.cat-card p{font-size:.9rem;color:var(--medium-gray)}.menu-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem}.menu-item{background:var(--white);border-radius:8px;padding:1.5rem;box-shadow:var(--shadow);border-left:4px solid var(--brick)}.menu-item h4{color:var(--dark);margin-bottom:.35rem}.menu-item .price{color:var(--gold);font-weight:700;font-size:.9rem}.menu-item p{font-size:.85rem;color:var(--medium-gray);margin-bottom:.5rem}.bakery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;margin-top:2rem}.bakery-item{background:var(--white);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:var(--shadow)}.bakery-item .icon{font-size:2rem;margin-bottom:.5rem}.bakery-item h4{color:var(--brick);font-size:.95rem}.bakery-item .price{color:var(--gold);font-weight:700;font-size:.85rem}
 </style>
+
+<style data-phase2-responsive>
+html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
+@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -27,8 +32,10 @@
 </nav>
 </div>
 </header>
+<main id="main">
 
-<section class="hero" id="main">
+
+<section class="hero" id="phase2-legacy-main-1">
 <div>
 <p class="tagline">Authentic Vietnamese Street Food &amp; Bakery</p>
 <h1>Lula <span>Bánh Mì + Bakery</span></h1>
@@ -156,6 +163,8 @@
 </div>
 </section>
 
+
+</main>
 <footer class="section" style="padding:2rem 24px;background:var(--charcoal);color:var(--cream);text-align:center">
 <div class="container">
 <p style="opacity:.8">&copy; 2026 Lula Bánh Mì + Bakery — Pineville, NC</p>

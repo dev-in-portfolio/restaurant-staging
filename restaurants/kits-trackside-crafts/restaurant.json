@@ -1,6 +1,6 @@
 {
   "id": "kits-trackside-crafts",
-  "name": "Kit",
+  "name": "Kit's Trackside Crafts",
   "slug": "kits-trackside-crafts",
   "location": {
     "city": "Charlotte area",
@@ -10,7 +10,7 @@
   "stage": "staging",
   "status": "ready-for-polish",
   "sourceRepository": "dev-in-portfolio/restaurants",
-  "sourcePath": "restaurants/kits-trackside-crafts",
+  "sourcePath": "kits-trackside-crafts",
   "currentWebsiteUrl": "",
   "currentPublicPresenceType": "website",
   "demoRoute": "restaurants/kits-trackside-crafts/index.html",
@@ -29,6 +29,7 @@
   "productionBuildPassed": false,
   "approvedForPresentation": false,
   "notes": [
-    "Initial promotion metadata generated automatically from Thunderdome override source."
+    "Initial promotion metadata generated automatically from Thunderdome override source.",
+    "Phase 4 synchronized from repaired source commit 2bd7924130a4dd86bc61217a5ff6119283f72306 after successful static and desktop/tablet/mobile browser QA. Root-relative self-links were adapted only for the /restaurants/ staging route."
   ]
 }

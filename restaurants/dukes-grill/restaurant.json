@@ -1,6 +1,6 @@
 {
   "id": "dukes-grill",
-  "name": "Duke",
+  "name": "Duke's Grill",
   "slug": "dukes-grill",
   "location": {
     "city": "Monroe",
@@ -10,7 +10,7 @@
   "stage": "staging",
   "status": "ready-for-polish",
   "sourceRepository": "dev-in-portfolio/restaurants",
-  "sourcePath": "restaurants/dukes-grill",
+  "sourcePath": "dukes-grill",
   "currentWebsiteUrl": "",
   "currentPublicPresenceType": "website",
   "demoRoute": "restaurants/dukes-grill/index.html",
@@ -29,6 +29,7 @@
   "productionBuildPassed": false,
   "approvedForPresentation": false,
   "notes": [
-    "Initial promotion metadata generated automatically from Thunderdome override source."
+    "Initial promotion metadata generated automatically from Thunderdome override source.",
+    "Phase 4 synchronized from repaired source commit 2bd7924130a4dd86bc61217a5ff6119283f72306 after successful static and desktop/tablet/mobile browser QA. Root-relative self-links were adapted only for the /restaurants/ staging route."
   ]
 }

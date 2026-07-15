@@ -46,6 +46,11 @@ footer{background:var(--black);color:rgba(255,255,255,.3);text-align:center;padd
 footer a{color:var(--red);text-decoration:none}
 .disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
 </style>
+
+<style data-phase2-responsive>
+html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
+@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
+</style>
 </head>
 <body>
 <nav class="nav" aria-label="Main navigation">
@@ -62,6 +67,8 @@ footer a{color:var(--red);text-decoration:none}
   <h1>Our Beers</h1>
   <p>Hazy, dark, crisp, or wild — find your devilish pour</p>
 </header>
+<main id="main">
+
 <section class="section">
   <div class="cat-tabs">
     <button class="cat-tab active" data-tab="ipa">IPAs</button>
@@ -108,6 +115,8 @@ footer a{color:var(--red);text-decoration:none}
     </div>
   </div>
 </section>
+
+</main>
 <footer>
   <p>Devil's Logic Brewing · 1426 E 4th St · Charlotte, NC 28204 · (704) 666-1001</p>
   <p><a href="beer.html">Beer</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
