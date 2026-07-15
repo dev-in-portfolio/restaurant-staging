@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · Deejai Thai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:2rem 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section p{font-size:.92rem;line-height:1.7;opacity:.7}
+.values{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.value-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.25rem}
+.value-card h3{font-size:1rem;color:var(--gold);margin:0 0 .25rem}
+.value-card p{font-size:.82rem;opacity:.55;line-height:1.5;margin:0}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Deejai Thai</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>Thai authenticity and sushi craftsmanship in Charlotte since 2009</p>
+</header>
+<section class="section">
+  <h2>Bringing Thai Flavors to Charlotte</h2>
+  <p>Deejai Thai has been a Charlotte favorite for over 17 years, serving authentic Thai cuisine and fresh sushi from its Providence Road location in Myers Park. Built on a foundation of traditional family recipes and the highest-quality ingredients, Deejai brings the bold, balanced flavors of Thailand to the Queen City.</p>
+  <p>The name "Deejai" means "good heart" in Thai — and that philosophy runs through everything we do. From the careful preparation of each curry paste to the artful rolling of every sushi maki, our team takes pride in creating food that nourishes both body and spirit. We believe in spice that challenges, flavors that surprise, and service that makes you feel like family.</p>
+  <h2>Our Philosophy</h2>
+  <div class="values">
+    <div class="value-card"><h3>Authentic Thai Traditions</h3><p>Every dish starts with traditional Thai techniques — hand-pounded curry pastes, fresh herbs, and the perfect balance of sweet, sour, salty, and spicy.</p></div>
+    <div class="value-card"><h3>Fresh Sushi, Daily</h3><p>Our sushi bar sources the freshest fish and prepares each roll to order — from classic nigiri to our signature Deejai Roll.</p></div>
+    <div class="value-card"><h3>Spice Is Personal</h3><p>We believe heat should be your choice — from mild and aromatic to Thai hot. Our spice finder helps you find your perfect level.</p></div>
+    <div class="value-card"><h3>Community First</h3><p>For over 17 years, Deejai has been part of the Myers Park and Charlotte community — serving families, neighbors, and visitors alike.</p></div>
+  </div>
+</section>
+<footer>
+  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

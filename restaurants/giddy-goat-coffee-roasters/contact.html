@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations · Giddy Goat Coffee Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--gold:#e8b830;--teal:#2a9d8f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1f10;--muted:#8a7a6a}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#111;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(232,184,48,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1a1a,#2a1f10);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--gold);margin:0 0 .1rem;border-left:3px solid var(--teal);padding-left:.75rem}
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
+.loc-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.06);border-radius:10px;padding:1.5rem}
+.loc-card h3{color:var(--gold);font-size:1rem;margin:0 0 .4rem}
+.loc-card .address{font-size:.85rem;opacity:.55;line-height:1.5;margin:0}
+.loc-card .hours{font-size:.82rem;opacity:.45;margin-top:.6rem}
+.loc-card .hours strong{color:var(--cream);opacity:.6}
+.loc-card .hours .day{opacity:.35;font-weight:600;display:inline-block;width:85px}
+.loc-card .hours .time{opacity:.55}
+.loc-card .links{margin-top:.75rem;display:flex;gap:.75rem;flex-wrap:wrap}
+.loc-card .links a{color:var(--gold);font-size:.78rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.loc-card .links a:hover{text-decoration:underline}
+.contact-form{max-width:600px;margin:2rem auto 0}
+.demo-form{display:grid;gap:1rem}
+.demo-form label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;border:1px solid rgba(232,184,48,.2);border-radius:.7rem;padding:.85rem 1rem;background:rgba(0,0,0,.3);color:var(--cream)}
+.demo-form button{background:var(--gold);color:#111;border:none;padding:.85rem;border-radius:.7rem;font-weight:700;cursor:pointer;transition:.2s}
+.demo-form button:hover{opacity:.9}
+footer{background:#111;color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Giddy Goat</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="empanadas.html">Empanadas</a>
+    <a href="roast.html">Roast</a>
+    <a href="story.html">Our Story</a>
+    <a href="contact.html">Locations</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Locations</h1>
+  <p>Three spots across Charlotte — find your nearest giddy fix</p>
+</div>
+<section class="section">
+  <div class="loc-grid">
+    <div class="loc-card">
+      <h3>Plaza Midwood</h3>
+      <p class="address">1217 The Plaza<br>Charlotte, NC 28205</p>
+      <div class="hours">
+        <strong>Hours</strong><br>
+        <span class="day">Daily</span><span class="time">7:00 AM – 7:00 PM</span>
+      </div>
+      <div class="links">
+        <a href="https://maps.google.com/?cid=3924689043256233834">Directions</a>
+        <a href="https://order.tapmango.com/merchant/71124ebf-74c5-4c20-a5ba-a201b0a75b6b/order/catalog-picker?mlId=7127">Order Online</a>
+      </div>
+    </div>
+    <div class="loc-card">
+      <h3>South End</h3>
+      <p class="address">3001 Griffith St<br>Charlotte, NC 28203</p>
+      <div class="hours">
+        <strong>Hours</strong><br>
+        <span class="day">Daily</span><span class="time">7:00 AM – 2:00 PM</span>
+      </div>
+      <div class="links">
+        <a href="http://www.google.com/maps/search/3001%20Griffith%20St%2C%20Charlotte%2C%20NC%2028203">Directions</a>
+        <a href="https://order.tapmango.com/merchant/71124ebf-74c5-4c20-a5ba-a201b0a75b6b/order/catalog-picker?mlId=12926">Order Online</a>
+      </div>
+    </div>
+    <div class="loc-card">
+      <h3>YMCA</h3>
+      <p class="address">400 E Morehead<br>Charlotte, NC 28205</p>
+      <div class="hours">
+        <strong>Hours</strong><br>
+        <span class="day">Mon–Thu</span><span class="time">6:30 AM – 7:00 PM</span><br>
+        <span class="day">Fri</span><span class="time">6:30 AM – 1:00 PM</span><br>
+        <span class="day">Sat–Sun</span><span class="time">8:00 AM – 1:00 PM</span>
+      </div>
+      <div class="links">
+        <a href="http://www.google.com/maps/search/400%20E%20Morehead%2C%20Charlotte%2C%20NC%2028205">Directions</a>
+        <a href="https://order.tapmango.com/merchant/71124ebf-74c5-4c20-a5ba-a201b0a75b6b/order/catalog-picker?mlId=9075">Order Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:rgba(255,255,255,.02)">
+  <h2>Get in Touch</h2>
+  <p class="note">coffee@giddygoat.com · @giddycoffee</p>
+  <div class="contact-form">
+    <form class="demo-form" data-demo-form>
+      <label>Name
+        <input type="text" placeholder="Your name" required>
+      </label>
+      <label>Email
+        <input type="email" placeholder="you@example.com" required>
+      </label>
+      <label>Location
+        <select>
+          <option value="">Select location</option>
+          <option value="plaza">Plaza Midwood</option>
+          <option value="southend">South End</option>
+          <option value="ymca">YMCA</option>
+        </select>
+      </label>
+      <label>Message
+        <textarea placeholder="How can we help?" required></textarea>
+      </label>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--gold);font-size:.9rem">Giddy Goat Coffee Roasters</strong><br>1217 The Plaza, Charlotte, NC 28205 · coffee@giddygoat.com</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="roast.html">Roast</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

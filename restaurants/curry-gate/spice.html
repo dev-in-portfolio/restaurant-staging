@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curry Gate | Indo-Nepali Spice Guide</title>
+  <meta name="description" content="Explore our authentic Indian and Nepali spice scale. Learn about our levels 1-10+ heat options and plan your meal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive heat visualizer */
+    .spice-mat {
+      background: radial-gradient(circle, #2c1208 0%, #0c0402 100%);
+      border: 1.5px solid var(--color-p);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #fff;
+    }
+    .heat-bar-graphic {
+      width: 150px;
+      height: 20px;
+      border: 2px solid #fafafa;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.4s;
+      overflow: hidden;
+    }
+    .heat-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 30%; /* Level representation */
+      background: #eab308; /* Yellow/Red gradient fill */
+      transition: all 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Curry Gate Home">
+        <div class="logo-icon" aria-hidden="true">&#127835;</div>
+        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="spice.html" class="active">Spice Guide</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="page-header text-center" style="padding: 60px 0 30px;">
+      <div class="wrap">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: #fff;">Our Spice Scale</h2>
+        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem;">From mild and fragrant to authentic Nepalese hot, learn how we dial in the perfect heat for your palate.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Spice Customizer -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Curry Spice Customizer & Heat Planner</h3>
+        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your curry and target spice level to check the warning details and heat pairings.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Spice Visualizer -->
+          <div class="spice-mat" id="glass-box">
+            <div class="heat-bar-graphic">
+              <div class="heat-fill" id="heat-layer"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="spice-display-title">Butter Chicken (Level 3-4)</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-p); margin: 0.5rem 0;" id="spice-display-pairing">Pairing: Sweet Mango Lassi</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Select Signature Curry</label>
+              <select id="curry-select" onchange="updateSpice()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="butter" selected>Butter Chicken ($14.00)</option>
+                <option value="tikka">Chicken Tikka Masala ($14.50)</option>
+                <option value="goat">Traditional Goat Curry ($16.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Spice Level</label>
+              <select id="level-select" onchange="updateSpice()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="1">Level 1-2 (Mild & Creamy)</option>
+                <option value="3" selected>Level 3-4 (Medium Kick)</option>
+                <option value="5">Level 5-6 (Traditional Hot)</option>
+                <option value="10">Level 10+ (Volcanic Heat)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 2rem;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;" id="display-spice-name">Butter Chicken (Level 3-4)</h4>
+          <p style="font-size: 0.9rem; color: var(--tx2); max-width: 600px; margin: 0 auto;" id="display-spice-desc">Tender chicken simmered in creamy tomato sauce at level 3-4 (Medium Kick). Recommended cooling pairing: Sweet Mango Lassi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spice Level Information -->
+    <section class="section-dark">
+      <div class="wrap">
+        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Spice Level Details</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Level 1 - 2 <span class="price">Mild</span></h4>
+            <p>Perfect for those who prefer aroma over heat. Rich coconut cream, cashew paste, and light cardamom flavors dominate the palate.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Level 3 - 4 <span class="price">Medium</span></h4>
+            <p>A pleasant, warm kick of red chili powder and fresh ginger. Ideal for first-time guests looking to explore authentic Indian flavors.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Level 5 - 6 <span class="price">Indian Hot</span></h4>
+            <p>The standard spice level preferred by our kitchen. A heavy dose of fresh green chilies and house garam masala.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Level 10+ <span class="price">Volcanic</span></h4>
+            <p>Not for the faint of heart. Spiced with Ghost Pepper and Carolina Reaper chili flakes. Searing heat, proceed with caution.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across five Charlotte area taprooms and locations.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Uptown</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const curryData = {
+      butter: { name: "Butter Chicken", price: 14.00 },
+      tikka: { name: "Chicken Tikka Masala", price: 14.50 },
+      goat: { name: "Traditional Goat Curry", price: 16.00 }
+    };
+
+    const levelData = {
+      "1": { name: "Level 1-2 (Mild & Creamy)", fillWidth: "20%", color: "#eab308", pairing: "Garlic Naan", desc: "prepared at level 1-2 (Mild & Creamy). Sweet cardamom and cashew cream flavors dominate the palate." },
+      "3": { name: "Level 3-4 (Medium Kick)", fillWidth: "50%", color: "#f97316", pairing: "Sweet Mango Lassi", desc: "prepared at level 3-4 (Medium Kick). A pleasant, warm heat of red chili powder and fresh ginger." },
+      "5": { name: "Level 5-6 (Traditional Hot)", fillWidth: "75%", color: "#ea580c", pairing: "Cucumber Raita", desc: "prepared at level 5-6 (Traditional Hot). A heavy dose of fresh green chilies and garam masala." },
+      "10": { name: "Level 10+ (Volcanic Heat)", fillWidth: "100%", color: "#ef4444", pairing: "Double Mango Lassi & Water", desc: "prepared at level 10+ (Volcanic Heat). Spiced with Ghost Pepper and Carolina Reaper chili flakes." }
+    };
+
+    function updateSpice() {
+      const curryKey = document.getElementById('curry-select').value;
+      const lvlKey = document.getElementById('level-select').value;
+
+      const curry = curryData[curryKey];
+      const lvl = levelData[lvlKey];
+
+      // Update graphic fill
+      document.getElementById('heat-layer').style.width = lvl.fillWidth;
+      document.getElementById('heat-layer').style.backgroundColor = lvl.color;
+
+      // Update displays
+      document.getElementById('spice-display-title').innerText = `${curry.name} (${lvlKey})`;
+      document.getElementById('spice-display-pairing').innerText = `Pairing: ${lvl.pairing}`;
+
+      document.getElementById('display-spice-name').innerText = `${curry.name} (${lvl.name})`;
+      document.getElementById('display-spice-desc').innerText = `${curry.name} ${lvl.desc} Recommended cooling pairing: ${lvl.pairing}.`;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateSpice();
+    });
+  </script>
+</body>
+</html>

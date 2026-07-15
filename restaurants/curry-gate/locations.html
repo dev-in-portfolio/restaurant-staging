@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations | Curry Gate</title>
+  <meta name="description" content="Find a Curry Gate near you - Matthews, Uptown Charlotte, and University locations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Curry Gate Home"><div class="logo-icon" aria-hidden="true">&#127835;</div><div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div></a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html" class="active">Locations</a></li>
+          <li><a href="spice.html">Spice Guide</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero page-hero-locations">
+      <div class="wrap">
+        <span class="page-hero-badge">&#128205; Five Locations</span>
+        <h1>Find Us</h1>
+        <p>Five locations across the Charlotte metro area, bringing authentic Indian and Nepali flavors closer to you.</p>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="location-tabs" role="tablist" aria-label="Select a location">
+          <button class="loc-tab active" data-loc="matthews" role="tab" aria-selected="true">Matthews</button>
+          <button class="loc-tab" data-loc="uptown" role="tab" aria-selected="false">Uptown</button>
+          <button class="loc-tab" data-loc="university" role="tab" aria-selected="false">University</button>
+        </div>
+        <div class="loc-panel" id="loc-matthews" role="tabpanel">
+          <div class="loc-detail">
+            <div class="loc-detail-info">
+              <h2>Matthews</h2>
+              <p class="loc-address">1240 Matthews-Mint Hill Road<br>Matthews, NC 28105</p>
+              <p class="loc-phone"><a href="tel:9809877936">(980) 987-7936</a></p>
+              <div class="loc-hours">
+                <h3>Hours</h3>
+                <p>Monday &ndash; Saturday: 12 PM &ndash; 9 PM</p>
+                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
+              </div>
+              <div class="loc-actions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=1240+Matthews-Mint+Hill+Rd+Matthews+NC+28105" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
+                <a href="https://www.ezordering.com/currygatematthews" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-uptown" role="tabpanel" hidden>
+          <div class="loc-detail">
+            <div class="loc-detail-info">
+              <h2>Uptown</h2>
+              <p class="loc-address">101 N Tryon St, #105<br>Charlotte, NC 28202</p>
+              <p class="loc-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
+              <div class="loc-hours">
+                <h3>Hours</h3>
+                <p>Monday &ndash; Saturday: 11 AM &ndash; 9 PM</p>
+                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
+              </div>
+              <div class="loc-actions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=101+N+Tryon+St+105+Charlotte+NC+28202" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
+                <a href="https://www.ezordering.com/currygateuptown" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-university" role="tabpanel" hidden>
+          <div class="loc-detail">
+            <div class="loc-detail-info">
+              <h2>University</h2>
+              <p class="loc-address">630 W 24th St<br>Charlotte, NC 28206</p>
+              <p class="loc-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
+              <div class="loc-hours">
+                <h3>Hours</h3>
+                <p>Monday &ndash; Saturday: 11 AM &ndash; 9 PM</p>
+                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
+              </div>
+              <div class="loc-actions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=630+W+24th+St+Charlotte+NC+28206" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
+                <a href="https://www.ezordering.com/currygateuniversity" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

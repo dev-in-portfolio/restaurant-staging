@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · DŌZO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--sushi:#2a1a12;--golden:#d4a84b;--torch:#e63946;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--sushi);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--golden)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--golden)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0806,#2a1a12);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--golden)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--warm);margin:0 0 .25rem;border-left:3px solid var(--golden);padding-left:.75rem}
+.story-text{max-width:720px;margin:0 auto}
+.story-text p{font-size:.95rem;line-height:1.7;opacity:.7;margin-bottom:1rem}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+@media(max-width:640px){.values-grid{grid-template-columns:1fr}}
+.value-card{background:rgba(255,255,255,.03);border:1px solid rgba(212,168,75,.06);border-radius:8px;padding:1.5rem}
+.value-card h3{font-size:1rem;color:var(--golden);margin:0 0 .5rem}
+.value-card p{font-size:.88rem;opacity:.65;line-height:1.6;margin:0}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
+footer a{color:var(--golden);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">DŌZO</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="katsu.html">Katsu Builder</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>From a food truck to Charlotte's favorite intimate katsu counter</p>
+</header>
+<section class="section">
+  <div class="story-text">
+    <p>DŌZO Japanese-American Kitchen started as a food truck — Katsu Kart Sando Shop — serving crispy katsu sandwiches at breweries and pop-ups across Charlotte. The response was immediate: lines formed, sandwiches sold out, and it became clear that Charlotte was hungry for this kind of bold, unfussy Japanese comfort food.</p>
+    <p>In 2022, the team opened their first brick-and-mortar on Thrift Road — an intimate 12-seat space with a 6-seat chef's counter where guests could watch every cutlet get panko-crusted and fried to order. The second location followed on East Boulevard in Dilworth, bringing the same menu to a new neighborhood.</p>
+    <p>The name DŌZO means "please" or "go ahead" in Japanese — an invitation to eat well, share freely, and enjoy the moment. That spirit guides everything we do, from the curry we simmer for hours to the sandos we build by hand.</p>
+  </div>
+</section>
+<section class="section" style="border-top:1px solid rgba(212,168,75,.06)">
+  <h2>What We Believe</h2>
+  <div class="values-grid">
+    <div class="value-card"><h3>Quality Ingredients</h3><p>Panko made fresh, curry simmered from scratch, pork sourced with care. No shortcuts.</p></div>
+    <div class="value-card"><h3>Intimate Experience</h3><p>Small spaces, big flavors. Our kitchens are designed to put you close to the action.</p></div>
+    <div class="value-card"><h3>Japanese Soul</h3><p>We honor the traditions of izakaya and kissaten while making food that feels right at home in Charlotte.</p></div>
+    <div class="value-card"><h3>Community Roots</h3><p>We started as a food truck serving local breweries. That community-first spirit is still at our core.</p></div>
+  </div>
+</section>
+<footer>
+  <p>DŌZO Japanese-American Kitchen · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

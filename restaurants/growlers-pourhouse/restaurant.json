@@ -1,0 +1,34 @@
+{
+  "id": "growlers-pourhouse",
+  "name": "Growlers Pourhouse",
+  "slug": "growlers-pourhouse",
+  "location": {
+    "city": "NoDa",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/growlers-pourhouse",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/growlers-pourhouse/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:16:39.385Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "tabletReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}

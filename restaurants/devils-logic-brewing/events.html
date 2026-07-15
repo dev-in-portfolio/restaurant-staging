@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events · Devil's Logic Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--black:#0a0a0a;--red:#cc2222;--gold:#d4a017;--cream:#e8ddd0;--charcoal:#121212;--muted:#776655}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(204,34,34,.2)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--red)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0a0a0a,#1a0505);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--red);margin:0 0 1rem;border-left:3px solid var(--red);padding-left:.75rem}
+.event-card{background:rgba(255,255,255,.02);border:1px solid rgba(204,34,34,.08);border-radius:8px;padding:1.25rem;margin-bottom:1rem}
+.event-card .title{font-size:1.05rem;color:var(--red);font-family:'Fraunces',serif;font-weight:600;margin:0 0 .25rem}
+.event-card .meta{font-size:.82rem;opacity:.5;margin-bottom:.35rem}
+.event-card .desc{font-size:.85rem;opacity:.6;line-height:1.5;margin:0}
+.event-card .tag{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(204,34,34,.1);color:var(--red);padding:.15rem .5rem;border-radius:3px;margin-right:.35rem}
+.demo-form{max-width:500px;margin:2rem auto 0}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.6}
+.demo-form input,.demo-form textarea{width:100%;padding:.7rem;border:1px solid rgba(204,34,34,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:100px;resize:vertical}
+.demo-form button{background:var(--red);color:var(--cream);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#991111}
+footer{background:var(--black);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(204,34,34,.08)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Devil's Logic</a>
+  <div class="nav-links">
+    <a href="beer.html">Beer</a>
+    <a href="flight.html">Flight Builder</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Events</h1>
+  <p>Trivia, live music, food trucks, and more at the brewery</p>
+</header>
+<section class="section">
+  <h2>Upcoming Events</h2>
+  <div class="event-card">
+    <span class="tag">Weekly</span>
+    <h3 class="title">Trivia Night</h3>
+    <p class="meta">Every Tuesday · 7:00 PM</p>
+    <p class="desc">Bring your brain and your crew — win prizes, drink great beer, and prove you're the smartest devil in the room.</p>
+  </div>
+  <div class="event-card">
+    <span class="tag">Weekly</span>
+    <h3 class="title">Food Truck Rally</h3>
+    <p class="meta">Friday &amp; Saturday · 5:00–9:00 PM</p>
+    <p class="desc">Rotating local food trucks parked on the patio. Check our socials for this week's lineup.</p>
+  </div>
+  <div class="event-card">
+    <span class="tag">Live Music</span>
+    <h3 class="title">Brut Beat</h3>
+    <p class="meta">Friday July 17 · 6:00 PM</p>
+    <p class="desc">Live music on the patio with local Charlotte artists. Free entry, great beer, good vibes.</p>
+  </div>
+  <div class="event-card">
+    <span class="tag">Private</span>
+    <h3 class="title">Private Event Inquiries</h3>
+    <p class="desc">Host your next party, celebration, or corporate event at Devil's Logic. Indoor/outdoor space available for groups of all sizes. Catering and custom beer packages available.</p>
+  </div>
+  <h2>Book a Private Event</h2>
+  <p style="font-size:.9rem;opacity:.55;margin:-.5rem 0 1rem">Interested in hosting at the brewery? Tell us about your event.</p>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="event-type">Event Type</label>
+    <select id="event-type" style="width:100%;padding:.7rem;border:1px solid rgba(204,34,34,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif">
+      <option>Birthday Party</option><option>Corporate Event</option><option>Wedding Reception</option><option>Fundraiser</option><option>Other</option>
+    </select>
+    <label for="guests">Estimated Guests</label>
+    <input type="number" id="guests" required>
+    <label for="details">Tell us about your event</label>
+    <textarea id="details" required></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+</section>
+<footer>
+  <p>Devil's Logic Brewing · 1426 E 4th St · Charlotte, NC 28204 · (704) 666-1001</p>
+  <p><a href="beer.html">Beer</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

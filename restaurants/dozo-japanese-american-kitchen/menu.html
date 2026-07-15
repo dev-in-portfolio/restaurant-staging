@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · DŌZO Japanese-American Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--sushi:#2a1a12;--golden:#d4a84b;--torch:#e63946;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--sushi);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--golden)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--golden)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0806,#2a1a12);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--golden)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--warm);margin:0 0 1.25rem;border-left:3px solid var(--golden);padding-left:.75rem}
+.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cat-tab{background:rgba(255,255,255,.03);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
+.cat-tab:hover{color:var(--cream)}
+.cat-tab.active{background:rgba(212,168,75,.12);color:var(--golden)}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.menu-cat-title{color:var(--golden);font-size:1.1rem;margin:0 0 1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.menu-item:last-child{border-bottom:none}
+.menu-item .name{font-weight:600;font-size:.95rem}
+.menu-item .desc{font-size:.82rem;opacity:.55;line-height:1.4;margin:.15rem 0 0;max-width:75%}
+.menu-item .price{font-size:.9rem;color:var(--golden);font-weight:600;white-space:nowrap;margin-left:1rem}
+.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(230,57,70,.15);color:var(--torch);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
+footer a{color:var(--golden);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">DŌZO</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="katsu.html">Katsu Builder</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Menu</h1>
+  <p>Japanese comfort food made from scratch</p>
+</header>
+<section class="section">
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="katsu">Katsu</button>
+    <button class="cat-tab" data-tab="ramen">Ramen &amp; Bowls</button>
+    <button class="cat-tab" data-tab="small">Small Plates</button>
+    <button class="cat-tab" data-tab="sandos">Sandos</button>
+    <button class="cat-tab" data-tab="drinks">Drinks</button>
+  </div>
+  <div class="cat-panel active" data-panel="katsu">
+    <h3 class="menu-cat-title">Katsu Curry &amp; Plates</h3>
+    <div class="menu-item"><div><span class="name">Chicken Katsu Curry</span><span class="badge">Popular</span><p class="desc">Crispy panko chicken cutlet with house curry, rice, and pickled ginger</p></div><span class="price">$14</span></div>
+    <div class="menu-item"><div><span class="name">Pork Katsu Curry</span><p class="desc">Thick-cut pork loin katsu with curry, rice, and fukujinzuke</p></div><span class="price">$15</span></div>
+    <div class="menu-item"><div><span class="name">Veggie Katsu Curry</span><p class="desc">Panko-crusted vegetable cutlet with curry and rice</p></div><span class="price">$13</span></div>
+    <div class="menu-item"><div><span class="name">Katsu Don</span><p class="desc">Chicken katsu over rice with soft egg, onion, and sweet soy glaze</p></div><span class="price">$14</span></div>
+    <div class="menu-item"><div><span class="name">Curry Rice (Plain)</span><p class="desc">House curry with rice — add katsu +$5</p></div><span class="price">$8</span></div>
+  </div>
+  <div class="cat-panel" data-panel="ramen">
+    <h3 class="menu-cat-title">Ramen &amp; Bowls</h3>
+    <div class="menu-item"><div><span class="name">Tonkotsu Ramen</span><span class="badge">Popular</span><p class="desc">Pork bone broth, chashu, soft egg, nori, scallions, sesame</p></div><span class="price">$16</span></div>
+    <div class="menu-item"><div><span class="name">Miso Ramen</span><p class="desc">Rich miso broth, ground pork, corn, butter, bean sprouts, soft egg</p></div><span class="price">$15</span></div>
+    <div class="menu-item"><div><span class="name">Shoyu Ramen</span><p class="desc">Soy-based chicken broth, chashu, bamboo shoots, nori</p></div><span class="price">$14</span></div>
+    <div class="menu-item"><div><span class="name">Spicy Misoke Ramen</span><span class="badge">Spicy</span><p class="desc">Miso broth with chili oil, ground pork, garlic, soft egg</p></div><span class="price">$16</span></div>
+  </div>
+  <div class="cat-panel" data-panel="small">
+    <h3 class="menu-cat-title">Small Plates (Izakaya)</h3>
+    <div class="menu-item"><div><span class="name">Gyoza (6 pc)</span><span class="badge">Popular</span><p class="desc">Pan-fried pork and vegetable dumplings with soy-vinegar dipping sauce</p></div><span class="price">$8</span></div>
+    <div class="menu-item"><div><span class="name">Karaage</span><p class="desc">Japanese fried chicken — soy, ginger, garlic, served with lemon</p></div><span class="price">$9</span></div>
+    <div class="menu-item"><div><span class="name">Edamame</span><p class="desc">Steamed soybeans with sea salt and chili</p></div><span class="price">$5</span></div>
+    <div class="menu-item"><div><span class="name">Takoyaki (6 pc)</span><p class="desc">Octopus balls with takoyaki sauce, kewpie, bonito flakes</p></div><span class="price">$8</span></div>
+    <div class="menu-item"><div><span class="name">Agedashi Tofu</span><p class="desc">Fried tofu in dashi broth with bonito and scallions</p></div><span class="price">$7</span></div>
+    <div class="menu-item"><div><span class="name">Spicy Tuna Crispy Rice</span><p class="desc">Seared crispy rice topped with spicy tuna, avocado, jalapeño</p></div><span class="price">$12</span></div>
+  </div>
+  <div class="cat-panel" data-panel="sandos">
+    <h3 class="menu-cat-title">Sandos</h3>
+    <div class="menu-item"><div><span class="name">Classic Katsu Sando</span><span class="badge">Popular</span><p class="desc">Panko pork cutlet on shokupan with tonkatsu sauce and cabbage</p></div><span class="price">$11</span></div>
+    <div class="menu-item"><div><span class="name">Chicken Katsu Sando</span><p class="desc">Chicken katsu with kewpie, tonkatsu sauce, shredded cabbage</p></div><span class="price">$11</span></div>
+    <div class="menu-item"><div><span class="name">Egg Sando</span><p class="desc">Fluffy Japanese tamago with kewpie on shokupan</p></div><span class="price">$7</span></div>
+  </div>
+  <div class="cat-panel" data-panel="drinks">
+    <h3 class="menu-cat-title">Drinks</h3>
+    <div class="menu-item"><div><span class="name">Japanese Soda (Ramune)</span><p class="desc">Assorted flavors — strawberry, lychee, original</p></div><span class="price">$4</span></div>
+    <div class="menu-item"><div><span class="name">Iced Matcha Latte</span><p class="desc">Ceremonial matcha with oat milk</p></div><span class="price">$5</span></div>
+    <div class="menu-item"><div><span class="name">Green Tea (Hot/Iced)</span><p class="desc">Premium Japanese green tea</p></div><span class="price">$3</span></div>
+  </div>
+</section>
+<footer>
+  <p>DŌZO Japanese-American Kitchen · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();</script>
+</body>
+</html>

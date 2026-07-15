@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drink Lab · Enderly Coffee Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Enderly's aesthetic */
+.coffee-mat {
+  background: radial-gradient(circle, #2d5a3d 0%, #0f2617 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.coffee-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .coffee-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--p);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Enderly Coffee Home">
+        <span class="logo-text">Enderly Coffee Co.</span>
+        <span class="logo-sub">People First. Coffee Always.</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Cafe</a></li>
+          <li><a href="brew.html" class="active">Drink Lab</a></li>
+          <li><a href="roast.html">Our Coffee</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="wrap">
+        <div class="hero-content">
+          <h1>The Coffee Drink Lab</h1>
+          <p class="hero-sub">Design your signature espresso or cold brew beverage using our direct-trade roasted beans and house-made syrups</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 0;">
+      <div class="wrap">
+        <h2 style="font-family: var(--head); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Beverage Customizer</h2>
+        
+        <div class="coffee-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+          
+          <!-- Left: Cup Platter Visualizer -->
+          <div class="coffee-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #d5c3aa; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="coff-tag-display">SIGNATURE ESPRESSO</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--head); margin: 0 0 0.8rem 0;" id="coff-title-display">Hot Latte</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #d5c3aa; margin: 0 0 1.2rem 0;" id="coff-price-display">$4.75</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="coff-desc-display">Double-shot of our signature Enderly espresso pulled with steamed whole milk, sweet vanilla syrup notes.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Choose Beverage Style</label>
+              <select id="coff-style" onchange="updateDrink()">
+                <option value="latte" selected>Hot Latte ($4.75)</option>
+                <option value="iced">Iced Latte ($5.00)</option>
+                <option value="nitro">Nitro Cold Brew ($4.50)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Choose Milk / Creamer</label>
+              <select id="coff-milk" onchange="updateDrink()">
+                <option value="whole" selected>Steamed Whole Milk (+$0.00)</option>
+                <option value="oat">Creamy Oat Milk (+$0.75)</option>
+                <option value="almond">Organic Almond Milk (+$0.75)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Select Syrup Flavor</label>
+              <select id="coff-syrup" onchange="updateDrink()">
+                <option value="vanilla" selected>House-Made Sweet Vanilla (+$0.50)</option>
+                <option value="lavender">Real Lavender Honey (+$0.75)</option>
+                <option value="cardamom">Spiced Cardamom Syrup (+$0.70)</option>
+                <option value="none">No Syrup (+$0.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
+      <div class="wrap">
+        <p>Enderly Coffee Co. · 2620 Tuckaseegee Rd · Charlotte, NC 28208 · (704) 430-8025</p>
+        <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const styleData = {
+      latte: { tag: "SIGNATURE ESPRESSO", name: "Hot Latte", basePrice: 4.75, label: "double-shot of our signature Enderly espresso pulled with steamed" },
+      iced: { tag: "ICED ESPRESSO BAR", name: "Iced Latte", basePrice: 5.00, label: "double-shot of espresso poured over ice with cold" },
+      nitro: { tag: "TAP COLD BREW", name: "Nitro Cold Brew", basePrice: 4.50, label: "keg-pulled velvety nitro cold brew topped with creamy head and cold" }
+    };
+
+    const milkData = {
+      whole: { name: "Whole Milk", label: "whole milk", charge: 0.00 },
+      oat: { name: "Oat Milk", label: "oat milk", charge: 0.75 },
+      almond: { name: "Almond Milk", label: "almond milk", charge: 0.75 }
+    };
+
+    const syrupData = {
+      vanilla: { name: "Vanilla", label: ", sweetened with our house-made natural vanilla bean syrup", charge: 0.50 },
+      lavender: { name: "Lavender", label: ", sweetened with organic lavender blossom honey", charge: 0.75 },
+      cardamom: { name: "Cardamom", label: ", flavored with aromatic spiced cardamom syrup", charge: 0.70 },
+      none: { name: "Black", label: ", with no added syrup", charge: 0.00 }
+    };
+
+    function updateDrink() {
+      const styleKey = document.getElementById('coff-style').value;
+      const milkKey = document.getElementById('coff-milk').value;
+      const syrupKey = document.getElementById('coff-syrup').value;
+
+      const style = styleData[styleKey];
+      const milk = milkData[milkKey];
+      const syrup = syrupData[syrupKey];
+
+      const totalPrice = style.basePrice + milk.charge + syrup.charge;
+
+      document.getElementById('coff-tag-display').innerText = style.tag;
+      document.getElementById('coff-title-display').innerText = style.name;
+      document.getElementById('coff-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A pour of our ${style.label} ${milk.label}${syrup.label}.`;
+      
+      document.getElementById('coff-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateDrink();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

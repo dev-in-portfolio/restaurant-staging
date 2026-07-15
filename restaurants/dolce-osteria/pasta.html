@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasta & Wine Pairings · Dolce Osteria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --olive: #4a6b3a;
+  --cream: #f5efe6;
+  --terra: #8b3a2a;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --gold: #c9a84c;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--olive); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 40vh; background: linear-gradient(135deg, #1a1410, #2d1f16 50%, #1a1f12); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--gold); }
+.hero .tagline { font-size: 1.1rem; opacity: .5; font-style: italic; margin: .5rem 0 1.5rem; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+
+/* Interactive Pasta Customizer Styling */
+.pasta-mat {
+  background: radial-gradient(circle, #2d1510 0%, #0f0705 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.pasta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .pasta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201, 168, 76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dolce Osteria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pasta.html" style="color: var(--gold);">Pasta &amp; Wine</a>
+    <a href="story.html">Our Story</a>
+    <a href="reservations.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Artisan Pasta &amp; Wine Pairings</h1>
+    <p class="tagline">Explore our handcrafted daily pasta shapes and regional Italian wine pairings</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Pasta Board Builder</h2>
+  <p class="subtitle">Select your daily extruded pasta shape, artisan regional sauce, and sommelier Italian wine pairing below.</p>
+  
+  <div class="pasta-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(201, 168, 76, 0.05);">
+    
+    <!-- Left: Platter Visualizer -->
+    <div class="pasta-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="pasta-tag-display">ARTISAN PASTA BOARD</span>
+      <h3 style="font-size: 2.2rem; color: var(--warm); margin: 0 0 0.8rem 0;" id="pasta-title-display">Tagliolini Carbonara</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="pasta-price-display">$32.99</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="pasta-desc-display">Hand-pulled thin ribbon egg noodles tossed in creamy Roman egg yolk sauce with guanciale and black pepper, paired with a glass of Chianti Classico red wine.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Select Pasta Shape</label>
+        <select id="pasta-shape" onchange="updatePasta()">
+          <option value="tagliolini" selected>Tagliolini (Thin Ribbon - $18.99)</option>
+          <option value="rigatoni">Rigatoni (Ridged Tubes - $17.99)</option>
+          <option value="gnocchi">Hand-Rolled Potato Gnocchi ($19.99)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Choose Artisan Sauce</label>
+        <select id="pasta-sauce" onchange="updatePasta()">
+          <option value="carbonara" selected>Roman Carbonara (+$2.00)</option>
+          <option value="ragu">Wild Porcini Mushroom Ragù (+$3.00)</option>
+          <option value="cacio">Classic Cacio e Pepe (+$0.00)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>3. Add Wine Pairing</label>
+        <select id="pasta-wine" onchange="updatePasta()">
+          <option value="chianti" selected>Chianti Classico (Red - +$12.00)</option>
+          <option value="grigio">Trentino Pinot Grigio (White - +$10.00)</option>
+          <option value="soave">Veneto Soave Classico (White - +$11.00)</option>
+          <option value="none">No Wine Pairing (+$0.00)</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201, 168, 76,.06)">
+  <h2>Our Pasta Craft</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <div class="feature-card">
+      <h3>Semolina Flour</h3>
+      <p>We source imported organic Italian Tipo 00 and organic semolina flours to extruded fresh, textured pasta shapes every morning.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Bronze Dies</h3>
+      <p>Our pasta is extruded through traditional brass and bronze dies. This leaves a rough, matte surface texture that grips sauces perfectly.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dolce Osteria · 1710 Dilworth Rd E · Charlotte, NC 28203 · (704) 333-5534</p>
+  <p><a href="menu.html">Menu</a> · <a href="pasta.html">Pasta &amp; Wine</a> · <a href="story.html">Our Story</a> · <a href="reservations.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const shapeData = {
+    tagliolini: { name: "Tagliolini Ribbon", basePrice: 18.99, label: "hand-pulled thin ribbon egg noodles" },
+    rigatoni: { name: "Rigatoni Bronzo", basePrice: 17.99, label: "bronze-extruded ridged tube pasta" },
+    gnocchi: { name: "Potato Gnocchi", basePrice: 19.99, label: "light and fluffy housemade potato gnocchi" }
+  };
+
+  const sauceData = {
+    carbonara: { name: "Carbonara", label: "creamy Roman egg yolk sauce with guanciale, pecorino, and coarse black pepper", charge: 2.00 },
+    ragu: { name: "Mushroom Ragù", label: "aromatic slow-cooked wild porcini mushroom and truffle cream ragù", charge: 3.00 },
+    cacio: { name: "Cacio e Pepe", label: "sharp Pecorino Romano cheese sauce spiked with freshly cracked black pepper", charge: 0.00 }
+  };
+
+  const wineData = {
+    chianti: { name: "Chianti Classico", label: "a glass of Tuscan Chianti Classico red wine", charge: 12.00 },
+    grigio: { name: "Pinot Grigio", label: "a glass of crisp Trentino Pinot Grigio white wine", charge: 10.00 },
+    soave: { name: "Soave Classico", label: "a glass of Veneto Soave Classico white wine", charge: 11.00 },
+    none: { name: "No Wine", label: "no wine pairing", charge: 0.00 }
+  };
+
+  function updatePasta() {
+    const shapeKey = document.getElementById('pasta-shape').value;
+    const sauceKey = document.getElementById('pasta-sauce').value;
+    const wineKey = document.getElementById('pasta-wine').value;
+
+    const shape = shapeData[shapeKey];
+    const sauce = sauceData[sauceKey];
+    const wine = wineData[wineKey];
+
+    const totalPrice = shape.basePrice + sauce.charge + wine.charge;
+
+    document.getElementById('pasta-title-display').innerText = `${shape.name} ${sauce.name}`;
+    document.getElementById('pasta-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let winePhrase = wine.charge > 0 ? `, paired with ${wine.label}.` : `.`;
+    let desc = `${shape.label} tossed in ${sauce.label}${winePhrase}`;
+    
+    document.getElementById('pasta-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updatePasta();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Southern comfort classics and daily diner specials at Dish in Plaza Midwood, Charlotte. Build your dream comfort plate.">
+  <title>Daily Comfort Specials | Dish</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive Southern plate */
+    .plate-mat {
+      background: radial-gradient(circle, #2a5a60 0%, #0d2226 100%);
+      border: 1.5px solid #d56754;
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial six-page redesign demo • premium visual QA pending • forms do not submit</div>
+
+  <nav>
+    <a href="index.html">Dish</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="specials.html" aria-current="page">Comfort Specials</a>
+      <a href="about.html">Plaza Midwood Story</a>
+      <a href="brunch.html">Brunch &amp; Catering</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="head" style="text-align: center; padding: 60px 0 40px;">
+      <div class="tag">Weekly diner favorites</div>
+      <h1>Daily Comfort Specials</h1>
+      <p style="margin-inline: auto;">Our scratch-made Southern favorites rotating daily, served warm with house sides and fresh-baked bread.</p>
+    </header>
+
+    <!-- Interactive Plate Customizer -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: #fffdf9; border: 1px solid #e0d4c0; padding: 40px 32px; border-radius: 12px; color: #1e6570;">
+        <h3 style="text-align: center; font-size: 1.6rem; color: #1e6570; margin-bottom: 8px;">Daily Southern Plate Builder</h3>
+        <p style="text-align: center; color: #555; font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your main Southern comfort entree, two house sides, and bread to preview your custom plate and price.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Plate Mat -->
+          <div class="plate-mat">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #d8aa46; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="plate-tag">SCRATCH COMFORT PLATE</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="plate-title">Famous Meatloaf</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: #d8aa46; margin-bottom: 1.2rem;" id="plate-price">$14.99</p>
+            <p style="font-size: 0.95rem; color: #e2f1f2; line-height: 1.7;" id="plate-desc">Savory slow-baked ground beef meatloaf served with Mac & Cheese, Collard Greens, and a Fluffy Biscuit.</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">1. Select Southern Entree</label>
+              <select id="entree-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570; font-weight:600;">
+                <option value="meatloaf" selected>Famous Meatloaf ($14.99)</option>
+                <option value="dumplings">Chicken & Dumplings ($13.99)</option>
+                <option value="grits">Cajun Shrimp & Grits ($16.99)</option>
+                <option value="chicken">Fried Chicken Breast ($14.99)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">2. Select Side One</label>
+              <select id="side1-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+                <option value="mac" selected>Homemade Mac & Cheese</option>
+                <option value="greens">Slow-Simmered Collard Greens</option>
+                <option value="okra">Crispy Fried Okra</option>
+                <option value="eggs">Southern Deviled Eggs</option>
+                <option value="salad">Tomato & Cucumber Salad</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">3. Select Side Two</label>
+              <select id="side2-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+                <option value="mac">Homemade Mac & Cheese</option>
+                <option value="greens" selected>Slow-Simmered Collard Greens</option>
+                <option value="okra">Crispy Fried Okra</option>
+                <option value="eggs">Southern Deviled Eggs</option>
+                <option value="salad">Tomato & Cucumber Salad</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">4. Select Bread</label>
+              <select id="bread-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+                <option value="bis" selected>Fluffy Southern Biscuit</option>
+                <option value="corn">Cornbread Muffin</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Comfort Menu Lists -->
+    <section class="alt">
+      <div class="wrap">
+        <h3 style="text-align: center; color: #1e6570; font-size: 1.8rem; margin-bottom: 2rem;">Weekly Diner Comfort Specials</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Chicken & Dumplings Monday <span class="price">$13.99</span></h4>
+            <p>Our famous hand-rolled dumplings simmered in rich chicken broth with tender chicken meat, served with two sides.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Meatloaf Thursday <span class="price">$14.99</span></h4>
+            <p>Seasoned ground beef slow-baked to lock in juice, topped with classic tomato glaze and gravy, served with two sides.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Cajun Shrimp & Grits Friday <span class="price">$16.99</span></h4>
+            <p>Creamy stone-ground grits topped with pan-seared jumbo shrimp, cajun butter sauce, scallions, and crumbled bacon.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Concept only — not affiliated with or operated by Dish. Current operational details require owner confirmation.</footer>
+  
+  <script>
+    const entreeData = {
+      meatloaf: { title: "Famous Meatloaf", price: 14.99, desc: "Savory slow-baked ground beef meatloaf topped with tomato glaze" },
+      dumplings: { title: "Chicken & Dumplings", price: 13.99, desc: "Hand-rolled Southern flour dumplings simmered in rich chicken broth" },
+      grits: { title: "Cajun Shrimp & Grits", price: 16.99, desc: "Pan-seared jumbo shrimp over creamy stone-ground butter grits" },
+      chicken: { title: "Fried Chicken Breast", price: 14.99, desc: "Golden-fried crispy seasoned chicken breast served with honey" }
+    };
+
+    const sideData = {
+      mac: "Homemade Mac & Cheese",
+      greens: "Slow-Simmered Collard Greens",
+      okra: "Crispy Fried Okra",
+      eggs: "Southern Deviled Eggs",
+      salad: "Tomato & Cucumber Salad"
+    };
+
+    const breadData = {
+      bis: "a Fluffy Southern Biscuit",
+      corn: "a Sweet Cornbread Muffin"
+    };
+
+    function updatePlate() {
+      const entreeKey = document.getElementById('entree-select').value;
+      const side1Key = document.getElementById('side1-select').value;
+      const side2Key = document.getElementById('side2-select').value;
+      const breadKey = document.getElementById('bread-select').value;
+
+      const ent = entreeData[entreeKey];
+      const s1 = sideData[side1Key];
+      const s2 = sideData[side2Key];
+      const brd = breadData[breadKey];
+
+      document.getElementById('plate-title').innerText = ent.title;
+      document.getElementById('plate-price').innerText = `$${ent.price.toFixed(2)}`;
+
+      let desc = `${ent.desc} served with ${s1}, ${s2}, and ${brd}.`;
+      document.getElementById('plate-desc').innerText = desc;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updatePlate();
+    });
+  </script>
+</body>
+</html>

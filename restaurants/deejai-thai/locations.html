@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations · Deejai Thai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.loc-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem}
+.loc-card .name{font-size:1.1rem;color:var(--gold);font-family:'Fraunces',serif;font-weight:600;margin:0 0 .5rem}
+.loc-card .detail{font-size:.85rem;opacity:.65;line-height:1.6;margin:0}
+.loc-card .detail strong{color:var(--cream);opacity:.9}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Deejai Thai</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Locations</h1>
+  <p>Serving Charlotte with Thai &amp; sushi at two convenient spots</p>
+</header>
+<section class="section">
+  <h2>Find Deejai Thai</h2>
+  <div class="loc-card">
+    <h3 class="name">Providence Road · Myers Park</h3>
+    <p class="detail"><strong>Address:</strong> 613 Providence Rd, Charlotte, NC 28207</p>
+    <p class="detail"><strong>Phone:</strong> (704) 333-7884</p>
+    <p class="detail"><strong>Hours:</strong> Tue–Fri 11:00am–2:30pm, 5:00pm–9:30pm | Sat–Sun 5:00pm–9:30pm | Mon Closed</p>
+  </div>
+  <div class="loc-card">
+    <h3 class="name">South Kings Drive</h3>
+    <p class="detail"><strong>Address:</strong> 205 S Kings Dr, Charlotte, NC 28204</p>
+    <p class="detail"><strong>Hours:</strong> Tue–Fri 11:00am–2:30pm, 5:00pm–9:30pm | Sat–Sun 5:00pm–9:30pm | Mon Closed</p>
+  </div>
+  <div style="text-align:center;margin-top:2rem;padding:1.5rem;background:rgba(232,184,48,.04);border-radius:8px">
+    <p style="font-size:.9rem;opacity:.6;margin:0">Lunch specials served Tue–Fri 11am–2:30pm at both locations<br>Includes soup, appetizer, and entree — plus $5 bottomless sangria</p>
+  </div>
+</section>
+<footer>
+  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — 1900 Mexican Grill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">1900</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="mezcal.html">Mezcal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Locations</a></li>
+        <li><a href="reserve.html" class="nav-cta">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Menu</h1>
+      <p>Scratch-made Mexican inspired by the street markets, cantinas, and home kitchens of Mexico City.</p>
+    </div>
+  </header>
+
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="menu-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="appetizers">Appetizers</button>
+          <button class="filter-btn" data-filter="entrees">Entrees</button>
+          <button class="filter-btn" data-filter="tacos">Tacos</button>
+          <button class="filter-btn" data-filter="drinks">Drinks</button>
+        </div>
+        <input type="text" class="menu-search" placeholder="Search menu..." aria-label="Search menu">
+      </div>
+
+      <div class="menu-category" data-category="appetizers">
+        <h2 class="menu-cat-title">Appetizers</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-search="guacamole fresco tableside">
+            <div class="menu-item-head">
+              <h3>Guacamole Fresco</h3>
+              <span class="menu-price">$7</span>
+            </div>
+            <p>Prepared tableside — ripe avocados, fresh lime, cilantro, serrano peppers. Add chips and salsa.</p>
+          </div>
+          <div class="menu-item" data-search="nachos chilaquiles chips cheese salsa">
+            <div class="menu-item-head">
+              <h3>Nachos Chilaquiles</h3>
+              <span class="menu-price">$8</span>
+            </div>
+            <p>Crispy tortilla chips, green or red salsa, crema, queso fresco, pickled onions, jalapeños.</p>
+          </div>
+          <div class="menu-item" data-search="mexican corn elote street corn">
+            <div class="menu-item-head">
+              <h3>Mexican Corn</h3>
+              <span class="menu-price">$5</span>
+            </div>
+            <p>Grilled elote, mayo, cotija cheese, chili-lime seasoning, fresh lime.</p>
+          </div>
+          <div class="menu-item" data-search="flautas crispy rolled tacos chicken">
+            <div class="menu-item-head">
+              <h3>Flautas</h3>
+              <span class="menu-price">$7</span>
+            </div>
+            <p>Crispy rolled tortillas with seasoned shredded chicken, lettuce, crema, salsa verde.</p>
+          </div>
+          <div class="menu-item" data-search="tostadas ceviche seafood fresh fish">
+            <div class="menu-item-head">
+              <h3>Tostadas de Ceviche</h3>
+              <span class="menu-price">$10</span>
+            </div>
+            <p>Fresh citrus-cured fish, avocado, pickled red onion, cilantro, habanero on crispy tostadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="entrees">
+        <h2 class="menu-cat-title">Entrees</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-search="burrito chingon burrito oversized">
+            <div class="menu-item-head">
+              <h3>Burrito Chingon</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Oversized flour tortilla stuffed with carne asada, rice, beans, pico de gallo, queso, and guacamole.</p>
+          </div>
+          <div class="menu-item" data-search="chimichanga deep fried burrito crispy">
+            <div class="menu-item-head">
+              <h3>Chimichanga</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Deep-fried burrito with your choice of protein, smothered in queso, topped with crema and salsa.</p>
+          </div>
+          <div class="menu-item" data-search="carne asada steak grilled">
+            <div class="menu-item-head">
+              <h3>Carne Asada</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Grilled marinated steak, charred to perfection. Served with rice, beans, and fresh tortillas.</p>
+          </div>
+          <div class="menu-item" data-search="enchiladas verdes green salsa chicken">
+            <div class="menu-item-head">
+              <h3>Enchiladas Verdes</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Three rolled tortillas filled with chicken, smothered in house-made tomatillo salsa verde, crema.</p>
+          </div>
+          <div class="menu-item" data-search="arroz con pollo rice chicken">
+            <div class="menu-item-head">
+              <h3>Arroz Con Pollo</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Seasoned rice with grilled chicken, roasted vegetables, and salsa roja.</p>
+          </div>
+          <div class="menu-item" data-search="taco salad bowl crispy tortilla">
+            <div class="menu-item-head">
+              <h3>Taco Salad</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Served in a crispy tortilla bowl with lettuce, beans, cheese, pico, sour cream, and your choice of protein.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="tacos">
+        <h2 class="menu-cat-title">Tacos</h2>
+        <p class="menu-cat-note">Served in pairs on corn tortillas with cilantro and onion.</p>
+        <div class="menu-items">
+          <div class="menu-item" data-search="birria tacos slow braised beef consomme">
+            <div class="menu-item-head">
+              <h3>Birria Tacos</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Slow-braised beef, melted cheese, rich consommé for dipping.</p>
+          </div>
+          <div class="menu-item" data-search="fish tacos grilled crispy">
+            <div class="menu-item-head">
+              <h3>Fish Tacos</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Crispy or grilled white fish, cabbage slaw, chipotle crema, lime.</p>
+          </div>
+          <div class="menu-item" data-search="chicken tacos pollo">
+            <div class="menu-item-head">
+              <h3>Chicken Tacos</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Grilled adobo-marinated chicken, salsa verde, avocado crema.</p>
+          </div>
+          <div class="menu-item" data-search="carne asada tacos steak">
+            <div class="menu-item-head">
+              <h3>Carne Asada Tacos</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Grilled marinated steak, fire-roasted jalapeños, pickled onions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="drinks">
+        <h2 class="menu-cat-title">Drinks &amp; Margaritas</h2>
+        <p class="menu-cat-note">All cocktails made fresh. Pitchers available. Ask about our full bar.</p>
+        <div class="menu-items">
+          <div class="menu-item featured" data-search="classic margarita traditional lime">
+            <div class="menu-item-head">
+              <h3>Classic Margarita</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>100% agave tequila, fresh lime, orange liqueur. The one that started it all.</p>
+            <span class="menu-badge">Signature</span>
+          </div>
+          <div class="menu-item" data-search="watermelon jalapeno margarita spicy">
+            <div class="menu-item-head">
+              <h3>Watermelon Jalapeño Margarita</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Fresh watermelon, muddled jalapeño, tequila, lime. Sweet heat in every sip.</p>
+            <span class="menu-badge">Popular</span>
+          </div>
+          <div class="menu-item" data-search="hibiscus margarita jamaica floral">
+            <div class="menu-item-head">
+              <h3>Hibiscus Margarita</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>House hibiscus syrup, tequila, lime, salt rim. Floral and vibrant.</p>
+          </div>
+          <div class="menu-item featured" data-search="mezcal flights tasting collection">
+            <div class="menu-item-head">
+              <h3>Mezcal Flights</h3>
+              <span class="menu-price">$$$</span>
+            </div>
+            <p>Three pours from our collection of 80+ mezcals. Ask your server for tonight's selections.</p>
+            <span class="menu-badge">Largest in NC</span>
+          </div>
+          <div class="menu-item" data-search="carajillo coffee liqueur espresso">
+            <div class="menu-item-head">
+              <h3>Carajillo</h3>
+              <span class="menu-price">$$</span>
+            </div>
+            <p>Spanish-Mexican classic — Licor 43, espresso, shaken over ice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-note">
+        <p>🌵 <strong>The largest Mezcal collection in North Carolina</strong> — 80+ varieties from Oaxaca, Durango, and beyond.</p>
+        <p>$$ = $30 and under per person · Gluten-free and vegetarian options available · Please inform your server of any allergies.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">1900</span>
+        <p>The Mexican Restaurant Where Charlotte Meets</p>
+      </div>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Locations</a>
+        <a href="reserve.html">Reserve</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2025 1900 Mexican Grill. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

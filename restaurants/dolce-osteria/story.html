@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · Dolce Osteria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --olive: #4a6b3a;
+  --cream: #f5efe6;
+  --terra: #8b3a2a;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --gold: #c9a84c;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--olive); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a1410, #2d1f16); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.story-text { max-width: 720px; margin: 0 auto; }
+.story-text p { font-size: .95rem; line-height: 1.7; opacity: .7; margin-bottom: 1rem; }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+@media (max-width:640px) { .values-grid { grid-template-columns: 1fr; } }
+.value-card { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.06); border-radius: 8px; padding: 1.5rem; }
+.value-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .5rem; }
+.value-card p { font-size: .88rem; opacity: .65; line-height: 1.6; margin: 0; }
+.timeline { margin: 3rem 0; position: relative; padding-left: 2rem; border-left: 2px solid rgba(201,168,76,.2); }
+.timeline-item { margin-bottom: 2rem; position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: .3rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+.timeline-item .year { font-size: .8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; }
+.timeline-item .title { font-size: 1rem; font-weight: 600; color: var(--warm); margin: .15rem 0 .25rem; }
+.timeline-item .desc { font-size: .85rem; opacity: .6; line-height: 1.5; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dolce Osteria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pasta.html">Pasta &amp; Wine</a>
+    <a href="story.html">Our Story</a>
+    <a href="reservations.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>Bringing the flavors of Italy to Dilworth</p>
+</header>
+
+<section class="section">
+  <div class="story-text">
+    <p>Dolce Osteria was born from a love of regional Italian cooking and a desire to create a place where every meal feels like a Sunday dinner in Italy. Founded by Rita and her family, the restaurant opened on Kenilworth Avenue in Charlotte's Dilworth neighborhood with a simple mission: serve authentic, handcrafted Italian food in an intimate, welcoming setting.</p>
+    <p>The name "Dolce Osteria" translates to "sweet tavern" — a nod to the warm, unpretentious spirit of Italian osterias where good food, good wine, and good company come together naturally. Every dish on our menu reflects time-honored techniques passed down through generations, from the rolling of fresh pasta to the slow simmering of ragu.</p>
+    <p>Our kitchen is led by a team that believes in the power of simplicity. We import Italian olive oil, source local produce, and make our pasta, sauces, and desserts from scratch daily. The result is a menu that changes with the seasons while staying true to its roots.</p>
+    <p>Whether you're celebrating an anniversary or simply craving a perfect bowl of pasta, Dolce Osteria is a place where you can slow down, savor the moment, and taste the love that goes into every plate.</p>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,168,76,.06)">
+  <h2>Our Journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="year">2016</span>
+      <div class="title">A Dream Takes Shape</div>
+      <div class="desc">Rita envisions an authentic Italian osteria in Dilworth — a neighborhood in need of a warm, family-run dinner spot.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2017</span>
+      <div class="title">Dolce Osteria Opens</div>
+      <div class="desc">The doors open on Kenilworth Avenue with a small dining room, a handmade pasta station, and an ambitious menu.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2019</span>
+      <div class="title">A Neighborhood Favorite</div>
+      <div class="desc">Regulars fill the dining room nightly. The tiramisu and limoncello cake develop a loyal following.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2021</span>
+      <div class="title">Expanding the Vision</div>
+      <div class="desc">Lunch service launches Wednesday through Friday. The wine list grows to showcase regional Italian producers.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">Today</span>
+      <div class="title">Still Family-Run</div>
+      <div class="desc">Dolce Osteria continues to serve handcrafted Italian cuisine — made from scratch, served with heart.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,168,76,.06)">
+  <h2>What We Stand For</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>Handmade Always</h3>
+      <p>We roll our own pasta, bake our own desserts, and make every sauce from scratch. No shortcuts.</p>
+    </div>
+    <div class="value-card">
+      <h3>Regional Roots</h3>
+      <p>Our inspiration comes from Italy's regions — from Piedmont to Sicily — interpreted with respect and creativity.</p>
+    </div>
+    <div class="value-card">
+      <h3>Seasonal &amp; Local</h3>
+      <p>We partner with Carolina farms for produce and proteins, letting the seasons guide our menu changes.</p>
+    </div>
+    <div class="value-card">
+      <h3>Warm Hospitality</h3>
+      <p>Every guest is treated like family. We believe great food is only half the experience — the other half is how you're welcomed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dolce Osteria · 1710 Kenilworth Ave · Charlotte, NC 28203 · (704) 332-7525</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="reservations.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations — 1900 Mexican Grill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">1900</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="mezcal.html">Mezcal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Locations</a></li>
+        <li><a href="reserve.html" class="nav-cta active">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Reservations</h1>
+      <p>Grab a seat at the cantina. Walk-ins always welcome.</p>
+    </div>
+  </header>
+
+  <section class="reserve-section">
+    <div class="container reserve-grid">
+
+      <div class="reserve-info">
+        <h2>Come As You Are</h2>
+        <p>Whether it's a Tuesday night margarita run or a Saturday celebration, there's a seat for you at 1900. We accept reservations for parties of all sizes, but walk-ins are always welcome.</p>
+
+        <div class="reserve-options">
+          <div class="reserve-option">
+            <h3>📅 Reservations</h3>
+            <p>Book ahead for groups, date nights, and celebrations. We'll save you a spot.</p>
+          </div>
+          <div class="reserve-option">
+            <h3>🚶 Walk-Ins</h3>
+            <p>Craving margaritas right now? Pull up a chair. We've got you.</p>
+          </div>
+          <div class="reserve-option">
+            <h3>🎉 Private Events</h3>
+            <p>Birthdays, corporate events, bachelorette parties — we do it all. Ask about our party packages.</p>
+          </div>
+          <div class="reserve-option">
+            <h3>📱 Catering</h3>
+            <p>Bring 1900 to your office, your home, or your event. Full catering menu available.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reserve-form-wrap">
+        <h2>Make a Reservation</h2>
+        <p class="reserve-note">Select your location and party size. For same-day reservations, please call us directly.</p>
+
+        <div class="reserve-location-select">
+          <button class="reserve-loc active" data-loc="midtown">Midtown — Elizabeth Ave</button>
+          <button class="reserve-loc" data-loc="southpark">South Park — Park Rd</button>
+        </div>
+
+        <div class="reserve-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-name">Name</label>
+              <input type="text" id="res-name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="res-phone">Phone</label>
+              <input type="tel" id="res-phone" placeholder="(704) 000-0000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date">Date</label>
+              <input type="date" id="res-date">
+            </div>
+            <div class="form-group">
+              <label for="res-time">Time</label>
+              <select id="res-time">
+                <option value="">Select time</option>
+                <option>11:00 AM</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>1:30 PM</option>
+                <option>2:00 PM</option>
+                <option>2:30 PM</option>
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+                <option>9:00 PM</option>
+                <option>9:30 PM</option>
+                <option>10:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="res-party">Party Size</label>
+            <select id="res-party">
+              <option value="">Select party size</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="res-notes">Special Requests</label>
+            <textarea id="res-notes" rows="3" placeholder="Allergies, seating preferences, occasion details..."></textarea>
+          </div>
+          <button class="btn btn-primary btn-full" type="button">Request Reservation</button>
+          <p class="form-disclaimer">Reservations are confirmed by phone. For immediate assistance, call us directly.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="visit-cta">
+    <div class="container">
+      <h2>Happy Hour</h2>
+      <p>Discounted margaritas and appetizers. Ask your server about our daily specials.</p>
+      <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">1900</span>
+        <p>The Mexican Restaurant Where Charlotte Meets</p>
+      </div>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Locations</a>
+        <a href="reserve.html">Reserve</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2025 1900 Mexican Grill. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

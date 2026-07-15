@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caswell Station | Weekly Events & Game Day</title>
+  <meta name="description" content="Trivia nights, live acoustic music, and game day viewings at Caswell Station Charlotte. Reserve your team table.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive event card */
+    .event-confirm-box {
+      background: radial-gradient(circle, #222e28 0%, #0d1210 100%);
+      border: 1.5px solid var(--color-a);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Caswell Station Home">
+        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div>
+          <span class="logo-text">Caswell Station</span>
+          <span class="logo-sub">Elizabeth Neighborhood</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="brunch.html">Brunch</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="visit.html#reserve" class="header-cta">Reserve</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="page-header text-center" style="padding: 60px 0 30px;">
+      <div class="wrap">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: #fff;">Weekly Events</h2>
+        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem;">From packed trivia Tuesdays to high-energy football Saturdays, there is always something happening on the corner.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Event Selector -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Weekly Event Planner & Seat Estimator</h3>
+        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your target weekly event and group size to calculate package options and check table status.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Invoice/Details Card -->
+          <div class="event-confirm-box" id="confirm-box">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-a); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="event-tag">Trivia Night</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="event-title">Team Trivia Tuesday</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-a); margin-bottom: 1.2rem;" id="event-price">Free Entry</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;" id="event-desc">Table reserved for 4 guests. Team trivia entry is free. Enjoy our Tuesday half-price draft pints special.</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Choose Weekly Event</label>
+              <select id="event-select" onchange="updateEvent()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="trivia" selected>Team Trivia Tuesday (Free)</option>
+                <option value="acoustic">Acoustic Music Wednesday (Free)</option>
+                <option value="college">College Football Saturday (Seat Cover: $5.00)</option>
+                <option value="nfl">NFL Sunday Tailgate (Entry: $10.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Party Size</label>
+              <select id="party-select" onchange="updateEvent()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="2">2 Guests</option>
+                <option value="4" selected>4 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="8">8 Guests</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Lists -->
+    <section class="section-dark">
+      <div class="wrap">
+        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Tuesday Trivia <span class="price">7:00 PM</span></h4>
+            <p>Gather your smartest friends for our weekly team trivia competition. Prizes for top three teams, and half-priced local craft taps all night.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Wednesday Acoustic <span class="price">6:30 PM</span></h4>
+            <p>Live music from local Charlotte acoustic songwriters on our patio. Half-price bottles of wine and house sangria pitchers.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Saturday College Game Day <span class="price">12:00 PM</span></h4>
+            <p>Catch every game across all major conferences on our massive screens. Drink pitchers, game day wing platters, and sound on for major matchups.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>NFL Sunday Tailgate <span class="price">1:00 PM</span></h4>
+            <p>Elizabeth's home for Sunday football. Featuring $5 Bloody Marys, mimosa carafes, and our signature slow-roasted short rib tatchos.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Caswell Station</h3>
+        <p>A neighborhood gastropub and local tavern inside a historic Elizabeth house. Serving New American comfort plates and weekend brunch on our massive garden patio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          366 N Caswell Rd<br>
+          Charlotte, NC 28204<br>
+          Phone: (704) 334-3660
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:30 AM - 10:00 PM<br>
+          Fri - Sat: 11:00 AM - 11:00 PM<br>
+          Sunday: 10:00 AM - 9:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caswell Station. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const eventData = {
+      trivia: { tag: "Trivia Night", title: "Team Trivia Tuesday", price: 0.00, desc: "Team trivia entry is free. Enjoy our Tuesday half-price draft pints special." },
+      acoustic: { tag: "Acoustic Music", title: "Acoustic Live Music", price: 0.00, desc: "Live music is free to enjoy. Half-price bottles of wine and house sangria." },
+      college: { tag: "College Football", title: "College Game Day", price: 5.00, desc: "Premium seat cover ticket for college football watch zone. Game day drink pitchers active." },
+      nfl: { tag: "NFL Sunday", title: "NFL Sunday Tailgate", price: 10.00, desc: "Entry ticket includes a draft pint or Mimosa voucher. $5 Bloody Marys active." }
+    };
+
+    function updateEvent() {
+      const eKey = document.getElementById('event-select').value;
+      const count = parseInt(document.getElementById('party-select').value);
+
+      const ev = eventData[eKey];
+      const cost = ev.price * count;
+
+      document.getElementById('event-tag').innerText = ev.tag;
+      document.getElementById('event-title').innerText = ev.title;
+
+      if (cost === 0) {
+        document.getElementById('event-price').innerText = "Free Entry";
+      } else {
+        document.getElementById('event-price').innerText = `$${cost.toFixed(2)} Total`;
+      }
+
+      document.getElementById('event-desc').innerText = `Table reserved for ${count} guests. ${ev.desc}`;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateEvent();
+    });
+  </script>
+</body>
+</html>

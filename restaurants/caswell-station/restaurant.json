@@ -1,0 +1,34 @@
+{
+  "id": "caswell-station",
+  "name": "Caswell Station",
+  "slug": "caswell-station",
+  "location": {
+    "city": "Elizabeth",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/caswell-station",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/caswell-station/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:16:36.925Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "tabletReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}

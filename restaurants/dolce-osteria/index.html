@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolce Osteria · Dilworth Italian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --olive: #4a6b3a;
+  --cream: #f5efe6;
+  --terra: #8b3a2a;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --gold: #c9a84c;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--olive); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 70vh; background: linear-gradient(135deg, #1a1410, #2d1f16 50%, #1a1f12); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--gold); }
+.hero .tagline { font-size: 1rem; opacity: .6; font-style: italic; margin: .5rem 0 1.5rem; }
+.hero .btn { display: inline-block; background: var(--terra); color: var(--cream); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; }
+.hero .btn:hover { background: #a84532; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.feature-card { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.5rem; }
+.feature-card .icon { font-size: 1.5rem; margin-bottom: .5rem; display: block; }
+.feature-card h3 { font-size: 1.05rem; color: var(--gold); margin: 0 0 .35rem; }
+.feature-card p { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.stat { text-align: center; padding: 1.5rem; background: rgba(255,255,255,.03); border-radius: 8px; border: 1px solid rgba(201,168,76,.06); }
+.stat .num { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--gold); }
+.stat .label { font-size: .82rem; opacity: .5; }
+.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+@media (max-width:640px) { .about-preview { grid-template-columns: 1fr; } }
+.about-preview p { font-size: .92rem; opacity: .65; line-height: 1.7; }
+.about-preview .btn { display: inline-block; background: var(--olive); color: var(--cream); padding: .7rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+.testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.testimonial { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.06); border-radius: 6px; padding: 1.25rem; font-style: italic; }
+.testimonial .text { font-size: .88rem; opacity: .65; line-height: 1.6; margin-bottom: .75rem; }
+.testimonial .author { font-size: .8rem; opacity: .4; font-style: normal; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dolce Osteria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pasta.html">Pasta &amp; Wine</a>
+    <a href="story.html">Our Story</a>
+    <a href="reservations.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Dolce Osteria</h1>
+    <p class="tagline">Regional Italian cuisine in the heart of Dilworth</p>
+    <a href="menu.html" class="btn">Explore the Menu</a>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Welcome to Dolce Osteria</h2>
+  <p class="subtitle">Handmade pasta, seasonal ingredients, and warm Italian hospitality</p>
+  <div class="featured-grid">
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍝</span>
+      <h3>Housemade Pasta</h3>
+      <p>Fresh pasta made daily — from tagliolini to gnocchi, every shape tells a story</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍷</span>
+      <h3>Curated Wine List</h3>
+      <p>Italian and domestic wines selected to complement every dish on the menu</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🏠</span>
+      <h3>Intimate Setting</h3>
+      <p>A cozy, romantic escape in Dilworth — perfect for date night or a quiet dinner with friends</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍰</span>
+      <h3>House Desserts</h3>
+      <p>Tiramisu, limoncello cake, cannoli — made in-house by our pastry team</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,168,76,.06)">
+  <h2>Our Philosophy</h2>
+  <div class="about-preview">
+    <div>
+      <p>At Dolce Osteria, we believe Italian food should be both authentic and personal. Our kitchen follows regional traditions while embracing the best ingredients the Carolinas have to offer. From the olive oil we source to the pasta we roll by hand, every detail matters.</p>
+      <p>Whether you're joining us for a weekday lunch or a Saturday evening celebration, you'll find a menu built around flavor, seasonality, and the kind of hospitality that makes you feel like family.</p>
+      <a href="story.html" class="btn">Read Our Story</a>
+    </div>
+    <div style="background:rgba(255,255,255,.03);border-radius:8px;height:250px;display:flex;align-items:center;justify-content:center;opacity:.3;font-style:italic;border:2px dashed rgba(201,168,76,.1)">Photo coming soon</div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,168,76,.06)">
+  <h2>What Guests Say</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p class="text">"The pasta and seafood are extraordinary. The barbera wine is a phenomenal pour. Cozy, quiet, perfect for a special meal."</p>
+      <span class="author">— OpenTable Diner</span>
+    </div>
+    <div class="testimonial">
+      <p class="text">"Rita and her team make you feel so welcome. The cinghiale — wild boar ragu — is unforgettable."</p>
+      <span class="author">— Restaurant Guru</span>
+    </div>
+    <div class="testimonial">
+      <p class="text">"Our favorite dish is the Buttara. The limoncello cake is the perfect finish to any meal."</p>
+      <span class="author">— Yelp Review</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,168,76,.06)">
+  <h2>Hours &amp; Location</h2>
+  <p class="subtitle">1710 Kenilworth Ave · Dilworth · Charlotte</p>
+  <div class="stats">
+    <div class="stat">
+      <span class="num">Mon, Wed–Sun</span>
+      <span class="label">Dinner 5:00 PM</span>
+    </div>
+    <div class="stat">
+      <span class="num">Wed–Fri</span>
+      <span class="label">Lunch 11:30 AM – 2:00 PM</span>
+    </div>
+    <div class="stat">
+      <span class="num">Tuesday</span>
+      <span class="label">Closed</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem">
+    <a href="reservations.html" class="hero btn">Make a Reservation</a>
+  </div>
+</section>
+
+<footer>
+  <p>Dolce Osteria · 1710 Kenilworth Ave · Charlotte, NC 28203 · (704) 332-7525</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="reservations.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

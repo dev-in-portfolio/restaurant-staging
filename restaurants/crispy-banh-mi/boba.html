@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crispy Banh Mi | Boba Tea & Vietnamese Coffee</title>
+  <meta name="description" content="Authentic Vietnamese milk teas, iced coffee, and fruit teas at Crispy Banh Mi. Customize your boba toppings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive boba glass */
+    .boba-glass-box {
+      background: radial-gradient(circle, #fcf6f0 0%, #faf0e6 100%);
+      border: 1.5px solid #d97706;
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #7c2d12;
+    }
+    .boba-glass-graphic {
+      width: 70px;
+      height: 130px;
+      border: 3px solid #7c2d12;
+      border-radius: 4px 4px 15px 15px;
+      background: rgba(255,255,255,0.7);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.4s;
+      overflow: hidden;
+    }
+    .boba-liquid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px; /* Liquid level */
+      background: #dfc2a9; /* Black milk tea color */
+      transition: all 0.4s;
+    }
+    .boba-straw {
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      width: 10px;
+      height: 150px;
+      background: #ef4444; /* Red straw */
+      transform: rotate(10deg);
+      z-index: 2;
+    }
+    .boba-pearls {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+      height: 25px;
+      display: none;
+      background-image: radial-gradient(circle, #1a0f05 20%, transparent 20%),
+                        radial-gradient(circle, #1a0f05 20%, transparent 20%);
+      background-size: 12px 12px;
+      background-position: 0 0, 6px 6px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Crispy Banh Mi Home">
+        <div class="logo-icon" aria-hidden="true">CB</div>
+        <div><span class="logo-text">Crispy Banh Mi</span><span class="logo-sub">Est. 2016</span></div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="boba.html" class="active">Boba Tea</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="https://crispy-banh-mi.square.site" class="header-cta" target="_blank" rel="noopener">Order Online</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="page-header text-center" style="padding: 60px 0 30px;">
+      <div class="wrap">
+        <h2 style="font-family: 'DM Serif Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--color-p);">Boba Tea & Drinks</h2>
+        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem;">Handcrafted milk teas, iced coffee slow-dripped through traditional phin filters, and sparkling fruit teas.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Boba Customizer -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Boba Sugar & Toppings Customizer</h3>
+        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your tea base, sugar level, and toppings to preview your customized cup and price.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Boba Glass Visualizer -->
+          <div class="boba-glass-box" id="glass-box">
+            <div class="boba-glass-graphic">
+              <div class="boba-straw"></div>
+              <div class="boba-liquid" id="liquid-layer"></div>
+              <div class="boba-pearls" id="pearls-layer"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #7c2d12;" id="boba-display-title">Classic Black Milk Tea</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-p); margin: 0.5rem 0;" id="boba-display-price">$5.50</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Select Tea Base</label>
+              <select id="tea-select" onchange="updateBoba()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="classic" selected>Classic Black Milk Tea ($5.50)</option>
+                <option value="jasmine">Jasmine Green Milk Tea ($5.50)</option>
+                <option value="taro">Taro Cream Milk Tea ($6.00)</option>
+                <option value="matcha">Matcha Green Latte ($6.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Sweetness Level</label>
+              <select id="sugar-select" onchange="updateBoba()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="100" selected>100% Regular Sweetness</option>
+                <option value="70">70% Less Sweetness</option>
+                <option value="50">50% Half Sweetness</option>
+                <option value="30">30% Low Sugar</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">3. Add Boba Toppings</label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--tx); margin-top: 0.4rem; font-weight: 500;">
+                <input type="checkbox" id="chk-pearls" onchange="updateBoba()" style="width: auto;"> Honey Boba Pearls (+50¢)
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 2rem;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;" id="display-boba-name">Classic Black Milk Tea</h4>
+          <p style="font-size: 0.9rem; color: var(--tx2); max-width: 600px; margin: 0 auto;" id="display-boba-desc">Classic Black Milk Tea prepared at 100% sweetness level.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drinks List -->
+    <section class="section-dark">
+      <div class="wrap">
+        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Vietnamese Specialty Beverages</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Traditional Vietnamese Iced Coffee <span class="price">$5.50</span></h4>
+            <p>Dark roast coffee slow-dripped through a phin filter directly over sweet condensed milk, served cold over ice.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Classic Milk Tea <span class="price">$5.50</span></h4>
+            <p>Rich, sweetened black tea blended with non-dairy creamer. Bold tea notes, a classic street favorite.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Taro Cream Milk Tea <span class="price">$6.00</span></h4>
+            <p>Creamy taro root blend offering a sweet, slightly nutty vanilla profile and vibrant purple color.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Mango Green Tea <span class="price">$5.50</span></h4>
+            <p>Freshly brewed jasmine green tea shaken with sweet mango nectar pulp, served cold with ice.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Crispy Banh Mi</h3>
+        <p>Serving authentic Vietnamese banh mi sandwiches, noodle bowls, and custom bubble milk teas in South Charlotte, Dilworth, and University Area since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          South Blvd: 5100 South Blvd, Ste C<br>
+          Dilworth: 2920 Park Rd<br>
+          University: 9318 J M Keynes Dr
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Store Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Sat: 10:00 AM - 8:30 PM<br>
+          Sunday: 10:00 AM - 7:30 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Crispy Banh Mi. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const teaData = {
+      classic: { name: "Classic Black Milk Tea", price: 5.50, color: "#dfc2a9" },
+      jasmine: { name: "Jasmine Green Milk Tea", price: 5.50, color: "#f5e6d3" },
+      taro: { name: "Taro Cream Milk Tea", price: 6.00, color: "#c084fc" },
+      matcha: { name: "Matcha Green Latte", price: 6.00, color: "#86efac" }
+    };
+
+    function updateBoba() {
+      const teaKey = document.getElementById('tea-select').value;
+      const sugar = document.getElementById('sugar-select').value;
+      const addPearls = document.getElementById('chk-pearls').checked;
+
+      const tea = teaData[teaKey];
+      let price = tea.price;
+
+      if (addPearls) {
+        price += 0.50;
+        document.getElementById('pearls-layer').style.display = 'block';
+      } else {
+        document.getElementById('pearls-layer').style.display = 'none';
+      }
+
+      // Update liquid color
+      document.getElementById('liquid-layer').style.backgroundColor = tea.color;
+
+      // Update text displays
+      document.getElementById('boba-display-title').innerText = tea.name;
+      document.getElementById('boba-display-price').innerText = `$${price.toFixed(2)}`;
+
+      document.getElementById('display-boba-name').innerText = `${tea.name} (${sugar}% Sweetness)`;
+      
+      let desc = `${tea.name} prepared at ${sugar}% sweetness level.`;
+      if (addPearls) {
+        desc += " Includes organic honey boba pearls.";
+      }
+      document.getElementById('display-boba-desc').innerText = desc;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateBoba();
+    });
+  </script>
+</body>
+</html>

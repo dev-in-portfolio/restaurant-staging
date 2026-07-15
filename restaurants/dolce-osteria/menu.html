@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Dolce Osteria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --olive: #4a6b3a;
+  --cream: #f5efe6;
+  --terra: #8b3a2a;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --gold: #c9a84c;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--olive); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a1410, #2d1f16); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 3rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.3rem; color: var(--warm); margin: 0 0 1.25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.cat-tabs { display: flex; gap: .25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.cat-tab { background: rgba(255,255,255,.03); border: none; padding: .65rem 1.25rem; border-radius: 4px 4px 0 0; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+.cat-tab:hover { color: var(--cream); }
+.cat-tab.active { background: rgba(201,168,76,.12); color: var(--gold); }
+.cat-panel { display: none; }
+.cat-panel.active { display: block; }
+.menu-cat-title { color: var(--gold); font-size: 1.1rem; margin: 0 0 1rem; }
+.menu-item { display: flex; justify-content: space-between; align-items: flex-start; padding: .75rem 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.menu-item:last-child { border-bottom: none; }
+.menu-item .name { font-weight: 600; font-size: .95rem; }
+.menu-item .desc { font-size: .82rem; opacity: .55; line-height: 1.4; margin: .15rem 0 0; max-width: 75%; }
+.menu-item .price { font-size: .9rem; color: var(--gold); font-weight: 600; white-space: nowrap; margin-left: 1rem; }
+.menu-item .badge { display: inline-block; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; background: rgba(74,107,58,.2); color: var(--olive); padding: .15rem .5rem; border-radius: 3px; margin-left: .5rem; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dolce Osteria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pasta.html">Pasta &amp; Wine</a>
+    <a href="story.html">Our Story</a>
+    <a href="reservations.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>Regional Italian dishes prepared with seasonal ingredients</p>
+</header>
+
+<section class="section">
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="lunch">Lunch</button>
+    <button class="cat-tab" data-tab="dinner">Dinner</button>
+    <button class="cat-tab" data-tab="dessert">Dessert</button>
+    <button class="cat-tab" data-tab="wine">Wine &amp; Cocktails</button>
+  </div>
+
+  <div class="cat-panel active" data-panel="lunch">
+    <h3 class="menu-cat-title">Pranzo (Lunch) · Wed–Fri 11:30AM–2PM</h3>
+    <div class="menu-item">
+      <div><span class="name">Penne Alla Vodka</span><span class="badge">Popular</span><p class="desc">Penne in a creamy tomato-vodka sauce with pancetta and parmesan</p></div>
+      <span class="price">$16</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Spaghetti Bolognese</span><p class="desc">Traditional meat ragu simmered with tomato, wine, and herbs</p></div>
+      <span class="price">$17</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Chicken Parmigiana</span><span class="badge">Popular</span><p class="desc">Breaded chicken cutlet topped with mozzarella and marinara — served with a side of pasta</p></div>
+      <span class="price">$18</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Insalata Cesare</span><p class="desc">Classic Caesar with housemade croutons and shaved parmesan</p></div>
+      <span class="price">$12</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Prosciutto &amp; Burrata</span><p class="desc">Imported prosciutto with creamy burrata, arugula, and balsamic glaze</p></div>
+      <span class="price">$15</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Panini di Pollo</span><p class="desc">Grilled chicken, roasted peppers, mozzarella, and pesto on ciabatta</p></div>
+      <span class="price">$14</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="dinner">
+    <h3 class="menu-cat-title">Cena (Dinner)</h3>
+    <div class="menu-item">
+      <div><span class="name">Funghi</span><span class="badge">Popular</span><p class="desc">Sautéed wild mushrooms with garlic, white wine, and herbs — served on crostini</p></div>
+      <span class="price">$14</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Cozze</span><p class="desc">Prince Edward Island mussels in white wine, garlic, and lemon butter</p></div>
+      <span class="price">$16</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Tagliolini Cinghiale</span><span class="badge">Chef's Pick</span><p class="desc">Homemade tagliolini with wild boar ragu — rosemary, red wine, and pecorino</p></div>
+      <span class="price">$26</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Pappardelle alla Genovese</span><p class="desc">Slow-cooked onion and beef ragu with fresh pappardelle</p></div>
+      <span class="price">$24</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Gnocchi alla Sorrentina</span><p class="desc">House potato gnocchi with tomato, fresh mozzarella, and basil</p></div>
+      <span class="price">$22</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Penne alla Vodka con Gamberi</span><p class="desc">Penne in vodka sauce with sautéed shrimp</p></div>
+      <span class="price">$24</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Costata di Manzo</span><p class="desc">Grilled 10oz ribeye with rosemary roasted potatoes and seasonal vegetables</p></div>
+      <span class="price">$36</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Salmone alla Griglia</span><p class="desc">Grilled salmon with lemon caper butter, asparagus, and risotto</p></div>
+      <span class="price">$28</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="dessert">
+    <h3 class="menu-cat-title">Dolci (Dessert)</h3>
+    <div class="menu-item">
+      <div><span class="name">Tiramisu</span><span class="badge">Popular</span><p class="desc">Classic espresso-soaked ladyfingers with mascarpone cream and cocoa</p></div>
+      <span class="price">$10</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Limoncello Cake</span><span class="badge">Popular</span><p class="desc">Light lemon cake soaked in limoncello — whipped cream and fresh berries</p></div>
+      <span class="price">$10</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Cannoli</span><p class="desc">Crispy pastry shells filled with sweet ricotta, chocolate chips, and pistachio</p></div>
+      <span class="price">$9</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Panna Cotta</span><p class="desc">Vanilla bean panna cotta with strawberry compote</p></div>
+      <span class="price">$9</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Italian Mascarpone Cheesecake</span><p class="desc">Baked mascarpone cheesecake with raspberry coulis</p></div>
+      <span class="price">$11</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="wine">
+    <h3 class="menu-cat-title">Vino (Wine)</h3>
+    <div class="menu-item">
+      <div><span class="name">Barbera d'Alba — Pio Cesare</span><p class="desc">Piedmont · Bright red berries, earthy undertones, elegant finish</p></div>
+      <span class="price">$14/$54</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Chianti Classico — Fèlsina</span><p class="desc">Tuscany · Sangiovese with cherry, violet, and spice notes</p></div>
+      <span class="price">$13/$48</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Pinot Grigio — Jermann</span><p class="desc">Friuli · Crisp, mineral-driven with white peach and citrus</p></div>
+      <span class="price">$12/$44</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Nero d'Avola — Planeta</span><p class="desc">Sicily · Bold, dark fruit with a velvety finish</p></div>
+      <span class="price">$14/$52</span>
+    </div>
+    <h3 class="menu-cat-title" style="margin-top:1.5rem">Cocktails</h3>
+    <div class="menu-item">
+      <div><span class="name">Negroni</span><p class="desc">Gin, Campari, sweet vermouth — stirred and strained</p></div>
+      <span class="price">$14</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Limoncello Spritz</span><p class="desc">House limoncello, prosecco, soda water, fresh mint</p></div>
+      <span class="price">$13</span>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Italian Old Fashioned</span><p class="desc">Bourbon, amaro, orange bitters, cherry</p></div>
+      <span class="price">$15</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dolce Osteria · 1710 Kenilworth Ave · Charlotte, NC 28203 · (704) 332-7525</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="reservations.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('[data-panel]');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === this.dataset.tab));
+    });
+  });
+})();
+</script>
+</body>
+</html>

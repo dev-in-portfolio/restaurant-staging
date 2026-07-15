@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Deejai Thai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cat-tab{background:rgba(255,255,255,.03);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
+.cat-tab:hover{color:var(--cream)}
+.cat-tab.active{background:rgba(232,184,48,.12);color:var(--gold)}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.menu-cat-title{color:var(--gold);font-size:1.1rem;margin:0 0 1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.menu-item:last-child{border-bottom:none}
+.menu-item .name{font-weight:600;font-size:.95rem}
+.menu-item .desc{font-size:.82rem;opacity:.55;line-height:1.4;margin:.15rem 0 0;max-width:75%}
+.menu-item .price{font-size:.9rem;color:var(--gold);font-weight:600;white-space:nowrap;margin-left:1rem}
+.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(232,184,48,.15);color:var(--gold);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
+.quiz-box{background:rgba(232,184,48,.04);border:1px solid rgba(232,184,48,.12);border-radius:8px;padding:2rem;margin:2rem 0}
+.quiz-box h3{color:var(--gold);margin:0 0 1rem;font-size:1.2rem}
+.quiz-step{margin-bottom:1.25rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem;opacity:.7}
+.quiz-step select{width:100%;padding:.7rem;border:1px solid rgba(232,184,48,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.quiz-result{background:rgba(232,184,48,.08);padding:1rem;border-radius:6px;margin-top:1rem;text-align:center;display:none}
+.quiz-result.show{display:block}
+.quiz-result .name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--gold)}
+.quiz-result .desc{font-size:.85rem;opacity:.6;margin-top:.25rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Deejai Thai</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Menu</h1>
+  <p>Thai classics, fresh sushi, and lunch specials you'll crave</p>
+</header>
+<section class="section">
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="thai">Thai Entrees</button>
+    <button class="cat-tab" data-tab="sushi">Sushi &amp; Rolls</button>
+    <button class="cat-tab" data-tab="appetizers">Starters</button>
+    <button class="cat-tab" data-tab="lunch">Lunch Specials</button>
+    <button class="cat-tab" data-tab="drinks">Drinks</button>
+  </div>
+  <div class="cat-panel active" data-panel="thai">
+    <h3 class="menu-cat-title">Thai Entrees</h3>
+    <div class="menu-item"><div><span class="name">Pad Thai</span><span class="badge">Classic</span><p class="desc">Rice noodles stir-fried with egg, bean sprouts, green onions, peanuts — your choice of protein</p></div><span class="price">$12.99</span></div>
+    <div class="menu-item"><div><span class="name">Drunken Noodles</span><span class="badge">Popular</span><p class="desc">Wide rice noodles wok-fried with chili, garlic, basil, bell peppers, and onion</p></div><span class="price">$12.99</span></div>
+    <div class="menu-item"><div><span class="name">Pad See Ew</span><p class="desc">Stir-fried rice noodles with broccolini, egg, sweet soy sauce</p></div><span class="price">$12.99</span></div>
+    <div class="menu-item"><div><span class="name">Green Curry</span><span class="badge">Popular</span><p class="desc">Coconut milk curry with green chili, bamboo shoots, basil, bell peppers — choose your heat</p></div><span class="price">$13.99</span></div>
+    <div class="menu-item"><div><span class="name">Red Curry</span><p class="desc">Aromatic red curry with coconut milk, vegetables, and your choice of protein</p></div><span class="price">$13.99</span></div>
+    <div class="menu-item"><div><span class="name">Massaman Curry</span><p class="desc">Mild, rich curry with peanuts, potato, onion, and coconut milk</p></div><span class="price">$13.99</span></div>
+    <div class="menu-item"><div><span class="name">Pad Woonsen</span><p class="desc">Glass noodle stir-fry with egg, vegetables, and your choice of protein</p></div><span class="price">$12.99</span></div>
+    <div class="menu-item"><div><span class="name">Basil Fried Rice</span><p class="desc">Jasmine rice stir-fried with Thai basil, chili, garlic, and vegetables</p></div><span class="price">$11.99</span></div>
+  </div>
+  <div class="cat-panel" data-panel="sushi">
+    <h3 class="menu-cat-title">Sushi &amp; Specialty Rolls</h3>
+    <div class="menu-item"><div><span class="name">Red Dragon Roll</span><span class="badge">Popular</span><p class="desc">Spicy tuna and cucumber inside, topped with tuna and spicy mayo — super flavorful</p></div><span class="price">$14.99</span></div>
+    <div class="menu-item"><div><span class="name">Deejai Roll</span><span class="badge">Signature</span><p class="desc">Shrimp tempura, avocado, cream cheese, spicy mayo — baked and topped with eel sauce</p></div><span class="price">$15.99</span></div>
+    <div class="menu-item"><div><span class="name">California Roll</span><p class="desc">Crab, avocado, cucumber — the classic</p></div><span class="price">$6.99</span></div>
+    <div class="menu-item"><div><span class="name">Spicy Tuna Roll</span><p class="desc">Fresh tuna, spicy sauce, cucumber</p></div><span class="price">$7.99</span></div>
+    <div class="menu-item"><div><span class="name">Salmon Nigiri</span><p class="desc">Two pieces of fresh salmon over seasoned sushi rice</p></div><span class="price">$6.99</span></div>
+    <div class="menu-item"><div><span class="name">Tuna Nigiri</span><p class="desc">Two pieces of fresh tuna over seasoned sushi rice</p></div><span class="price">$7.99</span></div>
+  </div>
+  <div class="cat-panel" data-panel="appetizers">
+    <h3 class="menu-cat-title">Starters &amp; Soups</h3>
+    <div class="menu-item"><div><span class="name">Spring Rolls</span><span class="badge">Classic</span><p class="desc">Crispy fried vegetarian rolls with sweet &amp; sour sauce</p></div><span class="price">$4.99</span></div>
+    <div class="menu-item"><div><span class="name">Curry Pot Stickers</span><p class="desc">Homemade pork and vegetable dumplings in sweet curry sauce</p></div><span class="price">$6.99</span></div>
+    <div class="menu-item"><div><span class="name">Edamame</span><p class="desc">Steamed soybeans with light salt</p></div><span class="price">$3.99</span></div>
+    <div class="menu-item"><div><span class="name">Tom Yum Soup</span><span class="badge">Popular</span><p class="desc">Spicy and sour Thai broth with shrimp, mushrooms, chili, and lime</p></div><span class="price">$4.99</span></div>
+    <div class="menu-item"><div><span class="name">Tom Kha Soup</span><p class="desc">Coconut milk broth with mushrooms, tomatoes, cilantro, and your choice of protein</p></div><span class="price">$4.99</span></div>
+    <div class="menu-item"><div><span class="name">Seaweed Salad</span><p class="desc">Green seaweed with tangy rice vinegar and cucumber</p></div><span class="price">$4.99</span></div>
+  </div>
+  <div class="cat-panel" data-panel="lunch">
+    <h3 class="menu-cat-title">Lunch Specials</h3>
+    <p style="font-size:.82rem;opacity:.45;margin-top:-.5rem;margin-bottom:1rem">Served Tue–Fri 11am–2:30pm · Includes soup and appetizer</p>
+    <div class="menu-item"><div><span class="name">Lunch Pad Thai</span><p class="desc">Classic pad thai with soup and spring roll — generous portion</p></div><span class="price">$9.99</span></div>
+    <div class="menu-item"><div><span class="name">Lunch Drunken Noodles</span><span class="badge">Popular</span><p class="desc">Spicy basil noodles with soup and spring roll</p></div><span class="price">$9.99</span></div>
+    <div class="menu-item"><div><span class="name">Lunch Green Curry</span><p class="desc">Green curry with jasmine rice, soup, and spring roll</p></div><span class="price">$10.99</span></div>
+    <div class="menu-item"><div><span class="name">Lunch Basil Fried Rice</span><p class="desc">Thai basil fried rice with soup and spring roll</p></div><span class="price">$9.99</span></div>
+    <div class="menu-item"><div><span class="name">Lunch Sushi Combo</span><p class="desc">California roll + 3 pieces nigiri with soup and salad</p></div><span class="price">$11.99</span></div>
+  </div>
+  <div class="cat-panel" data-panel="drinks">
+    <h3 class="menu-cat-title">Drinks</h3>
+    <div class="menu-item"><div><span class="name">Thai Iced Tea</span><span class="badge">Classic</span><p class="desc">Creamy, sweet black tea with star anise and tamarind</p></div><span class="price">$3.99</span></div>
+    <div class="menu-item"><div><span class="name">Bottomless Sangria</span><span class="badge">Deal</span><p class="desc">Red or white — unlimited refills with any lunch entree</p></div><span class="price">$5.00</span></div>
+    <div class="menu-item"><div><span class="name">Singha Beer</span><p class="desc">Classic Thai lager — light, crisp, refreshing</p></div><span class="price">$5.00</span></div>
+    <div class="menu-item"><div><span class="name">Hot Green Tea</span><p class="desc">Traditional Japanese green tea</p></div><span class="price">$2.50</span></div>
+  </div>
+  <h2>Find Your Spice Level</h2>
+  <p style="font-size:.9rem;opacity:.55;margin:-.5rem 0 0">Not sure how hot to go? Let us match your heat.</p>
+  <div class="quiz-box">
+    <h3>Spice Finder</h3>
+    <div class="quiz-step">
+      <label for="heat">How adventurous are you with spice?</label>
+      <select id="heat"><option value="">Select...</option><option value="mild">I like flavor, not fire</option><option value="medium">Give me a good kick</option><option value="hot">I can handle real heat</option><option value="thai">Make it Thai hot — bring it on</option></select>
+    </div>
+    <div class="quiz-step">
+      <label for="dish">What are you in the mood for?</label>
+      <select id="dish"><option value="">Select...</option><option value="noodle">Noodles (Pad Thai or Drunken)</option><option value="curry">Curry (Green or Red)</option><option value="rice">Fried Rice</option><option value="soup">Soup (Tom Yum)</option></select>
+    </div>
+    <div class="quiz-result" id="quiz-result">
+      <p class="name" id="quiz-name"></p>
+      <p class="desc" id="quiz-desc"></p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();
+(function(){const heat=document.getElementById('heat'),dish=document.getElementById('dish'),res=document.getElementById('quiz-result'),name=document.getElementById('quiz-name'),desc=document.getElementById('quiz-desc');const picks={noodle:{mild:'Mild Pad Thai — the perfect entry point, sweet and savory',medium:'Drunken Noodles (medium) — spicy basil wok flavor without the burn',hot:'Drunken Noodles (hot) — real heat, real flavor',thai:'Drunken Noodles (Thai hot) — you asked for it. Respect.'},curry:{mild:'Massaman Curry — rich, mild, peanut-infused comfort',medium:'Green Curry (medium) — coconut cream balances the green chili heat',hot:'Red Curry (hot) — bold, aromatic, and spicy',thai:'Red Curry (Thai hot) — not for the faint of heart'},rice:{mild:'Basil Fried Rice (mild) — fragrant, herbaceous, approachable',medium:'Basil Fried Rice (medium) — Thai basil with a pleasant kick',hot:'Spicy Basil Fried Rice — chili and garlic forward, serious heat',thai:'Thai Hot Fried Rice — only order this if you know'},soup:{mild:'Tom Kha — coconut milk soup, soothing and aromatic',medium:'Tom Yum (medium) — sour and spicy, the classic balance',hot:'Tom Yum (hot) — extra chili, extra lime, extra flavor',thai:'Tom Yum (Thai hot) — clears the sinuses and then some'}};function update(){if(!heat.value||!dish.value){res.classList.remove('show');return}
+const p=picks[dish.value][heat.value];const parts=p.split(' — ');name.textContent=parts[0];desc.textContent=parts[1];res.classList.add('show')}
+heat.addEventListener('change',update);dish.addEventListener('change',update)})();
+</script>
+</body>
+</html>

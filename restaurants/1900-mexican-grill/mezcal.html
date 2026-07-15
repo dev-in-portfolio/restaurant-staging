@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mezcal & Margaritas — 1900 Mexican Grill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .flight-box {
+      background: radial-gradient(circle, #2a1f0e 0%, #1a1208 100%);
+      border: 1.5px solid var(--a);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      color: #fff;
+    }
+    .flight-tray {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 1.5rem 0;
+      background: #3a2b16;
+      border: 2.5px solid var(--a);
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 100px;
+    }
+    .flight-glass {
+      width: 50px;
+      height: 50px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50% 50% 10% 10%;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .flight-glass.active {
+      background: rgba(196,134,43,0.3);
+      border-color: var(--a);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(196,134,43,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">1900</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="mezcal.html" class="active">Mezcal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Locations</a></li>
+        <li><a href="reserve.html" class="nav-cta">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>The Mezcal Reserve</h1>
+      <p>North Carolina's largest collection of artisan mezcal & scratch-crafted cocktails.</p>
+    </div>
+  </header>
+
+  <!-- Interactive Flight Mixer Section -->
+  <main class="container" style="margin-top: 4rem;">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Mezcal Flight Mixer</h3>
+      <p style="text-align: center; color: var(--muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Design your custom 3-pour mezcal flight. Select a glass on the flight tray, pick an agave variety, and choose your hand-ground pairing salt.
+      </p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Platter Visual -->
+        <div class="flight-box" id="flight-display">
+          <div class="flight-tray">
+            <div class="flight-glass active" id="glass-0" onclick="selectGlass(0)">Pour 1</div>
+            <div class="flight-glass" id="glass-1" onclick="selectGlass(1)">Pour 2</div>
+            <div class="flight-glass" id="glass-2" onclick="selectGlass(2)">Pour 3</div>
+          </div>
+          <h4 style="font-size: 1.8rem; margin-bottom: 0.5rem;" id="flight-title">Custom Tasting Flight</h4>
+          <p style="font-size: 1.35rem; font-weight: 700; color: var(--a); margin-bottom: 1rem;" id="flight-price">$39.00</p>
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7;" id="flight-desc">Select pours on the wooden tray to begin.</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label id="glass-control-label">1. Choose Pour 1 Agave</label>
+            <div class="option-grid" id="agave-options">
+              <button class="option-btn" onclick="setAgave('Espadín', 10.00)">Espadín ($10)</button>
+              <button class="option-btn" onclick="setAgave('Tobalá', 14.00)">Tobalá ($14)</button>
+              <button class="option-btn" onclick="setAgave('Tepeztate', 15.00)">Tepeztate ($15)</button>
+              <button class="option-btn" onclick="setAgave('Arroqueño', 16.00)">Arroqueño ($16)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Pair With Artisanal Salt</label>
+            <div class="option-grid" id="salt-options">
+              <button class="option-btn active" onclick="setSalt('gusano', 'Sal de Gusano (Worm Salt)', 2.00)">Sal de Gusano (+$2)</button>
+              <button class="option-btn" onclick="setSalt('chili', 'Chili Lime Salt', 0.00)">Chili Lime Salt</button>
+              <button class="option-btn" onclick="setSalt('sea', 'Smoked Sea Salt', 0.00)">Sea Salt</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mezcal lists -->
+    <h3 class="section-title">Agave Spirit Varieties</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Wild Agaves</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tobalá</span>
+            <span class="menu-item-price">$14 / Pour</span>
+          </div>
+          <p class="menu-item-desc">Harvested from wild high-altitude oak pine forests. Sweet, floral profile with a light smoke finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tepeztate</span>
+            <span class="menu-item-price">$15 / Pour</span>
+          </div>
+          <p class="menu-item-desc">Takes up to 25 years to mature on steep cliffs. Intensely herbal, peppery, and complex.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Arroqueño</span>
+            <span class="menu-item-price">$16 / Pour</span>
+          </div>
+          <p class="menu-item-desc">A massive wild agave variety. Spicy notes, vegetal sweetness, and rich smoke.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Cultivated Agaves</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Espadín</span>
+            <span class="menu-item-price">$10 / Pour</span>
+          </div>
+          <p class="menu-item-desc">The classic cultivated mezcal agave. Balanced wood smoke, green apple, and smooth finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Barril</span>
+            <span class="menu-item-price">$12 / Pour</span>
+          </div>
+          <p class="menu-item-desc">Karwinskii family. Vegetal, earthy sweetness with dark chocolate undertones.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Cuishe</span>
+            <span class="menu-item-price">$13 / Pour</span>
+          </div>
+          <p class="menu-item-desc">Wild-harvested stalk-growing agave. High mineral citrus tones with tropical fruit aromas.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">1900</div>
+      <div class="footer-brand">
+        <p>1523 Elizabeth Ave · Charlotte, NC 28204</p>
+        <p>5110 Park Rd #1e · Charlotte, NC 28209</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Locations</a>
+      </div>
+      <div class="footer-legal">
+        <p>© 2026 1900 Mexican Grill. Charlotte, NC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>
+    // State variables
+    let activeGlass = 0;
+    let flightPours = [
+      { agave: 'Espadín', price: 10.00 },
+      { agave: 'Tobalá', price: 14.00 },
+      { agave: 'Tepeztate', price: 15.00 }
+    ];
+    let selectedSalt = { key: 'gusano', name: 'Sal de Gusano (Worm Salt)', price: 2.00 };
+
+    function selectGlass(idx) {
+      activeGlass = idx;
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`glass-${i}`).classList.remove('active');
+      }
+      document.getElementById(`glass-${idx}`).classList.add('active');
+      document.getElementById('glass-control-label').innerText = `1. Choose Pour ${idx + 1} Agave`;
+
+      // Highlight correct agave button
+      const buttons = document.getElementById('agave-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.includes(flightPours[idx].agave)) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    function setAgave(agave, price) {
+      flightPours[activeGlass] = { agave, price };
+
+      // Update glass text
+      const glassEl = document.getElementById(`glass-${activeGlass}`);
+      glassEl.innerText = agave;
+      glassEl.classList.add('active');
+
+      // Highlight active button
+      const buttons = document.getElementById('agave-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      updateDisplay();
+    }
+
+    function setSalt(key, name, price) {
+      const buttons = document.getElementById('salt-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSalt = { key, name, price };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = flightPours[0].price + flightPours[1].price + flightPours[2].price + selectedSalt.price;
+      document.getElementById('flight-price').innerText = `$${total.toFixed(2)}`;
+
+      const title = `${flightPours[0].agave} • ${flightPours[1].agave} • ${flightPours[2].agave}`;
+      document.getElementById('flight-title').innerText = title;
+
+      const desc = `Custom flight featuring three artisanal pours: ${flightPours[0].agave}, ${flightPours[1].agave}, and ${flightPours[2].agave}, served on a wooden tray with a side of traditional ${selectedSalt.name.toLowerCase()}.`;
+      document.getElementById('flight-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      // Set initial labels
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`glass-${i}`).innerText = flightPours[i].agave;
+      }
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

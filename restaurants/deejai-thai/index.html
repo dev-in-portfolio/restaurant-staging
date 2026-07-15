@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deejai Thai · Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.hero{min-height:70vh;background:linear-gradient(135deg,#1a0a0a,#4a1515 50%,#0a1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
+.hero .tagline{font-size:1rem;opacity:.6;font-style:italic;margin:.5rem 0 1.5rem}
+.hero .btn{display:inline-block;background:var(--gold);color:var(--charcoal);padding:.8rem 2.5rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+.hero .btn:hover{background:#d4a520}
+.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.5rem}
+.feature-card .icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.feature-card h3{font-size:1.05rem;color:var(--gold);margin:0 0 .35rem}
+.feature-card p{font-size:.85rem;opacity:.6;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(232,184,48,.06)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold)}
+.stat .label{font-size:.82rem;opacity:.5}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Deejai Thai</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="hero">
+  <div>
+    <h1>Deejai Thai</h1>
+    <p class="tagline">Authentic Thai cuisine &amp; fresh sushi in Charlotte</p>
+    <a href="menu.html" class="btn">Explore Our Menu</a>
+  </div>
+</header>
+<section class="section">
+  <h2>Welcome to Deejai Thai</h2>
+  <p class="subtitle">Bold Thai flavors, fresh sushi rolls, and a warm Providence Road welcome</p>
+  <div class="featured-grid">
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍜</span><h3>Authentic Thai</h3><p>From pad thai and drunken noodles to tom yum and green curry — made with traditional Thai spices and fresh ingredients</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍣</span><h3>Fresh Sushi</h3><p>Hand-rolled sushi, sashimi, and specialty rolls — including the spicy Red Dragon and signature Deejai rolls</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🌶️</span><h3>Spice Your Way</h3><p>Every dish comes with your choice of heat level — from mild to Thai hot. Don't say we didn't warn you</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍹</span><h3>Bottomless Sangria</h3><p>$5 bottomless sangria with lunch — the best deal in Myers Park. Yes, please</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">613 Providence Rd</span><span class="label">Myers Park · Charlotte</span></div>
+    <div class="stat"><span class="num">Lunch Specials</span><span class="label">Soup + App + Entree</span></div>
+    <div class="stat"><span class="num">Tue–Sun</span><span class="label">Open for lunch &amp; dinner</span></div>
+    <div class="stat"><span class="num">17+ Years</span><span class="label">Serving Charlotte</span></div>
+  </div>
+</section>
+<footer>
+  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>
