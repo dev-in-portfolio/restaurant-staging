@@ -46,6 +46,12 @@ jobs:
           mkdir -p out
           python3 controller/.github/scripts/phase4-sync.py 2>&1 | tee out/phase4-sync.log
 
+      - name: Apply targeted staging mobile fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 controller/.github/scripts/phase4-mobile-fixes.py 2>&1 | tee out/phase4-mobile-fixes.log
+
       - name: Validate all 41 staging builds
         shell: bash
         working-directory: staging
