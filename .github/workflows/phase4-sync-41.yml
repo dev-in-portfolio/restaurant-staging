@@ -1,0 +1,368 @@
+name: Temporary Phase 4 sync 41
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controller branch
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          fetch-depth: 0
+          path: staging
+
+      - name: Check out latest repaired source main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurants
+          ref: main
+          fetch-depth: 0
+          path: source
+
+      - name: Verify Phase 2 source commit is present
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C source merge-base --is-ancestor 2bd7924130a4dd86bc61217a5ff6119283f72306 HEAD
+          echo "Source SHA: $(git -C source rev-parse HEAD)"
+          echo "Staging SHA: $(git -C staging rev-parse HEAD)"
+
+      - name: Synchronize 41 repaired builds
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python3 - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import shutil
+          import subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          source_root = Path('source').resolve()
+          staging_root = Path('staging').resolve()
+          out = Path('out').resolve()
+          source_sha = subprocess.check_output(['git','-C',str(source_root),'rev-parse','HEAD'], text=True).strip()
+          staging_sha_before = subprocess.check_output(['git','-C',str(staging_root),'rev-parse','HEAD'], text=True).strip()
+          stamp = datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
+
+          groups = {
+            'A': [
+              ('aj-family-restaurant','AJ Family Restaurant'),
+              ('alice-jules-coffee-house','Alice Jules Coffee House'),
+              ('amina','Amina'),
+              ('anatolia-cafe-and-cuisine','Anatolia Cafe & Cuisine'),
+              ('food-soul','Food For Your Soul CLT'),
+              ('hathaways-fried-chicken',"Hathaway's Fried Chicken"),
+              ('house-of-leng','House of Leng'),
+              ('kits-trackside-crafts',"Kit's Trackside Crafts"),
+              ('lang-van','Lang Van'),
+              ('laurel-market','Laurel Market'),
+              ('le-kebab-grill','Le Kebab Grill'),
+              ('les-sandwiches-cafe',"Le's Sandwiches & Café"),
+              ('machu-picchu','Machu Picchu Peruvian Cuisine'),
+              ('matthews-social-house','Matthews Social House'),
+              ('miguels-restaurant',"Miguel's Restaurant"),
+              ('mj-donuts','MJ Donuts'),
+              ('picadelis-pub-in-deli',"Picadeli's Pub-In-Deli"),
+              ('queens-soul',"Queen's Soul Food"),
+              ('republica','República Restaurant & Lounge'),
+              ('the-dive-n','The Dive N'),
+              ('palace-monroe','The Palace Restaurant'),
+              ('portrait-gallery','The Portrait Gallery'),
+            ],
+            'B': [
+              ('dbs-tavern',"DB's Tavern"),
+              ('doans-vietnamese-cuisine',"Doan's Vietnamese Cuisine"),
+              ('dolce-osteria','Dolce Osteria'),
+              ('east-74-restaurant','East 74 Restaurant'),
+              ('el-valle-mexican-restaurant','El Valle Mexican Restaurant'),
+              ('geno-ds-pizza',"Geno D's Pizza"),
+              ('giddy-goat-coffee-roasters','Giddy Goat Coffee Roasters'),
+              ('gotcha-matcha-espresso','Gotcha Matcha & Espresso'),
+              ('greys-diner',"Grey's Diner"),
+            ],
+            'C': [
+              ('deejai-thai','Deejai Thai'),
+              ('devils-logic-brewing',"Devil's Logic Brewing"),
+              ('doms-dive-bar',"Dom's Dive Bar"),
+              ('dozo-japanese-american-kitchen','DŌZO Japanese-American Kitchen'),
+              ('dukes-grill',"Duke's Grill"),
+              ('fenians-keep',"Fenian's Keep"),
+              ('flour-shop','Flour Shop'),
+              ('harpers-cafe',"Harper's Cafe"),
+              ('lula-banh-mi-and-bakery','Lula Bánh Mì + Bakery'),
+              ('marias-mexican-restaurant',"Maria's Mexican Restaurant"),
+            ],
+          }
+          targets = [(group, slug, name) for group, items in groups.items() for slug, name in items]
+          assert len(targets) == 41
+
+          excluded = {'.git','.github','.migration','.staging-do-not-use.txt','node_modules','.DS_Store','Thumbs.db','qa','restaurant.json'}
+          def ignored(path: Path) -> bool:
+            return any(part in excluded or part.startswith('.') for part in path.parts)
+
+          def copy_site(src: Path, dst: Path) -> None:
+            if dst.exists():
+              shutil.rmtree(dst)
+            dst.mkdir(parents=True)
+            for item in src.rglob('*'):
+              rel = item.relative_to(src)
+              if ignored(rel):
+                continue
+              target = dst / rel
+              if item.is_dir():
+                target.mkdir(parents=True, exist_ok=True)
+              elif item.is_file():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(item, target)
+
+          def digest_map(root: Path) -> dict[str,str]:
+            result = {}
+            for file in sorted(p for p in root.rglob('*') if p.is_file()):
+              rel = file.relative_to(root)
+              if ignored(rel):
+                continue
+              result[rel.as_posix()] = hashlib.sha256(file.read_bytes()).hexdigest()
+            return result
+
+          restaurants_root = staging_root / 'restaurants'
+          restaurants_root.mkdir(exist_ok=True)
+          count_before = len([p for p in restaurants_root.iterdir() if p.is_dir() and (p/'restaurant.json').is_file()])
+          results = []
+
+          for group, slug, fallback_name in targets:
+            src = source_root / slug
+            dst = restaurants_root / slug
+            if not src.is_dir():
+              raise SystemExit(f'Missing source folder: {slug}')
+            html_count = len(list(src.rglob('*.html')))
+            if html_count < 6 or not (src/'index.html').is_file():
+              raise SystemExit(f'{slug}: source does not meet six-page/index standard')
+
+            existing = {}
+            meta_path = dst / 'restaurant.json'
+            existed = meta_path.is_file()
+            if existed:
+              existing = json.loads(meta_path.read_text(encoding='utf-8'))
+
+            copy_site(src, dst)
+
+            notes = list(existing.get('notes') or [])
+            notes = [n for n in notes if not str(n).startswith('Phase 4 synchronized from repaired source commit')]
+            notes.append(f'Phase 4 synchronized from repaired source commit {source_sha} after successful static and desktop/tablet/mobile browser QA.')
+
+            metadata = {
+              'id': existing.get('id', slug),
+              'name': existing.get('name', fallback_name),
+              'slug': slug,
+              'location': existing.get('location') or {'city':'Charlotte','state':'NC','address':''},
+              'stage': 'staging',
+              'status': existing.get('status', 'ready-for-polish'),
+              'sourceRepository': 'dev-in-portfolio/restaurants',
+              'sourcePath': slug,
+              'currentWebsiteUrl': existing.get('currentWebsiteUrl',''),
+              'currentPublicPresenceType': existing.get('currentPublicPresenceType','website'),
+              'demoRoute': f'restaurants/{slug}/index.html',
+              'informationVerifiedAt': existing.get('informationVerifiedAt'),
+              'promotedToStagingAt': existing.get('promotedToStagingAt') or stamp,
+              'promotedToShowcaseAt': existing.get('promotedToShowcaseAt'),
+              'desktopReviewed': bool(existing.get('desktopReviewed', False)),
+              'tabletReviewed': bool(existing.get('tabletReviewed', False)),
+              'mobileReviewed': bool(existing.get('mobileReviewed', False)),
+              'linksVerified': bool(existing.get('linksVerified', False)),
+              'contentVerified': bool(existing.get('contentVerified', False)),
+              'performanceReviewed': bool(existing.get('performanceReviewed', False)),
+              'accessibilityReviewed': bool(existing.get('accessibilityReviewed', False)),
+              'comparisonButtonAdded': bool(existing.get('comparisonButtonAdded', False)),
+              'comparisonButtonNotApplicable': bool(existing.get('comparisonButtonNotApplicable', False)),
+              'productionBuildPassed': bool(existing.get('productionBuildPassed', False)),
+              'approvedForPresentation': bool(existing.get('approvedForPresentation', False)),
+              'notes': notes,
+            }
+            meta_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+            source_hashes = digest_map(src)
+            staging_hashes = digest_map(dst)
+            if source_hashes != staging_hashes:
+              missing = sorted(set(source_hashes) - set(staging_hashes))
+              extra = sorted(set(staging_hashes) - set(source_hashes))
+              changed = sorted(k for k in set(source_hashes)&set(staging_hashes) if source_hashes[k] != staging_hashes[k])
+              raise SystemExit(f'{slug}: mirror mismatch missing={missing[:5]} extra={extra[:5]} changed={changed[:5]}')
+
+            results.append({'group':group,'slug':slug,'name':metadata['name'],'existedBefore':existed,'htmlPages':html_count,'fileCount':len(source_hashes)})
+
+          count_after = len([p for p in restaurants_root.iterdir() if p.is_dir() and (p/'restaurant.json').is_file()])
+          changed = sorted(subprocess.check_output(['git','-C',str(staging_root),'diff','--name-only'], text=True).splitlines())
+          allowed_prefixes = tuple(f'restaurants/{slug}/' for _, slug, _ in targets)
+          unexpected = [p for p in changed if not p.startswith(allowed_prefixes)]
+          if unexpected:
+            raise SystemExit(f'Unexpected changed files outside the 41 targets: {unexpected}')
+
+          report = {
+            'phase': 4,
+            'sourceSha': source_sha,
+            'stagingShaBefore': staging_sha_before,
+            'targetCount': len(targets),
+            'groups': {k:len(v) for k,v in groups.items()},
+            'existingTargetsUpdated': sum(1 for r in results if r['existedBefore']),
+            'newTargetsAdded': sum(1 for r in results if not r['existedBefore']),
+            'stagingRestaurantCountBefore': count_before,
+            'stagingRestaurantCountAfter': count_after,
+            'changedFileCount': len(changed),
+            'targets': results,
+          }
+          out.joinpath('phase4-sync-report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(json.dumps(report, indent=2, ensure_ascii=False))
+          PY
+
+      - name: Validate all 41 staging builds
+        shell: bash
+        working-directory: staging
+        run: |
+          set -euo pipefail
+          slugs=(
+            aj-family-restaurant alice-jules-coffee-house amina anatolia-cafe-and-cuisine food-soul
+            hathaways-fried-chicken house-of-leng kits-trackside-crafts lang-van laurel-market
+            le-kebab-grill les-sandwiches-cafe machu-picchu matthews-social-house miguels-restaurant
+            mj-donuts picadelis-pub-in-deli queens-soul republica the-dive-n palace-monroe portrait-gallery
+            dbs-tavern doans-vietnamese-cuisine dolce-osteria east-74-restaurant el-valle-mexican-restaurant
+            geno-ds-pizza giddy-goat-coffee-roasters gotcha-matcha-espresso greys-diner
+            deejai-thai devils-logic-brewing doms-dive-bar dozo-japanese-american-kitchen dukes-grill
+            fenians-keep flour-shop harpers-cafe lula-banh-mi-and-bakery marias-mexican-restaurant
+          )
+          for slug in "${slugs[@]}"; do
+            npm run validate -- --restaurant "$slug"
+          done
+          npm test --if-present
+
+      - name: Install browser QA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase4-qa
+          cd /tmp/phase4-qa
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+
+      - name: Run staging route QA at desktop tablet and mobile
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --directory staging >/tmp/phase4-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
+          NODE_PATH=/tmp/phase4-qa/node_modules node - <<'JS' 2>&1 | tee out/phase4-browser.log
+          const fs = require('fs');
+          const path = require('path');
+          const { chromium } = require('playwright');
+          const report = JSON.parse(fs.readFileSync('out/phase4-sync-report.json','utf8'));
+          const root = path.resolve('staging');
+          const base = 'http://127.0.0.1:4173';
+          const viewports = [
+            {name:'desktop',width:1440,height:900},
+            {name:'tablet',width:1024,height:768},
+            {name:'mobile',width:390,height:844},
+          ];
+          function pages(dir){
+            const out=[];
+            for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+              if(e.name==='restaurant.json') continue;
+              const p=path.join(dir,e.name);
+              if(e.isDirectory()) out.push(...pages(p));
+              else if(e.name.toLowerCase().endsWith('.html')) out.push(p);
+            }
+            return out.sort();
+          }
+          function urlPath(rel){return rel.split(path.sep).map(encodeURIComponent).join('/');}
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const failures=[];
+            let pageLoads=0;
+            try{
+              for(const target of report.targets){
+                const site=path.join(root,'restaurants',target.slug);
+                const html=pages(site);
+                for(const viewport of viewports){
+                  const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height}});
+                  const page=await context.newPage();
+                  for(const file of html){
+                    const rel=path.relative(root,file);
+                    const label=`${target.slug}/${path.relative(site,file)} @ ${viewport.name}`;
+                    const errors=[];
+                    const bad=[];
+                    page.removeAllListeners();
+                    page.on('pageerror',e=>errors.push(e.message));
+                    page.on('response',r=>{if(r.url().startsWith(base+'/') && r.status()>=400 && !r.url().endsWith('/favicon.ico')) bad.push(`${r.status()} ${r.url()}`)});
+                    const response=await page.goto(`${base}/${urlPath(rel)}`,{waitUntil:'domcontentloaded',timeout:25000});
+                    await page.waitForTimeout(60);
+                    pageLoads++;
+                    const checks=await page.evaluate(()=>({
+                      title:document.title.trim(),
+                      lang:document.documentElement.lang.trim(),
+                      overflow:document.documentElement.scrollWidth-window.innerWidth,
+                      mainCount:document.querySelectorAll('main').length,
+                      duplicateIds:[...document.querySelectorAll('[id]')].map(e=>e.id).filter((id,i,a)=>id&&a.indexOf(id)!==i),
+                      text:document.body.innerText.replace(/\s+/g,' ').trim().length,
+                    }));
+                    if(!response || response.status()>=400) failures.push(`${label}: navigation ${response?.status()}`);
+                    if(!checks.title) failures.push(`${label}: empty title`);
+                    if(!checks.lang) failures.push(`${label}: missing lang`);
+                    if(checks.mainCount!==1) failures.push(`${label}: main count ${checks.mainCount}`);
+                    if(checks.overflow>12) failures.push(`${label}: horizontal overflow ${checks.overflow}px`);
+                    if(checks.duplicateIds.length) failures.push(`${label}: duplicate ids ${[...new Set(checks.duplicateIds)].join(',')}`);
+                    if(checks.text<180) failures.push(`${label}: insufficient visible text ${checks.text}`);
+                    failures.push(...errors.map(e=>`${label}: pageerror ${e}`));
+                    failures.push(...bad.map(e=>`${label}: local response ${e}`));
+                  }
+                  await context.close();
+                }
+              }
+            } finally { await browser.close(); }
+            const result={restaurants:report.targets.length,pageLoads,viewports:viewports.map(v=>v.name),failures};
+            fs.writeFileSync('out/phase4-browser-report.json',JSON.stringify(result,null,2)+'\n');
+            console.log(JSON.stringify({restaurants:result.restaurants,pageLoads,failures:failures.length},null,2));
+            if(failures.length){console.error(failures.slice(0,100).join('\n'));process.exit(1);}
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+
+      - name: Commit and push synchronized builds to staging main
+        shell: bash
+        working-directory: staging
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add restaurants
+          if git diff --cached --quiet; then
+            echo 'No Phase 4 staging changes were needed.' | tee ../out/commit.txt
+            exit 0
+          fi
+          git commit -m 'Synchronize 41 repaired restaurant builds into staging'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+          git rev-parse HEAD | tee ../out/commit.txt
+
+      - name: Upload Phase 4 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase4-sync-41-report
+          path: out
