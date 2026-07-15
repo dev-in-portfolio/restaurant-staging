@@ -1,0 +1,13 @@
+{
+  "name": "restaurant-staging",
+  "version": "1.0.0",
+  "description": "Controlled staging and finalization environment for restaurant websites",
+  "type": "commonjs",
+  "scripts": {
+    "promote:staging": "node scripts/promote-from-thunderdome.js",
+    "validate": "node scripts/validate-restaurant.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}

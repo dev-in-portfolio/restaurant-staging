@@ -1,0 +1,32 @@
+{
+  "id": "restaurant-slug",
+  "name": "Restaurant Name",
+  "slug": "restaurant-slug",
+  "location": {
+    "city": "Charlotte",
+    "state": "NC",
+    "address": "123 Main Street, Charlotte, NC 28202"
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/restaurant-slug",
+  "currentWebsiteUrl": "https://www.example-restaurant.com",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/restaurant-slug/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T15:30:00Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}
