@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machu Picchu Peruvian Cuisine - Pineville, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">M</div>
+        <h1 class="brand-name">
+          Machu Picchu
+          <span>Peruvian Cuisine</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-table.html">Flavor Table</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Peruvian Culinary Board</h2>
+    <p class="page-subtitle">Embark on a culinary journey across Peru. Customize your fresh ceviche plate using our interactive builder below, or choose our iconic wok specialties.</p>
+  </header>
+
+  <!-- Interactive Ceviche Builder Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Interactive Ceviche Builder</h3>
+      
+      <div class="builder-grid">
+        
+        <div class="ceviche-controls">
+          
+          <!-- Base selection -->
+          <div class="control-group">
+            <label>Select Seafood Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('sea-bass', 16.00, 'Sea Bass Ceviche')">Sea Bass ($16)</button>
+              <button class="option-btn" onclick="setBase('shrimp', 15.00, 'Camarón (Shrimp) Ceviche')">Shrimp ($15)</button>
+              <button class="option-btn" onclick="setBase('mixed', 18.00, 'Ceviche Mixto')">Mixed Seafood ($18)</button>
+            </div>
+          </div>
+
+          <!-- Citrus Leche de Tigre selection -->
+          <div class="control-group">
+            <label>Select Leche de Tigre Marinade</label>
+            <div class="option-grid" id="citrus-options">
+              <button class="option-btn active" onclick="setCitrus('classic', 0.00, 'Classic Key Lime Juice')">Classic Lime (+$0)</button>
+              <button class="option-btn" onclick="setCitrus('amarillo', 1.00, 'Aji Amarillo Cream')">Ají Amarillo (+$1)</button>
+              <button class="option-btn" onclick="setCitrus('rocoto', 1.50, 'Rocoto Red Chili Cream')">Rocoto Chili (+$1.50)</button>
+            </div>
+          </div>
+
+          <!-- Garnish choice -->
+          <div class="control-group">
+            <label>Andean Garnishes</label>
+            <div class="option-grid" id="garnish-options">
+              <button class="option-btn active" onclick="setGarnish('traditional', 'Traditional Choclo & Camote')">Traditional Choclo & Sweet Potato</button>
+              <button class="option-btn" onclick="setGarnish('criolla', 'Salsa Criolla Relish')">Salsa Criolla Onions</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Builder Display Card -->
+        <div class="builder-display" style="background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%);">
+          <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Fresh Wok Order</span>
+          <h4 class="builder-display-title" id="display-ceviche-name">Sea Bass Ceviche</h4>
+          <p id="display-ceviche-citrus" style="color: var(--color-teal); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Classic Key Lime Juice</p>
+          <div class="builder-display-price" id="display-ceviche-price">$16.00</div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-ceviche-desc">Fresh Sea Bass cured in Classic Key Lime Juice Leche de Tigre, served with Traditional Choclo & Camote.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Traditional Culinary Board</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Platos de Fondo (Entrées)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Lomo Saltado<span class="menu-item-badge">Inca Legend</span></span>
+            <span class="menu-item-price">$18.00</span>
+          </div>
+          <p class="menu-item-desc">A classic Peruvian-Chinese stir-fry: tender sliced beef loin wok-sizzled with red onions, tomatoes, fresh cilantro, and soy-garlic reduction, layered over crinkle fries and served with white rice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Arroz con Mariscos</span>
+            <span class="menu-item-price">$19.50</span>
+          </div>
+          <p class="menu-item-desc">Peruvian-style seasoned yellow rice simmered with shrimp, squid, mussels, and green peas in white wine and red pepper aji panca base.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Seco de Carne</span>
+            <span class="menu-item-price">$17.50</span>
+          </div>
+          <p class="menu-item-desc">Tender beef chunks slow-simmered in a rich cilantro-garlic broth, served with canary beans, white rice, and pickled red onions.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Antojitos (Appetizers & Sweets)</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Papa Rellena</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Deep-fried potato croquette stuffed with seasoned minced beef, hard-boiled egg, onions, raisins, and black olives, topped with lime-marinated onion salsa criolla.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Anticuchos de Corazón</span>
+            <span class="menu-item-price">$9.50</span>
+          </div>
+          <p class="menu-item-desc">Two flame-grilled skewers of tender beef heart cubes marinated in garlic, red wine vinegar, cumin, and spicy aji panca, served with boiled potato wheels.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Alfajores Dulce de Leche</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Three traditional Peruvian melt-in-your-mouth shortbread cookies sandwiched with rich dulce de leche milk caramel, dusted with powdered sugar.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>123 Main St<br>Pineville, NC 28134</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sat: 11:00 AM - 12:00 AM<br>Sun: 10:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 889-0801<br>Counter Takeout | Dine-In & Bar</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Machu Picchu Peruvian Cuisine. Pineville landmark since 2012.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Builder State
+    let selectedBase = { key: 'sea-bass', price: 16.00, name: 'Sea Bass Ceviche' };
+    let selectedCitrus = { key: 'classic', price: 0.00, name: 'Classic Key Lime Juice' };
+    let selectedGarnish = { key: 'traditional', name: 'Traditional Choclo & Camote' };
+
+    function setBase(key, price, name) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, price, name };
+      updateDisplay();
+    }
+
+    function setCitrus(key, price, name) {
+      const buttons = document.getElementById('citrus-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedCitrus = { key, price, name };
+      updateDisplay();
+    }
+
+    function setGarnish(key, name) {
+      const buttons = document.getElementById('garnish-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedGarnish = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const totalPrice = (selectedBase.price + selectedCitrus.price).toFixed(2);
+      document.getElementById('display-ceviche-price').innerText = `$${totalPrice}`;
+      document.getElementById('display-ceviche-name').innerText = selectedBase.name;
+      document.getElementById('display-ceviche-citrus').innerText = selectedCitrus.name;
+
+      const desc = `Fresh seafood base cured in ${selectedCitrus.name} Leche de Tigre, served with ${selectedGarnish.name}.`;
+      document.getElementById('display-ceviche-desc').innerText = desc;
+    }
+  </script>
+</body>
+</html>

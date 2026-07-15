@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop coffee beans, local gifts, handmade jewelry and merchandise at Alice Jules Coffee House in Monroe, NC.">
+  <title>Coffee &amp; Retail — Alice Jules Coffee House</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+    :root {
+      --aj-cream: #faf6f0; --aj-warm: #f0e8dc; --aj-sage: #9a8c7e; --aj-mauve: #8b6f6f; --aj-gold: #c9a96e; --aj-dark: #3a2e2a; --aj-brown: #6b4f3c;
+      --aj-font: 'DM Sans', system-ui, sans-serif; --aj-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; } html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--aj-font); background: var(--aj-cream); color: var(--aj-dark); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: .9rem 2rem; background: rgba(58,46,42,.93); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: .06em; color: var(--aj-cream); }
+    .nav-logo em { font-style: normal; color: var(--aj-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a { padding: .5rem .9rem; border-radius: .4rem; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: rgba(250,246,240,.7); transition: .2s; }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--aj-cream); }
+    .nav-shop { background: var(--aj-gold); color: var(--aj-dark) !important; border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--aj-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) { .nav-toggle { display: flex; } .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(58,46,42,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); } .nav-links.open { display: flex; } .nav-links a { padding: .7rem .9rem; } .nav-bar { padding: .75rem 1rem; } }
+
+    .page-header { padding: 7rem 2rem 3rem; background: linear-gradient(135deg, #3a2e2a 0%, #5a3f32 50%, #7a5a48 100%); color: var(--aj-cream); text-align: center; }
+    .page-header h1 { font-family: var(--aj-serif); font-size: clamp(2rem,4.5vw,3rem); font-weight: 400; margin: 0 0 .35rem; }
+    .page-header p { color: rgba(250,246,240,.5); max-width: 480px; margin: 0 auto; }
+
+    .shop-content { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .finder-section { margin-bottom: 4rem; }
+    .finder-section h2 { font-family: var(--aj-serif); font-size: 1.5rem; font-weight: 400; text-align: center; margin-bottom: .35rem; }
+    .finder-section > p { text-align: center; color: rgba(58,46,42,.5); margin-bottom: 1.5rem; }
+
+    .finder-card {
+      background: #fff; border-radius: .8rem; padding: 2rem;
+      border: 1px solid rgba(58,46,42,.06); max-width: 520px; margin: 0 auto;
+    }
+    .finder-question { margin-bottom: 1.25rem; }
+    .finder-question label { display: block; font-weight: 700; font-size: .85rem; margin-bottom: .3rem; }
+    .finder-options { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .finder-opt {
+      padding: .4rem .8rem; border-radius: .3rem;
+      border: 2px solid rgba(58,46,42,.1); background: transparent;
+      font-weight: 600; font-size: .8rem; cursor: pointer; transition: .2s;
+      font-family: var(--aj-font);
+    }
+    .finder-opt:hover { border-color: var(--aj-sage); }
+    .finder-opt.selected { background: var(--aj-dark); color: var(--aj-cream); border-color: var(--aj-dark); }
+
+    .finder-result {
+      background: var(--aj-warm); border-radius: .6rem; padding: 1.25rem;
+      margin-top: 1.5rem; text-align: center; display: none;
+    }
+    .finder-result.show { display: block; }
+    .finder-result h3 { font-family: var(--aj-serif); font-size: 1.2rem; font-weight: 400; margin: 0 0 .3rem; }
+    .finder-result p { font-size: .9rem; color: rgba(58,46,42,.6); margin: 0; }
+    .finder-result .drink-name { color: var(--aj-mauve); font-weight: 700; }
+
+    .retail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .retail-item {
+      background: #fff; border-radius: .8rem; padding: 2rem 1.5rem; text-align: center;
+      border: 1px solid rgba(58,46,42,.06); transition: .2s;
+    }
+    .retail-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.05); }
+    .retail-item .icon { font-size: 2.2rem; margin-bottom: .6rem; }
+    .retail-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
+    .retail-item p { font-size: .85rem; color: rgba(58,46,42,.5); margin-bottom: .75rem; }
+    .retail-item .tag { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--aj-mauve); }
+
+    .why-section { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+    .why-section h2 { font-family: var(--aj-serif); font-size: 1.5rem; font-weight: 400; margin-bottom: .6rem; }
+    .why-section p { color: rgba(58,46,42,.55); font-size: .95rem; }
+
+    .contact-inline { background: var(--aj-warm); border-radius: .8rem; padding: 2rem; text-align: center; max-width: 520px; margin: 0 auto; }
+    .contact-inline h3 { font-family: var(--aj-serif); font-size: 1.2rem; font-weight: 400; margin-bottom: .3rem; }
+    .contact-inline p { font-size: .9rem; color: rgba(58,46,42,.55); margin-bottom: .5rem; }
+    .contact-inline a { color: var(--aj-mauve); font-weight: 600; }
+
+    .footer { background: var(--aj-dark); border-top: 1px solid rgba(255,255,255,.06); padding: 3rem 2rem 2rem; color: rgba(250,246,240,.45); font-size: .82rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--aj-cream); font-size: .82rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    .footer a { color: rgba(250,246,240,.45); transition: .2s; }
+    .footer a:hover { color: var(--aj-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+    .concept-bar { background: var(--aj-gold); color: var(--aj-dark); }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/alice-jules-coffee-house/" class="nav-logo">Alice Jules <em>Coffee House</em></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="/alice-jules-coffee-house/">Home</a>
+      <a href="/alice-jules-coffee-house/menu.html">Menu</a>
+      <a href="/alice-jules-coffee-house/story.html">Our Story</a>
+      <a href="/alice-jules-coffee-house/shop.html">Coffee &amp; Retail</a>
+      <a href="/alice-jules-coffee-house/visit.html">Visit</a>
+      <a href="/alice-jules-coffee-house/shop.html" class="nav-shop">Shop Coffee</a>
+      <a href="drink-lab.html">Drink Lab</a>
+  </div>
+</nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Coffee &amp; Retail</h1>
+      <p>Take the taste home. Coffee beans, local gifts, handcrafted goods from Monroe makers.</p>
+    </div>
+
+    <div class="shop-content">
+      <div class="finder-section">
+        <h2>Find Your Brew</h2>
+        <p>Not sure what to order? Answer a few questions and we&#8217;ll recommend something.</p>
+        <div class="finder-card">
+          <div class="finder-question">
+            <label>1. What&#8217;s your vibe today?</label>
+            <div class="finder-options" data-question="vibe">
+              <button class="finder-opt" data-value="warm">Warm &amp; Cozy</button>
+              <button class="finder-opt" data-value="cool">Cool &amp; Refreshing</button>
+              <button class="finder-opt" data-value="bold">Bold &amp; Strong</button>
+            </div>
+          </div>
+          <div class="finder-question">
+            <label>2. How do you take your coffee?</label>
+            <div class="finder-options" data-question="style">
+              <button class="finder-opt" data-value="black">Black</button>
+              <button class="finder-opt" data-value="milky">Milky &amp; Smooth</button>
+              <button class="finder-opt" data-value="sweet">Sweet &amp; Flavored</button>
+            </div>
+          </div>
+          <div class="finder-question">
+            <label>3. Any dietary preference?</label>
+            <div class="finder-options" data-question="diet">
+              <button class="finder-opt" data-value="none">No Preference</button>
+              <button class="finder-opt" data-value="sugarfree">Sugar-Free</button>
+              <button class="finder-opt" data-value="milk">Non-Dairy Milk</button>
+            </div>
+          </div>
+
+          <div class="finder-result" id="finderResult">
+            <h3>We recommend:</h3>
+            <p class="drink-name" id="finderDrink">Mr. Darcy</p>
+            <p id="finderDesc">English toffee latte &#8212; warm, smooth, and just sweet enough.</p>
+          </div>
+          <p style="font-size:.75rem;color:rgba(58,46,42,.35);text-align:center;margin-top:.75rem">Demo tool &#8212; suggestions are representative.</p>
+        </div>
+      </div>
+
+      <h2 style="font-family:var(--aj-serif);font-size:1.5rem;font-weight:400;text-align:center;margin-bottom:.3rem">In the Shop</h2>
+      <p style="text-align:center;color:rgba(58,46,42,.5);margin-bottom:1.5rem">Available in-store at 204 Lancaster Ave.</p>
+
+      <div class="retail-grid">
+        <div class="retail-item">
+          <div class="icon">&#9749;</div>
+          <h3>Coffee Beans</h3>
+          <p>Whole bean or ground. Alice&#8217;s House Blend, flavored roasts, and bold selections.</p>
+          <span class="tag">Available now</span>
+        </div>
+        <div class="retail-item">
+          <div class="icon">&#127873;</div>
+          <h3>Local Art &amp; Gifts</h3>
+          <p>Handcrafted jewelry, pottery, and gifts from Monroe-area makers and artists.</p>
+          <span class="tag">Rotating selection</span>
+        </div>
+        <div class="retail-item">
+          <div class="icon">&#127855;</div>
+          <h3>Handmade Mugs</h3>
+          <p>One-of-a-kind ceramic mugs from local potters. Each piece is unique.</p>
+          <span class="tag">Limited stock</span>
+        </div>
+        <div class="retail-item">
+          <div class="icon">&#127807;</div>
+          <h3>Local Honey</h3>
+          <p>Pure, raw honey from Union County beekeepers. Perfect in your morning tea.</p>
+          <span class="tag">Seasonal</span>
+        </div>
+      </div>
+
+      <div class="why-section">
+        <h2>Why buy local?</h2>
+        <p>Every bag of beans and every handmade piece you purchase supports Monroe&#8217;s creative economy. You get quality you can taste &#8212; and you help keep independent shops like Alice Jules thriving.</p>
+      </div>
+
+      <div class="contact-inline">
+        <h3>Want to order ahead?</h3>
+        <p>Call or stop in to check current bean availability and gift selection.</p>
+        <p><a href="tel:7042927777">704-292-7777</a> &middot; <a href="mailto:info@alicejulescoffee.com">info@alicejulescoffee.com</a></p>
+        <p style="font-size:.8rem;color:rgba(58,46,42,.4)">In-store pickup only. We accept cash and cards.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col"><h4>Alice Jules Coffee House</h4><p>204 Lancaster Ave #1</p><p>Monroe, NC 28112</p><p><a href="tel:7042927777">704-292-7777</a></p><div class="footer-social"><a href="https://www.instagram.com/alicejulescoffee" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.facebook.com/Alice-Jules-Coffee-House-100865176624854" target="_blank" rel="noopener" aria-label="Facebook">FB</a></div></div>
+      <div class="footer-col"><h4>Pages</h4><p><a href="/alice-jules-coffee-house/menu.html">Menu</a></p><p><a href="/alice-jules-coffee-house/story.html">Our Story</a></p><p><a href="/alice-jules-coffee-house/shop.html">Coffee &amp; Retail</a></p><p><a href="/alice-jules-coffee-house/visit.html">Visit</a></p></div>
+      <div class="footer-col"><h4>Hours</h4><p>Mon&#8211;Fri: 6:30am&#8211;6pm</p><p>Sat&#8211;Sun: 8am&#8211;1pm</p></div>
+    </div>
+    <div class="footer-bottom"><p>This is an unofficial concept presentation and is not affiliated with or operated by Alice Jules Coffee House.</p></div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+  <script src="../site-core.js"></script>
+  <script>
+    (function() {
+      var options = document.querySelectorAll('.finder-opt');
+      var result = document.getElementById('finderResult');
+      var drinkName = document.getElementById('finderDrink');
+      var drinkDesc = document.getElementById('finderDesc');
+
+      var selections = { vibe: null, style: null, diet: null };
+
+      var recommendations = {
+        warm_black_none: { name: 'Alice\u2019s House Brew', desc: 'Our signature house blend. Clean, honest coffee done right.' },
+        warm_black_sugarfree: { name: 'Alice\u2019s House Brew', desc: 'No sugar needed. Our house blend stands on its own.' },
+        warm_black_milk: { name: 'Cafe Au Lait', desc: 'House coffee with your choice of almond or coconut milk.' },
+        warm_milky_none: { name: 'Cafe Latte', desc: 'Espresso with steamed milk. Smooth, comforting, classic.' },
+        warm_milky_sugarfree: { name: 'Creme Brulee Latte', desc: 'Vanilla and caramel, sugar-free. Warm and creamy without the sugar.' },
+        warm_milky_milk: { name: 'London Fog', desc: 'Earl Grey tea with vanilla and steamed non-dairy milk.' },
+        warm_sweet_none: { name: 'Mr. Darcy', desc: 'English toffee latte. Warm, smooth, and just sweet enough.' },
+        warm_sweet_sugarfree: { name: 'Creme Brulee Latte (SF)', desc: 'All the flavor, none of the sugar. Ask for sugar-free vanilla.' },
+        warm_sweet_milk: { name: 'Chai Latte', desc: 'Spiced chai with your choice of non-dairy milk. Warm and aromatic.' },
+        cool_black_none: { name: 'Iced Alice\u2019s House Brew', desc: 'Our house blend, poured over ice. Refreshing and straightforward.' },
+        cool_black_sugarfree: { name: 'Iced Coffee (SF)', desc: 'House brew over ice. No sugar needed.' },
+        cool_black_milk: { name: 'Iced Latte (Almond)', desc: 'Espresso with almond milk over ice. Light and refreshing.' },
+        cool_milky_none: { name: 'Iced Latte', desc: 'Espresso with cold milk. The cool-down classic.' },
+        cool_milky_sugarfree: { name: 'Iced Creme Brulee (SF)', desc: 'Sugar-free vanilla and caramel. Iced and guilt-free.' },
+        cool_milky_milk: { name: 'Iced Chai (Coconut)', desc: 'Spiced chai with coconut milk over ice.' },
+        cool_sweet_none: { name: 'Chilly Alice', desc: 'Blended drink with your choice of flavor and 2 espresso shots.' },
+        cool_sweet_sugarfree: { name: 'Italian Soda (SF)', desc: 'Club soda with sugar-free syrup over ice. Light and bubbly.' },
+        cool_sweet_milk: { name: 'Smoothie', desc: 'Your choice of flavor with non-dairy base. Cool and fruity.' },
+        bold_black_none: { name: 'Espresso (Double)', desc: 'Two shots of full-flavored espresso. Straight up.' },
+        bold_black_sugarfree: { name: 'Bold Roast (Black)', desc: 'Our daily bold roast. Dark, intense, no apologies.' },
+        bold_black_milk: { name: 'Cappuccino (Almond)', desc: 'Frothy espresso with almond milk. Bold but balanced.' },
+        bold_milky_none: { name: 'Cappuccino', desc: 'Espresso with frothy steamed milk. Bold and velvety.' },
+        bold_milky_sugarfree: { name: 'Cafe Mocha (SF)', desc: 'Sugar-free chocolate syrup with espresso and steamed milk.' },
+        bold_milky_milk: { name: 'Cafe Mocha (Coconut)', desc: 'Chocolate, espresso, and coconut milk. Bold and dairy-free.' },
+        bold_sweet_none: { name: 'White Chocolate Mocha', desc: 'White chocolate syrup with espresso. Bold, sweet, indulgent.' },
+        bold_sweet_sugarfree: { name: 'Cafe Mocha (SF)', desc: 'Sugar-free chocolate. All the bold, none of the sugar.' },
+        bold_sweet_milk: { name: 'White Chocolate Mocha (Almond)', desc: 'White chocolate and almond milk. Bold and dairy-friendly.' }
+      };
+
+      function updateSelection() {
+        var vibe = selections.vibe || 'warm';
+        var style = selections.style || 'milky';
+        var diet = selections.diet || 'none';
+        var key = vibe + '_' + style + '_' + diet;
+        var rec = recommendations[key] || recommendations.warm_milky_none;
+        drinkName.textContent = rec.name;
+        drinkDesc.textContent = rec.desc;
+        result.classList.add('show');
+      }
+
+      options.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          var group = this.closest('[data-question]');
+          var q = group.getAttribute('data-question');
+          var val = this.getAttribute('data-value');
+
+          group.querySelectorAll('.finder-opt').forEach(function(b) { b.classList.remove('selected'); });
+          this.classList.add('selected');
+          selections[q] = val;
+          updateSelection();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

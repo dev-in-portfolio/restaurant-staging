@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Palace Restaurant - Monroe, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Blackboard Specific Styles */
+    .blackboard-frame {
+      background: radial-gradient(circle, #20070a 0%, #0d0405 100%);
+      border: 6px solid var(--color-red);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .blackboard-chalk-title {
+      font-size: 1.8rem;
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .blackboard-chalk-desc {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">P</div>
+        <h1 class="brand-name">
+          The Palace
+          <span>Diner & Restaurant</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Traditional Diner Menu</h2>
+    <p class="page-subtitle">Savor home-cooked plates. Check our daily specials blackboard below, or browse our classic breakfasts and diner dinners.</p>
+  </header>
+
+  <!-- Interactive Specials Section -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Daily Specials Blackboard</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Blackboard -->
+        <div class="blackboard-frame" id="blackboard-specials-box">
+          <h4 class="blackboard-chalk-title" id="chalk-title">Tuesday: Hamburger Steak Dinner</h4>
+          <p class="blackboard-chalk-desc" id="chalk-desc">10oz fresh beef chuck patty seared on the flat top, smothered in sweet caramelized onions, sautéed mushrooms, and rich brown pan gravy. Served with creamy mashed potatoes, green beans, and a warm dinner roll.</p>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-cream); margin-top: 1rem; font-family: 'Outfit';" id="chalk-price">$10.99</p>
+        </div>
+
+        <!-- Right Side: Day Selectors -->
+        <div class="selector-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;">
+          <button class="option-btn" onclick="showChalkSpecials('mon', this)">Monday</button>
+          <button class="option-btn active" onclick="showChalkSpecials('tue', this)">Tuesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('wed', this)">Wednesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('thu', this)">Thursday</button>
+          <button class="option-btn" onclick="showChalkSpecials('fri', this)">Friday</button>
+          <button class="option-btn" onclick="showChalkSpecials('sat', this)">Saturday</button>
+          <button class="option-btn" style="grid-column: span 2;" onclick="showChalkSpecials('sun', this)">Sunday Dinner Special</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Palace Breakfasts & Dinners</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Hearty Breakfasts</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Palace Platter<span class="menu-item-badge">Best Seller</span></span>
+            <span class="menu-item-price">$9.50</span>
+          </div>
+          <p class="menu-item-desc">Two fresh farm eggs cooked to order, accompanied by thick-cut applewood bacon or country sausage links, crispy hashbrowns or grits, and buttered toast with jelly.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Buttermilk Pancake Stack</span>
+            <span class="menu-item-price">$6.99</span>
+          </div>
+          <p class="menu-item-desc">Three fluffy, golden buttermilk pancakes basted in sweet butter, served hot with maple syrup and whipped cream.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Country Sausage Biscuit</span>
+            <span class="menu-item-price">$4.50</span>
+          </div>
+          <p class="menu-item-desc">Warm, flaky buttermilk biscuit stuffed with a seared savory pork sausage patty. Add egg or cheese for $1.00.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Diner Dinners</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Smothered Hamburger Steak</span>
+            <span class="menu-item-price">$10.99</span>
+          </div>
+          <p class="menu-item-desc">10oz seasoned ground beef patty grilled and smothered under caramelized onions and rich brown pan gravy. Served with mashed potatoes, green beans, and rolls.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Country Fried Steak</span>
+            <span class="menu-item-price">$10.99</span>
+          </div>
+          <p class="menu-item-desc">Crispy breaded beef cutlet fried golden and smothered in Southern white pepper milk gravy, served with mashed potatoes and yellow corn.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Char-Grilled Ribeye</span>
+            <span class="menu-item-price">$15.99</span>
+          </div>
+          <p class="menu-item-desc">10oz choice hand-cut ribeye steak seasoned in house steak rub, char-grilled over open flames, served with baked potato and a side salad.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1000 Lancaster Ave<br>Monroe, NC 28112</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tue - Thu: 7:00 AM - 8:00 PM<br>Fri: 7:00 AM - 8:30 PM<br>Sat - Sun: 7:00 AM - 2:30 PM<br>Mon: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 283-1123<br>American Diner & Family Kitchen | Dine-In</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 The Palace Restaurant. Monroe diner landmark.</p>
+    </div>
+  </footer>
+
+  <script>
+    const specials = {
+      mon: {
+        title: "Monday: Closed",
+        desc: "We are closed Mondays resting our griddles and prepping fresh homemade gravies. See you Tuesday morning at 7:00 AM!",
+        price: "$0.00"
+      },
+      tue: {
+        title: "Tuesday: Hamburger Steak Dinner",
+        desc: "10oz fresh beef chuck patty seared on the flat top, smothered in sweet caramelized onions, sautéed mushrooms, and rich brown pan gravy. Served with creamy mashed potatoes, green beans, and a warm dinner roll.",
+        price: "$10.99"
+      },
+      wed: {
+        title: "Wednesday: Thick Pork Chops",
+        desc: "Two center-cut pork chops pan-seared and smothered in rich onion-garlic brown gravy, served over white rice with sweet candied yams and cornbread.",
+        price: "$11.99"
+      },
+      thu: {
+        title: "Thursday: Country Fried Steak",
+        desc: "Crispy breaded country fried steak smothered in traditional Southern white pepper gravy. Served with yellow corn, mashed potatoes, and dinner rolls.",
+        price: "$10.99"
+      },
+      fri: {
+        title: "Friday: Calabash Shrimp Platter",
+        desc: "Crispy calabash fried shrimp lightly battered in seasoned flour and cornmeal, fried golden. Served with seasoned french fries, coleslaw, and hushpuppies.",
+        price: "$13.99"
+      },
+      sat: {
+        title: "Saturday: Blueberry Pancake Platter",
+        desc: "Three fluffy buttermilk pancakes loaded with fresh Maine blueberries, served with two farm eggs cooked to order, bacon, and warm maple syrup.",
+        price: "$8.99"
+      },
+      sun: {
+        title: "Sunday: Southern Pot Roast",
+        desc: "Slow-braised tender beef chuck roast simmered with carrots, celery, and potatoes in rich savory beef broth, served with green beans and dinner rolls.",
+        price: "$12.99"
+      }
+    };
+
+    function showChalkSpecials(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const blackboard = document.getElementById('blackboard-specials-box');
+      blackboard.style.opacity = '0';
+      blackboard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = specials[key];
+        document.getElementById('chalk-title').innerText = data.title;
+        document.getElementById('chalk-desc').innerText = data.desc;
+        document.getElementById('chalk-price').innerText = data.price;
+        
+        blackboard.style.opacity = '1';
+        blackboard.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hathaway's Chicken n' Biscuits - Monroe, NC | Contact & Bookings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Hathaway's Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Hathaway's
+          <span>Chicken n' Biscuits</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Visit Hathaway's</h2>
+    <p class="page-subtitle">Grab your fried chicken hot and fresh from our Roosevelt Blvd lobby counter or drive-thru window.</p>
+  </header>
+
+  <!-- Content Sections -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Hours and Info Card -->
+      <div class="country-card">
+        <h3 class="menu-category-title">Chicken Shop Details</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Address</h4>
+          <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted);">
+            1310 W. Roosevelt Blvd.<br>Monroe, NC 28110
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Opening Hours</h4>
+          <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Monday - Saturday:</strong> 10:30 AM - 9:00 PM<br>
+            <strong>Sunday:</strong> Closed
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Shop Phone</h4>
+          <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Phone:</strong> (704) 283-5187<br>
+            <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: var(--color-brown);">
+              *Note: We do not take table bookings. Seating in our country dining lobby is open for walk-ins!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="country-card">
+        <h3 class="menu-category-title">Send a Greeting</h3>
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" required placeholder="Write a message to our shop staff..." style="min-height: 100px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Message Sent!</h3>
+          <p class="success-msg">Thank you. We will read your message and reply via phone if necessary.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pickup Request Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Request Hot Pickup</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit details below to place a hot pickup order. We will prepare it fresh for your arrival.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-time">Pickup Time</label>
+              <select id="pickup-time" required>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="17:30">5:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="items">Order Details (e.g. 3-piece combo with wedges, tenders, biscuits)</label>
+              <textarea id="items" required placeholder="What country combos can we fry up for you?"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Order Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍗</div>
+          <h3 class="success-title">Order Curated!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have received your pickup request. Pull through the drive-thru or grab it inside!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: var(--card-border); padding-top: 3rem;">
+      <p>© 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle message submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const time = document.getElementById('pickup-time').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Welcome to the family, <strong>${name}</strong>! We have received your request for pickup at <strong>${time}</strong>. If there are any delays, we will contact you at <strong>${phone}</strong>. Grab it hot at the drive-thru or lobby counter!`;
+    });
+  </script>
+</body>
+</html>

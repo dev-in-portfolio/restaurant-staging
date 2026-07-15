@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen's Soul Food - Charlotte, NC | Contact & Orders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">Q</div>
+        <h1 class="brand-name">
+          Queen's Soul Food
+          <span>Charlotte Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Contact & Takeout Pickups</h2>
+    <p class="page-subtitle">Visit our dining room on East Independence Boulevard, or submit your details below to place a hot counter takeout order.</p>
+  </header>
+
+  <!-- Live Wait-Time Indicator Section -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-weight: 800;">📍 Live Dining Room Status:</span>
+      <span class="wait-badge wait-low" id="live-wait-badge">Seating is Immediate (0-5 min wait)</span>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Details Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Contact & Location</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-purple); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+            7308 E Independence Blvd<br>Charlotte, NC 28227
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-purple); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Hours of Operation</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Mon - Fri:</strong> 11:00 AM - 9:00 PM<br>
+            <strong>Sat - Sun:</strong> 11:00 AM - 9:30 PM
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-purple); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Direct Line</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Phone:</strong> (704) 563-1106<br>
+            <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: var(--color-gold);">
+              *takeout pickup orders are processed at our register counter.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Send a Greeting</h3>
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" required placeholder="Write a note to our Charlotte kitchen crew..." style="min-height: 100px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Message Sent!</h3>
+          <p class="success-msg">Thank you. We will read your note after the dinner rush and contact you if needed.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Takeout Request Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Request Hot Takeout</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your order details below. We cook every dish fresh to order for hot pickup at our Independence Blvd counter.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-time">Requested Pickup Time</label>
+              <select id="pickup-time" required>
+                <option value="11:45">11:45 AM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="17:30">5:30 PM</option>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:30">8:30 PM</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="items">Order Details (e.g. Oxtail Platter with Mac n Cheese & Yams, Sweet Tea, Slice of Strawberry Cake)</label>
+              <textarea id="items" required placeholder="Describe your dishes, additions, and diner choices..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Takeout Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍜</div>
+          <h3 class="success-title">Order Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have received your pickup request. Grab it hot at the register!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Queen's Soul Food. Charlotte comfort landmark since 2012.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Wait time calculation based on hour of the day
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      
+      const badge = document.getElementById('live-wait-badge');
+
+      // Check open hours (11:00 am to 9:00 pm, Sat-Sun till 9:30 pm)
+      const day = now.getDay();
+      let closeHour = 21;
+      let closeMinute = 0;
+      
+      if (day === 0 || day === 6) { // Sat, Sun closes at 9:30 pm (21:30)
+        closeHour = 21;
+        closeMinute = 30;
+      }
+
+      if (hour < 11 || hour > closeHour || (hour === closeHour && minute >= closeMinute)) {
+        badge.innerText = "CLOSED - Kitchen is closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // If open, check peak rush hours
+      // Lunch peak: 12:00 to 13:30
+      // Dinner peak: 18:00 to 19:45
+      if (hour === 12 || (hour === 13 && minute <= 30)) {
+        badge.innerText = "LUNCH RUSH: Expect a 15-20 min wait for tables";
+        badge.className = "wait-badge wait-medium";
+      } else if (hour === 18 || hour === 19) {
+        badge.innerText = "DINNER RUSH: Expect a 20-30 min wait for tables";
+        badge.className = "wait-badge wait-high";
+      } else {
+        badge.innerText = "SEATING IS IMMEDIATE: Walk right in! (0-5 min wait)";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle message submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const time = document.getElementById('pickup-time').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Order logged, <strong>${name}</strong>! We will have it ready for counter pickup at <strong>${time} today</strong>. If we have questions, we'll call you at <strong>${phone}</strong>. Pay at the register!`;
+    });
+  </script>
+</body>
+</html>

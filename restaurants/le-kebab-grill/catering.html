@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering | Le Kebab Grill Charlotte</title>
+  <meta name="description" content="Catering from Le Kebab Grill in Charlotte, NC. Full-service catering for events from 5 to 500 people. Family-style trays, combos, and custom menus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    :root{--gold:#e8b84b;--gold-light:#f5d98c;--gold-dark:#b8862a;--red:#8b1a1a;--red-dark:#5c0e0e;--cream:#faf5eb;--charcoal:#1a1a1a;--charcoal-light:#2d2d2d}
+    .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--charcoal)}
+    .logo span{color:var(--gold)}
+    .nav-links a{color:var(--charcoal);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem 0}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-dark);text-decoration:none}
+    .page-hero{background:linear-gradient(135deg,var(--charcoal) 0%,var(--charcoal-light) 100%);padding:4rem 0;text-align:center;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--red),var(--gold))}
+    .page-hero h1{color:var(--cream);margin-bottom:.5rem}
+    .page-hero h1 span{color:var(--gold)}
+    .page-hero p{color:rgba(255,255,255,.7);max-width:540px;margin:0 auto}
+    .catering-intro{background:var(--cream);padding:4rem 0;text-align:center}
+    .catering-intro h2 span{color:var(--gold-dark)}
+    .catering-intro p{max-width:640px;margin:0 auto;color:#444;font-size:1.05rem;line-height:1.8}
+    .catering-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+    .catering-card{background:var(--cream);border-radius:12px;padding:2rem;border-left:4px solid var(--gold);transition:transform .2s}
+    .catering-card:hover{transform:translateX(4px)}
+    .catering-card h3{font-size:1.15rem;margin-bottom:.5rem}
+    .catering-card .price-range{color:var(--red);font-weight:700;font-size:.95rem;margin-bottom:.5rem;display:block}
+    .catering-card p{font-size:.9rem;color:#555;line-height:1.6}
+    .catering-card ul{list-style:none;margin-top:.75rem;font-size:.9rem;color:#555}
+    .catering-card ul li{padding:.2rem 0;padding-left:1.25rem;position:relative}
+    .catering-card ul li::before{content:'\2713';color:var(--gold-dark);position:absolute;left:0}
+    .catering-tubs{background:var(--charcoal);color:var(--cream);padding:4rem 0}
+    .catering-tubs h2{color:var(--gold);text-align:center;margin-bottom:.5rem}
+    .catering-tubs > p{text-align:center;color:rgba(255,255,255,.7);margin-bottom:2rem}
+    .tubs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .tub-card{background:rgba(255,255,255,.05);border-radius:12px;padding:2rem;border:1px solid rgba(255,255,255,.1);text-align:center}
+    .tub-card span{font-size:2.5rem;display:block;margin-bottom:.75rem}
+    .tub-card h4{color:var(--gold);margin-bottom:.5rem}
+    .tub-card p{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6}
+    .tub-card .tub-price{color:var(--gold-light);font-weight:700;font-size:1.1rem;margin-top:.75rem;display:block}
+    .form-section{padding:4rem 0}
+    .form-section h2{text-align:center;margin-bottom:.5rem}
+    .form-section h2 span{color:var(--gold-dark)}
+    .form-section > p{text-align:center;color:#666;margin-bottom:2rem}
+    .demo-form{background:var(--cream);border-radius:12px;padding:2.5rem;max-width:640px;margin:0 auto}
+    .demo-form .form-group{margin-bottom:1.25rem}
+    .demo-form label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px;color:var(--charcoal)}
+    .demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:12px 14px;border:1px solid #d4d0c8;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:1rem;background:#fff;transition:border-color .2s}
+    .demo-form input:focus,.demo-form textarea:focus,.demo-form select:focus{outline:none;border-color:var(--gold)}
+    .demo-form .btn{width:100%;margin-top:.5rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .highlight-box{background:var(--cream);border-radius:8px;padding:2rem;margin:2rem 0;border-left:4px solid var(--gold);text-align:center;max-width:600px;margin-left:auto;margin-right:auto}
+    .highlight-box span{font-size:2rem;display:block;margin-bottom:.5rem}
+    .highlight-box h3{color:var(--charcoal)}
+    .highlight-box p{color:#555;margin:.5rem 0}
+    .highlight-box a{color:var(--red);font-weight:700}
+    .site-footer{background:var(--charcoal);color:var(--cream);padding:3rem 0}
+    .site-footer a{color:var(--gold)}
+    .site-footer a:hover{color:var(--gold-light)}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+    .footer-grid h4{font-size:1rem;margin-bottom:.75rem;color:var(--gold)}
+    .footer-grid ul{list-style:none;font-size:.9rem}
+    .footer-grid ul li{margin-bottom:.35rem}
+    .footer-grid p{font-size:.85rem;opacity:.7}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;opacity:.6}
+    .disclosure{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+    .disclosure a{color:var(--gold)}
+    @media(max-width:768px){.catering-grid,.tubs-grid,.footer-grid,.form-row{grid-template-columns:1fr}.nav-links{display:none}}
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Le Kebab <span>Grill</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="catering.html" class="active">Catering</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      <li><a href="flavor-guide.html">Flavor Guide</a></li></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <h1><span>Catering</span> Services</h1>
+      <p>Bring the authentic flavors of Le Kebab Grill to your next event &mdash; from intimate gatherings to large celebrations</p>
+    </div>
+  </section>
+
+  <section class="catering-intro" aria-labelledby="catering-intro-heading">
+    <div class="container">
+      <span class="badge">Full Service Catering</span>
+      <h2 id="catering-intro-heading">We Cater Events from <span>5 to 500+ Guests</span></h2>
+      <p>Whether it's a small office lunch, a family celebration, or a large community event, our catering team delivers the same fresh, authentic Mediterranean flavors you love at our restaurant. We handle delivery, setup, and cleanup so you can enjoy your event.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="menu-heading">
+    <div class="container">
+      <span class="badge" style="background:var(--red);color:#fff">Catering Menu</span>
+      <h2 id="menu-heading" class="section-title" style="text-align:center">Select from Our <span>Catering Menu</span></h2>
+      <p class="section-subtitle">Family-style trays, combos, and individual boxes &mdash; customizable for any group size</p>
+
+      <div class="catering-grid">
+        <div class="catering-card">
+          <h3>Kebab Platter</h3>
+          <span class="price-range">Serves 10&ndash;15 | $120</span>
+          <p>Assorted chicken, kofta, and beef kebabs over rice with salad, hummus, warm pita, and garlic sauce.</p>
+          <ul>
+            <li>Choice of 3 kebab varieties</li>
+            <li>Includes rice, salad, hummus</li>
+            <li>Warm pita &amp; sauces</li>
+          </ul>
+        </div>
+        <div class="catering-card">
+          <h3>Shawarma Tray</h3>
+          <span class="price-range">Serves 10&ndash;15 | $110</span>
+          <p>Your choice of chicken or beef shawarma, sliced and served over rice with all traditional accompaniments.</p>
+          <ul>
+            <li>Choice of chicken or beef</li>
+            <li>Served with rice, salad, pickles</li>
+            <li>Garlic sauce &amp; tahini on the side</li>
+          </ul>
+        </div>
+        <div class="catering-card">
+          <h3>Falafel Feast</h3>
+          <span class="price-range">Serves 10&ndash;15 | $95</span>
+          <p>Crispy falafel balls with hummus, baba ghanouj, tabouli, pita, and tahini sauce. Great for vegetarian guests.</p>
+          <ul>
+            <li>50+ falafel balls</li>
+            <li>Hummus, baba ghanouj, tabouli</li>
+            <li>Warm pita &amp; tahini sauce</li>
+          </ul>
+        </div>
+        <div class="catering-card">
+          <h3>Mixed Grill Supreme</h3>
+          <span class="price-range">Serves 15&ndash;20 | $175</span>
+          <p>The ultimate spread: chicken kebab, kofta, beef kebab, shawarma, lamb chops, rice, grilled veggies, and all dips.</p>
+          <ul>
+            <li>5 protein varieties</li>
+            <li>Rice, grilled vegetables</li>
+            <li>Hummus, baba ghanouj, salad</li>
+            <li>Pita &amp; sauce bar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catering-tubs" aria-labelledby="tubs-heading">
+    <div class="container">
+      <span class="badge" style="background:var(--gold);color:var(--charcoal);display:inline-block;margin:0 auto 1rem;text-align:center">Quick &amp; Easy</span>
+      <h2 id="tubs-heading">Tubs <span style="color:var(--gold-light)">To&nbsp;Go</span></h2>
+      <p>Perfect for office lunches, small parties, or a hassle-free dinner at home</p>
+      <div class="tubs-grid">
+        <div class="tub-card">
+          <span>&#127857;</span>
+          <h4>Hummus Tub</h4>
+          <p>Creamy hummus with olive oil and paprika. Serves 6&ndash;8.</p>
+          <span class="tub-price">$12.99</span>
+        </div>
+        <div class="tub-card">
+          <span>&#127858;</span>
+          <h4>Falafel Tub</h4>
+          <p>24 crispy falafel balls with tahini sauce. Serves 6&ndash;8.</p>
+          <span class="tub-price">$18.99</span>
+        </div>
+        <div class="tub-card">
+          <span>&#127831;</span>
+          <h4>Rice Tub</h4>
+          <p>Seasoned basmati rice with toasted almonds. Serves 8&ndash;10.</p>
+          <span class="tub-price">$14.99</span>
+        </div>
+        <div class="tub-card">
+          <span>&#127869;</span>
+          <h4>Kebab Tub</h4>
+          <p>12 skewers of your choice. Serves 6&ndash;8.</p>
+          <span class="tub-price">$49.99</span>
+        </div>
+        <div class="tub-card">
+          <span>&#129478;</span>
+          <h4>Shawarma Tub</h4>
+          <p>2 lbs of chicken or beef shawarma. Serves 6&ndash;8.</p>
+          <span class="tub-price">$39.99</span>
+        </div>
+        <div class="tub-card">
+          <span>&#127860;</span>
+          <h4>Combo Tub</h4>
+          <p>Kebabs, rice, hummus, salad &amp; pita. Serves 8&ndash;10.</p>
+          <span class="tub-price">$69.99</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" aria-labelledby="inquiry-heading">
+    <div class="container">
+      <span class="badge" style="display:inline-block;margin:0 auto 1rem;text-align:center">Get Started</span>
+      <h2 id="inquiry-heading">Plan Your <span>Event</span></h2>
+      <p>Tell us about your event and we'll create a custom catering proposal</p>
+
+      <form class="demo-form" data-demo-form novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="catering-name">Full Name</label>
+            <input type="text" id="catering-name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="catering-email">Email</label>
+            <input type="email" id="catering-email" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="catering-phone">Phone</label>
+          <input type="tel" id="catering-phone" name="phone" placeholder="(704) 555-0000">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="catering-date">Event Date</label>
+            <input type="date" id="catering-date" name="date">
+          </div>
+          <div class="form-group">
+            <label for="catering-guests">Estimated Guests</label>
+            <select id="catering-guests" name="guests">
+              <option value="1-10">1&ndash;10</option>
+              <option value="11-25">11&ndash;25</option>
+              <option value="26-50">26&ndash;50</option>
+              <option value="51-100">51&ndash;100</option>
+              <option value="100+">100+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="catering-menu">Menu Interest</label>
+          <select id="catering-menu" name="menu">
+            <option value="">Select...</option>
+            <option value="kebab">Kebab Platter</option>
+            <option value="shawarma">Shawarma Tray</option>
+            <option value="falafel">Falafel Feast</option>
+            <option value="mixed">Mixed Grill Supreme</option>
+            <option value="tubs">Tubs To Go</option>
+            <option value="custom">Custom Menu</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="catering-details">Event Details</label>
+          <textarea id="catering-details" name="details" rows="3" placeholder="Tell us about your event, dietary needs, or special requests..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="display:inline-block;padding:14px 36px;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .25s;text-decoration:none;background:var(--gold);color:var(--charcoal)">Request Catering Quote</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Le Kebab Grill</h4>
+        <p>Fresh Authentic Mediterranean Cuisine.<br>Jordanian-owned &middot; Family recipes &middot; Halal</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon&ndash;Thu 11:30am&ndash;9pm<br>Fri&ndash;Sat 11:30am&ndash;9:30pm<br>Sun 11:30am&ndash;9pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://www.instagram.com/lekebabgrill" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.facebook.com/lekebabgrill" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Le Kebab Grill &mdash; Charlotte, NC
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation &mdash; not operated by the restaurant. <a href="https://lekebabgrill.com" target="_blank" rel="noopener">Visit the official site</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

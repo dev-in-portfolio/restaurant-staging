@@ -1,0 +1,34 @@
+{
+  "id": "food-soul",
+  "name": "Food For Your Soul CLT",
+  "slug": "food-soul",
+  "location": {
+    "city": "Charlotte area",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/food-soul",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/food-soul/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:26:43.788Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "tabletReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}

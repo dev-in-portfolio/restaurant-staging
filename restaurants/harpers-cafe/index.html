@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harper's Cafe · Pineville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b81e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--navy:#1a2744;--muted:#8a7a6a;--gold:#c49a2a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#111;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(184,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:70vh;background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a1520);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:3rem;margin:0;color:var(--cream);line-height:1.1}
+.hero h1 span{color:var(--red)}
+.hero .tagline{font-size:1.05rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .btn{display:inline-block;background:var(--red);color:#fff;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{background:#8e1212;transform:translateY(-2px)}
+.hero .btn-outline{background:transparent;border:1px solid var(--red);color:var(--red);margin-left:.5rem}
+.hero .btn-outline:hover{background:rgba(184,30,30,.1)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--red);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,30,30,.06);border-radius:10px;padding:1.75rem;transition:.25s}
+.feature-card:hover{border-color:rgba(184,30,30,.2);transform:translateY(-3px)}
+.feature-card .icon{font-size:2rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1rem;color:var(--red);margin:0 0 .35rem}
+.feature-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(184,30,30,.04)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--red);display:block}
+.stat .label{font-size:.82rem;opacity:.4;margin-top:.3rem;display:block}
+footer{background:#111;color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(184,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Harper's Cafe</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Find Us</a>
+    <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+<div class="hero">
+  <div>
+    <p style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:.8rem;margin:0 0 .5rem">PINEVILLE · CHARLOTTE</p>
+    <h1>American Fare<br><span>Since 1987</span></h1>
+    <p class="tagline">35 years of flavor — breakfast, lunch, and old favorites</p>
+    <div>
+      <a href="menu.html" class="btn">View Menu</a>
+      <a href="story.html" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+</div>
+<section class="section" id="about">
+  <h2>Welcome to Harper's Cafe</h2>
+  <p class="subtitle">Fast-casual breakfast & lunch in Pineville</p>
+  <p style="font-size:.92rem;opacity:.6;line-height:1.7;max-width:720px;margin:0 0 2.5rem">Harper's Cafe is a breakfast and lunch fast-casual restaurant located in the Terrace at Park Place in Pineville. We bring back the classics you've missed — Chicken Supremes, Original Oriental salad, pesto pasta salad, and Black Bean Soup — alongside new breakfast items and rotating weekly signatures.</p>
+  <div class="featured-grid">
+    <div class="feature-card">
+      <span class="icon">🍗</span>
+      <h3>Chicken Supremes</h3>
+      <p>The legend returns — crispy chicken tenderloins served with your choice of sauce and sides.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🥗</span>
+      <h3>Original Oriental Salad</h3>
+      <p>A Harper's signature for over three decades — fresh greens, crispy chicken, and that unforgettable dressing.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🍳</span>
+      <h3>Breakfast All Day</h3>
+      <p>Omelettes, breakfast bowls, burritos, and sandwiches — served until 3 PM daily.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🍝</span>
+      <h3>Pesto Pasta Salad</h3>
+      <p>House-made pesto, fresh pasta, and the perfect blend of flavors — a Charlotte original.</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:rgba(255,255,255,.02);padding-top:3rem;padding-bottom:3rem">
+  <div class="two-col">
+    <div>
+      <h2 style="margin-top:0">Now Open for Dinner</h2>
+      <p style="font-size:.88rem;opacity:.55;line-height:1.7">Harper's Cafe is now open for early dinner on Friday and Saturday evenings, plus Brunch on Sundays. Come enjoy your favorites in a relaxed fast-casual setting with the same hospitality Charlotte has counted on for 35 years.</p>
+      <a href="menu.html" style="color:var(--red)">Browse our menus →</a>
+    </div>
+    <div class="stats" style="margin:0">
+      <div class="stat">
+        <span class="num">1987</span>
+        <span class="label">First Opened</span>
+      </div>
+      <div class="stat">
+        <span class="num">35+</span>
+        <span class="label">Years of Flavor</span>
+      </div>
+      <div class="stat">
+        <span class="num">2025</span>
+        <span class="label">Cafe Opened</span>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Harper's Cafe</strong><br>9101 Pineville-Matthews Road, Ste I, Pineville, NC 28134 · (704) 366-6688</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

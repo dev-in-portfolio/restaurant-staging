@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>República Restaurant & Lounge - Matthews, NC | About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">R</div>
+        <h1 class="brand-name">
+          República
+          <span>Restaurant & Lounge</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-table.html">Flavor Table</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Dominican Culinary Heritage</h2>
+    <p class="page-subtitle">Matthews Station's favorite Latin lounge and kitchen, preserving multi-generational island arts.</p>
+  </header>
+
+  <!-- Interactive Events Planner Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Weekly Lounge Theme & Events</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a night to explore our themed music events, lounge dining specials, and tropical beverage pairings.</p>
+      
+      <div class="selector-grid">
+        <button class="selector-btn active" onclick="selectEvent('friday', this)">
+          <span class="selector-btn-icon">💃</span>
+          <span>Merengue Fridays</span>
+          <span style="font-size: 0.75rem; color: var(--color-blue); font-weight: 600; margin-top: 0.2rem;">Tropical Rhythms</span>
+        </button>
+
+        <button class="selector-btn" onclick="selectEvent('saturday', this)">
+          <span class="selector-btn-icon">🎷</span>
+          <span>Latin Jazz Saturdays</span>
+          <span style="font-size: 0.75rem; color: var(--color-gold); font-weight: 600; margin-top: 0.2rem;">Live Bands</span>
+        </button>
+
+        <button class="selector-btn" onclick="selectEvent('sunday', this)">
+          <span class="selector-btn-icon">🍲</span>
+          <span>Sancocho Sundays</span>
+          <span style="font-size: 0.75rem; color: var(--color-red); font-weight: 600; margin-top: 0.2rem;">Family Feast</span>
+        </button>
+      </div>
+
+      <!-- Recommendation Display Card -->
+      <div class="result-card" id="event-display" style="background: rgba(0, 0, 0, 0.5); border: 1px solid var(--color-border); border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+          <h3 style="font-size: 1.5rem; color: #ffffff;" id="event-title">Merengue & Bachata Fridays</h3>
+          <span style="font-size: 1rem; color: var(--color-gold); font-weight: 900;" id="event-hours">10:00 PM - 2:00 AM</span>
+        </div>
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1.2rem; display: inline-block; width: max-content;" id="event-badge">DJ Live Set & dancing</span>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-muted);" id="event-desc">
+          Enjoy live DJ sets spinning authentic Dominican Merengue, Bachata, and Salsa. Dancing lessons start at 9pm, paired with premium Brugal rum bucket drink specials.
+        </p>
+      </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
+      
+      <!-- Roots Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Dominican Culinary Roots</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
+          Founded in Matthews, República Restaurant & Lounge is dedicated to serving authentic gourmet Dominican recipes. Our kitchen blends indigenous Taíno, Spanish, and African influences, crafting mouthwatering Mofongos, braised chicken platters, and traditional Sancocho stews.
+        </p>
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+          Whether celebrating over a family Sunday dinner or sipping cocktails on our patio during Latin nights, we present the hospitality of the islands.
+        </p>
+      </div>
+
+      <!-- Re-opening Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">January 2026 Grand Re-Opening</h3>
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+          Following a temporary update in late 2025, we celebrated our Grand Re-opening in January 2026, presenting a fully upgraded gourmet wok kitchen, expanded lounge seating, and an interactive cocktail bar. We invite you to experience the rhythms and recipes of Santo Domingo.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>11315 E Independence Blvd<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sat: 11:00 AM - 2:00 AM<br>Sun: 11:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 246-8073<br>Dominican Gourmet | Lounge & Cocktails</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 República Restaurant & Lounge. Matthews culinary landmark.</p>
+    </div>
+  </footer>
+
+  <script>
+    const events = {
+      friday: {
+        title: "Merengue & Bachata Fridays",
+        hours: "9:00 PM - 2:00 AM",
+        badge: "DJ Live Set & dancing",
+        desc: "Enjoy live DJ sets spinning authentic Dominican Merengue, Bachata, and Salsa. Dancing lessons start at 9pm, paired with premium Brugal rum bucket drink specials."
+      },
+      saturday: {
+        title: "Latin Jazz Saturdays",
+        hours: "8:00 PM - 2:00 AM",
+        badge: "Live acoustic Bands",
+        desc: "An upscale evening featuring live local Latin acoustic bands and jazz trumpetists, creating a cozy candlelight lounge setting paired with gourmet dining options."
+      },
+      sunday: {
+        title: "Sancocho Family Sundays",
+        hours: "12:00 PM - 8:00 PM",
+        badge: "Dominican Stew specials",
+        desc: "Gather the family for traditional Sunday Sancocho. Hearty three-meat Dominican stews simmered all morning, served with avocado salad and white rice, backed by soft acoustic rhythms."
+      }
+    };
+
+    function selectEvent(key, btnElement) {
+      const buttons = document.querySelectorAll('.selector-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const displayCard = document.getElementById('event-display');
+      displayCard.style.opacity = '0';
+      displayCard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = events[key];
+        document.getElementById('event-title').innerText = data.title;
+        document.getElementById('event-hours').innerText = data.hours;
+        document.getElementById('event-badge').innerText = data.badge;
+        document.getElementById('event-desc').innerText = data.desc;
+        
+        displayCard.style.opacity = '1';
+        displayCard.style.transform = 'translateY(0)';
+      }, 200);
+    }
+  </script>
+</body>
+</html>

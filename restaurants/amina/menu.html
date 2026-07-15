@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Amina</title>
+  <meta name="description" content="Explore Amina's menu — Eritrean-Mediterranean fusion with wood-fired flatbreads, branzino, lamb chops, tibs, and craft cocktails.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Amina</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html">Signature Experience</a>
+</nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Our Menu</h1>
+        <p class="hero-subtitle">Eritrean Heritage. Mediterranean Craft. Wood-Fired Soul.</p>
+      </div>
+    </section>
+
+    <section class="section menu-section">
+      <div class="container">
+        <div class="menu-controls">
+          <div class="menu-filters" id="menuFilters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="starters">Starters</button>
+            <button class="filter-btn" data-filter="flatbreads">Flatbreads</button>
+            <button class="filter-btn" data-filter="entrees">Entrees</button>
+            <button class="filter-btn" data-filter="bowls">Bowls</button>
+            <button class="filter-btn" data-filter="sides">Sides</button>
+          </div>
+          <input type="text" class="menu-search" id="menuSearch" placeholder="Search dishes...">
+        </div>
+
+        <div class="menu-categories" id="menuCategories">
+          <div class="menu-category" data-category="starters">
+            <h2 class="menu-category-title">Starters</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Golden Crab Toast">
+                <div class="menu-item-header">
+                  <h3>Golden Crab Toast</h3>
+                  <span class="menu-price">$18 – $24</span>
+                </div>
+                <p>Delicate crab, golden crisp, bright citrus notes.</p>
+              </div>
+              <div class="menu-item" data-name="Golden Beef Sambusa">
+                <div class="menu-item-header">
+                  <h3>Golden Beef Sambusa</h3>
+                  <span class="menu-price">$10 – $14</span>
+                </div>
+                <p>Hand-folded, spiced beef, golden-fried to order.</p>
+              </div>
+              <div class="menu-item" data-name="Berbere Honey Wings">
+                <div class="menu-item-header">
+                  <h3>Berbere Honey Wings</h3>
+                  <span class="menu-price">$14 – $19</span>
+                </div>
+                <p>Berbere spice, raw honey glaze, cooling aioli.</p>
+              </div>
+              <div class="menu-item" data-name="Halloumi Fries">
+                <div class="menu-item-header">
+                  <h3>Halloumi Fries</h3>
+                  <span class="menu-price">$14</span>
+                </div>
+                <p>Crispy-fried halloumi, herb dust, dipping sauce.</p>
+              </div>
+              <div class="menu-item" data-name="Slow-Braised Oxtail Sliders">
+                <div class="menu-item-header">
+                  <h3>Slow-Braised Oxtail Sliders</h3>
+                  <span class="menu-price">$22 – $30</span>
+                </div>
+                <p>Fall-apart oxtail, pickled onion, house-made brioche.</p>
+              </div>
+              <div class="menu-item" data-name="Midnight Luxe Sliders">
+                <div class="menu-item-header">
+                  <h3>Midnight Luxe Sliders</h3>
+                  <span class="menu-price">$28</span>
+                </div>
+                <p>Wagyu beef, truffle aioli, aged gouda, brioche bun.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category" data-category="flatbreads">
+            <h2 class="menu-category-title">Wood-Fired Flatbreads</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Fire-Kissed Margherita">
+                <div class="menu-item-header">
+                  <h3>Fire-Kissed Margherita</h3>
+                  <span class="menu-price">$16</span>
+                </div>
+                <p>San Marzano, fresh mozzarella, basil, wood-fired.</p>
+              </div>
+              <div class="menu-item" data-name="Berbere-Honey Pepperoni">
+                <div class="menu-item-header">
+                  <h3>Berbere-Honey Pepperoni</h3>
+                  <span class="menu-price">$18</span>
+                </div>
+                <p>Spiced pepperoni, berbere honey drizzle, mozzarella.</p>
+              </div>
+              <div class="menu-item" data-name="Awaze Chicken Flatbread">
+                <div class="menu-item-header">
+                  <h3>Awaze Chicken Flatbread</h3>
+                  <span class="menu-price">$19</span>
+                </div>
+                <p>Awaze-marinated chicken, pickled jalapeño, herb crema.</p>
+              </div>
+              <div class="menu-item" data-name="Whipped Feta Veggie Flatbread">
+                <div class="menu-item-header">
+                  <h3>Whipped Feta Veggie Flatbread</h3>
+                  <span class="menu-price">$17</span>
+                </div>
+                <p>Whipped feta, roasted vegetables, za&rsquo;atar, olive oil.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category" data-category="entrees">
+            <h2 class="menu-category-title">Entrees</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Wood-Fired Branzino">
+                <div class="menu-item-header">
+                  <h3>Wood-Fired Branzino</h3>
+                  <span class="menu-price">$54</span>
+                </div>
+                <p>Whole branzino, wood-fired, herb butter, seasonal accompaniment.</p>
+              </div>
+              <div class="menu-item" data-name="Golden Crispy Snapper">
+                <div class="menu-item-header">
+                  <h3>Golden Crispy Snapper</h3>
+                  <span class="menu-price">$46</span>
+                </div>
+                <p>Whole snapper, golden-fried, Mediterranean sauces.</p>
+              </div>
+              <div class="menu-item" data-name="Honey Rosemary Lamb Chops">
+                <div class="menu-item-header">
+                  <h3>Honey Rosemary Lamb Chops</h3>
+                  <span class="menu-price">$48</span>
+                </div>
+                <p>Wood-fired lamb, honey-rosemary glaze, roasted root vegetables.</p>
+              </div>
+              <div class="menu-item" data-name="Center-Cut Filet">
+                <div class="menu-item-header">
+                  <h3>Center-Cut Filet</h3>
+                  <span class="menu-price">$68</span>
+                </div>
+                <p>Premium center-cut, wood-grilled, compound butter, choice of side.</p>
+              </div>
+              <div class="menu-item" data-name="Amina Reserve Salmon">
+                <div class="menu-item-header">
+                  <h3>Amina Reserve Salmon</h3>
+                  <span class="menu-price">$38</span>
+                </div>
+                <p>Reserve-cut salmon, wood-fired, citrus herb glaze.</p>
+              </div>
+              <div class="menu-item" data-name="Steak Tibs">
+                <div class="menu-item-header">
+                  <h3>Steak Tibs</h3>
+                  <span class="menu-price">$26</span>
+                </div>
+                <p>Cubed steak, sautéed peppers, onions, traditional berbere spice.</p>
+              </div>
+              <div class="menu-item" data-name="Chicken Tibs">
+                <div class="menu-item-header">
+                  <h3>Chicken Tibs</h3>
+                  <span class="menu-price">$22</span>
+                </div>
+                <p>Sautéed chicken, peppers, onions, rosemary, mild spice.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category" data-category="bowls">
+            <h2 class="menu-category-title">Bowls</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Chicken Tibs Bowl">
+                <div class="menu-item-header">
+                  <h3>Chicken Tibs Bowl</h3>
+                  <span class="menu-price">$19</span>
+                </div>
+                <p>Chicken tibs, jasmine rice, sautéed greens, berbere sauce.</p>
+              </div>
+              <div class="menu-item" data-name="Steak Tibs Bowl">
+                <div class="menu-item-header">
+                  <h3>Steak Tibs Bowl</h3>
+                  <span class="menu-price">$26</span>
+                </div>
+                <p>Steak tibs, jasmine rice, peppers, onions, berbere spice.</p>
+              </div>
+              <div class="menu-item" data-name="Mediterranean Salmon Bowl">
+                <div class="menu-item-header">
+                  <h3>Mediterranean Salmon Bowl</h3>
+                  <span class="menu-price">$25</span>
+                </div>
+                <p>Wood-fired salmon, grains, roasted vegetables, herb vinaigrette.</p>
+              </div>
+              <div class="menu-item" data-name="Falafel Grain Bowl">
+                <div class="menu-item-header">
+                  <h3>Falafel Grain Bowl</h3>
+                  <span class="menu-price">$18</span>
+                </div>
+                <p>Crispy falafel, ancient grains, hummus, pickled vegetables, tahini.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category" data-category="sides">
+            <h2 class="menu-category-title">Sides</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Berbere Sea Salt Fries">
+                <div class="menu-item-header">
+                  <h3>Berbere Sea Salt Fries</h3>
+                  <span class="menu-price">$7 – $9</span>
+                </div>
+                <p>Crispy fries, berbere seasoning, flaky sea salt.</p>
+              </div>
+              <div class="menu-item" data-name="Lemon Herb Rice">
+                <div class="menu-item-header">
+                  <h3>Lemon Herb Rice</h3>
+                  <span class="menu-price">$6 – $11</span>
+                </div>
+                <p>Fluffy rice, fresh lemon, mixed herbs.</p>
+              </div>
+              <div class="menu-item" data-name="Truffle Fries">
+                <div class="menu-item-header">
+                  <h3>Truffle Fries</h3>
+                  <span class="menu-price">$9 – $12</span>
+                </div>
+                <p>Truffle oil, parmesan, fresh herbs.</p>
+              </div>
+              <div class="menu-item" data-name="Golden Alicha">
+                <div class="menu-item-header">
+                  <h3>Golden Alicha</h3>
+                  <span class="menu-price">$13</span>
+                </div>
+                <p>Traditional Eritrean cabbage, turmeric, mild spice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-no-results" id="menuNoResults" style="display:none;">
+          <p>No dishes found matching your search.</p>
+        </div>
+
+        <div class="menu-cta">
+          <p>Consuming raw or undercooked meats, poultry, seafood, or eggs may increase your risk of foodborne illness.</p>
+          <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Amina</p>
+      <p>&copy; 2026 Amina. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

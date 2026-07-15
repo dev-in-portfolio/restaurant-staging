@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hathaway's Chicken n' Biscuits - Monroe, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Hathaway's Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Hathaway's
+          <span>Chicken n' Biscuits</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Southern Style Group Catering</h2>
+    <p class="page-subtitle">Feed your church gathering, family picnic, or office team lunch with Monroe's favorite crispy fried chicken and fresh buttermilk biscuits.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="country-card">
+        <h3 class="menu-category-title">Picnic & Family Packs</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          Planning a family get-together or park picnic in Monroe? We prepare 12-piece and 20-piece family packs featuring mixed crispy fried chicken, large side orders of macaroni & cheese or green beans, and flaky warm biscuits.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="country-card">
+        <h3 class="menu-category-title">Church Potlucks</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          A Union County tradition. We specialize in bulk orders of 50, 100, or 200 pieces of hand-breaded fried chicken and boxes of fresh biscuits, packaged in hot containers for local church potlucks, assemblies, and reunions.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="country-card">
+        <h3 class="menu-category-title">Office Tender Trays</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          Elevate office lunch. We package large trays of our seasoned crispy white meat chicken tenders, paired with massive portions of seasoned tater wedges, honey mustard dipping cups, and buttermilk biscuits.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Request Form</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Fill out the details below to request a catering estimate. We will call you to verify quantities and coordinate Roosevelt Blvd pickup.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Person</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Catering Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="chicken-type">Chicken Choice</label>
+              <select id="chicken-type" required>
+                <option value="mixed">Mixed Fried Chicken (Bone-In)</option>
+                <option value="tenders">Crispy Tenders Trays</option>
+                <option value="wings">Wings Trays</option>
+                <option value="combination">Biscuit & Side Assortments</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of your request (Chicken pieces count, sides, biscuit boxes)</label>
+              <textarea id="notes" placeholder="e.g. 50 pieces of mixed fried chicken, 2 trays of tenders, 3 large pans of Mac & Cheese, 40 biscuits..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍗</div>
+          <h3 class="success-title">Catering Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. The Hathaway's kitchen staff will review your country feast request and call you back to confirm pricing.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1310 W. Roosevelt Blvd.<br>Monroe, NC 28110</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday - Saturday: 10:30 AM - 9:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 283-5187<br>Drive-Thru & Dine-In Pickup</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. We have received your country catering details. Our kitchen manager will contact you at <strong>${phone}</strong> shortly to verify quantities and pickup time.`;
+    });
+  </script>
+</body>
+</html>

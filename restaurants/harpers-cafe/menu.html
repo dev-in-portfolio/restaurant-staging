@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Harper's Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b81e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--navy:#1a2744;--muted:#8a7a6a;--gold:#c49a2a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#111;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(184,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a1520);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.menu-item{background:rgba(255,255,255,.03);border:1px solid rgba(184,30,30,.06);border-radius:10px;padding:1.25rem 1.5rem}
+.menu-item .name{font-weight:700;color:var(--red);font-size:.92rem;display:flex;justify-content:space-between}
+.menu-item .name .price{color:var(--cream);opacity:.5;font-weight:400}
+.menu-item .desc{font-size:.8rem;opacity:.45;line-height:1.5;margin-top:.3rem}
+footer{background:#111;color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(184,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+.finder{background:rgba(184,30,30,.06);border:1px solid rgba(184,30,30,.15);border-radius:12px;padding:2rem;margin-top:1.5rem}
+.finder h3{color:var(--red);margin:0 0 .75rem;font-size:1.1rem}
+.finder .finder-form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}@media(max-width:600px){.finder .finder-form{grid-template-columns:1fr}}
+.finder label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.finder select,.finder button{width:100%;padding:.8rem 1rem;border-radius:8px;font-size:.85rem}
+.finder select{border:1px solid rgba(184,30,30,.2);background:rgba(0,0,0,.3);color:var(--cream)}
+.finder button{background:var(--red);color:#fff;border:none;font-weight:700;cursor:pointer;transition:.2s}
+.finder button:hover{background:#8e1212}
+.finder-result{background:rgba(255,255,255,.03);border-radius:8px;padding:1rem;margin-top:1rem;display:none;border:1px solid var(--red)}
+.finder-result.show{display:block}
+.tab-bar{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab-bar button{background:rgba(255,255,255,.03);border:1px solid rgba(184,30,30,.1);color:var(--cream);padding:.5rem 1.2rem;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+.tab-bar button.active,.tab-bar button:hover{background:var(--red);color:#fff;border-color:var(--red)}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Harper's Cafe</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Find Us</a>
+    <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Menu</h1>
+  <p>Classic American fare — breakfast all day, big salads, hand-helds, and full plates</p>
+</div>
+<section class="section">
+  <div class="tab-bar" data-toggle-group>
+    <button data-toggle="breakfast" class="active">Breakfast</button>
+    <button data-toggle="salads">Salads</button>
+    <button data-toggle="handhelds">Hand Helds</button>
+    <button data-toggle="plates">Full Plates</button>
+  </div>
+  <div data-panel="breakfast">
+    <h2>Breakfast</h2>
+    <p class="note">Served all day, every day</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Classic 3-Egg Omelette</span> <span class="price">12</span></div>
+        <div class="desc">With cheese — add veggies, meat, or extra toppings</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Breakfast Bowl</span> <span class="price">13</span></div>
+        <div class="desc">Scrambled eggs, potatoes, cheese, choice of bacon or sausage</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Breakfast Burrito</span> <span class="price">13</span></div>
+        <div class="desc">Eggs, cheese, potatoes, bacon or sausage, wrapped in a flour tortilla</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Breakfast Sandwich</span> <span class="price">11</span></div>
+        <div class="desc">Egg, cheese, choice of bacon or sausage, on a toasted bun</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Yogurt Bowl</span> <span class="price">11</span></div>
+        <div class="desc">Greek yogurt, granola, fresh berries, honey drizzle</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Breakfast Sides</span> <span class="price">6</span></div>
+        <div class="desc">Bacon, sausage, hash browns, toast, or fresh fruit</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="salads" hidden>
+    <h2>Big Salads</h2>
+    <p class="note">Fresh, crisp, and generously portioned</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Original Oriental Salad</span> <span class="price">18</span></div>
+        <div class="desc">A Harper's legend — crispy chicken tenders, fresh greens, and that unforgettable house dressing</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Supreme Chef Salad</span> <span class="price">17</span></div>
+        <div class="desc">Ham, turkey, egg, cheese, tomato, cucumber, croutons</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>House Salad</span> <span class="price">9</span></div>
+        <div class="desc">Mixed greens, tomato, cucumber, croutons, choice of dressing</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Pesto Pasta Salad</span> <span class="price">6</span></div>
+        <div class="desc">House-made pesto, fresh pasta — a Charlotte original</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="handhelds" hidden>
+    <h2>Hand Helds</h2>
+    <p class="note">Comes with your choice of side</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Harper's Classic Club</span> <span class="price">15</span></div>
+        <div class="desc">Turkey, bacon, lettuce, tomato, mayo on toasted sourdough</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Harper's Reuben</span> <span class="price">17</span></div>
+        <div class="desc">Corned beef, sauerkraut, Swiss, thousand island on rye</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Molino Smash Burger</span> <span class="price">17</span></div>
+        <div class="desc">Double smash patty, American cheese, pickles, special sauce</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>American Burger</span> <span class="price">17</span></div>
+        <div class="desc">Classic beef patty, lettuce, tomato, onion, pickles, choice of cheese</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Chicken Caesar Wrap</span> <span class="price">17</span></div>
+        <div class="desc">Grilled chicken, romaine, parmesan, caesar dressing in a flour wrap</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Fairview Chicken Sandwich</span> <span class="price">17</span></div>
+        <div class="desc">Crispy or grilled chicken, lettuce, tomato, honey mustard on brioche</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Original Oriental Wrap</span> <span class="price">16</span></div>
+        <div class="desc">The classic Oriental flavors wrapped up and ready to go</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="plates" hidden>
+    <h2>Full Plates</h2>
+    <p class="note">Hearty, satisfying meals</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Chicken Supremes Platter</span> <span class="price">18</span></div>
+        <div class="desc">Crispy chicken tenderloins with choice of sauce, two sides</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Baked Penne Pasta</span> <span class="price">19</span></div>
+        <div class="desc">Penne baked with marinara, mozzarella, and your choice of protein</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Black Bean Soup</span> <span class="price">7</span></div>
+        <div class="desc">A Harper's classic — rich, smoky, served with sour cream and cilantro</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section">
+  <div class="finder" data-demo-form>
+    <h3>What Are You Craving?</h3>
+    <p style="font-size:.85rem;opacity:.5;margin:0 0 1rem">Tell us what sounds good and we'll point you to the perfect meal</p>
+    <form class="finder-form" data-demo-form>
+      <label>What's your mood?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="breakfast">Breakfast any time</option>
+          <option value="salad">A big fresh salad</option>
+          <option value="burger">A juicy burger</option>
+          <option value="chicken">Crispy chicken</option>
+          <option value="soup">Soup & comfort food</option>
+        </select>
+      </label>
+      <label>Dine in or take out?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="dinein">Dine in</option>
+          <option value="takeout">Take out</option>
+        </select>
+      </label>
+      <div style="grid-column:1/-1">
+        <button type="submit">Find My Meal</button>
+      </div>
+    </form>
+    <div class="finder-result" id="finder-result">
+      <p style="margin:0;color:var(--red);font-weight:700">Great choice! Order online for pickup or come see us at the Terrace at Park Place.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Harper's Cafe</strong><br>9101 Pineville-Matthews Road, Ste I, Pineville, NC 28134 · (704) 366-6688</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Flour Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Flour Shop</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="reserve.html" class="nav-cta">Reserve</a></li>
+      <li><a href="pasta-pairing.html">Pasta Pairing</a></li></ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Menu</h1>
+    <p class="page-sub">Seasonal &amp; locally sourced — changes frequently based on availability</p>
+  </header>
+
+  <section class="section menu-section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="category-pills">
+          <button class="pill active" data-category="all">All</button>
+          <button class="pill" data-category="to-start">To Start</button>
+          <button class="pill" data-category="grill">Grill</button>
+          <button class="pill" data-category="pasta">Pasta</button>
+          <button class="pill" data-category="vegetables">Vegetables</button>
+        </div>
+        <div class="menu-search">
+          <input type="text" id="menu-search" placeholder="Search dishes…" aria-label="Search menu">
+        </div>
+      </div>
+
+      <div class="menu-notice">
+        <p>Our menu changes frequently based on seasonal availability. Prices subject to change.</p>
+      </div>
+
+      <div class="menu-category" data-category="to-start">
+        <h2>To Start</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-name="croquettes">
+            <div class="menu-item-info">
+              <h3>Croquettes</h3>
+              <p>Chorizo, herb, potato</p>
+            </div>
+            <span class="menu-item-price">$14</span>
+          </div>
+          <div class="menu-item" data-name="burrata di bufala">
+            <div class="menu-item-info">
+              <h3>Burrata Di Bufala</h3>
+              <p>Pistachio pesto &amp; sourdough</p>
+            </div>
+            <span class="menu-item-price">$16</span>
+          </div>
+          <div class="menu-item" data-name="caesar salad">
+            <div class="menu-item-info">
+              <h3>Caesar</h3>
+              <p>Classic preparation</p>
+            </div>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <div class="menu-item" data-name="dates">
+            <div class="menu-item-info">
+              <h3>Dates</h3>
+              <p>Seasonal preparation</p>
+            </div>
+            <span class="menu-item-price">$14</span>
+          </div>
+          <div class="menu-item" data-name="grilled octopus">
+            <div class="menu-item-info">
+              <h3>Grilled BBQ Octopus</h3>
+              <p>Soy glaze</p>
+            </div>
+            <span class="menu-item-price">$22</span>
+          </div>
+          <div class="menu-item" data-name="beets">
+            <div class="menu-item-info">
+              <h3>Beets</h3>
+              <p>Seasonal preparation</p>
+            </div>
+            <span class="menu-item-price">$12</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="grill">
+        <h2>Grill</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-name="dry aged duck">
+            <div class="menu-item-info">
+              <h3>Crispy Dry Aged Duck Breast</h3>
+              <p>Wood-fired</p>
+            </div>
+            <span class="menu-item-price">$28</span>
+          </div>
+          <div class="menu-item" data-name="hanger steak">
+            <div class="menu-item-info">
+              <h3>Hanger Steak</h3>
+              <p>Pomme frites</p>
+            </div>
+            <span class="menu-item-price">$30</span>
+          </div>
+          <div class="menu-item" data-name="stone seafood flounder">
+            <div class="menu-item-info">
+              <h3>Stone Seafood Flounder</h3>
+              <p>Market fresh</p>
+            </div>
+            <span class="menu-item-price">$28</span>
+          </div>
+          <div class="menu-item" data-name="lamb sirloin">
+            <div class="menu-item-info">
+              <h3>Lamb Sirloin</h3>
+              <p>Seasonal accompaniment</p>
+            </div>
+            <span class="menu-item-price">$18</span>
+          </div>
+          <div class="menu-item" data-name="scallops">
+            <div class="menu-item-info">
+              <h3>Scallops</h3>
+              <p>Pan-seared</p>
+            </div>
+            <span class="menu-item-price">$20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="pasta">
+        <h2>Pasta</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-name="squid ink linguine">
+            <div class="menu-item-info">
+              <h3>Squid Ink Linguine</h3>
+              <p>Chorizo &amp; Carolina shrimp</p>
+            </div>
+            <span class="menu-item-price">$28</span>
+          </div>
+          <div class="menu-item" data-name="fettuccini carbonara">
+            <div class="menu-item-info">
+              <h3>Fettuccini Carbonara</h3>
+              <p>Classic carbonara</p>
+            </div>
+            <span class="menu-item-price">$26</span>
+          </div>
+          <div class="menu-item" data-name="orecchiette">
+            <div class="menu-item-info">
+              <h3>Orecchiette</h3>
+              <p>Seasonal preparation</p>
+            </div>
+            <span class="menu-item-price">$26</span>
+          </div>
+          <div class="menu-item" data-name="cappelletti crab diablo">
+            <div class="menu-item-info">
+              <h3>Cappelletti Crab Diablo</h3>
+              <p>Crab-filled, spicy</p>
+            </div>
+            <span class="menu-item-price">$30</span>
+          </div>
+          <div class="menu-item" data-name="ricotta gnocchi">
+            <div class="menu-item-info">
+              <h3>Ricotta Gnocchi</h3>
+              <p>Pork meatballs</p>
+            </div>
+            <span class="menu-item-price">$26</span>
+          </div>
+          <div class="menu-item" data-name="rigatoni bolognese">
+            <div class="menu-item-info">
+              <h3>Rigatoni</h3>
+              <p>Joyce Farms bolognese</p>
+            </div>
+            <span class="menu-item-price">$26</span>
+          </div>
+          <div class="menu-item" data-name="tagliatelle">
+            <div class="menu-item-info">
+              <h3>Tagliatelle</h3>
+              <p>Seasonal preparation</p>
+            </div>
+            <span class="menu-item-price">$28</span>
+          </div>
+          <div class="menu-item" data-name="balanzoni">
+            <div class="menu-item-info">
+              <h3>Balanzoni</h3>
+              <p>Seasonal preparation</p>
+            </div>
+            <span class="menu-item-price">$28</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="vegetables">
+        <h2>Vegetables</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-name="corn sofrito">
+            <div class="menu-item-info">
+              <h3>Corn Sofrito</h3>
+              <p>Seasonal</p>
+            </div>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <div class="menu-item" data-name="green beans">
+            <div class="menu-item-info">
+              <h3>Green Beans</h3>
+              <p>Seasonal</p>
+            </div>
+            <span class="menu-item-price">$14</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-empty" style="display:none;">
+        <p>No dishes match your search.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-logo">Flour Shop</p>
+      <p class="footer-addr">530 A Brandywine Rd, Charlotte, NC 28209 · <a href="tel:+19802993754">(980) 299-3754</a></p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Reserve</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Flour Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

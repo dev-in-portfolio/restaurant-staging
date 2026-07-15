@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit — Amina</title>
+  <meta name="description" content="Plan your visit to Amina — hours, address, parking, and reservations in Uptown Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Amina</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html" class="active">Visit</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html">Signature Experience</a>
+</nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Visit Us</h1>
+        <p class="hero-subtitle">First Ward, Uptown Charlotte</p>
+      </div>
+    </section>
+
+    <section class="section visit-section">
+      <div class="container visit-grid">
+        <div class="visit-card">
+          <h2>Hours</h2>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>Closed</td></tr>
+            <tr><td>Tuesday – Thursday</td><td>11 AM – 11 PM</td></tr>
+            <tr><td>Friday</td><td>11 AM – 2 AM</td></tr>
+            <tr><td>Saturday</td><td>5 PM – 2 AM</td></tr>
+            <tr><td>Sunday</td><td>5 PM – 11 PM</td></tr>
+          </table>
+          <p class="hours-note">Late-night lounge Fri &amp; Sat until 2 AM</p>
+        </div>
+
+        <div class="visit-card">
+          <h2>Location</h2>
+          <p class="visit-address">
+            225 East 6th Street, Suite C<br>
+            Charlotte, NC 28202
+          </p>
+          <p class="visit-detail">First Ward, Uptown Charlotte</p>
+          <p class="visit-detail">Walking distance to Spectrum Center (Charlotte Hornets)</p>
+          <a href="https://maps.google.com/?q=225+East+6th+Street+Suite+C+Charlotte+NC+28202" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+        </div>
+
+        <div class="visit-card">
+          <h2>Parking</h2>
+          <p>We offer <strong>complimentary 2-hour parking validation</strong> for all dining guests. Just ask your server when you arrive.</p>
+        </div>
+
+        <div class="visit-card">
+          <h2>Contact</h2>
+          <p class="visit-phone">(704) 803-0606</p>
+          <p>For large parties or special events, please call or book online.</p>
+          <a href="reserve.html" class="btn btn-primary">Make a Reservation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit-map">
+      <div class="container">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.5!2d-80.841!3d35.225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856acbda4cf2d7f%3A0x0!2s225+East+6th+Street+Charlotte+NC"
+            width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+            title="Amina location map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Amina</p>
+      <p>&copy; 2026 Amina. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

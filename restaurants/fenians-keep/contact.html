@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Fenian's Keep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--green:#1a3320;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#0d0d0d;--wood:#5c3d2e;--muted:#7a8a7a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--green);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,.12)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a3320,#0d0d0d);padding:3rem 2rem;text-align:center}
+.page-header h1{margin:0;font-size:2.2rem;color:var(--gold)}
+.page-header p{font-style:italic;opacity:.5;margin:.35rem 0 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:860px;margin:0 auto;padding:3rem 2rem}
+.grid-2 h2{font-size:1.15rem;color:var(--gold);margin:0 0 .15rem}
+.grid-2 .sub{font-size:.85rem;opacity:.45;margin-bottom:1.25rem}
+.info-block p{font-size:.88rem;opacity:.55;line-height:1.7;margin:0 0 .35rem}
+.info-block strong{color:var(--gold);opacity:.9}
+.info-block .social{margin-top:1rem;display:flex;gap:.75rem}
+.info-block .social a{color:var(--gold);text-decoration:none;font-size:.85rem;font-weight:600;transition:.2s}
+.info-block .social a:hover{opacity:.7}
+.hours-table{width:100%;margin:1rem 0}
+.hours-table tr td{padding:.35rem 0;font-size:.84rem;opacity:.5;border-bottom:1px solid rgba(255,255,255,.03)}
+.hours-table tr td:first-child{font-weight:600;opacity:.7}
+.demo-form{display:grid;gap:1rem}
+.demo-form .form-row{display:grid;gap:.4rem}
+.demo-form .form-row label{font-size:.82rem;font-weight:700;color:var(--gold)}
+.demo-form .form-row input,.demo-form .form-row textarea,.demo-form .form-row select{padding:.85rem 1rem;border:1px solid rgba(201,168,76,.15);border-radius:8px;background:rgba(0,0,0,.2);color:var(--cream);font-size:.9rem}
+.demo-form .form-row select option{background:var(--charcoal);color:var(--cream)}
+.demo-form .form-row input:focus,.demo-form .form-row textarea:focus,.demo-form .form-row select:focus{outline:none;border-color:var(--gold)}
+.demo-form button{background:var(--gold);color:var(--charcoal);padding:.85rem 2rem;border:none;border-radius:6px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;transition:.2s;cursor:pointer}
+.demo-form button:hover{background:#b8973a}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+@media(max-width:650px){.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Fenian's Keep</a>
+  <div class="nav-links">
+    <a href="drinks.html">Drinks</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Come find us in NoDa</p>
+</header>
+<div class="grid-2">
+  <div class="info-block">
+    <h2>Visit Us</h2>
+    <p class="sub">Your neighborhood Irish pub in the heart of NoDa</p>
+    <p><strong>Fenian's Keep</strong><br>423 E 36th St, Suite A<br>Charlotte, NC 28205</p>
+    <p><strong>(980) 237-2126</strong></p>
+    <p><a href="mailto:info.fenianskeep@gmail.com" style="color:var(--gold)">info.fenianskeep@gmail.com</a></p>
+
+    <h2 style="margin-top:2rem">Hours</h2>
+    <table class="hours-table">
+      <tr><td>Monday – Thursday</td><td>5 PM – 12 AM</td></tr>
+      <tr><td>Friday</td><td>5 PM – 2 AM</td></tr>
+      <tr><td>Saturday</td><td>2 PM – 2 AM</td></tr>
+      <tr><td>Sunday</td><td>2 PM – 10 PM</td></tr>
+    </table>
+
+    <div class="social">
+      <a href="https://www.instagram.com/fenianskeep" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/brigidsirishpubclt" target="_blank">Facebook</a>
+    </div>
+
+    <h2 style="margin-top:2rem">Getting Here</h2>
+    <p class="sub">Located at 36th Street in NoDa, next to Waterbean Coffee</p>
+    <p style="font-size:.82rem;opacity:.4">Street parking available. Easy walk from the 36th Street light rail station. Ride-sharing encouraged on late nights.</p>
+    <p style="margin-top:.75rem"><a href="https://www.google.com/maps/dir//423+E+36th+St,+Charlotte,+NC+28205" target="_blank" style="color:var(--gold);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)">Get Directions →</a></p>
+  </div>
+  <div>
+    <h2>Drop Us a Line</h2>
+    <p class="sub">Questions, booking inquiries or just want to say hello</p>
+    <form class="demo-form" data-demo-form>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-row">
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option value="">Select a subject…</option>
+          <option>General Inquiry</option>
+          <option>Private Event / Buyout</option>
+          <option>Live Music Booking</option>
+          <option>Sports Viewing Inquiry</option>
+          <option>Feedback</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>Fenian's Keep · 423 E 36th St, Suite A · Charlotte, NC 28205 · (980) 237-2126</p>
+  <p><a href="drinks.html">Drinks</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

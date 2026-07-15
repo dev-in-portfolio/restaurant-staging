@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | Le Kebab Grill Charlotte</title>
+  <meta name="description" content="Learn the story behind Le Kebab Grill in Charlotte, NC. Jordanian family recipes, the chef-owner's journey, and our place in the University City community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    :root{--gold:#e8b84b;--gold-light:#f5d98c;--gold-dark:#b8862a;--red:#8b1a1a;--red-dark:#5c0e0e;--cream:#faf5eb;--charcoal:#1a1a1a;--charcoal-light:#2d2d2d}
+    .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--charcoal)}
+    .logo span{color:var(--gold)}
+    .nav-links a{color:var(--charcoal);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem 0}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-dark);text-decoration:none}
+    .page-hero{background:linear-gradient(135deg,var(--charcoal) 0%,var(--charcoal-light) 100%);padding:4rem 0;text-align:center;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--red),var(--gold))}
+    .page-hero h1{color:var(--cream);margin-bottom:.5rem}
+    .page-hero h1 span{color:var(--gold)}
+    .page-hero p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto}
+    .story-section{padding:5rem 0}
+    .story-section:nth-child(even){background:var(--cream)}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    .story-image{background:var(--cream);border-radius:12px;padding:3rem 2rem;text-align:center;border:2px dashed var(--gold);min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .story-section:nth-child(even) .story-image{background:#fff}
+    .story-image span{font-size:4rem;margin-bottom:1rem}
+    .story-image p{color:#888;font-style:italic}
+    .story-text h2{margin-bottom:.75rem}
+    .story-text h2 span{color:var(--gold-dark)}
+    .story-text p{color:#444;line-height:1.8;margin-bottom:1rem;font-size:1.05rem}
+    .story-text .lead{font-size:1.15rem;font-weight:500;color:var(--charcoal)}
+    .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+    .value-card{background:#fff;border-radius:12px;padding:2rem;text-align:center;border-top:4px solid var(--gold);transition:transform .25s}
+    .value-card:hover{transform:translateY(-4px)}
+    .value-card span{font-size:2.5rem;display:block;margin-bottom:.75rem}
+    .value-card h4{margin-bottom:.5rem}
+    .value-card p{font-size:.9rem;color:#555}
+    .site-footer{background:var(--charcoal);color:var(--cream);padding:3rem 0}
+    .site-footer a{color:var(--gold)}
+    .site-footer a:hover{color:var(--gold-light)}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+    .footer-grid h4{font-size:1rem;margin-bottom:.75rem;color:var(--gold)}
+    .footer-grid ul{list-style:none;font-size:.9rem}
+    .footer-grid ul li{margin-bottom:.35rem}
+    .footer-grid p{font-size:.85rem;opacity:.7}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;opacity:.6}
+    .disclosure{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+    .disclosure a{color:var(--gold)}
+    @media(max-width:768px){.story-grid,.values-grid,.footer-grid{grid-template-columns:1fr}.nav-links{display:none}.page-hero{padding:3rem 0}}
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Le Kebab <span>Grill</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html" class="active">Our Story</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      <li><a href="flavor-guide.html">Flavor Guide</a></li></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our <span>Story</span></h1>
+      <p>From Jordan to Charlotte &mdash; a family tradition of flavor</p>
+    </div>
+  </section>
+
+  <section class="story-section" aria-labelledby="origin-heading">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-text">
+          <span class="badge">Our Origin</span>
+          <h2 id="origin-heading">A <span>Jordanian</span> Culinary Tradition</h2>
+          <p class="lead">Le Kebab Grill was born from a simple belief: great food brings people together.</p>
+          <p>Our story begins in Jordan, where the founder grew up in a kitchen filled with the aromas of sizzling kebabs, fresh herbs, and simmering stews. Family gatherings revolved around shared plates and long meals, where recipes were passed down by hand and heart.</p>
+          <p>When our family moved to Charlotte, they brought those recipes with them. What started as cooking for friends and community gatherings soon became a dream to share Jordanian hospitality with the wider Charlotte community.</p>
+        </div>
+        <div class="story-image">
+          <span>&#127758;</span>
+          <p>From Jordan to Charlotte &mdash; same recipes, same love</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section" aria-labelledby="chef-heading">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image">
+          <span>&#127859;</span>
+          <p>Where passion meets tradition</p>
+        </div>
+        <div class="story-text">
+          <span class="badge" style="background:var(--red);color:#fff">The Chef</span>
+          <h2 id="chef-heading">Meet the <span>Chef &amp; Owner</span></h2>
+          <p class="lead">Cooking is in his blood. Hospitality is in his nature.</p>
+          <p>Our chef and owner brings decades of experience from Jordan's kitchens to Charlotte's University City neighborhood. Trained in traditional Mediterranean cooking and inspired by his mother's home kitchen, every dish at Le Kebab Grill reflects his commitment to authenticity.</p>
+          <p>He personally selects every ingredient, oversees every marinade, and greets every guest who walks through the door. For him, running Le Kebab Grill isn't just about food &mdash; it's about building community around a shared table.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section" aria-labelledby="values-heading">
+    <div class="container">
+      <span class="badge" style="display:inline-block;margin:0 auto 1rem;text-align:center">What We Believe</span>
+      <h2 id="values-heading" class="section-title" style="text-align:center">Our <span>Values</span></h2>
+      <p class="section-subtitle" style="text-align:center;max-width:600px;margin:0 auto 2rem">The principles that guide everything we do</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <span>&#127860;</span>
+          <h4>Authenticity</h4>
+          <p>We stay true to Jordanian traditions. No shortcuts, no compromises &mdash; just real Mediterranean food made the way it has been for generations.</p>
+        </div>
+        <div class="value-card">
+          <span>&#127793;</span>
+          <h4>Fresh First</h4>
+          <p>We source fresh ingredients daily, prepare everything in-house, and never use frozen or pre-packaged components.</p>
+        </div>
+        <div class="value-card">
+          <span>&#129309;</span>
+          <h4>Community</h4>
+          <p>University City is our home. We're proud to serve our neighbors, support local events, and create a welcoming space for all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Le Kebab Grill</h4>
+        <p>Fresh Authentic Mediterranean Cuisine.<br>Jordanian-owned &middot; Family recipes &middot; Halal</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon&ndash;Thu 11:30am&ndash;9pm<br>Fri&ndash;Sat 11:30am&ndash;9:30pm<br>Sun 11:30am&ndash;9pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://www.instagram.com/lekebabgrill" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.facebook.com/lekebabgrill" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Le Kebab Grill &mdash; Charlotte, NC
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation &mdash; not operated by the restaurant. <a href="https://lekebabgrill.com" target="_blank" rel="noopener">Visit the official site</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

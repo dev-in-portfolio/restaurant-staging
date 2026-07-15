@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Portrait Gallery - Historic Matthews | Contact & Reservations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
+        <h1 class="brand-name">
+          The Portrait Gallery
+          <span>Matthews, NC</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Connect With The Gallery</h2>
+    <p class="page-subtitle">Reserve a table or send us a message. We look forward to curating your evening.</p>
+  </header>
+
+  <!-- Content Containers -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Info and Hours Card -->
+      <div class="gallery-frame-card">
+        <h3 class="exhibition-title">Lounge Details</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Address</h4>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted);">
+            118 E. Charles St.<br>Matthews, NC 28105
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Opening Hours</h4>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Tuesday - Thursday:</strong> 5:00 PM - 9:00 PM<br>
+            <strong>Friday - Saturday:</strong> 5:00 PM - 10:00 PM<br>
+            <strong>Sunday - Monday:</strong> Closed
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">General Inquiries</h4>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Phone:</strong> (704) 369-9982<br>
+            <strong>Email:</strong> info@pgmatthews.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="gallery-frame-card">
+        <h3 class="exhibition-title">Send A Message</h3>
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" required placeholder="How can we help you?" style="min-height: 100px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Message Sent!</h3>
+          <p class="success-msg">Thank you. We have received your query and will follow up shortly.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Booking Form Section -->
+    <section id="reserve-table" class="form-frame-wrapper">
+      <div class="form-frame">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Acquire Table Reservation</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-family: var(--font-sans); font-size: 0.95rem; margin-bottom: 2rem;">Reservations are highly recommended due to limited parlor space. Walk-ins are seated if possible.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Guest Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="date">Selected Date</label>
+              <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="time">Arrival Time</label>
+              <select id="time" required>
+                <option value="17:00">5:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="21:00">9:00 PM</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Party Size</label>
+              <select id="guests" required>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5+ Guests</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Request Reservation</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🖼</div>
+          <h3 class="success-title">Reservation Curated!</h3>
+          <p class="success-msg" id="success-message">Thank you. An invitation detail has been dispatched to your email address.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 3rem;">
+      <p>© 2026 The Portrait Gallery Restaurant & Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle message form submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+
+    // Handle reservation submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const guests = document.getElementById('guests').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Salutations, <strong>${name}</strong>. Your requested table for <strong>${guests} guests</strong> on <strong>${date}</strong> at <strong>${time}</strong> has been logged. Check <strong>${email}</strong> for your invitation details shortly.`;
+    });
+  </script>
+</body>
+</html>

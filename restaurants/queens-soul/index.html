@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen's Soul Food - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Absolute Positioning for Platter Food Items */
+    #food-oxtails { top: 30px; left: 80px; }
+    #food-wings { top: 40px; left: 100px; }
+    #food-chops { top: 50px; left: 70px; }
+    #food-feet { top: 35px; left: 90px; }
+    
+    #food-mac { bottom: 40px; left: 40px; }
+    #food-yams { bottom: 40px; right: 40px; }
+    #food-greens { bottom: 80px; left: 80px; }
+    #food-potato { bottom: 50px; left: 90px; }
+    #food-cabbage { bottom: 60px; right: 80px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">Q</div>
+        <h1 class="brand-name">
+          Queen's Soul Food
+          <span>Charlotte Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Hero Banner Section -->
+  <header class="hero-section" style="background-image: url('hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Royal Comfort Kitchen</span>
+        <h2 class="hero-title">Queen's Soul Food</h2>
+        <p class="hero-desc">"Experience soul cooking fit for royalty. From slow-simmered oxtails and gravy to golden fried chicken wings and home-style cobblers."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- To-Go Pickup Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Order Hotline: (704) 563-1106. Dine-In Booths & Takeout Register. 7308 E Independence Blvd.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">A Charlotte Comfort Standard</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Conveniently located on East Independence Boulevard in Charlotte, Queen's Soul Food is committed to serving hearty, authentic Southern dinner plates. Blending classic Georgia family seasonings with large comfort portions, our kitchen is renowned for fall-off-the-bone oxtails, smothered chops, and baked bakes.
+      </p>
+      <a href="about.html" style="color: var(--color-purple); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-purple); padding-bottom: 4px; transition: var(--transition-fast);">
+        Explore Our Royal Legacy ➔
+      </a>
+    </section>
+
+    <!-- Interactive Platter Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Queen's Platter Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Design your platter. Select a plate size, choose your meats, select two sides, and watch your plate fill.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Plate -->
+        <div class="plate-canvas">
+          <div class="plate-wireframe">
+            <div class="plate-gold-rim"></div>
+            <!-- Food Graphics (clean text + emoji representations for fast rendering) -->
+            <div class="plate-food-item" id="food-oxtails">🍖 Oxtails</div>
+            <div class="plate-food-item" id="food-wings">🍗 Wings</div>
+            <div class="plate-food-item" id="food-chops">🥩 Chops</div>
+            <div class="plate-food-item" id="food-feet">🐖 Pig Feet</div>
+            
+            <div class="plate-food-item" id="food-mac">🧀 Mac</div>
+            <div class="plate-food-item" id="food-yams">🍠 Yams</div>
+            <div class="plate-food-item" id="food-greens">🥬 Greens</div>
+            <div class="plate-food-item" id="food-potato">🥔 Potato Sal</div>
+            <div class="plate-food-item" id="food-cabbage">🥬 Cabbage</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>Select Platter Size</label>
+            <div class="option-grid" id="size-options">
+              <button class="option-btn active" onclick="setSize('small', 11.99, 'Small Plate (1 Meat, 2 Sides)')">Small Plate ($11.99)</button>
+              <button class="option-btn" onclick="setSize('large', 14.99, 'Large Plate (2 Meats, 2 Sides)')">Large Plate ($14.99)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>Select Meats</label>
+            <div class="option-grid" id="meat-options">
+              <button class="option-btn active" onclick="toggleMeat('oxtails', 3.00, 'Oxtails')">Oxtails (+$3.00)</button>
+              <button class="option-btn" onclick="toggleMeat('wings', 0.00, 'Fried Chicken Wings')">Fried Wings</button>
+              <button class="option-btn" onclick="toggleMeat('chops', 0.00, 'Smothered Pork Chops')">Smothered Chops</button>
+              <button class="option-btn" onclick="toggleMeat('feet', 0.00, 'BBQ Pig Feet')">BBQ Pig Feet</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>Select 2 Sides</label>
+            <div class="option-grid" id="side-options">
+              <button class="option-btn active" onclick="toggleSide('mac', 'Baked Mac n Cheese')">Mac n Cheese</button>
+              <button class="option-btn active" onclick="toggleSide('yams', 'Candied Yams')">Candied Yams</button>
+              <button class="option-btn" onclick="toggleSide('greens', 'Collard Greens')">Collard Greens</button>
+              <button class="option-btn" onclick="toggleSide('potato', 'Potato Salad')">Potato Salad</button>
+              <button class="option-btn" onclick="toggleSide('cabbage', 'Fried Cabbage')">Fried Cabbage</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Platter Order Summary</span>
+        <h4 class="builder-display-title" id="display-plate-name">Small Plate with Oxtails</h4>
+        <p id="display-plate-sides" style="color: var(--color-purple); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Baked Mac n Cheese, Candied Yams</p>
+        <div class="builder-display-price" id="display-plate-price">$14.99</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">A hearty serving of slow-simmered Oxtails with rich brown gravy, accompanied by Baked Mac n Cheese and Candied Yams.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Daily Specials Scroll</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From slow-cooked oxtail dinners and barbecue wings to peach cobbler desserts. Click below to view daily specials.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Daily Specials
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>7308 E Independence Blvd<br>Charlotte, NC 28227</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 9:00 PM<br>Sat - Sun: 11:00 AM - 9:30 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 563-1106<br>Dine-In Booths & Takeout Counter</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Queen's Soul Food. Charlotte comfort landmark since 2012.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State Variables
+    let currentSize = 'small';
+    let basePrice = 11.99;
+    let selectedMeats = ['oxtails'];
+    let selectedSides = ['mac', 'yams'];
+    let meatAddonPrice = 3.00;
+
+    const meatData = {
+      oxtails: { name: 'Oxtails', price: 3.00 },
+      wings: { name: 'Fried Chicken Wings', price: 0.00 },
+      chops: { name: 'Smothered Pork Chops', price: 0.00 },
+      feet: { name: 'BBQ Pig Feet', price: 0.00 }
+    };
+
+    const sideData = {
+      mac: 'Baked Mac n Cheese',
+      yams: 'Candied Yams',
+      greens: 'Collard Greens',
+      potato: 'Potato Salad',
+      cabbage: 'Fried Cabbage'
+    };
+
+    function setSize(size, price, title) {
+      const buttons = document.getElementById('size-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      currentSize = size;
+      basePrice = price;
+
+      // Adjust selection constraints
+      if (currentSize === 'small' && selectedMeats.length > 1) {
+        // Drop all meats except the first one
+        const activeMeats = document.getElementById('meat-options').querySelectorAll('.option-btn');
+        activeMeats.forEach(btn => btn.classList.remove('active'));
+        
+        selectedMeats = [selectedMeats[0]];
+        // Re-active button
+        const btnToActive = Array.from(activeMeats).find(btn => btn.innerText.includes(meatData[selectedMeats[0]].name.split(' ')[0]));
+        if (btnToActive) btnToActive.classList.add('active');
+      }
+
+      updateDisplay();
+    }
+
+    function toggleMeat(key, addonPrice) {
+      const buttons = document.getElementById('meat-options').querySelectorAll('.option-btn');
+      const idx = selectedMeats.indexOf(key);
+
+      if (currentSize === 'small') {
+        // Small plate allows only 1 meat selection
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        selectedMeats = [key];
+      } else {
+        // Large plate allows up to 2 meats
+        if (idx > -1) {
+          if (selectedMeats.length > 1) {
+            selectedMeats.splice(idx, 1);
+            event.target.classList.remove('active');
+          }
+        } else {
+          if (selectedMeats.length < 2) {
+            selectedMeats.push(key);
+            event.target.classList.add('active');
+          }
+        }
+      }
+
+      updateDisplay();
+    }
+
+    function toggleSide(key, name) {
+      const idx = selectedSides.indexOf(key);
+      if (idx > -1) {
+        if (selectedSides.length > 1) { // Keep at least one side
+          selectedSides.splice(idx, 1);
+          event.target.classList.remove('active');
+        }
+      } else {
+        if (selectedSides.length < 2) {
+          selectedSides.push(key);
+          event.target.classList.add('active');
+        } else {
+          // Replace oldest side
+          const oldSide = selectedSides.shift();
+          const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
+          const oldBtn = Array.from(buttons).find(btn => btn.innerText.includes(sideData[oldSide].split(' ')[0]) || btn.innerText.includes('Mac') && oldSide==='mac');
+          if (oldBtn) oldBtn.classList.remove('active');
+
+          selectedSides.push(key);
+          event.target.classList.add('active');
+        }
+      }
+
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      let extra = 0;
+      selectedMeats.forEach(m => {
+        extra += meatData[m].price;
+      });
+      const totalPrice = (basePrice + extra).toFixed(2);
+      document.getElementById('display-plate-price').innerText = `$${totalPrice}`;
+
+      // Update names
+      const meatNames = selectedMeats.map(m => meatData[m].name).join(' & ');
+      const sideNames = selectedSides.map(s => sideData[s]).join(', ');
+      
+      document.getElementById('display-plate-name').innerText = `${currentSize === 'small' ? 'Small Platter' : 'Large Platter'} with ${meatNames}`;
+      document.getElementById('display-plate-sides').innerText = sideNames;
+
+      // Update descriptions
+      document.getElementById('display-plate-desc').innerText = `A royal platter of slow-cooked ${meatNames}, paired perfectly with our Southern-style ${sideNames}.`;
+
+      // Animate graphics on virtual plate
+      const allFoodItems = document.querySelectorAll('.plate-food-item');
+      allFoodItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.5)';
+      });
+
+      // Show selected meats
+      selectedMeats.forEach(m => {
+        const el = document.getElementById(`food-${m}`);
+        if (el) {
+          el.style.opacity = '1';
+          el.style.transform = 'scale(1)';
+        }
+      });
+
+      // Show selected sides
+      selectedSides.forEach(s => {
+        const el = document.getElementById(`food-${s}`);
+        if (el) {
+          el.style.opacity = '1';
+          el.style.transform = 'scale(1)';
+        }
+      });
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lang Van Vietnamese Restaurant - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Lang Van Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Lang Van
+          <span>Vietnamese Restaurant</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Family Platters & Large Groups</h2>
+    <p class="page-subtitle">Let Lang Van provide comforting, authentic Vietnamese meals for your next family gathering or team lunch.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="organic-card">
+        <h3 class="menu-category-title">Group Take-Out Orders</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Need to feed a group? We specialize in large take-out orders for businesses and family events. We package our vermicelli bowls, summer rolls, fried spring rolls, and signature entrees to travel perfectly. Please call us at least 2 hours in advance.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="organic-card">
+        <h3 class="menu-category-title">Dine-In Family Banquets</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Book a large table block for groups of 6 to 12 guests. Dan and the staff will work with you to prepare a family-style dining banquet, featuring multiple shared clay pots, sizzling pancakes, and steaming bowls of beef and chicken pho.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="organic-card">
+        <h3 class="menu-category-title">Dietary Curation</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Hosting an event with diverse dietary needs? Our vegetarian and vegan selection is legendary. We can structure custom group platters that are entirely dairy-free, gluten-free, or vegan without compromising on traditional flavors.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Curation Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Lang Van operates traditionally. You can submit details below to generate a draft order, which we will verify via phone.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Person</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Event Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Guests Count</label>
+              <select id="guests" required>
+                <option value="6">6 - 10 Guests</option>
+                <option value="15">11 - 20 Guests</option>
+                <option value="30">20+ Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Special requests or favorite dishes</label>
+              <textarea id="notes" placeholder="e.g. 5 orders of Summer Rolls, 3 Beef Pho, vegetarian preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Order Curation</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍃</div>
+          <h3 class="success-title">Request Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. Dan or the staff will contact you at your phone number to finalize your order details.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>3019 Shamrock Dr.<br>Charlotte, NC 28215</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tuesday - Thursday: 11:00 AM - 10:00 PM<br>Friday - Saturday: 11:00 AM - 11:00 PM<br>Sunday: 11:00 AM - 10:00 PM<br>Monday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Call To Book</h3>
+        <p>Phone: (704) 531-9525<br>No official social media/email</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Lang Van Restaurant. Charlotte staple since 1999.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. We have received your catering details. Dan or one of the staff members will call you at <strong>${phone}</strong> shortly to confirm items and pricing.`;
+    });
+  </script>
+</body>
+</html>

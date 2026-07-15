@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel's Mexican & American Restaurant - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">M</div>
+        <h1 class="brand-name">
+          Miguel's
+          <span>Mexican & American</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-table.html">Flavor Table</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Fiesta Catering & To-Go</h2>
+    <p class="page-subtitle">Feed your corporate meeting, airport shift crew, or weekend tailgate party with Miguel's massive portion trays.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Fajita Party Trays</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Bring our sizzling skillet flavor to your group. Massive party pans of grilled steak, chicken, and shrimp cooked with bell peppers and sweet onions. Complete with side pans of beans, rice, and tortillas. Serves 15 to 20.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Corporate Lunch Boxes</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Perfect for office luncheons. We package individual burritos, chimichangas, or cheeseburger baskets wrapped hot in foil and boxed with chips and salsa. Call ahead for group orders over 10.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Taco Buffet Stations</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Set up a build-your-own taco station. Large bowls of seasoned beef or chicken, crispy and soft taco shells, shredded cheese, lettuce, tomatoes, and containers of our signature red sauce and sour cream.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Inquiry</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your catering details below. Please note that all catering orders are pickup-only at our Business Center Drive location.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="package">Select Catering Package</label>
+              <select id="package" required>
+                <option value="fajita">Fajita Party Trays</option>
+                <option value="taco">Taco Buffet Stations</option>
+                <option value="boxes">Corporate Lunch Boxes</option>
+                <option value="mixed">Mixed Fiesta Buffet</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of your request (Guest count, specific menu selections, salsa heat levels)</label>
+              <textarea id="notes" placeholder="e.g. Fajita trays for 15 people, 10 steak burritos de luxe, and extra salsa chips..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Catering Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🌮</div>
+          <h3 class="success-title">Order Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Miguel's catering staff will review your request and call your phone to verify details and arrange pickup timing.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>4252 Business Center Drive<br>Charlotte, NC 28214</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday - Saturday: 11:00 AM - 10:00 PM<br>Sunday: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 393-3890<br>To-Go Pickups | Family-Friendly Dinings</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Miguel's Mexican & American Restaurant. Charlotte landmark since 1998.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your catering request has been sent to the kitchen. We will call you at <strong>${phone}</strong> shortly to confirm your order details.`;
+    });
+  </script>
+</body>
+</html>

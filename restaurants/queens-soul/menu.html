@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen's Soul Food - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Chalkboard Specific Styles */
+    .blackboard-frame {
+      background: radial-gradient(circle, #1a1724 0%, #0d0c12 100%);
+      border: 6px solid var(--color-gold);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .blackboard-chalk-title {
+      font-size: 1.8rem;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .blackboard-chalk-desc {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">Q</div>
+        <h1 class="brand-name">
+          Queen's Soul Food
+          <span>Charlotte Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Royal Comfort Board</h2>
+    <p class="page-subtitle">Savor authentic Southern cooking. Check our daily specials below, or browse our classic dinners, sides, and house cakes.</p>
+  </header>
+
+  <!-- Interactive Specials Section -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Daily Specials Blackboard</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Blackboard -->
+        <div class="blackboard-frame" id="blackboard-specials-box">
+          <h4 class="blackboard-chalk-title" id="chalk-title">Monday: Smothered Pork Chops</h4>
+          <p class="blackboard-chalk-desc" id="chalk-desc">Two thick pork chops pan-seared and smothered in rich onion-garlic brown poultry gravy, slow-simmered until tender. Served over white rice with green beans, sweet potato yams, and cornbread muffins.</p>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-top: 1rem; font-family: 'Outfit';" id="chalk-price">$11.99</p>
+        </div>
+
+        <!-- Right Side: Day Selectors -->
+        <div class="selector-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;">
+          <button class="option-btn active" onclick="showChalkSpecials('mon', this)">Monday</button>
+          <button class="option-btn" onclick="showChalkSpecials('tue', this)">Tuesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('wed', this)">Wednesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('thu', this)">Thursday</button>
+          <button class="option-btn" onclick="showChalkSpecials('fri', this)">Friday</button>
+          <button class="option-btn" onclick="showChalkSpecials('sat', this)">Saturday</button>
+          <button class="option-btn" style="grid-column: span 2;" onclick="showChalkSpecials('sun', this)">Sunday Dinner Special</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title"> Dinners & Side Dishes</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Southern Dinners</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Queen's Oxtail Platter<span class="menu-item-badge">Royal Specialty</span></span>
+            <span class="menu-item-price">$17.99</span>
+          </div>
+          <p class="menu-item-desc">Tender beef oxtails seasoned with secret family herbs and slow-simmered for hours in onion-carrot brown gravy until fall-off-the-bone tender. Served with white rice, two side choices, and corn bread.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fried Chicken Wing Plate</span>
+            <span class="menu-item-price">$11.99</span>
+          </div>
+          <p class="menu-item-desc">Three golden fried chicken wings dredged in seasoned flour and fried crispy. Served hot with two side choices and cornbread.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Smothered Pork Chops</span>
+            <span class="menu-item-price">$11.99</span>
+          </div>
+          <p class="menu-item-desc">Two bone-in pork chops pan-fried and smothered under rich brown onion gravy. Served with two side choices and cornbread.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Traditional Sides & Cakes</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Baked Mac n Cheese</span>
+            <span class="menu-item-price">$3.50</span>
+          </div>
+          <p class="menu-item-desc">Rich and cheesy elbow macaroni baked from scratch with cheddar, monterey jack, mozzarella, and cream.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Candied Yams</span>
+            <span class="menu-item-price">$3.50</span>
+          </div>
+          <p class="menu-item-desc">Sweet potato yams baked tender in a sweet butter glaze with brown sugar, cinnamon, and nutmeg.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Southern Cakes</span>
+            <span class="menu-item-price">$4.50</span>
+          </div>
+          <p class="menu-item-desc">Generous slices of homemade double-layer cakes. Choose from Strawberry Cake, Coconut Cake, or Fudge Chocolate Cake.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>7308 E Independence Blvd<br>Charlotte, NC 28227</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 9:00 PM<br>Sat - Sun: 11:00 AM - 9:30 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 563-1106<br>Dine-In Booths & Takeout Counter</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Queen's Soul Food. Charlotte comfort landmark since 2012.</p>
+    </div>
+  </footer>
+
+  <script>
+    const specials = {
+      mon: {
+        title: "Monday: Smothered Pork Chops",
+        desc: "Two thick pork chops pan-seared and smothered in rich onion-garlic brown poultry gravy, slow-simmered until tender. Served over white rice with green beans, sweet potato yams, and cornbread muffins.",
+        price: "$11.99"
+      },
+      tue: {
+        title: "Tuesday: Fried Whiting Fish Basket",
+        desc: "Two fresh whiting fillets lightly battered in seasoned yellow cornmeal, fried golden and crisp. Served with seasoned french fries, coleslaw, hushpuppies, and tartar sauce.",
+        price: "$10.99"
+      },
+      wed: {
+        title: "Wednesday: Southern BBQ Pork Ribs",
+        desc: "Half slab of slow-smoked tender pork ribs basted in our sweet hickory brown sugar barbecue sauce. Served with potato salad, collard greens, and warm cornbread.",
+        price: "$13.99"
+      },
+      thu: {
+        title: "Thursday: Slow-Cooked Beef Tips",
+        desc: "Tender beef sirloin tips slow-simmered with onions and bell peppers in a savory brown gravy, served over a piping hot bed of buttered egg noodles with a side of sweet yams.",
+        price: "$12.99"
+      },
+      fri: {
+        title: "Friday: Queen's Simmered Oxtails",
+        desc: "Large helper of slow-braised beef oxtails loaded with carrots and celery in a rich, thick pan reduction. Served over white rice with baked mac n cheese, collard greens, and cornbread.",
+        price: "$17.99"
+      },
+      sat: {
+        title: "Saturday: Crispy Fried Wing Platter",
+        desc: "Four jumbo chicken wings dredged in seasoned flour, fried crispy golden. Served with seasoned french fries, baked beans, and a slice of strawberry cake.",
+        price: "$11.99"
+      },
+      sun: {
+        title: "Sunday: Baked Turkey Wing Dinner",
+        desc: "Jumbo turkey wing baked slow in poultry seasonings until fall-off-the-bone tender, smothered in onion-poultry gravy. Served over cornbread stuffing with cranberry sauce and two sides.",
+        price: "$12.99"
+      }
+    };
+
+    function showChalkSpecials(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const blackboard = document.getElementById('blackboard-specials-box');
+      blackboard.style.opacity = '0';
+      blackboard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = specials[key];
+        document.getElementById('chalk-title').innerText = data.title;
+        document.getElementById('chalk-desc').innerText = data.desc;
+        document.getElementById('chalk-price').innerText = data.price;
+        
+        blackboard.style.opacity = '1';
+        blackboard.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

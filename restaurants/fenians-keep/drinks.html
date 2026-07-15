@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drinks · Fenian's Keep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--green:#1a3320;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#0d0d0d;--wood:#5c3d2e;--muted:#7a8a7a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--green);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,.12)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a3320,#0d0d0d);padding:3rem 2rem;text-align:center}
+.page-header h1{margin:0;font-size:2.2rem;color:var(--gold)}
+.page-header p{font-style:italic;opacity:.5;margin:.35rem 0 0}
+.tab-bar{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;padding:1.5rem 1rem;background:rgba(0,0,0,.2)}
+.tab-bar button{padding:.65rem 1.4rem;background:transparent;border:1px solid rgba(201,168,76,.2);border-radius:999px;color:var(--cream);font-weight:600;font-size:.82rem;letter-spacing:.06em;cursor:pointer;transition:.25s;text-transform:uppercase}
+.tab-bar button:hover{border-color:var(--gold);color:var(--gold)}
+.tab-bar button.active{background:var(--gold);border-color:var(--gold);color:var(--charcoal)}
+.drink-section{max-width:760px;margin:0 auto;padding:3rem 2rem}
+.drink-section.hidden{display:none}
+.menu-cat{margin-bottom:2.5rem}
+.menu-cat h3{color:var(--gold);font-size:1.1rem;margin:0 0 .2rem;border-bottom:1px solid rgba(201,168,76,.1);padding-bottom:.5rem}
+.menu-cat .cat-note{font-size:.78rem;opacity:.4;font-style:italic;margin-bottom:1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.menu-item .name{font-size:.92rem;font-weight:600}
+.menu-item .desc{font-size:.78rem;opacity:.4;margin-top:.15rem;max-width:80%}
+.menu-item .price{font-family:'Fraunces',serif;color:var(--gold);font-size:.95rem;white-space:nowrap;margin-left:1rem}
+.specials-box{max-width:580px;margin:2rem auto;padding:1.75rem;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:12px;text-align:center}
+.specials-box h3{color:var(--gold);margin:0 0 .25rem}
+.specials-box p{font-size:.85rem;opacity:.5;margin:0}
+.quiz-box{max-width:580px;margin:3rem auto;padding:2rem;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:12px;text-align:center}
+.quiz-box h3{color:var(--gold);margin:0 0 .5rem}
+.quiz-box p{font-size:.85rem;opacity:.5;margin:0 0 1.5rem}
+.quiz-step{margin-bottom:1.25rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem;color:var(--gold)}
+.quiz-step select{width:100%;max-width:320px;padding:.75rem 1rem;border:1px solid rgba(201,168,76,.2);border-radius:8px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem}
+.quiz-step select option{background:var(--charcoal);color:var(--cream)}
+.quiz-btn{display:inline-block;background:var(--gold);color:var(--charcoal);padding:.75rem 2rem;border:none;border-radius:6px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;transition:.2s}
+.quiz-btn:hover{background:#b8973a}
+.quiz-result{margin-top:1.5rem;padding:1.25rem;border-radius:8px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);display:none}
+.quiz-result.show{display:block}
+.quiz-result h4{color:var(--gold);margin:0 0 .35rem;font-size:1.05rem}
+.quiz-result p{font-size:.88rem;opacity:.6;margin:0;line-height:1.5}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Fenian's Keep</a>
+  <div class="nav-links">
+    <a href="drinks.html">Drinks</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Drinks</h1>
+  <p>Spirits, ales and good company — no food, no pretension</p>
+</header>
+<div class="tab-bar" data-toggle-group>
+  <button data-toggle="beer" class="active">Beer &amp; Ales</button>
+  <button data-toggle="whiskey">Irish Whiskey</button>
+  <button data-toggle="cocktails">Cocktails</button>
+  <button data-toggle="specials">Specials</button>
+</div>
+
+<section class="drink-section" data-panel="beer" id="beer">
+  <div class="menu-cat">
+    <h3>On Draft &amp; In Bottles</h3>
+    <p class="cat-note">A rotating selection of Irish, European and local Charlotte brews</p>
+    <div class="menu-item"><span><span class="name">Guinness Draught</span><div class="desc">The classic Irish dry stout — smooth, creamy, perfectly poured</div></span><span class="price">$7</span></div>
+    <div class="menu-item"><span><span class="name">Smithwick's Irish Ale</span><div class="desc">Smooth, caramel-rich Irish red ale</div></span><span class="price">$6.50</span></div>
+    <div class="menu-item"><span><span class="name">Harp Lager</span><div class="desc">Crisp, refreshing Irish lager</div></span><span class="price">$6</span></div>
+    <div class="menu-item"><span><span class="name">Magners Irish Cider</span><div class="desc">Slightly sweet, sparkling apple cider — served over ice</div></span><span class="price">$7</span></div>
+    <div class="menu-item"><span><span class="name">Local Rotation IPA</span><div class="desc">Rotating hazy IPA from a Charlotte brewery — ask your bartender</div></span><span class="price">$8</span></div>
+    <div class="menu-item"><span><span class="name">Local Pilsner</span><div class="desc">Crisp, light German-style pilsner from a nearby Charlotte brewery</div></span><span class="price">$7</span></div>
+    <div class="menu-item"><span><span class="name">European Lager</span><div class="desc">Rotating European import — ask what's pouring tonight</div></span><span class="price">$7.50</span></div>
+  </div>
+</section>
+
+<section class="drink-section hidden" data-panel="whiskey" id="whiskey">
+  <div class="menu-cat">
+    <h3>Irish Whiskey</h3>
+    <p class="cat-note">Served neat, on the rocks or in your favorite cocktail</p>
+    <div class="menu-item"><span><span class="name">Jameson Original</span><div class="desc">Smooth, triple-distilled — the classic Irish pour</div></span><span class="price">$8</span></div>
+    <div class="menu-item"><span><span class="name">Jameson Black Barrel</span><div class="desc">Triple-distilled, double-charred — richer, spicier finish</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">Tullamore D.E.W.</span><div class="desc">Light, smooth with vanilla and nutty notes</div></span><span class="price">$8</span></div>
+    <div class="menu-item"><span><span class="name">Bushmills Original</span><div class="desc">Light, floral single malt from Northern Ireland's oldest distillery</div></span><span class="price">$9</span></div>
+    <div class="menu-item"><span><span class="name">Bushmills Black Bush</span><div class="desc">Matured in Oloroso sherry casks — rich, fruity, full-bodied</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">Redbreast 12 Year</span><div class="desc">Single pot still — rich, spicy with sherry cask depth</div></span><span class="price">$14</span></div>
+    <div class="menu-item"><span><span class="name">Green Spot</span><div class="desc">Single pot still — light, fresh with apple and spice notes</div></span><span class="price">$15</span></div>
+    <div class="menu-item"><span><span class="name">Powers Gold Label</span><div class="desc">Bold, spicy with honeyed sweetness</div></span><span class="price">$8</span></div>
+    <div class="menu-item"><span><span class="name">Teeling Small Batch</span><div class="desc">Grain and malt blend finished in rum casks — smooth with a hint of sweetness</div></span><span class="price">$11</span></div>
+    <div class="menu-item"><span><span class="name">Knappogue Castle 12 Year</span><div class="desc">Single malt — light, floral, triple-distilled</div></span><span class="price">$13</span></div>
+  </div>
+</section>
+
+<section class="drink-section hidden" data-panel="cocktails" id="cocktails">
+  <div class="menu-cat">
+    <h3>Pub Cocktails</h3>
+    <p class="cat-note">Classic cocktails with an Irish twist</p>
+    <div class="menu-item"><span><span class="name">Irish Mule</span><div class="desc">Jameson, ginger beer, lime — served in a copper mug</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">Whiskey Sour</span><div class="desc">Bushmills, lemon, simple syrup, egg white, angostura bitters</div></span><span class="price">$11</span></div>
+    <div class="menu-item"><span><span class="name">Irish Old Fashioned</span><div class="desc">Jameson Black Barrel, demerara, bitters, orange peel</div></span><span class="price">$12</span></div>
+    <div class="menu-item"><span><span class="name">The Dubliner</span><div class="desc">Irish whiskey, sweet vermouth, green chartreuse, cherry</div></span><span class="price">$12</span></div>
+    <div class="menu-item"><span><span class="name">Black Velvet</span><div class="desc">Guinness and champagne — a classic Irish pairing</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">Irish Coffee</span><div class="desc">Jameson, hot coffee, brown sugar, heavy cream</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">Leprechaun's Lemonade</span><div class="desc">Tullamore D.E.W., lemon, mint, elderflower, soda</div></span><span class="price">$10</span></div>
+    <div class="menu-item"><span><span class="name">The Fenian</span><div class="desc">Powers, Guinness syrup, bitters, lemon — our house signature</div></span><span class="price">$11</span></div>
+  </div>
+</section>
+
+<section class="drink-section hidden" data-panel="specials" id="specials">
+  <div class="specials-box">
+    <h3>All-Day Everyday Specials</h3>
+    <p>$5 shots of Jameson · $6 Guinness pints before 7 PM · $8 Irish Mules all night</p>
+  </div>
+  <div class="menu-cat">
+    <h3>Weekly Drink Specials</h3>
+    <div class="menu-item"><span><span class="name">Mondays</span><div class="desc">$6 Guinness pints all night</div></span><span class="price">-</span></div>
+    <div class="menu-item"><span><span class="name">Tuesdays</span><div class="desc">$5 Jameson shots + $7 whiskey sours</div></span><span class="price">-</span></div>
+    <div class="menu-item"><span><span class="name">Wednesdays</span><div class="desc">$8 Irish Mules — all flavors</div></span><span class="price">-</span></div>
+    <div class="menu-item"><span><span class="name">Thursdays</span><div class="desc">$6 select drafts + $8 featured cocktails</div></span><span class="price">-</span></div>
+    <div class="menu-item"><span><span class="name">Fridays &amp; Saturdays</span><div class="desc">Late night — open till 2 AM · $8 featured cocktails</div></span><span class="price">-</span></div>
+    <div class="menu-item"><span><span class="name">Sundays</span><div class="desc">$5 Bloody Marys + $6 mimosas — lazy Sunday pints</div></span><span class="price">-</span></div>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Your Perfect Pint</h3>
+    <p>Not sure what to order? Tell us your mood and we'll pour the perfect drink.</p>
+    <div class="quiz-step">
+      <label for="mood-pint">What's your vibe right now?</label>
+      <select id="mood-pint">
+        <option value="">Choose a mood…</option>
+        <option value="classic">Classic &amp; Traditional</option>
+        <option value="bold">Bold &amp; Strong</option>
+        <option value="light">Light &amp; Refreshing</option>
+        <option value="adventurous">Feeling Adventurous</option>
+      </select>
+    </div>
+    <button class="quiz-btn" id="pint-btn">Pour Me a Drink</button>
+    <div class="quiz-result" id="pint-result">
+      <h4 id="pint-name"></h4>
+      <p id="pint-desc"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Fenian's Keep · 423 E 36th St, Suite A · Charlotte, NC 28205 · (980) 237-2126</p>
+  <p><a href="drinks.html">Drinks</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+document.getElementById('pint-btn').addEventListener('click',function(){const m=document.getElementById('mood-pint').value;const r=document.getElementById('pint-result');const n=document.getElementById('pint-name');const d=document.getElementById('pint-desc');const picks={classic:{name:'Guinness Draught',desc:'The one and only. Smooth, creamy, perfectly poured \u2014 you can\u2019t go wrong with the classic Irish dry stout.'},bold:{name:'Jameson Black Barrel Neat',desc:'Bold, rich and double-charred \u2014 a whiskey that stands up to any conversation. Served neat or on a single large cube.'},light:{name:'Harp Lager',desc:'Crisp, refreshing and easygoing. A clean Irish lager that goes down easy on any night.'},adventurous:{name:'The Fenian \u2014 House Signature',desc:'Powers Irish whiskey, Guinness syrup, bitters and lemon \u2014 our bartender\u2019s own creation. Bold, sweet and unmistakably Irish.'}};if(!m){r.classList.remove('show');return}const pick=picks[m];n.textContent=pick.name;d.textContent=pick.desc;r.classList.add('show')});
+</script>
+</body>
+</html>

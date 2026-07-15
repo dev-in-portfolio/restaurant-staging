@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen's Soul Food - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">Q</div>
+        <h1 class="brand-name">
+          Queen's Soul Food
+          <span>Charlotte Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Royal Banquet Catering</h2>
+    <p class="page-subtitle">Feed your family reunion, birthday celebration, or corporate lunch with Queen's Soul Food generous Southern catering pans.</p>
+  </header>
+
+  <!-- Interactive Platter Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Banquet Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required pans and total cost.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-purple); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">30</span> people</label>
+        <input type="range" id="guests-count" min="10" max="120" value="30" step="5" style="width: 100%; accent-color: var(--color-purple); cursor: pointer;" oninput="calculateFeast(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🍖</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Oxtail Dinner Pans</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-purple);" id="oxtail-pans">3 Pans</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~12 per pan ($120/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🍗</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Fried Wing Pans</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-purple);" id="wing-pans">3 Pans</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">30 wings per pan ($50/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🧀</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Baked Mac n Cheese</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-purple);" id="mac-pans">2 Pans</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~15 per pan ($50/ea)</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.05em;">Estimated Banquet Total</span>
+        <h4 style="font-size: 3rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$610.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 3 Oxtail pans, 3 Fried Wing pans, and 2 Baked Mac pans.</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. All catering orders require 48 hours notice. pickup-only at our East Independence Boulevard counter.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="30" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(139, 92, 246, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of your request (Sweet tea jugs, specific cake selections, dietary concerns)</label>
+              <textarea id="notes" placeholder="e.g. Please make 2 oxtail pans and 1 pan smothered chops. 1 whole strawberry cake, and 2 pitchers Sweet Tea..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">👑</div>
+          <h3 class="success-title">Feast Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Queen's catering coordinator will review details and call you to arrange pricing and pick-up details.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>7308 E Independence Blvd<br>Charlotte, NC 28227</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 9:00 PM<br>Sat - Sun: 11:00 AM - 9:30 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 563-1106<br>Dine-In Booths & Takeout Counter</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Queen's Soul Food. Charlotte comfort landmark since 2012.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateFeast(guests) {
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Calculation logic
+      const oxtails = Math.ceil(guests / 12);
+      const wings = Math.ceil(guests * 3 / 30);
+      const mac = Math.ceil(guests / 15);
+
+      const totalCost = (oxtails * 120) + (wings * 50) + (mac * 50);
+
+      document.getElementById('oxtail-pans').innerText = `${oxtails} ${oxtails === 1 ? 'Pan' : 'Pans'}`;
+      document.getElementById('wing-pans').innerText = `${wings} ${wings === 1 ? 'Pan' : 'Pans'}`;
+      document.getElementById('mac-pans').innerText = `${mac} ${mac === 1 ? 'Pan' : 'Pans'}`;
+      document.getElementById('feast-cost').innerText = `$${totalCost.toFixed(2)}`;
+      document.getElementById('feast-summary').innerText = `Includes ${oxtails} Oxtail ${oxtails === 1 ? 'pan' : 'pans'}, ${wings} Fried Wing ${wings === 1 ? 'pan' : 'pans'}, and ${mac} Baked Mac ${mac === 1 ? 'pan' : 'pans'}.`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your royal soul food catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
+    });
+  </script>
+</body>
+</html>

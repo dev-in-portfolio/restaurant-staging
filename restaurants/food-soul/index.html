@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food For Your Soul CLT - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">S</div>
+        <h1 class="brand-name">
+          Food For Your Soul
+          <span>CLT Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Hero Banner Section -->
+  <header class="hero-section" style="background-image: url('hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Viral Cornbread Bowl Originator</span>
+        <h2 class="hero-title">Food For Your Soul CLT</h2>
+        <p class="hero-desc">"Savor the rich comfort of Southern soul food, featuring our signature honey-drizzled cornbread bowls loaded with lamb chops, wings, and mac & cheese."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- To-Go Pickup Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Operating Out of City Kitch Thrift Road. Digital Orders & Carry-Out Only.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Home Cooking for the Soul</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Located inside City Kitch on Thrift Road in Charlotte's West End, Food For Your Soul CLT is famous for inventing the **Cornbread Bowl**. We take a freshly baked, honey-glazed cornbread cake, hollow it into a bowl, and load it with slow-cooked collards, sweet candied yams, four-cheese mac, and gourmet meats.
+      </p>
+      <a href="about.html" style="color: var(--color-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Culinary Journey ➔
+      </a>
+    </section>
+
+    <!-- Interactive Cornbread Bowl Builder Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Cornbread Bowl Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-build your viral cornbread bowl. Select a batter style, choose your meat topping, and watch it fill.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Bowl -->
+        <div class="bowl-canvas">
+          <div class="bowl-wireframe">
+            <div class="parsley-garnish" id="bowl-parsley"></div>
+            <div class="bowl-fill" id="bowl-fill-layer"></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>Select Cornbread Base</label>
+            <div class="option-grid" id="batter-options">
+              <button class="option-btn active" onclick="mixBowl('sweet', '#fbbf24', 'Traditional Sweet Cornbread')">Traditional Sweet</button>
+              <button class="option-btn" onclick="mixBowl('jalapeno', '#eab308', 'Jalapeño Cheddar Cornbread')">Jalapeño Cheddar</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>Select Meat Topping</label>
+            <div class="option-grid" id="topping-options">
+              <button class="option-btn active" onclick="setMeat('chops', 17.00, 'Honey Glazed Lamb Chops')">Lamb Chops ($17)</button>
+              <button class="option-btn" onclick="setMeat('salmon', 16.00, 'Bourbon-Glazed Salmon')">Bourbon Salmon ($16)</button>
+              <button class="option-btn" onclick="setMeat('wings', 14.00, 'Crispy Fried Chicken Wings')">Fried Wings ($14)</button>
+              <button class="option-btn" onclick="setMeat('turkey', 15.00, 'Smothered Turkey Wings')">Turkey Wings ($15)</button>
+            </div>
+          </div>
+
+          <div class="result-card" style="min-height: auto; padding: 1.5rem;" id="mixer-output">
+            <h4 style="color: #ffffff; margin-bottom: 0.4rem;" id="mixer-title">Sweet Cornbread Bowl with Honey Glazed Lamb Chops</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="mixer-desc">A sweet honeycomb cake bowl layered with baked Mac & Cheese, Candied Yams, and Collard Greens, topped with Honey Glazed Lamb Chops.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Soul Food Availability Timer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From loaded cornbread bowls and mac bakes to sweet banana pudding desserts. Click below to check if our woks are currently cooking.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Check Cooking Hours
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>2200 Thrift Road<br>Charlotte, NC 28208</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Tue: Closed<br>Wed - Thu: 12:00 PM - 8:00 PM<br>Fri - Sat: 12:00 PM - 9:00 PM<br>Sun: 12:00 PM - 5:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Takeout & Pickup Only | City Kitch Kitchen Space<br>Instagram: @foodforyoursoulclt</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Food For Your Soul CLT. Charlotte soul food landmark.</p>
+    </div>
+  </footer>
+
+  <script>
+    const batters = {
+      sweet: {
+        title: "Sweet Cornbread Bowl",
+        color: "#fbbf24"
+      },
+      jalapeno: {
+        title: "Jalapeño Cheddar Cornbread Bowl",
+        color: "#eab308"
+      }
+    };
+
+    const toppings = {
+      chops: {
+        title: "Honey Glazed Lamb Chops",
+        price: 17.00,
+        desc: "Two juicy rib chops seared in garlic butter and glazed in local honey sauce, served over baked Mac & Cheese, candied yams, and turkey collard greens inside our cornbread bowl."
+      },
+      salmon: {
+        title: "Bourbon-Glazed Salmon",
+        price: 16.00,
+        desc: "Fresh Atlantic salmon fillet pan-seared and glazed in a sweet bourbon molasses reduction, layered inside the cornbread bowl with mac and collards."
+      },
+      wings: {
+        title: "Crispy Fried Chicken Wings",
+        price: 14.00,
+        desc: "Three jumbo Southern fried chicken wings seasoned in our signature flour dredge, fried golden, placed hot inside the cornbread bowl with candied yams."
+      },
+      turkey: {
+        title: "Smothered Turkey Wings",
+        price: 15.00,
+        desc: "Slow-baked jumbo turkey wing smothered in rich onion-garlic poultry gravy until fall-off-the-bone tender, layered with baked mac inside our cornbread bowl."
+      }
+    };
+
+    let activeBatter = 'sweet';
+    let activeMeat = 'chops';
+
+    function mixBowl(key, color, title) {
+      const buttons = document.getElementById('batter-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      activeBatter = key;
+      updateDisplay();
+    }
+
+    function setMeat(key, price, title) {
+      const buttons = document.getElementById('topping-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      activeMeat = key;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const fillLayer = document.getElementById('bowl-fill-layer');
+      const parsley = document.getElementById('bowl-parsley');
+      
+      fillLayer.style.height = '0%';
+      parsley.style.opacity = '0';
+      
+      setTimeout(() => {
+        const batterData = batters[activeBatter];
+        const meatData = toppings[activeMeat];
+        
+        fillLayer.style.background = `linear-gradient(180deg, ${batterData.color} 0%, #d97706 100%)`;
+        fillLayer.style.height = '70%';
+        parsley.style.opacity = '1';
+        
+        document.getElementById('mixer-title').innerText = `${batterData.title} with ${meatData.title}`;
+        document.getElementById('mixer-desc').innerText = meatData.desc;
+      }, 300);
+    }
+
+    // Trigger initial fill on page load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('bowl-fill-layer').style.height = '70%';
+        document.getElementById('bowl-parsley').style.opacity = '1';
+      }, 500);
+    });
+  </script>
+</body>
+</html>

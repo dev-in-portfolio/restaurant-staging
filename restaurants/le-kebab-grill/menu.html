@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Le Kebab Grill Charlotte</title>
+  <meta name="description" content="Explore our menu of authentic Mediterranean dishes at Le Kebab Grill in Charlotte. Falafel, shawarma, kebabs, hummus, baba ghanouj, lamb chops, and desserts. Build your own kebab combo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    :root{--gold:#e8b84b;--gold-light:#f5d98c;--gold-dark:#b8862a;--red:#8b1a1a;--red-dark:#5c0e0e;--cream:#faf5eb;--charcoal:#1a1a1a;--charcoal-light:#2d2d2d}
+    .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--charcoal)}
+    .logo span{color:var(--gold)}
+    .nav-links a{color:var(--charcoal);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem 0}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-dark);text-decoration:none}
+    .page-hero{background:linear-gradient(135deg,var(--charcoal) 0%,var(--charcoal-light) 100%);padding:4rem 0;text-align:center;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--red),var(--gold))}
+    .page-hero h1{color:var(--cream);margin-bottom:.5rem}
+    .page-hero h1 span{color:var(--gold)}
+    .page-hero p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto}
+    .menu-section{padding:4rem 0}
+    .menu-section:nth-child(even){background:var(--cream)}
+    .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+    .menu-item{background:var(--cream);border-radius:8px;padding:1.5rem;border-left:4px solid var(--gold);transition:transform .2s}
+    .menu-item:hover{transform:translateX(4px)}
+    .menu-section:nth-child(even) .menu-item{background:#fff}
+    .menu-item-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.35rem}
+    .menu-item-header h4{font-size:1.05rem;font-weight:600}
+    .menu-item-header .price{font-weight:700;color:var(--red);font-size:1.05rem}
+    .menu-item p{font-size:.9rem;color:#555;line-height:1.5}
+    .badge{display:inline-block;background:var(--gold);color:var(--charcoal);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:20px;margin-bottom:.5rem}
+    .badge-red{background:var(--red);color:#fff}
+    .combo-builder{background:var(--charcoal);color:var(--cream);border-radius:16px;padding:3rem;margin:3rem 0}
+    .combo-builder h2{color:var(--gold);text-align:center;margin-bottom:.5rem}
+    .combo-builder > p{text-align:center;color:rgba(255,255,255,.7);margin-bottom:2rem}
+    .builder-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+    .builder-step h3{font-size:1.1rem;color:var(--gold);margin-bottom:1rem;font-weight:600}
+    .builder-step h3 small{font-size:.8rem;color:rgba(255,255,255,.5);font-weight:400}
+    .option-btn{display:block;width:100%;padding:12px 16px;margin-bottom:8px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:8px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;cursor:pointer;transition:all .2s;text-align:left}
+    .option-btn:hover{background:rgba(255,255,255,.15);border-color:var(--gold)}
+    .option-btn.selected{background:rgba(232,184,75,.2);border-color:var(--gold);color:var(--gold)}
+    .option-btn .opt-price{float:right;color:rgba(255,255,255,.5);font-size:.8rem}
+    .option-btn.selected .opt-price{color:var(--gold-light)}
+    .builder-summary{background:rgba(255,255,255,.05);border-radius:12px;padding:2rem;margin-top:2rem;border:1px solid rgba(255,255,255,.1)}
+    .builder-summary h3{color:var(--gold);margin-bottom:1rem}
+    .builder-summary .summary-line{display:flex;justify-content:space-between;padding:.35rem 0;font-size:.95rem}
+    .builder-summary .summary-line .label{color:rgba(255,255,255,.6)}
+    .builder-summary .summary-line .value{color:var(--cream);font-weight:500}
+    .builder-summary .total-line{border-top:1px solid rgba(255,255,255,.2);margin-top:.75rem;padding-top:.75rem;display:flex;justify-content:space-between;font-size:1.15rem;font-weight:700}
+    .builder-summary .total-line .total-price{color:var(--gold)}
+    .combo-btn{display:inline-block;padding:14px 40px;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .25s;background:var(--gold);color:var(--charcoal);margin-top:1rem;width:100%}
+    .combo-btn:hover{background:var(--gold-light)}
+    .combo-btn:disabled{opacity:.5;cursor:not-allowed}
+    .combo-feedback{text-align:center;margin-top:.75rem;font-weight:600;color:var(--gold);display:none}
+    .site-footer{background:var(--charcoal);color:var(--cream);padding:3rem 0}
+    .site-footer a{color:var(--gold)}
+    .site-footer a:hover{color:var(--gold-light)}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+    .footer-grid h4{font-size:1rem;margin-bottom:.75rem;color:var(--gold)}
+    .footer-grid ul{list-style:none;font-size:.9rem}
+    .footer-grid ul li{margin-bottom:.35rem}
+    .footer-grid p{font-size:.85rem;opacity:.7}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;opacity:.6}
+    .disclosure{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+    .disclosure a{color:var(--gold)}
+    @media(max-width:768px){.menu-grid,.builder-steps,.footer-grid{grid-template-columns:1fr}.nav-links{display:none}.combo-builder{padding:2rem 1.5rem}}
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Le Kebab <span>Grill</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      <li><a href="flavor-guide.html">Flavor Guide</a></li></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our <span>Menu</span></h1>
+      <p>Freshly prepared Mediterranean classics &mdash; made to order with family recipes</p>
+    </div>
+  </section>
+
+  <!-- Starters -->
+  <section class="menu-section" aria-labelledby="starters-heading">
+    <div class="container">
+      <span class="badge">Starters</span>
+      <h2 id="starters-heading" class="section-title" style="text-align:left;margin-bottom:0">Starters &amp; <span>Shareables</span></h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Hummus</h4>
+            <span class="price">$7.99</span>
+          </div>
+          <p>Smooth chickpea dip blended with tahini, olive oil, lemon, and warm pita.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Baba Ghanouj</h4>
+            <span class="price">$8.99</span>
+          </div>
+          <p>Smoky roasted eggplant dip with tahini, garlic, and lemon. Served with pita.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Falafel Plate (6pc)</h4>
+            <span class="price">$9.99</span>
+          </div>
+          <p>Crispy chickpea falafel balls served with tahini sauce and pickled turnips.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Grape Leaves</h4>
+            <span class="price">$8.99</span>
+          </div>
+          <p>Stuffed grape leaves with rice, herbs, and tender lamb, simmered in tomato broth.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Tabouli</h4>
+            <span class="price">$7.99</span>
+          </div>
+          <p>Fresh parsley, bulgur, tomato, mint, and lemon-olive oil dressing.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Fattoush Salad</h4>
+            <span class="price">$8.99</span>
+          </div>
+          <p>Mixed greens with crispy pita, tomato, cucumber, and sumac vinaigrette.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wraps -->
+  <section class="menu-section" aria-labelledby="wraps-heading">
+    <div class="container">
+      <span class="badge badge-red">Wraps</span>
+      <h2 id="wraps-heading" class="section-title" style="text-align:left;margin-bottom:0">Wraps &amp; <span>Sandwiches</span></h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Chicken Shawarma Wrap</h4>
+            <span class="price">$11.99</span>
+          </div>
+          <p>Marinated chicken shawarma in warm pita with garlic sauce, pickles, and fries.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Beef Shawarma Wrap</h4>
+            <span class="price">$12.99</span>
+          </div>
+          <p>Seasoned beef shawarma with tahini, tomatoes, onions, and pickled turnips.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Falafel Wrap</h4>
+            <span class="price">$9.99</span>
+          </div>
+          <p>Crispy falafel in pita with lettuce, tomato, onion, and tahini sauce.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Grilled Chicken Wrap</h4>
+            <span class="price">$11.99</span>
+          </div>
+          <p>Grilled marinated chicken breast with garlic sauce, lettuce, tomato, and fries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entrees / Kebabs -->
+  <section class="menu-section" aria-labelledby="entrees-heading">
+    <div class="container">
+      <span class="badge">Entr&eacute;es</span>
+      <h2 id="entrees-heading" class="section-title" style="text-align:left;margin-bottom:0">Kebabs &amp; <span>Entr&eacute;es</span></h2>
+      <p style="margin-bottom:1rem;color:#555">Served with rice, salad, and warm pita</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Chicken Kebab</h4>
+            <span class="price">$15.99</span>
+          </div>
+          <p>Marinated chicken breast skewered and grilled over open flame.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Kofta Kebab</h4>
+            <span class="price">$15.99</span>
+          </div>
+          <p>Hand-formed spiced ground beef and lamb with parsley and onions.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Beef Kebab</h4>
+            <span class="price">$16.99</span>
+          </div>
+          <p>Tender beef chunks marinated in traditional Mediterranean spices.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Lamb Kebab</h4>
+            <span class="price">$18.99</span>
+          </div>
+          <p>Succulent lamb seasoned with Jordanian herbs and grilled to perfection.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Chicken Shawarma Plate</h4>
+            <span class="price">$14.99</span>
+          </div>
+          <p>Slow-roasted chicken shawarma over rice with salad, garlic sauce, and pita.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Beef Shawarma Plate</h4>
+            <span class="price">$15.99</span>
+          </div>
+          <p>Seasoned beef shawarma over rice with tahini sauce, salad, and pita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef Specials -->
+  <section class="menu-section" aria-labelledby="specials-heading">
+    <div class="container">
+      <span class="badge badge-red">Chef Specials</span>
+      <h2 id="specials-heading" class="section-title" style="text-align:left;margin-bottom:0">Chef <span>Specials</span></h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Lamb Chops</h4>
+            <span class="price">$22.99</span>
+          </div>
+          <p>Grilled lamb chops marinated in herbs and garlic. Served with rice and grilled vegetables.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Mixed Grill Platter</h4>
+            <span class="price">$21.99</span>
+          </div>
+          <p>A sampler of chicken kebab, kofta kebab, and shawarma over rice with all the fixings.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Shish Tawook</h4>
+            <span class="price">$16.99</span>
+          </div>
+          <p>Marinated chicken chunks skewered and chargrilled, served with garlic sauce and rice.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Kebab Deluxe</h4>
+            <span class="price">$19.99</span>
+          </div>
+          <p>Your choice of two kebabs served with hummus, baba ghanouj, salad, and rice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desserts -->
+  <section class="menu-section" aria-labelledby="desserts-heading">
+    <div class="container">
+      <span class="badge">Desserts</span>
+      <h2 id="desserts-heading" class="section-title" style="text-align:left;margin-bottom:0"><span>Desserts</span> &amp; Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Baklava</h4>
+            <span class="price">$4.99</span>
+          </div>
+          <p>Layers of phyllo with walnuts and honey syrup. Made in-house daily.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Kunafa</h4>
+            <span class="price">$6.99</span>
+          </div>
+          <p>Shredded phyllo pastry with sweet cheese filling, drizzled with rose syrup.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Turkish Coffee</h4>
+            <span class="price">$3.99</span>
+          </div>
+          <p>Traditional Turkish coffee brewed and served in the classic style.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <h4>Mint Lemonade</h4>
+            <span class="price">$3.99</span>
+          </div>
+          <p>Fresh-squeezed lemonade blended with mint. Cool and refreshing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kebab Combo Builder -->
+  <section class="section" aria-labelledby="builder-heading">
+    <div class="container">
+      <div class="combo-builder" id="kebab-combo-builder">
+        <span class="badge" style="display:inline-block;margin:0 auto 1rem;text-align:center">&#127828; Build Your Own</span>
+        <h2 id="builder-heading">Kebab Combo <span style="color:var(--gold-light)">Builder</span></h2>
+        <p>Pick your protein, two sides, and a sauce. We'll handle the rest.</p>
+
+        <div class="builder-steps">
+          <div class="builder-step">
+            <h3>Step 1 <small>Protein</small></h3>
+            <button class="option-btn" data-group="protein" data-value="chicken" data-price="0">Chicken Kebab <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="protein" data-value="kofta" data-price="0">Kofta Kebab <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="protein" data-value="beef" data-price="1">Beef Kebab <span class="opt-price">+$1</span></button>
+            <button class="option-btn" data-group="protein" data-value="lamb" data-price="3">Lamb Kebab <span class="opt-price">+$3</span></button>
+          </div>
+
+          <div class="builder-step">
+            <h3>Step 2 <small>Pick 2 Sides</small></h3>
+            <button class="option-btn" data-group="sides" data-value="rice" data-price="0">Rice <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sides" data-value="salad" data-price="0">Garden Salad <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sides" data-value="hummus" data-price="1.5">Hummus <span class="opt-price">+$1.50</span></button>
+            <button class="option-btn" data-group="sides" data-value="fries" data-price="0">Fries <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sides" data-value="baba" data-price="1.5">Baba Ghanouj <span class="opt-price">+$1.50</span></button>
+            <button class="option-btn" data-group="sides" data-value="veggies" data-price="0">Grilled Veggies <span class="opt-price">+$0</span></button>
+          </div>
+
+          <div class="builder-step">
+            <h3>Step 3 <small>Sauce</small></h3>
+            <button class="option-btn" data-group="sauce" data-value="tahini" data-price="0">Tahini <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sauce" data-value="garlic" data-price="0">Garlic Sauce <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sauce" data-value="hot" data-price="0">Hot Sauce <span class="opt-price">+$0</span></button>
+            <button class="option-btn" data-group="sauce" data-value="white" data-price="0">White Sauce <span class="opt-price">+$0</span></button>
+          </div>
+        </div>
+
+        <div class="builder-summary" id="builder-summary">
+          <h3>&#127860; Your Combo</h3>
+          <div class="summary-line">
+            <span class="label">Protein</span>
+            <span class="value" id="summary-protein">&mdash;</span>
+          </div>
+          <div class="summary-line">
+            <span class="label">Side 1</span>
+            <span class="value" id="summary-side1">&mdash;</span>
+          </div>
+          <div class="summary-line">
+            <span class="label">Side 2</span>
+            <span class="value" id="summary-side2">&mdash;</span>
+          </div>
+          <div class="summary-line">
+            <span class="label">Sauce</span>
+            <span class="value" id="summary-sauce">&mdash;</span>
+          </div>
+          <div class="total-line">
+            <span>Total</span>
+            <span class="total-price" id="summary-total">$13.99</span>
+          </div>
+          <button class="combo-btn" id="combo-submit" disabled>Add to Order</button>
+          <div class="combo-feedback" id="combo-feedback">&#10003; Added to your order! (Demo)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Le Kebab Grill</h4>
+        <p>Fresh Authentic Mediterranean Cuisine.<br>Jordanian-owned &middot; Family recipes &middot; Halal</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon&ndash;Thu 11:30am&ndash;9pm<br>Fri&ndash;Sat 11:30am&ndash;9:30pm<br>Sun 11:30am&ndash;9pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://www.instagram.com/lekebabgrill" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.facebook.com/lekebabgrill" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Le Kebab Grill &mdash; Charlotte, NC
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation &mdash; not operated by the restaurant. <a href="https://lekebabgrill.com" target="_blank" rel="noopener">Visit the official site</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  var basePrice = 13.99;
+  var selections = { protein: null, sides: [], sauce: null };
+  var btnMap = { chicken: 'Chicken Kebab', kofta: 'Kofta Kebab', beef: 'Beef Kebab', lamb: 'Lamb Kebab',
+    rice: 'Rice', salad: 'Garden Salad', hummus: 'Hummus', fries: 'Fries', baba: 'Baba Ghanouj', veggies: 'Grilled Veggies',
+    tahini: 'Tahini', garlic: 'Garlic Sauce', hot: 'Hot Sauce', white: 'White Sauce' };
+
+  function updateSummary() {
+    document.getElementById('summary-protein').textContent = selections.protein ? btnMap[selections.protein] : '\u2014';
+    document.getElementById('summary-side1').textContent = selections.sides[0] ? btnMap[selections.sides[0]] : '\u2014';
+    document.getElementById('summary-side2').textContent = selections.sides[1] ? btnMap[selections.sides[1]] : '\u2014';
+    document.getElementById('summary-sauce').textContent = selections.sauce ? btnMap[selections.sauce] : '\u2014';
+
+    var extras = 0;
+    document.querySelectorAll('.option-btn.selected').forEach(function(btn) {
+      extras += parseFloat(btn.getAttribute('data-price')) || 0;
+    });
+    var total = basePrice + extras;
+    document.getElementById('summary-total').textContent = '$' + total.toFixed(2);
+
+    var ready = selections.protein && selections.sides.length === 2 && selections.sauce;
+    document.getElementById('combo-submit').disabled = !ready;
+  }
+
+  document.querySelectorAll('.option-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var group = this.getAttribute('data-group');
+      var value = this.getAttribute('data-value');
+
+      if (group === 'protein') {
+        document.querySelectorAll('.option-btn[data-group="protein"]').forEach(function(b) { b.classList.remove('selected'); });
+        this.classList.add('selected');
+        selections.protein = value;
+      } else if (group === 'sides') {
+        var currentSides = document.querySelectorAll('.option-btn[data-group="sides"].selected');
+        if (this.classList.contains('selected')) {
+          this.classList.remove('selected');
+          selections.sides = selections.sides.filter(function(v) { return v !== value; });
+        } else if (currentSides.length < 2) {
+          this.classList.add('selected');
+          selections.sides.push(value);
+        }
+      } else if (group === 'sauce') {
+        document.querySelectorAll('.option-btn[data-group="sauce"]').forEach(function(b) { b.classList.remove('selected'); });
+        this.classList.add('selected');
+        selections.sauce = value;
+      }
+      updateSummary();
+    });
+  });
+
+  document.getElementById('combo-submit').addEventListener('click', function() {
+    var feedback = document.getElementById('combo-feedback');
+    feedback.style.display = 'block';
+    this.disabled = true;
+    this.textContent = '\u2713 Added!';
+    var btn = this;
+    setTimeout(function() {
+      feedback.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Add to Order';
+    }, 2000);
+  });
+})();
+</script>
+</body>
+</html>

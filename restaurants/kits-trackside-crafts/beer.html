@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beer Menu — Kit's Trackside Crafts</title>
+  <meta name="description" content="Explore 24 rotating taps and 350+ bottles & cans at Kit's Trackside Crafts. Use our Beer Mood Matcher to find your perfect pour.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Kit's Trackside Crafts</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="beer.html" class="active">Beer</a>
+        <a href="story.html">Story</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="flight-planner.html">Flight Planner</a>
+</nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Our Beer</h1>
+        <p class="tagline">24 taps. 350+ bottles. Infinite possibilities.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="beer-category">
+          <h3>🍺 Rotating Tap List</h3>
+          <p>Our 24 taps feature a curated mix of local favorites, seasonal specialties, and rare finds. The list changes weekly — ask your bartender what's pouring today.</p>
+          <ul class="beer-list">
+            <li><span><span class="beer-name">IPA</span> — 4–6 rotating</span><span class="beer-note">Hazy, West Coast, Session</span></li>
+            <li><span><span class="beer-name">Stout / Porter</span> — 2–4 rotating</span><span class="beer-note">Imperial, Coffee, Pastry</span></li>
+            <li><span><span class="beer-name">Sour / Wild</span> — 2–3 rotating</span><span class="beer-note">Gose, Kettle Sour, Barrel-Aged</span></li>
+            <li><span><span class="beer-name">Lager / Pilsner</span> — 2–3 rotating</span><span class="beer-note">German, Czech, Italian</span></li>
+            <li><span><span class="beer-name">Wheat / Belgian</span> — 2–3 rotating</span><span class="beer-note">Wit, Hefe, Tripel, Dubbel</span></li>
+            <li><span><span class="beer-name">Pale Ale / Blonde</span> — 1–2 rotating</span><span class="beer-note">American, English, Blonde</span></li>
+            <li><span><span class="beer-name">Seasonal / Specialty</span> — 2–4 rotating</span><span class="beer-note">One-offs, collabs, firkin</span></li>
+          </ul>
+        </div>
+
+        <div class="beer-category">
+          <h3>🏺 Bottles &amp; Cans — To-Go or On-Site</h3>
+          <p>350+ options from around the world. Mix &amp; match any 4, 6, or 12 to build your own custom pack. Not sure what to pick? Our Cicerone is happy to help.</p>
+          <ul class="beer-list">
+            <li><span><span class="beer-name">Local NC Breweries</span></span><span class="beer-note">Burial, Wicked Weed, NoDa, Highland, more</span></li>
+            <li><span><span class="beer-name">Domestic Craft</span></span><span class="beer-note">Tree House, Other Half, Russian River, The Alchemist</span></li>
+            <li><span><span class="beer-name">Imports</span></span><span class="beer-note">Belgian, German, British, Japanese</span></li>
+            <li><span><span class="beer-name">Rare &amp; Limited</span></span><span class="beer-note">Bourbon County, Cantillon, Hill Farmstead</span></li>
+          </ul>
+        </div>
+
+        <div class="beer-category">
+          <h3>🍷 Wine, Mead &amp; Cider</h3>
+          <p>Not a beer drinker? No problem. We carry a rotating selection of fine wines, traditional meads, and hard ciders — available by the glass or bottle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Beer Mood Matcher</h2>
+        <p class="section-sub">Not sure what to drink? Tell us how you're feeling and we'll find the perfect pour.</p>
+
+        <div class="quiz-section" id="beerMoodForm">
+          <h3>What's Your Beer Mood?</h3>
+          <p class="quiz-intro">Pick a flavor profile and a vibe — we'll recommend something from our current lineup.</p>
+
+          <div class="quiz-step">
+            <label>I'm in the mood for something…</label>
+            <div class="quiz-options">
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-hoppy" value="hoppy">
+                <label for="mood-hoppy">🌲 Hoppy &amp; Bitter</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-malty" value="malty">
+                <label for="mood-malty">🌾 Malty &amp; Sweet</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-dark" value="dark">
+                <label for="mood-dark">🖤 Dark &amp; Roasty</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-crisp" value="crisp">
+                <label for="mood-crisp">❄️ Light &amp; Crisp</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-sour" value="sour">
+                <label for="mood-sour">🍋 Sour &amp; Funky</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="mood" id="mood-boozy" value="boozy">
+                <label for="mood-boozy">💪 Bold &amp; Boozy</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-step">
+            <label>I want…</label>
+            <div class="quiz-options">
+              <div class="quiz-option">
+                <input type="radio" name="vibe" id="vibe-new" value="new">
+                <label for="vibe-new">✨ Something New</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="vibe" id="vibe-classic" value="classic">
+                <label for="vibe-classic">⭐ A Classic Favorite</label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" name="vibe" id="vibe-food" value="food">
+                <label for="vibe-food">🍽️ Pairs with Food</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-result" id="moodResult">
+            <p style="color:var(--text-muted);margin:0">Select your mood and vibe to get a personalized recommendation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt text-center">
+      <div class="container">
+        <h2 class="section-title">Talk to a Cicerone</h2>
+        <p style="color:var(--text-muted);max-width:500px;margin:0 auto 1.5rem">Our Certified Cicerone is on staff to help you navigate our selection. Whether you're looking for a specific style or want to try something new, just ask.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Kit's Trackside Crafts</span>
+        <p>330 Main St, Pineville, NC 28134<br>(704) 889-0552</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="beer.html">Beer</a>
+        <a href="story.html">Story</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:tracksidecrafts@gmail.com">tracksidecrafts@gmail.com</a></p>
+        <p>Facebook: <a href="https://facebook.com/tracksidecrafts" target="_blank">@tracksidecrafts</a></p>
+        <p>Web: <a href="https://tracksidecrafts.com" target="_blank">tracksidecrafts.com</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Kit's Trackside Crafts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="disclosure-bar">
+    Unofficial concept presentation — not operated by the restaurant
+  </div>
+
+  <script src="../site-core.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

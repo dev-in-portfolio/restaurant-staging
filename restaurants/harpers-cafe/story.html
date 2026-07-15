@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · Harper's Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b81e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--navy:#1a2744;--muted:#8a7a6a;--gold:#c49a2a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#111;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(184,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a1520);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.timeline{position:relative;padding-left:2rem;margin:2rem 0}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(184,30,30,.2)}
+.timeline-item{position:relative;margin-bottom:2rem;padding-left:1.5rem}
+.timeline-item::before{content:'';position:absolute;left:-.4rem;top:.35rem;width:10px;height:10px;border-radius:50%;background:var(--red);border:2px solid var(--charcoal)}
+.timeline-item .year{font-family:'Fraunces',serif;color:var(--gold);font-weight:700;font-size:.95rem}
+.timeline-item .desc{font-size:.85rem;opacity:.55;line-height:1.5;margin:.2rem 0 0}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;margin-top:1.5rem}
+.value-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,30,30,.06);border-radius:10px;padding:1.5rem;text-align:center}
+.value-card .icon{font-size:2rem;display:block;margin-bottom:.5rem}
+.value-card h3{color:var(--red);font-size:.95rem;margin:0 0 .3rem}
+.value-card p{font-size:.8rem;opacity:.45;line-height:1.5;margin:0}
+footer{background:#111;color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(184,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Harper's Cafe</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Find Us</a>
+    <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Story</h1>
+  <p>35 years of flavor — and still going strong</p>
+</div>
+<section class="section">
+  <h2>How It All Began</h2>
+  <p class="note">From Woodlawn Road to Pineville — a Charlotte tradition</p>
+  <p style="font-size:.9rem;opacity:.55;line-height:1.7;max-width:720px">Harper's opened its doors in Charlotte in December of 1987 on Woodlawn Road. For decades, it was a beloved gathering place for Charlotteans seeking classic American fare, warm hospitality, and a menu full of signature dishes that became local legends. Harper's SouthPark opened in September of 1992, further cementing the family of restaurants as a Charlotte staple.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">1987</div>
+      <div class="desc">Harper's opens on Woodlawn Road in Charlotte — serving American classics with Southern hospitality</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">1992</div>
+      <div class="desc">Harper's SouthPark opens, becoming a destination for loyal Charlotte diners</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2000s–2020s</div>
+      <div class="desc">Decades of serving Chicken Supremes, Oriental salad, Black Bean Soup — dishes that defined Charlotte dining</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">May 2025</div>
+      <div class="desc">Harper's Cafe opens quietly at the Terrace at Park Place in Pineville — bringing back old favorites and introducing new breakfast items</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">Today</div>
+      <div class="desc">Now open for breakfast, lunch, early dinner, and Sunday brunch — still all about hospitality and quality</div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:rgba(255,255,255,.02)">
+  <h2>Our Values</h2>
+  <p class="note">What keeps Charlotte coming back for 35 years</p>
+  <div class="values-grid">
+    <div class="value-card">
+      <span class="icon">🤝</span>
+      <h3>Hospitality</h3>
+      <p>Genuine warmth and care for every guest who walks through our doors</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">🥘</span>
+      <h3>Quality</h3>
+      <p>Consistently great food made fresh, every time</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">🏙️</span>
+      <h3>Community</h3>
+      <p>Supporting Charlotte for 35 years — the city has returned the favor</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">📖</span>
+      <h3>Tradition</h3>
+      <p>Keeping the signature dishes alive while making new memories</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Harper's Cafe</strong><br>9101 Pineville-Matthews Road, Ste I, Pineville, NC 28134 · (704) 366-6688</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story of Alice Jules Coffee House — A historic Victorian coffeehouse in Monroe, NC, built around community, quality coffee and local charm.">
+  <title>Our Story — Alice Jules Coffee House</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+    :root {
+      --aj-cream: #faf6f0; --aj-warm: #f0e8dc; --aj-sage: #9a8c7e; --aj-mauve: #8b6f6f; --aj-gold: #c9a96e; --aj-dark: #3a2e2a; --aj-brown: #6b4f3c;
+      --aj-font: 'DM Sans', system-ui, sans-serif; --aj-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; } html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--aj-font); background: var(--aj-cream); color: var(--aj-dark); line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: .9rem 2rem; background: rgba(58,46,42,.93); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: .06em; color: var(--aj-cream); }
+    .nav-logo em { font-style: normal; color: var(--aj-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a { padding: .5rem .9rem; border-radius: .4rem; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: rgba(250,246,240,.7); transition: .2s; }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--aj-cream); }
+    .nav-shop { background: var(--aj-gold); color: var(--aj-dark) !important; border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--aj-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) { .nav-toggle { display: flex; } .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(58,46,42,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); } .nav-links.open { display: flex; } .nav-links a { padding: .7rem .9rem; } .nav-bar { padding: .75rem 1rem; } }
+
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      background: linear-gradient(135deg, #3a2e2a 0%, #5a3f32 50%, #7a5a48 100%);
+      color: var(--aj-cream); text-align: center;
+    }
+    .page-header h1 { font-family: var(--aj-serif); font-size: clamp(2rem,4.5vw,3rem); font-weight: 400; margin: 0 0 .4rem; }
+    .page-header p { color: rgba(250,246,240,.55); max-width: 480px; margin: 0 auto; }
+
+    .story-content { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .story-section { margin-bottom: 2.5rem; }
+    .story-section h2 { font-family: var(--aj-serif); font-size: 1.5rem; font-weight: 400; margin: 0 0 .75rem; color: var(--aj-brown); }
+    .story-section p { margin-bottom: 1rem; color: rgba(58,46,42,.68); font-size: 1rem; }
+    .story-section .lead { font-size: 1.08rem; color: var(--aj-dark); font-weight: 500; }
+
+    .pullquote {
+      font-family: var(--aj-serif); font-size: 1.3rem; font-style: italic;
+      text-align: center; padding: 2rem 1.5rem;
+      border-top: 2px solid var(--aj-gold); border-bottom: 2px solid var(--aj-gold);
+      margin: 2.5rem 0; color: var(--aj-brown);
+    }
+
+    .value-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem; margin: 2.5rem 0; }
+    .value-item { text-align: center; padding: 1.5rem; }
+    .value-item .icon { font-size: 2rem; margin-bottom: .5rem; }
+    .value-item h3 { font-size: .95rem; font-weight: 700; color: var(--aj-dark); margin-bottom: .25rem; }
+    .value-item p { font-size: .85rem; color: rgba(58,46,42,.5); }
+
+    .footer { background: var(--aj-dark); border-top: 1px solid rgba(255,255,255,.06); padding: 3rem 2rem 2rem; color: rgba(250,246,240,.45); font-size: .82rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--aj-cream); font-size: .82rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    .footer a { color: rgba(250,246,240,.45); transition: .2s; }
+    .footer a:hover { color: var(--aj-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+    .concept-bar { background: var(--aj-gold); color: var(--aj-dark); }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/alice-jules-coffee-house/" class="nav-logo">Alice Jules <em>Coffee House</em></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="/alice-jules-coffee-house/">Home</a>
+      <a href="/alice-jules-coffee-house/menu.html">Menu</a>
+      <a href="/alice-jules-coffee-house/story.html">Our Story</a>
+      <a href="/alice-jules-coffee-house/shop.html">Coffee &amp; Retail</a>
+      <a href="/alice-jules-coffee-house/visit.html">Visit</a>
+      <a href="/alice-jules-coffee-house/shop.html" class="nav-shop">Shop Coffee</a>
+      <a href="drink-lab.html">Drink Lab</a>
+  </div>
+</nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Our Story</h1>
+      <p>A Victorian house, a warm cup, and a community that feels like home.</p>
+    </div>
+
+    <div class="story-content">
+      <div class="story-section">
+        <p class="lead">Alice Jules Coffee House sits in a beautifully preserved Victorian home in the historic district of Monroe, North Carolina &#8212; a quiet alternative to the drive-thru and the chain.</p>
+        <p>The building itself sets the tone: hardwood floors, vintage trim, a porch that invites you to sit and stay. Inside, cognac-colored stools, cozy nooks, and rotating displays of local art make every visit feel personal. It&#8217;s the kind of place where the owner might remember your order.</p>
+        <p>Every day starts with three fresh roasts: Alice&#8217;s House Brew, a flavored roast, and a bold roast. The espresso drinks are hand-pulled. The pastries come from local bakeries. The syrups are flavored with care, not from a wholesale catalog.</p>
+      </div>
+
+      <div class="pullquote">&#8220;Where the coffee is brewed especially for YOU.&#8221;</div>
+
+      <div class="story-section">
+        <h2>Community First</h2>
+        <p>Alice Jules is more than a coffee shop &#8212; it&#8217;s a community hub. Local artists display their work on the walls. Handmade jewelry and gifts from Monroe makers are sold near the counter. The shop hosts and supports local events, from holiday gatherings to fundraisers.</p>
+        <p>Regulars stop in for the Mr. Darcy (English toffee latte) and stay for the conversation. First-timers are greeted like returning friends. The loyalty program rewards visits, but the real draw is the atmosphere: warm, unhurried, and unmistakably local.</p>
+      </div>
+
+      <div class="value-row">
+        <div class="value-item">
+          <div class="icon">&#9749;</div>
+          <h3>Fresh Roasts Daily</h3>
+          <p>House blend, flavored and bold &#8212; brewed fresh every morning.</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">&#127963;</div>
+          <h3>Historic Home</h3>
+          <p>A lovingly preserved Victorian in Monroe&#8217;s historic district.</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">&#127912;</div>
+          <h3>Local Art &amp; Gifts</h3>
+          <p>Supporting Monroe makers, artists and small-batch creators.</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">&#127860;</div>
+          <h3>Local Bakeries</h3>
+          <p>Partnering with nearby bakeries for fresh pastries daily.</p>
+        </div>
+      </div>
+
+      <div class="story-section">
+        <h2>More Than a Cup</h2>
+        <p>Alice Jules also sells its own coffee by the bag &#8212; whole bean or ground &#8212; so you can take the taste home. The retail selection includes local honey, handmade mugs, and gifts you won&#8217;t find at a chain.</p>
+        <p>Whether you stop in for a morning drip coffee, an afternoon blended smoothie, or a weekend chai latte with a pastry, the experience is the same: a small, independent coffeehouse that takes its coffee seriously and its customers personally.</p>
+        <p style="color:var(--aj-mauve);font-weight:600;font-style:italic">Come sit a while. You&#8217;re welcome here.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col"><h4>Alice Jules Coffee House</h4><p>204 Lancaster Ave #1</p><p>Monroe, NC 28112</p><p><a href="tel:7042927777">704-292-7777</a></p><div class="footer-social"><a href="https://www.instagram.com/alicejulescoffee" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.facebook.com/Alice-Jules-Coffee-House-100865176624854" target="_blank" rel="noopener" aria-label="Facebook">FB</a></div></div>
+      <div class="footer-col"><h4>Pages</h4><p><a href="/alice-jules-coffee-house/menu.html">Menu</a></p><p><a href="/alice-jules-coffee-house/story.html">Our Story</a></p><p><a href="/alice-jules-coffee-house/shop.html">Coffee &amp; Retail</a></p><p><a href="/alice-jules-coffee-house/visit.html">Visit</a></p></div>
+      <div class="footer-col"><h4>Hours</h4><p>Mon&#8211;Fri: 6:30am&#8211;6pm</p><p>Sat&#8211;Sun: 8am&#8211;1pm</p></div>
+    </div>
+    <div class="footer-bottom"><p>This is an unofficial concept presentation and is not affiliated with or operated by Alice Jules Coffee House.</p></div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+  <script src="../site-core.js"></script>
+</body>
+</html>

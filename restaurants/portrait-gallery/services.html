@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Portrait Gallery - Historic Matthews | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
+        <h1 class="brand-name">
+          The Portrait Gallery
+          <span>Matthews, NC</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Catering & Private Events</h2>
+    <p class="page-subtitle">Elevate your next gathering with bespoke culinary curation and artisan cocktail service.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="gallery-frame-card">
+        <h3 class="exhibition-title">Lounge Venue Buyouts</h3>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Host your wedding reception, rehearsal dinner, or corporate celebration inside our intimate historic brick gallery lounge. We accommodate buyouts up to 75 guests, including exclusive bar access, custom music pairing, and private staff.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="gallery-frame-card">
+        <h3 class="exhibition-title">Artisan Off-Site Catering</h3>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Bring our kitchen to your home or office. We design tailored catering menus featuring our signature cold and warm small plates, grazing boards, and premium pairings, complete with server presentation.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="gallery-frame-card">
+        <h3 class="exhibition-title">Private Mixology Exhibition</h3>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Perfect for birthdays or team building. Rent our main bar area for an afternoon and let our head mixologists teach your party the science of craft infusions, syrups, and the technique behind shaking three of our legendary cocktails.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-frame-wrapper">
+      <div class="form-frame">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Service Inquiry</h2>
+        
+        <form id="inquiry-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-family: var(--font-sans); font-size: 0.95rem; margin-bottom: 2rem;">Please submit your event details below, and our curation manager will respond within 24 hours.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="service-type">Service Required</label>
+              <select id="service-type" required>
+                <option value="buyout">Lounge Venue Buyout</option>
+                <option value="catering">Off-Site Small Plates Catering</option>
+                <option value="mixology">Private Mixology Exhibition</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Estimated Date</label>
+              <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="message">Event Curation Notes (Guests count, preferences)</label>
+              <textarea id="message" required placeholder="Tell us about your event..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Curation Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">⚜</div>
+          <h3 class="success-title">Inquiry Dispatched!</h3>
+          <p class="success-msg" id="success-message">We have received your event details and will review it shortly. Thank you.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Location</h3>
+        <p>118 E. Charles St.<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tuesday - Thursday: 5:00 PM - 9:00 PM<br>Friday - Saturday: 5:00 PM - 10:00 PM<br>Sunday - Monday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Contact</h3>
+        <p>Phone: (704) 369-9982<br>Email: info@pgmatthews.com</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 The Portrait Gallery Restaurant & Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle inquiry submissions
+    const form = document.getElementById('inquiry-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your inquiry has been routed to our event planner. We will contact you at <strong>${email}</strong> soon.`;
+    });
+  </script>
+</body>
+</html>

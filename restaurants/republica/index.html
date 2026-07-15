@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>República Restaurant & Lounge - Matthews, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">R</div>
+        <h1 class="brand-name">
+          República
+          <span>Restaurant & Lounge</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-table.html">Flavor Table</a>
+  </div>
+</nav>
+
+  <!-- Hero Banner Section -->
+  <header class="hero-section" style="background-image: url('hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Dominican Gourmet & Night Lounge</span>
+        <h2 class="hero-title">Gourmet Dominican Kitchen</h2>
+        <p class="hero-desc">"Savor the rich Caribbean culinary arts, from garlic-mashed crispy pork plantain mofongos to late-night hand-shaken tropical rum cocktails."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- To-Go Pickup Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Call-Ahead Pickup Takeout: (704) 246-8073. Dining Room & Cocktail Lounge.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">The Spirit of the Caribbean</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Located on East Independence Boulevard, República Restaurant & Lounge brings Dominican gourmet dining to Matthews. We hand-craft traditional staples like Sancocho stews, crispy pork Mofonguitos, and Chimi burgers with a high-end culinary touch, transforming into a vibrant lounge with live music and tropical cocktails on weekends.
+      </p>
+      <a href="about.html" style="color: var(--color-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-blue); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Rum & Tropical Cocktail Mixer Panel -->
+    <section class="interactive-panel">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Dominican Cocktail Mixer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Mix your virtual Caribbean drink. Select a beverage base, slide in your rum shots, and see your glass fill up.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Glass -->
+        <div class="cocktail-canvas">
+          <div class="cocktail-glass-wireframe">
+            <div class="cherry-garnish"></div>
+            <div class="cocktail-fill" id="cocktail-fill-layer"></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="mofongo-controls">
+          <div class="control-group">
+            <label>Select Beverage Base</label>
+            <div class="option-grid" id="beverage-options">
+              <button class="option-btn active" onclick="mixBeverage('ms', '#fed7aa', 'Morir Soñando Milk-Orange')">Morir Soñando</button>
+              <button class="option-btn" onclick="mixBeverage('sl', '#fef08a', 'Santo Libre (Rum & Lime)')">Santo Libre</button>
+              <button class="option-btn" onclick="mixBeverage('rp', '#f87171', 'Dominican Rum Punch')">Dominican Rum Punch</button>
+              <button class="option-btn" onclick="mixBeverage('pb', '#fbbf24', 'Presidente Cerveza')">Presidente Beer</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="rum-slider">Rum Shots Add-On</label>
+            <input type="range" id="rum-slider" min="0" max="3" value="1" style="width: 100%; accent-color: var(--color-blue); cursor: pointer;" oninput="adjustRum(this.value)">
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);" id="rum-label">Single Shot (Premium Dominican Rum)</p>
+          </div>
+
+          <div class="result-card" style="min-height: auto; padding: 1.5rem;" id="mixer-output">
+            <h4 style="color: #ffffff; margin-bottom: 0.4rem;" id="mixer-title">Morir Soñando Milk-Orange</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="mixer-desc">A classic Dominican sweet mocktail made with evaporated milk, cane sugar, shaved ice, and fresh orange juice.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Mofongo Customizer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From garlic-mashed crispy pork mofongos to slow-simmered Sancocho beef stews. Click below to view our complete menu board.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Launch Mofongo Customizer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>11315 E Independence Blvd<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sat: 11:00 AM - 2:00 AM<br>Sun: 11:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 246-8073<br>Dominican Gourmet | Lounge & Cocktails</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 República Restaurant & Lounge. Matthews culinary landmark.</p>
+    </div>
+  </footer>
+
+  <script>
+    const beverages = {
+      ms: {
+        title: "Morir Soñando Milk-Orange",
+        desc: "A classic Dominican sweet mocktail made with evaporated milk, cane sugar, shaved ice, and fresh orange juice. Velvety and delicious."
+      },
+      sl: {
+        title: "Santo Libre",
+        desc: "Dominican dark golden rum, fresh key lime juice, and sweet lemon-lime soda on the rocks. Crisp and carbonated."
+      },
+      rp: {
+        title: "Dominican Rum Punch",
+        desc: "A blend of dark rum, pineapple juice, passion fruit nectar, grenadine, and freshly squeezed orange juice. Tropical scarlet kick."
+      },
+      pb: {
+        title: "Presidente Cerveza",
+        desc: "The iconic, crispy Dominican pilsner beer served vestida de novia (wrapped in a dress of ice) directly from sub-zero drafts."
+      }
+    };
+
+    let activeBev = 'ms';
+    let activeColor = '#fed7aa';
+
+    function mixBeverage(key, color, title) {
+      const buttons = document.getElementById('beverage-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      activeBev = key;
+      activeColor = color;
+      
+      const fillLayer = document.getElementById('cocktail-fill-layer');
+      fillLayer.style.height = '0%';
+      
+      setTimeout(() => {
+        fillLayer.style.background = `linear-gradient(180deg, ${color} 0%, rgba(255,255,255,0.7) 100%)`;
+        fillLayer.style.height = '75%';
+        
+        const data = beverages[key];
+        document.getElementById('mixer-title').innerText = data.title;
+        document.getElementById('mixer-desc').innerText = data.desc;
+      }, 300);
+    }
+
+    function adjustRum(val) {
+      const label = document.getElementById('rum-label');
+      if (val == 0) {
+        label.innerText = "Virgin (Alcohol-Free Mocktail)";
+      } else if (val == 1) {
+        label.innerText = "Single Shot (Premium Dominican Rum)";
+      } else if (val == 2) {
+        label.innerText = "Double Shot (Lounge strength)";
+      } else {
+        label.innerText = "Triple Shot (Brugal Extra Viejo Strength!)";
+      }
+    }
+
+    // Trigger initial fill on page load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('cocktail-fill-layer').style.height = '75%';
+      }, 500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenian's Keep · NoDa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--green:#1a3320;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#0d0d0d;--wood:#5c3d2e;--muted:#7a8a7a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--green);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,.12)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:80vh;background:linear-gradient(135deg,#1a3320,#0d0d0d 50%,#2a1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,168,76,.05),transparent 70%);pointer-events:none}
+.hero h1{font-size:2.8rem;margin:0;color:var(--gold);line-height:1.15}
+.hero .tagline{font-size:1.1rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .sub{font-size:.92rem;opacity:.35;margin-bottom:1.8rem;max-width:500px}
+.hero .btn{display:inline-block;background:var(--gold);color:var(--charcoal);padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{background:#b8973a;transform:translateY(-2px)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.08);border-radius:10px;padding:1.75rem;transition:.25s;text-align:center}
+.feature-card:hover{border-color:rgba(201,168,76,.2);transform:translateY(-3px)}
+.feature-card .icon{font-size:2.2rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1.05rem;color:var(--gold);margin:0 0 .35rem}
+.feature-card p{font-size:.85rem;opacity:.5;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(201,168,76,.06)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold);display:block}
+.stat .label{font-size:.82rem;opacity:.4;margin-top:.3rem;display:block}
+.tagline-block{max-width:600px;margin:2rem auto;text-align:center;padding:2rem;border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
+.tagline-block .quote{font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;color:var(--gold);opacity:.7}
+.tagline-block .attr{font-size:.82rem;opacity:.35;margin-top:.5rem}
+.cta-section{text-align:center;padding:3rem 2rem;background:linear-gradient(135deg,#1a3320,#0d0d0d)}
+.cta-section h2{color:var(--gold);margin:0 0 .5rem;border-left:none;padding:0}
+.cta-section p{opacity:.5;margin:0 0 1.5rem;font-style:italic}
+.cta-section .btn{display:inline-block;background:var(--gold);color:var(--charcoal);padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.cta-section .btn:hover{background:#b8973a}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Fenian's Keep</a>
+  <div class="nav-links">
+    <a href="drinks.html">Drinks</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+<header class="hero">
+  <div>
+    <h1>Fenian's Keep</h1>
+    <p class="tagline">Neighborhood Irish Pub</p>
+    <p class="sub">Where neighbors become friends, and friends become family</p>
+    <a href="drinks.html" class="btn">See the Drinks</a>
+  </div>
+</header>
+<section class="section">
+  <h2>Welcome to the Pub</h2>
+  <p class="subtitle">Your local watering hole in the heart of NoDa</p>
+  <div class="featured-grid">
+    <div class="feature-card"><span class="icon" aria-hidden="true">🥃</span><h3>Irish Whiskey</h3><p>A curated selection of Irish whiskey, from classic pours to rare reserves — neat, on the rocks or in your favorite cocktail</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍺</span><h3>Spirits &amp; Ales</h3><p>Perfectly poured Guinness, Irish beers, European imports and local Charlotte brews — plus an all-day everyday $5 shot special</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🎵</span><h3>Live Music &amp; Sports</h3><p>Live music nights, TVs for the big game and a jukebox that keeps the energy right — NoDa's living room after dark</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🤝</span><h3>Community Vibe</h3><p>No strangers here — only friends you haven't met yet. A neighborhood spot where everyone knows your name</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">423 E 36th St</span><span class="label">NoDa · Charlotte</span></div>
+    <div class="stat"><span class="num">5 PM</span><span class="label">Opens Daily</span></div>
+    <div class="stat"><span class="num">$5 Shots</span><span class="label">All-Day Everyday</span></div>
+    <div class="stat"><span class="num">Late Nights</span><span class="label">Fri–Sat Till 2 AM</span></div>
+  </div>
+  <div class="tagline-block">
+    <p class="quote">"There is no stranger at an Irish pub — only friends you haven't met yet."</p>
+    <p class="attr">— Fenian's Keep</p>
+  </div>
+</section>
+<section class="cta-section">
+  <h2>Come Raise a Pint</h2>
+  <p>No food menu. No pretension. Just good drinks and great company.</p>
+  <a href="contact.html" class="btn">Find Us</a>
+</section>
+<footer>
+  <p>Fenian's Keep · 423 E 36th St, Suite A · Charlotte, NC 28205 · (980) 237-2126</p>
+  <p><a href="drinks.html">Drinks</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

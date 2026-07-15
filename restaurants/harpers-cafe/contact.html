@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Us · Harper's Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b81e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--navy:#1a2744;--muted:#8a7a6a;--gold:#c49a2a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#111;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(184,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a1520);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
+.info-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,30,30,.06);border-radius:10px;padding:1.5rem;margin-bottom:1rem}
+.info-card h3{color:var(--red);font-size:.92rem;margin:0 0 .5rem}
+.info-card p{font-size:.85rem;opacity:.55;line-height:1.6;margin:.25rem 0}
+.info-card .label{opacity:.35;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.hours-grid{display:grid;grid-template-columns:auto auto;gap:.35rem 1.5rem;font-size:.85rem}
+.hours-grid .day{opacity:.35;font-weight:600}
+.hours-grid .time{opacity:.55}
+.demo-form{display:grid;gap:1rem}
+.demo-form label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;border:1px solid rgba(184,30,30,.2);border-radius:.7rem;padding:.85rem 1rem;background:rgba(0,0,0,.3);color:var(--cream)}
+.demo-form button{background:var(--red);color:#fff;border:none;padding:.85rem;border-radius:.7rem;font-weight:700;cursor:pointer;transition:.2s}
+.demo-form button:hover{background:#8e1212}
+footer{background:#111;color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(184,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Harper's Cafe</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Find Us</a>
+    <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Find Us</h1>
+  <p>At the Terrace at Park Place in Pineville</p>
+</div>
+<section class="section">
+  <div class="contact-grid">
+    <div>
+      <div class="info-card">
+        <h3>Location</h3>
+        <p><span class="label">Address</span><br>9101 Pineville-Matthews Road, Ste I<br>Pineville, NC 28134</p>
+        <p style="margin-top:.5rem;font-size:.82rem;opacity:.35">Located at the Terrace at Park Place shopping center in Pineville</p>
+      </div>
+      <div class="info-card">
+        <h3>Hours</h3>
+        <div class="hours-grid">
+          <span class="day">Mon–Fri</span><span class="time">7:30 AM – 3:00 PM</span>
+          <span class="day">Fri–Sat</span><span class="time">Early dinner available</span>
+          <span class="day">Sun</span><span class="time">Brunch</span>
+        </div>
+        <p style="font-size:.8rem;opacity:.35;margin-top:.5rem">Breakfast & lunch served all day · Order online for pickup</p>
+      </div>
+      <div class="info-card">
+        <h3>Contact</h3>
+        <p><span class="label">Phone</span><br>(704) 366-6688</p>
+        <p><span class="label">Email</span><br><a href="mailto:hmarin@harpersgroup.com" style="color:var(--red);text-decoration:none">hmarin@harpersgroup.com</a></p>
+        <p><span class="label">Order Online</span><br>
+          <a href="https://order.online/store/harper%27s-cafe-pineville-34975353" style="color:var(--red);text-decoration:none">Order Pickup & Delivery</a>
+        </p>
+        <p><span class="label">Follow Us</span><br>
+          <a href="https://www.instagram.com/harperscafenc" style="color:var(--red);text-decoration:none;margin-right:.75rem">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="info-card">
+        <h3>Send Us a Message</h3>
+        <form class="demo-form" data-demo-form>
+          <label>Name
+            <input type="text" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input type="email" placeholder="you@example.com" required>
+          </label>
+          <label>Subject
+            <select>
+              <option value="">Select a topic</option>
+              <option value="general">General inquiry</option>
+              <option value="catering">Catering</option>
+              <option value="event">Private event</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea placeholder="Tell us what's on your mind..." required></textarea>
+          </label>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Harper's Cafe</strong><br>9101 Pineville-Matthews Road, Ste I, Pineville, NC 28134 · (704) 366-6688</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

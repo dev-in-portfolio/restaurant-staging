@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>República Restaurant & Lounge - Matthews, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">R</div>
+        <h1 class="brand-name">
+          República
+          <span>Restaurant & Lounge</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-table.html">Flavor Table</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Dominican Culinary Board</h2>
+    <p class="page-subtitle">Savor the authentic flavors of Santo Domingo. Custom-build your mashed plantain mofongo using our interactive selector, or choose traditional family recipes.</p>
+  </header>
+
+  <!-- Interactive Mofongo Builder Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Interactive Mofongo Customizer</h3>
+      
+      <div class="builder-grid">
+        
+        <div class="mofongo-controls">
+          
+          <!-- Base selection -->
+          <div class="control-group">
+            <label>Select Plantain Mash Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('garlic', 12.00, 'Garlic Butter Mofongo')">Garlic Butter ($12)</button>
+              <button class="option-btn" onclick="setBase('pork', 14.00, 'Chicharrón Mofongo')">Crispy Pork Chicharrón ($14)</button>
+              <button class="option-btn" onclick="setBase('sweet', 13.00, 'Maduros Sweet Mofongo')">Sweet Plantain ($13)</button>
+            </div>
+          </div>
+
+          <!-- Topping Protein selection -->
+          <div class="control-group">
+            <label>Select Topping Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('shrimp', 5.00, 'Garlic Shrimp')">Garlic Shrimp (+$5)</button>
+              <button class="option-btn" onclick="setProtein('pork', 4.00, 'Carne Frita')">Carne Frita Pork (+$4)</button>
+              <button class="option-btn" onclick="setProtein('chicken', 3.00, 'Pollo Guisado')">Stewed Chicken (+$3)</button>
+              <button class="option-btn" onclick="setProtein('veggie', 2.00, 'Mushroom & Peppers')">Veggies (+$2)</button>
+            </div>
+          </div>
+
+          <!-- Sauce choice -->
+          <div class="control-group">
+            <label>Select Dressing Sauce</label>
+            <div class="option-grid" id="sauce-options">
+              <button class="option-btn active" onclick="setSauce('broth', 'Warm Garlic Broth')">Garlic Broth</button>
+              <button class="option-btn" onclick="setSauce('mayoketchup', 'Creamy Mayo-Ketchup')">Mayo-Ketchup</button>
+              <button class="option-btn" onclick="setSauce('mojo', 'Tangy Mojo Citrus')">Citrus Mojo</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Builder Display Card -->
+        <div class="builder-display">
+          <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Gourmet Kitchen Order</span>
+          <h4 class="builder-display-title" id="display-mofongo-name">Garlic Butter Mofongo with Garlic Shrimp</h4>
+          <p id="display-mofongo-sauce" style="color: var(--color-blue); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Warm Garlic Broth</p>
+          <div class="builder-display-price" id="display-mofongo-price">$17.00</div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-mofongo-desc">Green plantains mashed with garlic, butter, and spices, topped with succulent Garlic Shrimp, finished with Warm Garlic Broth.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Traditional Gourmet Board</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Platos Fuertes (Entrées)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sancocho Dominicano<span class="menu-item-badge">Dominican Feast</span></span>
+            <span class="menu-item-price">$15.00</span>
+          </div>
+          <p class="menu-item-desc">A rich, hearty slow-boiled traditional broth packed with beef, pork ribs, and chicken, sweet corn medallions, yuca root, sweet potato, and kabocha pumpkin. Served with sliced avocado and white rice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pollo Guisado Platter</span>
+            <span class="menu-item-price">$14.50</span>
+          </div>
+          <p class="menu-item-desc">Slow-braised bone-in chicken thighs cooked in a savory reduction of red bell peppers, onions, garlic, and tomato paste. Served with red kidney beans and white rice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Chimi Burger</span>
+            <span class="menu-item-price">$12.50</span>
+          </div>
+          <p class="menu-item-desc">A seasoned beef burger patty sizzled with Dominican spices, topped with shredded green cabbage salad, tomatoes, red onions, and house chimi pink sauce inside a toasted pan de agua roll.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Pastelitos & Postres</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pastelitos Dominicana</span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Three crispy fried Dominican-style pastries stuffed with seasoned ground beef, shredded chicken breast, and melted mild cheddar cheese, served with mayo-ketchup dipping sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Morcilla & Chicharrón Basket</span>
+            <span class="menu-item-price">$11.50</span>
+          </div>
+          <p class="menu-item-desc">Crispy fried pork belly chunks (chicharrón) and slices of Dominican blood sausage (morcilla) served with lime wedges and fried green plantain slices (tostones).</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Coconut Flan custard</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">A velvety, smooth egg custard baked with sweet coconut milk flakes, served chilled under a dark amber sugar caramel glaze.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>11315 E Independence Blvd<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sat: 11:00 AM - 2:00 AM<br>Sun: 11:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 246-8073<br>Dominican Gourmet | Lounge & Cocktails</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 República Restaurant & Lounge. Matthews culinary landmark.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Builder State
+    let selectedBase = { key: 'garlic', price: 12.00, name: 'Garlic Butter Mofongo' };
+    let selectedProtein = { key: 'shrimp', price: 5.00, name: 'Garlic Shrimp' };
+    let selectedSauce = { key: 'broth', name: 'Warm Garlic Broth' };
+
+    function setBase(key, price, name) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, price, name };
+      updateDisplay();
+    }
+
+    function setProtein(key, price, name) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, price, name };
+      updateDisplay();
+    }
+
+    function setSauce(key, name) {
+      const buttons = document.getElementById('sauce-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSauce = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const totalPrice = (selectedBase.price + selectedProtein.price).toFixed(2);
+      document.getElementById('display-mofongo-price').innerText = `$${totalPrice}`;
+      document.getElementById('display-mofongo-name').innerText = `${selectedBase.name} with ${selectedProtein.name}`;
+      document.getElementById('display-mofongo-sauce').innerText = selectedSauce.name;
+
+      let baseText = '';
+      if (selectedBase.key === 'garlic') {
+        baseText = 'Green plantains mashed with garlic, butter, and spices';
+      } else if (selectedBase.key === 'pork') {
+        baseText = 'Traditional green plantains mashed with garlic, pork rinds, and chicharrón cracklings';
+      } else if (selectedBase.key === 'sweet') {
+        baseText = 'Sweet yellow plantains (maduros) mashed with butter and brown sugar hints';
+      }
+
+      const desc = `${baseText}, topped with succulent ${selectedProtein.name}, finished with ${selectedSauce.name}.`;
+      document.getElementById('display-mofongo-desc').innerText = desc;
+    }
+  </script>
+</body>
+</html>

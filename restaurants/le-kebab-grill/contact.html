@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Le Kebab Grill Charlotte</title>
+  <meta name="description" content="Contact Le Kebab Grill in Charlotte, NC. Location, hours, phone, email, and social media. Visit our hookah lounge in University City.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    :root{--gold:#e8b84b;--gold-light:#f5d98c;--gold-dark:#b8862a;--red:#8b1a1a;--red-dark:#5c0e0e;--cream:#faf5eb;--charcoal:#1a1a1a;--charcoal-light:#2d2d2d}
+    .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--charcoal)}
+    .logo span{color:var(--gold)}
+    .nav-links a{color:var(--charcoal);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:.5rem 0}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-dark);text-decoration:none}
+    .page-hero{background:linear-gradient(135deg,var(--charcoal) 0%,var(--charcoal-light) 100%);padding:4rem 0;text-align:center;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--red),var(--gold))}
+    .page-hero h1{color:var(--cream);margin-bottom:.5rem}
+    .page-hero h1 span{color:var(--gold)}
+    .page-hero p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+    .info-card{background:var(--cream);border-radius:12px;padding:2.5rem}
+    .info-card h3{font-size:1.2rem;margin-bottom:1.5rem}
+    .info-card h3 span{color:var(--gold-dark)}
+    .info-block{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+    .info-icon{font-size:1.5rem;flex-shrink:0;width:2rem;text-align:center}
+    .info-block h4{font-size:.95rem;margin-bottom:.15rem}
+    .info-block p{font-size:.9rem;color:#555;line-height:1.5}
+    .info-block a{color:var(--red);font-weight:500}
+    .info-block a:hover{color:var(--gold-dark)}
+    .hours-table{width:100%;border-collapse:collapse;font-size:.9rem}
+    .hours-table td{padding:.4rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+    .hours-table td:last-child{text-align:right;font-weight:500}
+    .hours-table .highlight td{color:var(--gold-dark);font-weight:600}
+    .social-links{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+    .social-link{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--charcoal);color:var(--cream);border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
+    .social-link:hover{background:var(--gold);color:var(--charcoal);text-decoration:none}
+    .contact-form{background:var(--cream);border-radius:12px;padding:2.5rem}
+    .contact-form h3{margin-bottom:1.5rem}
+    .contact-form h3 span{color:var(--gold-dark)}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px;color:var(--charcoal)}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 14px;border:1px solid #d4d0c8;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:1rem;background:#fff;transition:border-color .2s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--gold)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .btn-gold{display:inline-block;padding:14px 36px;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .25s;text-decoration:none;background:var(--gold);color:var(--charcoal);width:100%}
+    .btn-gold:hover{background:var(--gold-light)}
+    .hookah-section{background:var(--charcoal);color:var(--cream);padding:4rem 0;text-align:center}
+    .hookah-section h2{color:var(--gold);margin-bottom:1rem}
+    .hookah-section h2 span{color:var(--gold-light)}
+    .hookah-section p{color:rgba(255,255,255,.7);max-width:600px;margin:0 auto 1.5rem;line-height:1.8}
+    .hookah-features{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem;max-width:800px;margin-left:auto;margin-right:auto}
+    .hookah-feat span{font-size:2rem;display:block;margin-bottom:.5rem}
+    .hookah-feat h4{color:var(--gold);margin-bottom:.35rem;font-size:1rem}
+    .hookah-feat p{font-size:.85rem;color:rgba(255,255,255,.6)}
+    .map-section{padding:3rem 0;text-align:center;background:var(--cream)}
+    .map-section h3{margin-bottom:.5rem}
+    .map-section h3 span{color:var(--gold-dark)}
+    .map-section p{color:#555;margin-bottom:1rem}
+    .map-placeholder{background:#ddd;border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center;color:#888;font-size:1.1rem;flex-direction:column;gap:.5rem;max-width:800px;margin:1.5rem auto 0}
+    .map-placeholder span{font-size:2.5rem}
+    .site-footer{background:var(--charcoal);color:var(--cream);padding:3rem 0}
+    .site-footer a{color:var(--gold)}
+    .site-footer a:hover{color:var(--gold-light)}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+    .footer-grid h4{font-size:1rem;margin-bottom:.75rem;color:var(--gold)}
+    .footer-grid ul{list-style:none;font-size:.9rem}
+    .footer-grid ul li{margin-bottom:.35rem}
+    .footer-grid p{font-size:.85rem;opacity:.7}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;opacity:.6}
+    .disclosure{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+    .disclosure a{color:var(--gold)}
+    @media(max-width:768px){.contact-grid,.hookah-features,.footer-grid,.form-row{grid-template-columns:1fr}.nav-links{display:none}}
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Le Kebab <span>Grill</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="flavor-guide.html">Flavor Guide</a></li></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <h1><span>Contact</span> Us</h1>
+      <p>We'd love to hear from you. Stop by, call, or send us a message.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-info-heading">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="info-card">
+          <h3>Get in <span>Touch</span></h3>
+
+          <div class="info-block">
+            <div class="info-icon">&#128205;</div>
+            <div>
+              <h4>Location</h4>
+              <p>350 E McCullough Dr<br>Charlotte, NC 28262<br>University City Area</p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon">&#128222;</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+17045477217">(704) 547-7217</a></p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon">&#9993;</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@lekebabgrill.com">info@lekebabgrill.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon">&#127760;</div>
+            <div>
+              <h4>Website</h4>
+              <p><a href="https://lekebabgrill.com" target="_blank" rel="noopener">lekebabgrill.com</a></p>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem">
+            <h4 style="margin-bottom:.75rem;color:var(--gold-dark)">Hours of Operation</h4>
+            <table class="hours-table">
+              <tr><td>Monday &ndash; Thursday</td><td>11:30am &ndash; 9:00pm</td></tr>
+              <tr><td>Friday &ndash; Saturday</td><td>11:30am &ndash; 9:30pm</td></tr>
+              <tr><td>Sunday</td><td>11:30am &ndash; 9:00pm</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-top:2rem">
+            <h4 style="margin-bottom:.75rem;color:var(--gold-dark)">Follow Us</h4>
+            <div class="social-links">
+              <a href="https://www.instagram.com/lekebabgrill" target="_blank" rel="noopener" class="social-link">&#128247; Instagram</a>
+              <a href="https://www.facebook.com/lekebabgrill" target="_blank" rel="noopener" class="social-link">&#128161; Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-form">
+            <h3>Send a <span>Message</span></h3>
+            <form class="demo-form" data-demo-form novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Name</label>
+                  <input type="text" id="contact-name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email</label>
+                  <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <select id="contact-subject" name="subject">
+                  <option value="general">General Inquiry</option>
+                  <option value="catering">Catering</option>
+                  <option value="hookah">Hookah Lounge</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn-gold">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hookah-section" aria-labelledby="hookah-heading">
+    <div class="container">
+      <span class="badge" style="background:var(--gold);color:var(--charcoal);display:inline-block;margin:0 auto 1rem">Relax &amp; Unwind</span>
+      <h2 id="hookah-heading"><span>Hookah</span> Lounge</h2>
+      <p>Enjoy premium hookah in a relaxed, welcoming atmosphere. Perfect for evenings with friends or a winding-down moment after a great meal. We offer a variety of premium shisha flavors in a comfortable lounge setting.</p>
+      <div class="hookah-features">
+        <div class="hookah-feat">
+          <span>&#127869;</span>
+          <h4>Premium Flavors</h4>
+          <p>Wide selection of premium shisha brands and flavor profiles</p>
+        </div>
+        <div class="hookah-feat">
+          <span>&#128716;</span>
+          <h4>Comfortable Lounge</h4>
+          <p>Relaxed seating with a warm, social ambiance</p>
+        </div>
+        <div class="hookah-feat">
+          <span>&#127860;</span>
+          <h4>Full Menu Available</h4>
+          <p>Order from our full food menu while you enjoy hookah</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" aria-label="Map and directions">
+    <div class="container">
+      <h3>Find Us in <span>University City</span></h3>
+      <p>350 E McCullough Dr, Charlotte, NC 28262</p>
+      <div class="map-placeholder">
+        <span>&#128506;</span>
+        <p>Map: Le Kebab Grill &mdash; 350 E McCullough Dr, Charlotte, NC 28262</p>
+        <a href="https://maps.google.com/?q=350+E+McCullough+Dr+Charlotte+NC+28262" target="_blank" rel="noopener" class="btn-gold" style="display:inline-block;width:auto;padding:12px 28px">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Le Kebab Grill</h4>
+        <p>Fresh Authentic Mediterranean Cuisine.<br>Jordanian-owned &middot; Family recipes &middot; Halal</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon&ndash;Thu 11:30am&ndash;9pm<br>Fri&ndash;Sat 11:30am&ndash;9:30pm<br>Sun 11:30am&ndash;9pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://www.instagram.com/lekebabgrill" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.facebook.com/lekebabgrill" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Le Kebab Grill &mdash; Charlotte, NC
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation &mdash; not operated by the restaurant. <a href="https://lekebabgrill.com" target="_blank" rel="noopener">Visit the official site</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>
