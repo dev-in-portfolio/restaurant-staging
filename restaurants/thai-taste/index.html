@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thai Taste Matthews - Matthews, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">T</div>
+        <h1 class="brand-name">
+          Thai Taste
+          <span>Matthews</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+
+  <!-- Hero Banner Section -->
+  <header class="hero-section" style="background-image: url('hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Historic Matthews Landmark since 2005</span>
+        <h2 class="hero-title">Authentic Thai Kitchen</h2>
+        <p class="hero-desc">"Savor the rich heritage of Charlotte's original Thai kitchen, serving traditional curries, stir-fries, and hand-pulled noodles in Matthews Station."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- To-Go Pickup Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Call-Ahead Pickup Orders: 704-841-4455. Dine-In & Takeout.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">A Heritage of Saffron & Spice</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Located across from the Matthews Town Hall & Library, Thai Taste Matthews has been crafting fresh, traditional Thai cuisine since 2005. Rooted in Charlotte's first-ever Thai kitchen, we honor time-tested recipes using fresh Thai herbs, lemongrass, coconut milk, and customized spice levels cooked to order.
+      </p>
+      <a href="about.html" style="color: var(--color-saffron); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-saffron); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Spice & Dish Selector Panel -->
+    <section class="interactive-panel">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Find Your Perfect Dish</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your preferred heat level below, and our kitchen will recommend the perfect authentic dish for your taste buds.</p>
+      
+      <div class="selector-grid">
+        <button class="selector-btn active" onclick="selectSpice('mild', this)">
+          <span class="selector-btn-icon">🍃</span>
+          <span>Mild Spice</span>
+          <span style="font-size: 0.75rem; color: var(--color-bamboo); font-weight: 600; margin-top: 0.2rem;">🌶️ (Zero to Low)</span>
+        </button>
+
+        <button class="selector-btn" onclick="selectSpice('medium', this)">
+          <span class="selector-btn-icon">🔥</span>
+          <span>Medium Heat</span>
+          <span style="font-size: 0.75rem; color: var(--color-gold); font-weight: 600; margin-top: 0.2rem;">🌶️🌶️ (Flavorful)</span>
+        </button>
+
+        <button class="selector-btn" onclick="selectSpice('hot', this)">
+          <span class="selector-btn-icon">🌋</span>
+          <span>Hot Heat</span>
+          <span style="font-size: 0.75rem; color: var(--color-saffron); font-weight: 600; margin-top: 0.2rem;">🌶️🌶️🌶️ (Vibrant)</span>
+        </button>
+
+        <button class="selector-btn" onclick="selectSpice('thaihot', this)">
+          <span class="selector-btn-icon">💥</span>
+          <span>Thai Hot</span>
+          <span style="font-size: 0.75rem; color: #ef4444; font-weight: 800; margin-top: 0.2rem;">🌶️🌶️🌶️🌶️🌶️ (Native)</span>
+        </button>
+      </div>
+
+      <!-- Recommendation Display Card -->
+      <div class="result-card" id="recommendation-display">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+          <h3 style="font-size: 1.5rem; color: #ffffff;" id="dish-name">Chicken Pad Thai</h3>
+          <span style="font-size: 1.4rem; color: var(--color-saffron); font-weight: 900;" id="dish-price">$13.00</span>
+        </div>
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1.2rem; display: inline-block; width: max-content;" id="dish-badge">Mild Spice Recommendation</span>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-muted);" id="dish-desc">
+          Thin rice noodles stir-fried with sweet and tangy house tamarind sauce, egg, bean sprouts, crushed roasted peanuts, and scallions. Perfect entry-point!
+        </p>
+      </div>
+    </section>
+
+    <!-- Slanted Asymmetric Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Curry & Noodle Customizer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From Crispy Massaman Duck Curry and Pad See Ew to hot Tom Yum soup. Use our interactive builder to customize curry bases, proteins, and spice ratings.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Launch Curry Customizer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>131 Matthews Station St #1F<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 3:00 PM (Lunch)<br>Mon - Fri: 5:00 PM - 9:00 PM (Dinner)<br>Sat: 11:00 AM - 9:30 PM | Sun: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: 704-841-4455<br>Matthews Station | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Thai Taste Matthews. Matthews culinary tradition since 2005.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Spice levels recommendations data
+    const recommendations = {
+      mild: {
+        name: "Chicken Pad Thai",
+        price: "$13.00",
+        badge: "Mild Spice Recommendation",
+        desc: "Thin rice noodles stir-fried with sweet and tangy house tamarind sauce, egg, bean sprouts, crushed roasted peanuts, and scallions. Perfect entry-point!"
+      },
+      medium: {
+        name: "Massaman Crispy Duck",
+        price: "$21.00",
+        badge: "Medium Heat Recommendation",
+        desc: "Crispy roasted half-duck breast simmered in cream coconut Massaman curry, cardamom, sweet potatoes, onions, and dry roasted cashews. A warm and flavorful blend!"
+      },
+      hot: {
+        name: "Spicy Pad See Ew",
+        price: "$14.00",
+        badge: "Hot Heat Recommendation",
+        desc: "Wide flat rice noodles wok-tossed with fresh broccoli, egg, garlic, and sliced fresh bird's eye red chilies in a sweet black soy sauce marinade. Savory wok-hei heat!"
+      },
+      thaihot: {
+        name: "Volcano Chili Fried Rice",
+        price: "$16.00",
+        badge: "Thai Hot Recommendation",
+        desc: "Steamed Jasmine rice sizzled in house roasted chili jam paste, green bell peppers, sweet red onions, bird's eye peppers, and sweet Thai basil leaves. Native volcanic heat!"
+      }
+    };
+
+    function selectSpice(spiceKey, btnElement) {
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.selector-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      // Activate clicked button
+      btnElement.classList.add('active');
+
+      // Update card content with fade animation
+      const displayCard = document.getElementById('recommendation-display');
+      displayCard.style.opacity = '0';
+      displayCard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = recommendations[spiceKey];
+        document.getElementById('dish-name').innerText = data.name;
+        document.getElementById('dish-price').innerText = data.price;
+        document.getElementById('dish-badge').innerText = data.badge;
+        document.getElementById('dish-desc').innerText = data.desc;
+        
+        displayCard.style.opacity = '1';
+        displayCard.style.transform = 'translateY(0)';
+      }, 200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Idlewild Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+.page-header {
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--cream);
+}
+.page-header h1 i { color: var(--amber); font-style: italic; }
+
+.story-content { max-width: 720px; margin: 0 auto; }
+.story-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.story-content .dropcap::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--amber);
+  font-weight: 400;
+}
+
+.bio-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.bio-card:last-child { border-bottom: none; }
+.bio-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--navy-light);
+  border: 2px solid rgba(201,149,46,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.bio-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.15rem;
+}
+.bio-card .role { color: var(--amber); font-size: 0.85rem; margin-bottom: 0.35rem; display: block; }
+.bio-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Idlewild<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cocktails.html">Cocktails</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="page-header">
+    <h1>Our <i>Story</i></h1>
+    <p>How Idlewild came to be — and the people behind the bar.</p>
+  </div>
+
+  <section class="section" aria-labelledby="about-heading">
+    <div class="section-inner story-content">
+      <h2 id="about-heading" class="section-title">The <i>Bar</i></h2>
+      <p class="dropcap">Idlewild was born from a simple idea: that the best cocktail is the one made for you. In an era of endless menus and digital ordering, we wanted to create a space where the interaction between guest and bartender is the main event.</p>
+      <p>Tucked away in Charlotte's NoDa neighborhood, Idlewild occupies the ground floor of the Novel NoDa building at 30Six. Step through the door and the city fades away — replaced by warm candlelight, deep house rhythms, and the quiet hum of conversation.</p>
+      <p>Our name evokes a sense of idle wandering — a place where time slows down and the evening unfolds at its own pace. There are no screens, no lists, no rush. Just you, your company, and a bartender who's genuinely excited to learn what you love.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--navy-light);" aria-labelledby="noda-heading">
+    <div class="section-inner story-content">
+      <h2 id="noda-heading" class="section-title">NoDa — North <i>Davidson</i></h2>
+      <p>NoDa is Charlotte's historic arts district — a vibrant corridor of galleries, music venues, breweries, and eclectic restaurants that has become the creative heart of the city. Idlewild sits at the corner of 36th and Davidson, within walking distance of the Lynx Blue Line light rail and surrounded by the energy of one of Charlotte's most dynamic neighborhoods.</p>
+      <p>We're proud to be part of a community that values craft, creativity, and authenticity — values that every drink we pour is meant to reflect.</p>
+      <p class="text-center mt-2"><a href="visit.html" class="btn btn-outline">Find Us</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="team-heading">
+    <div class="section-inner" style="max-width:700px;">
+      <h2 id="team-heading" class="section-title text-center">The <i>Team</i></h2>
+      <p class="text-center section-sub">The people who make the drinks, set the mood, and welcome you in.</p>
+
+      <div class="bio-card">
+        <div class="bio-avatar">L</div>
+        <div>
+          <h3>Lena</h3>
+          <span class="role">Bar Lead</span>
+          <p>A decade behind the stick, Lena brings deep knowledge of spirits and a passion for unexpected flavor combinations. She's built Idlewild's approach to no-menu service from the ground up.</p>
+        </div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-avatar">M</div>
+        <div>
+          <h3>Marcus</h3>
+          <span class="role">Bartender</span>
+          <p>Marcus is our resident spirit guide — equally comfortable talking amaro profiles and blending fresh juices. His energy at the bar is infectious.</p>
+        </div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-avatar">J</div>
+        <div>
+          <h3>Jordan</h3>
+          <span class="role">Hospitality Lead</span>
+          <p>Jordan ensures every guest feels welcomed from the moment they walk in. Trained in fine dining and casual hospitality, they curate the overall experience at Idlewild.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Unofficial concept presentation &mdash; not operated by the restaurant. <br>Idlewild &middot; 424 E 36th St, Unit 2, Charlotte, NC</p>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

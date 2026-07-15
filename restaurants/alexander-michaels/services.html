@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexander Michael's - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Alexander Michael's Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Alexander Michael's
+          <span>Historic Tavern</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flight-planner.html">Flight Planner</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Tavern Group Catering</h2>
+    <p class="page-subtitle">Feed your home tailgate, office meeting, or neighborhood gathering with Al Mike's signature comfort pasta trays and slider boxes.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Game Day Slider Boxes</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Elevate your tailgate. We offer boxed trays of 12 or 24 mini Al Mike's pub cheeseburgers and seared turkey sliders, wrapped hot in foil and served with crisp crinkle-cut fries.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Bulk Pasta Trays</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Feed the crowd. Large oven-ready pans of our famous "What It Is" Cajun chicken pasta or sweet-savory Honey Chicken Pasta. Serves 10 to 15 guests, paired with warm French bread.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Spicy Crab Soup Pots</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Serve our most requested starter. Quarts of our rich, creamy Spicy Crab Soup, complete with individual serving bowls, oyster crackers, and hot sauce.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Please submit your group size and food selections below. Our kitchen manager will contact you to verify details and arrange window/curbside pickup.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="package">Select Package</label>
+              <select id="package" required>
+                <option value="sliders">Tavern Slider Boxes</option>
+                <option value="pasta">Bulk Pasta Trays</option>
+                <option value="soup">Spicy Crab Soup Pots</option>
+                <option value="mixed">Mixed Tavern Buffet</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of Order (Guest count, specific items, dietary notes)</label>
+              <textarea id="notes" placeholder="e.g. 2 trays of 'What It Is' Pasta, 1 box of 24 cheeseburger sliders..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Catering Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍗</div>
+          <h3 class="success-title">Order Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. The kitchen team will review your order details and call you to arrange pickup times and pricing.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>401 West 9th St.<br>Charlotte, NC 28202</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tuesday - Saturday: 11:00 AM - 10:00 PM<br>Sunday - Monday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 374-1232<br>First-Come Seating | Historic Fourth Ward</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Alexander Michael's. Charlotte landmark since 1983.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thanks, <strong>${name}</strong>. Your catering request has been sent to the kitchen. We will call you at <strong>${phone}</strong> shortly to verify details.`;
+    });
+  </script>
+</body>
+</html>

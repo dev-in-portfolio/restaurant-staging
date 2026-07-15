@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Humbug Craft Cocktail Bar</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --humbug-black: #0d0d0d;
+      --humbug-charcoal: #1a1a1a;
+      --humbug-deep-red: #6b1d1d;
+      --humbug-gold: #c9a84c;
+      --humbug-gold-light: #e0c872;
+      --humbug-cream: #f5f0e8;
+      --humbug-text: #d4cfc8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--humbug-black);
+      color: var(--humbug-text);
+      line-height: 1.6;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+      padding: 8px 16px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    a { color: var(--humbug-gold); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--humbug-gold-light); }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .site-header {
+      background: var(--humbug-charcoal);
+      border-bottom: 2px solid var(--humbug-deep-red);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--humbug-gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .logo span { color: #fff; font-weight: 400; }
+    .nav-list {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-list a {
+      color: var(--humbug-text);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .nav-list a:hover,
+    .nav-list a.active { color: var(--humbug-gold); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--humbug-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a0d0d 40%, #0d0d0d 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: #fff;
+    }
+    .page-hero p { color: var(--humbug-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.95rem; }
+
+    .section { padding: 64px 0; }
+    .section-dark { background: var(--humbug-charcoal); }
+    .section-black { background: var(--humbug-black); }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-title span { color: var(--humbug-gold); }
+
+    .content-block { max-width: 700px; margin: 0 auto; }
+    .content-block p { margin-bottom: 20px; opacity: 0.88; font-size: 1.05rem; }
+
+    .event-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 4px solid var(--humbug-gold);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .event-card h3 {
+      font-size: 1.4rem;
+      color: var(--humbug-gold);
+      margin-bottom: 8px;
+    }
+    .event-card .event-date {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .event-card .event-date::before { content: '\1F4C5'; margin-right: 6px; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border: 2px solid var(--humbug-gold);
+      color: var(--humbug-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      background: transparent;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+    }
+    .btn-primary:hover {
+      background: var(--humbug-gold-light);
+      border-color: var(--humbug-gold-light);
+    }
+
+    .demo-form {
+      max-width: 550px;
+      margin: 32px auto 0;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--humbug-gold);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--humbug-black);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--humbug-gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .rsvp-confirmation {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      border: 1px solid var(--humbug-gold);
+      margin-top: 24px;
+    }
+    .rsvp-confirmation.visible { display: block; }
+    .rsvp-confirmation h3 { color: var(--humbug-gold); margin-bottom: 8px; }
+
+    .site-footer {
+      background: var(--humbug-charcoal);
+      border-top: 2px solid var(--humbug-deep-red);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .site-footer p { font-size: 0.85rem; opacity: 0.7; }
+    .disclosure {
+      background: rgba(107,29,29,0.2);
+      border: 1px solid var(--humbug-deep-red);
+      color: var(--humbug-text);
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--humbug-charcoal);
+        padding: 24px;
+        border-bottom: 2px solid var(--humbug-deep-red);
+      }
+      .nav-list.open { display: flex; }
+      .nav-toggle { display: block; }
+      .header-inner { position: relative; }
+      .page-hero h1 { font-size: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Humbug <span>Bar</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <h1>Events</h1>
+      <p>Always Delicious, Never Pretentious</p>
+    </section>
+
+    <!-- Bah Humbug -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title"><span>Bah Humbug</span> Holiday Pop-Up</h2>
+        <div class="content-block">
+          <p>Our holiday transformation is here. Formerly House of Krampus, now reborn as <strong>Bah Humbug</strong> — a seasonal celebration that turns Humbug into a winter wonderland with a dark, playful edge.</p>
+          <p>Think holiday-themed cocktails, festive decor, special menu items, and the same warm (if slightly mischievous) hospitality you expect from us. This is the only time we accept reservations — and they go fast.</p>
+        </div>
+
+        <div class="event-card">
+          <h3>Bah Humbug 2024</h3>
+          <div class="event-date">November 29 &ndash; December 31</div>
+          <p style="opacity:0.88;">Reservations available for parties of 2&ndash;6. Walk-ins always welcome as space allows. 21+ only.</p>
+          <p style="margin-top:12px;"><a href="#" class="btn" id="rsvp-toggle-btn">Reserve Your Spot</a></p>
+        </div>
+
+        <!-- RSVP Form -->
+        <div id="rsvp-form-container" style="display:none;">
+          <h3 style="text-align:center;color:var(--humbug-gold);margin-bottom:16px;">Reserve for Bah Humbug</h3>
+          <form class="demo-form rsvp-form" data-demo-form="bah-humbug-rsvp">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rsvp-name">Name</label>
+                <input type="text" id="rsvp-name" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="rsvp-email">Email</label>
+                <input type="email" id="rsvp-email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rsvp-date">Date</label>
+                <select id="rsvp-date">
+                  <option value="">Select a date</option>
+                  <option>November 29</option>
+                  <option>November 30</option>
+                  <option>December 1</option>
+                  <option>December 5&ndash;8</option>
+                  <option>December 12&ndash;15</option>
+                  <option>December 19&ndash;23</option>
+                  <option>December 26&ndash;31</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="rsvp-guests">Party Size</label>
+                <select id="rsvp-guests">
+                  <option value="">Select size</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option>4 guests</option>
+                  <option>5 guests</option>
+                  <option>6 guests</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-notes">Special Requests</label>
+              <textarea id="rsvp-notes" placeholder="Allergies, celebrations, seating preferences..."></textarea>
+            </div>
+            <div style="text-align:center;">
+              <button type="submit" class="btn btn-primary">Submit Reservation</button>
+            </div>
+          </form>
+          <div class="rsvp-confirmation" id="rsvp-confirmation">
+            <h3>Thank you!</h3>
+            <p>Your reservation request has been received. We'll confirm within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Events -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Private <span>Events</span></h2>
+        <div class="content-block">
+          <p>Humbug is available for private buyouts and special events. The space accommodates up to 80 guests for a seated event or 120 for a standing reception.</p>
+          <p>Whether it's a birthday, corporate gathering, or a celebration that defies categorization, we'll work with you to create a custom menu and experience.</p>
+        </div>
+
+        <!-- Event Inquiry Form -->
+        <h3 style="text-align:center;color:var(--humbug-gold);margin:48px 0 16px;">Event Inquiry</h3>
+        <form class="demo-form" data-demo-form="event-inquiry">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiry-name">Name</label>
+              <input type="text" id="inquiry-name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="inquiry-email">Email</label>
+              <input type="email" id="inquiry-email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiry-date">Event Date</label>
+              <input type="date" id="inquiry-date">
+            </div>
+            <div class="form-group">
+              <label for="inquiry-guests">Estimated Guests</label>
+              <input type="number" id="inquiry-guests" placeholder="e.g. 50" min="1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inquiry-details">Tell us about your event</label>
+            <textarea id="inquiry-details" placeholder="Type of event, preferred setup, any special requirements..."></textarea>
+          </div>
+          <div style="text-align:center;">
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Upcoming -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">Upcoming <span>Events</span></h2>
+        <div class="event-card">
+          <h3>Trivia Night</h3>
+          <div class="event-date">Every other Wednesday, 7pm</div>
+          <p style="opacity:0.88;">Test your knowledge. Win a round. No theme too obscure.</p>
+        </div>
+        <div class="event-card">
+          <h3>Industry Night</h3>
+          <div class="event-date">Mondays (when open), 9pm&ndash;close</div>
+          <p style="opacity:0.88;">Discounts for hospitality workers. You take care of everyone — let us take care of you.</p>
+        </div>
+        <div class="event-card">
+          <h3>Seasonal Menu Launch Party</h3>
+          <div class="event-date">Quarterly</div>
+          <p style="opacity:0.88;">Be the first to taste our new menu. Small bites, new cocktails, good company.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Humbug Bar &mdash; Charlotte, NC</p>
+      <p style="font-size:0.85rem;margin-top:8px;">
+        <a href="https://humbugclt.com">humbugclt.com</a> &middot;
+        <a href="https://instagram.com/humbugclt" target="_blank">@humbugclt</a> &middot;
+        <a href="tel:+17049106436">(704) 910-6436</a>
+      </p>
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation — not operated by the restaurant
+    </div>
+  </footer>
+
+  <script src="../site-core.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Nav toggle
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.getElementById('nav-list');
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          navList.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+        });
+      }
+
+      // RSVP toggle
+      const rsvpBtn = document.getElementById('rsvp-toggle-btn');
+      const rsvpContainer = document.getElementById('rsvp-form-container');
+      if (rsvpBtn && rsvpContainer) {
+        rsvpBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          rsvpContainer.style.display = rsvpContainer.style.display === 'none' ? 'block' : 'none';
+        });
+      }
+
+      // RSVP form confirmation
+      const rsvpForm = document.querySelector('.rsvp-form');
+      const rsvpConfirm = document.getElementById('rsvp-confirmation');
+      if (rsvpForm && rsvpConfirm) {
+        rsvpForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          rsvpConfirm.classList.add('visible');
+          rsvpForm.style.display = 'none';
+        });
+      }
+
+      // Event inquiry confirmation
+      const inquiryForm = document.querySelector('[data-demo-form="event-inquiry"]');
+      if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your inquiry! We will be in touch within 1-2 business days.');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

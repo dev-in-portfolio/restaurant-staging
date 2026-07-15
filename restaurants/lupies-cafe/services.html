@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupie's Cafe - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Lupie's Cafe Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Lupie's
+          <span>Cafe</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html">Comfort Plate</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Home-Style Group Catering</h2>
+    <p class="page-subtitle">Bring Charlotte's favorite chilis, chili mac, and banana pudding to your next office luncheon or family celebration.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="cafe-card">
+        <h3 class="menu-category-title">Chili Mac Trays</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          Feed the group with our signature comfort plate. Large oven-ready trays of Cincinnati or Southern style chili baked hot over spaghetti noodles and covered in melted cheddar cheese. Recommended for 10 to 20 guests.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="cafe-card">
+        <h3 class="menu-category-title">Chili By The Quart</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          Mix and match your chilis. Order quarts of our Texas (spicy), Cincinnati, Southern, or Veggie chilis. Served with side containers of sour cream, cheddar, diced onions, and tortilla chips.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="cafe-card">
+        <h3 class="menu-category-title">Banana Pudding Pans</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
+          The perfect dessert. Large dessert pans of our home-style banana pudding, layered with vanilla wafers, sweet bananas, and vanilla whipped cream.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Inquiry Form</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Fill out the details below to request a comfort catering estimate. Our cafe manager will contact you to confirm setup and details.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Person</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Catering Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="service-type">Catering Package</label>
+              <select id="service-type" required>
+                <option value="chilimac">Chili Mac Trays</option>
+                <option value="quarts">Quarts of Chili</option>
+                <option value="pudding">Banana Pudding Pans</option>
+                <option value="mixed">Mixed Cafe Buffet</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of your request (Chili choices, guests count, sweet tea barrels)</label>
+              <textarea id="notes" placeholder="e.g. 2 trays of Cincinnati Chili Mac, 3 quarts of Texas Chili, 1 large pan of Banana Pudding..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍲</div>
+          <h3 class="success-title">Request Received!</h3>
+          <p class="success-msg" id="success-message">Thank you. Lupie's cafe staff will review your catering details and call you back to confirm pricing.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>2718 Monroe Rd.<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday - Saturday: 11:00 AM - 9:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 374-1232<br>Walk-Ins & Take-Out Welcomed</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Lupie's Cafe. Charlotte landmark since 1987.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. We have received your catering details. Our manager will contact you at <strong>${phone}</strong> shortly to verify menu choices.`;
+    });
+  </script>
+</body>
+</html>

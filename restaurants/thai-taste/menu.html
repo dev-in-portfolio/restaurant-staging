@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thai Taste Matthews - Matthews, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">T</div>
+        <h1 class="brand-name">
+          Thai Taste
+          <span>Matthews</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Curry & Noodle Specials</h2>
+    <p class="page-subtitle">Savor the spices of our heritage. Build your custom dish using our interactive builder below, or browse our classic kitchen specialties.</p>
+  </header>
+
+  <!-- Interactive Builder Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Interactive Curry & Noodle Builder</h3>
+      
+      <div class="builder-grid">
+        
+        <div class="builder-controls">
+          
+          <!-- Base selection -->
+          <div class="control-group">
+            <label>Select Base Dish</label>
+            <div class="control-options" id="base-options">
+              <button class="option-btn active" onclick="setBase('padthai', 13.00, 'Pad Thai Noodles')">Pad Thai</button>
+              <button class="option-btn" onclick="setBase('massaman', 15.00, 'Massaman Curry')">Massaman Curry</button>
+              <button class="option-btn" onclick="setBase('green', 15.00, 'Green Curry')">Green Curry</button>
+              <button class="option-btn" onclick="setBase('padseeew', 14.00, 'Pad See Ew')">Pad See Ew</button>
+            </div>
+          </div>
+
+          <!-- Protein selection -->
+          <div class="control-group">
+            <label>Select Protein Choice</label>
+            <div class="control-options" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('chicken', 0.00, 'Chicken')">Chicken (+$0)</button>
+              <button class="option-btn" onclick="setProtein('tofu', 0.00, 'Tofu')">Tofu (+$0)</button>
+              <button class="option-btn" onclick="setProtein('beef', 2.00, 'Beef')">Beef (+$2)</button>
+              <button class="option-btn" onclick="setProtein('shrimp', 4.00, 'Shrimp')">Shrimp (+$4)</button>
+              <button class="option-btn" onclick="setProtein('duck', 6.00, 'Crispy Duck')">Crispy Duck (+$6)</button>
+            </div>
+          </div>
+
+          <!-- Spice rating selection -->
+          <div class="control-group">
+            <label>Spice Level rating</label>
+            <div class="control-options" id="spice-options">
+              <button class="option-btn active" onclick="setSpiceLevel('1', 'Mild')">Mild 🌶️</button>
+              <button class="option-btn" onclick="setSpiceLevel('2', 'Medium')">Medium 🌶️🌶️</button>
+              <button class="option-btn" onclick="setSpiceLevel('3', 'Hot')">Hot 🌶️🌶️🌶️</button>
+              <button class="option-btn" onclick="setSpiceLevel('5', 'Thai Hot')">Thai Hot 🌶️🌶️🌶️🌶️🌶️</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Builder Display Card -->
+        <div class="builder-display">
+          <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Kitchen Order</span>
+          <h4 class="builder-display-title" id="display-dish-name">Chicken Pad Thai</h4>
+          <p id="display-dish-spice" style="color: var(--color-saffron); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Mild Heat Level</p>
+          <div class="builder-display-price" id="display-dish-price">$13.00</div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-dish-desc">Thin rice noodles wok-stirred with fresh sprouts, egg, crushed peanuts, scallions, and Chicken.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Chef's Dinner Board</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">House Specialties</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Massaman Crispy Duck<span class="menu-item-badge">Favorite</span></span>
+            <span class="menu-item-price">$21.00</span>
+          </div>
+          <p class="menu-item-desc">A deep golden-roasted crispy half-duck leg simmered with potatoes, baby onions, and cashews in coconut milk Massaman curry base.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tom Yum Goong Soup</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Classic hot & sour broth flavored with lemongrass, galangal, kaffir lime leaves, tomatoes, button mushrooms, and prawns.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pad Puk Ruam Mit</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">Sautéed garden-fresh Napa cabbage, broccoli, carrots, snow peas, and button mushrooms stir-fried in a seasoned oyster-garlic reduction.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Desserts & Refreshments</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sweet Mango Sticky Rice</span>
+            <span class="menu-item-price">$7.50</span>
+          </div>
+          <p class="menu-item-desc">Steamed sweet glutinous rice infused with rich coconut cream, served alongside ripe, sweet yellow mango slices and toasted sesame.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Thai Iced Tea</span>
+            <span class="menu-item-price">$4.00</span>
+          </div>
+          <p class="menu-item-desc">Classic sweet, amber-colored Thai tea brewed from black tea leaves, mixed with crushed ice and creamy evaporated milk.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Coconut Ice Cream</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">House-churned light coconut ice cream served in a shell with roasted peanuts and sweet jackfruit shreds.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>131 Matthews Station St #1F<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 3:00 PM (Lunch)<br>Mon - Fri: 5:00 PM - 9:00 PM (Dinner)<br>Sat: 11:00 AM - 9:30 PM | Sun: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: 704-841-4455<br>Matthews Station | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Thai Taste Matthews. Matthews culinary tradition since 2005.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Builder State
+    let selectedBase = { key: 'padthai', price: 13.00, name: 'Pad Thai Noodles' };
+    let selectedProtein = { key: 'chicken', price: 0.00, name: 'Chicken' };
+    let selectedSpice = { key: '1', name: 'Mild' };
+
+    function setBase(key, price, name) {
+      // Toggle active styling
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, price, name };
+      updateDisplay();
+    }
+
+    function setProtein(key, price, name) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, price, name };
+      updateDisplay();
+    }
+
+    function setSpiceLevel(key, name) {
+      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSpice = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const totalPrice = (selectedBase.price + selectedProtein.price).toFixed(2);
+      document.getElementById('display-dish-price').innerText = `$${totalPrice}`;
+      document.getElementById('display-dish-name').innerText = `${selectedProtein.name} ${selectedBase.name}`;
+      document.getElementById('display-dish-spice').innerText = `${selectedSpice.name} Heat Level`;
+
+      let desc = '';
+      if (selectedBase.key === 'padthai') {
+        desc = `Thin rice noodles wok-stirred with fresh sprouts, egg, crushed peanuts, scallions, and ${selectedProtein.name}.`;
+      } else if (selectedBase.key === 'massaman') {
+        desc = `Warm coconut milk curry broth filled with baby potatoes, sweet carrots, onions, cashew nuts, and tender ${selectedProtein.name}.`;
+      } else if (selectedBase.key === 'green') {
+        desc = `Spicy green chili coconut curry simmered with bamboo shoots, fresh Thai basil, green beans, bell peppers, and ${selectedProtein.name}.`;
+      } else if (selectedBase.key === 'padseeew') {
+        desc = `Wide flat noodles cooked in high-heat wok-toss with egg, broccoli florets, sweet dark soy sauce, garlic, and ${selectedProtein.name}.`;
+      }
+
+      document.getElementById('display-dish-desc').innerText = desc;
+    }
+  </script>
+</body>
+</html>

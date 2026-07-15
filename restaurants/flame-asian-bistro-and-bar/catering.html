@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering · Flame: Asian Bistro &amp; Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b91c1c;--gold:#f59e0b;--charcoal:#0d0d0d;--cream:#fef3c7;--warm:#1a0f0a;--muted:#9a8a7a}
+body{margin:0;background:var(--charcoal);color:#f5f0ea;font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--warm);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(245,158,11,.12)}
+.nav a{color:#f5f0ea;text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0f0a,#0d0d0d);padding:3rem 2rem;text-align:center}
+.page-header h1{margin:0;font-size:2.2rem;color:var(--gold)}
+.page-header p{font-style:italic;opacity:.5;margin:.35rem 0 0}
+.content{max-width:860px;margin:0 auto;padding:3rem 2rem}
+.content p{font-size:.95rem;line-height:1.7;opacity:.6;margin:0 0 1.25rem}
+.catering-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin:2rem 0}
+.catering-card{background:rgba(255,255,255,.03);border:1px solid rgba(245,158,11,.06);border-radius:10px;padding:1.5rem;transition:.25s}
+.catering-card:hover{border-color:rgba(245,158,11,.2)}
+.catering-card .icon{font-size:2rem;margin-bottom:.5rem;display:block}
+.catering-card h3{color:var(--gold);font-size:1rem;margin:0 0 .35rem}
+.catering-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
+.catering-card .price{font-family:'Fraunces',serif;color:var(--gold);display:block;margin-top:.6rem;font-size:.9rem}
+.party-box{max-width:580px;margin:2.5rem auto;padding:2rem;background:rgba(185,28,28,.04);border:1px solid rgba(185,28,28,.1);border-radius:12px;text-align:center}
+.party-box h3{color:var(--gold);margin:0 0 .35rem}
+.party-box p{font-size:.85rem;opacity:.5;margin:0 0 .25rem}
+.party-box .btn{display:inline-block;margin-top:1rem;background:var(--red);color:#fff;padding:.75rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;transition:.2s}
+.party-box .btn:hover{background:#991b1b}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(245,158,11,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Flame</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Contact</a>
+    <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Catering &amp; Private Events</h1>
+  <p>Fresh Asian cuisine for every occasion</p>
+</header>
+<section class="content">
+  <p>Bring the bold flavors of Flame to your next event. Whether you're planning a corporate lunch, a birthday party, a rehearsal dinner or a holiday celebration, our catering team works with you to create a menu that fits your occasion, your budget and your taste.</p>
+
+  <h2 style="color:var(--gold);font-size:1.2rem;margin:2rem 0 .25rem;border-left:3px solid var(--red);padding-left:.75rem">Catering Packages</h2>
+  <p style="font-style:italic;opacity:.4;margin-bottom:1.5rem;font-size:.9rem">Custom menus also available — contact us for a quote</p>
+  <div class="catering-grid">
+    <div class="catering-card">
+      <span class="icon" aria-hidden="true">🥟</span>
+      <h3>Dim Sum Platter</h3>
+      <p>An assortment of our most popular dim sum: soup dumplings, shrimp har gow, siu mai, pork buns and potstickers. Served with dipping sauces.</p>
+      <span class="price">Serves 10\u201315 \u2022 $85</span>
+    </div>
+    <div class="catering-card">
+      <span class="icon" aria-hidden="true">🍜</span>
+      <h3>Noodle &amp; Rice Feast</h3>
+      <p>Choose three: beef chow fun, Singapore vermicelli, flame lo mein, Thai crab rice or wok-fried rice. Served family-style with vegetables.</p>
+      <span class="price">Serves 15\u201320 \u2022 $150</span>
+    </div>
+    <div class="catering-card">
+      <span class="icon" aria-hidden="true">🔥</span>
+      <h3>Signature Entr\u00E9e Box</h3>
+      <p>Pick two chef specials: General Tso's chicken, Seoul Fire ribeye, sesame chicken or orange chicken. Served with steamed rice and spring rolls.</p>
+      <span class="price">Serves 10\u201315 \u2022 $160</span>
+    </div>
+    <div class="catering-card">
+      <span class="icon" aria-hidden="true">🎉</span>
+      <h3>Grand Celebration</h3>
+      <p>The full Flame experience: dim sum platter, two noodle dishes, two entrees, vegetable stir-fry and dessert. Premium cocktail service available.</p>
+      <span class="price">Serves 20\u201330 \u2022 $340</span>
+    </div>
+  </div>
+
+  <h2 style="color:var(--gold);font-size:1.2rem;margin:2.5rem 0 .25rem;border-left:3px solid var(--red);padding-left:.75rem">Private Events at Flame</h2>
+  <p style="font-style:italic;opacity:.4;margin-bottom:1.5rem;font-size:.9rem">Celebrate with cocktails and modern Asian cuisine</p>
+  <p>Our stylish dining space is the perfect setting for birthday dinners, anniversary celebrations, rehearsal dinners, corporate events, holiday parties and social gatherings. We offer flexible seating arrangements, a full bar and a dedicated event coordinator to ensure every detail is handled.</p>
+
+  <div class="party-box">
+    <h3>Ready to Plan Your Event?</h3>
+    <p>Call us at (704) 243-8008 or fill out our contact form</p>
+    <a href="contact.html" class="btn">Inquire Now</a>
+  </div>
+</section>
+<footer>
+  <p>Flame: Asian Bistro &amp; Bar · 10223 Mcintyre Ridge Rd #105 · Pineville, NC 28134 · (704) 243-8008</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="catering.html">Catering</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

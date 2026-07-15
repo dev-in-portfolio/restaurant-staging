@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thai Taste Matthews - Matthews, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">T</div>
+        <h1 class="brand-name">
+          Thai Taste
+          <span>Matthews</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Party Trays & Large Group Catering</h2>
+    <p class="page-subtitle">Feed your office luncheon, holiday party, or family gathering with our large portions of authentic Thai noodles and curries.</p>
+  </header>
+
+  <!-- Interactive Party Size Calculator -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Party size Food Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required pans and total cost.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">30</span> people</label>
+        <input type="range" id="guests-count" min="10" max="100" value="30" step="5" style="width: 100%; accent-color: var(--color-saffron); cursor: pointer;" oninput="calculateCatering(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🥢</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Pad Thai Trays</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-saffron);" id="padthai-trays">3 Trays</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~10 per tray ($70/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🍛</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Massaman Curry Trays</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-saffron);" id="curry-trays">2 Trays</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~15 per tray ($85/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🧆</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Spring Roll Trays</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-saffron);" id="rolls-trays">4 Trays</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~8 per tray ($35/ea)</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto;">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-bamboo); letter-spacing: 0.05em;">Estimated Catering Total</span>
+        <h4 style="font-size: 3rem; color: #ffffff; margin: 0.5rem 0;" id="catering-cost">$520.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="catering-summary">Includes 3 Pad Thai trays, 2 Massaman Curry trays, and 4 Spring Roll trays.</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your request. Please note all catering requires at least 48 hours notice. pickup-only at our Matthews Station St counter.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="30" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(249,115,22,0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details (Custom spice ratings per tray, allergy needs, protein swaps)</label>
+              <textarea id="notes" placeholder="e.g. Please make 1 Pad Thai tray mild and 2 trays medium spice..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍜</div>
+          <h3 class="success-title">Catering Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Thai Taste Matthews catering coordinator will review details and call you to arrange pricing and pick-up timing.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>131 Matthews Station St #1F<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 3:00 PM (Lunch)<br>Mon - Fri: 5:00 PM - 9:00 PM (Dinner)<br>Sat: 11:00 AM - 9:30 PM | Sun: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: 704-841-4455<br>Matthews Station | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Thai Taste Matthews. Matthews culinary tradition since 2005.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateCatering(guests) {
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Calculation logic
+      const padthai = Math.ceil(guests / 10);
+      const curry = Math.ceil(guests / 15);
+      const rolls = Math.ceil(guests / 8);
+
+      const totalCost = (padthai * 70) + (curry * 85) + (rolls * 35);
+
+      document.getElementById('padthai-trays').innerText = `${padthai} ${padthai === 1 ? 'Tray' : 'Trays'}`;
+      document.getElementById('curry-trays').innerText = `${curry} ${curry === 1 ? 'Tray' : 'Trays'}`;
+      document.getElementById('rolls-trays').innerText = `${rolls} ${rolls === 1 ? 'Tray' : 'Trays'}`;
+      document.getElementById('catering-cost').innerText = `$${totalCost.toFixed(2)}`;
+      document.getElementById('catering-summary').innerText = `Includes ${padthai} Pad Thai ${padthai === 1 ? 'tray' : 'trays'}, ${curry} Massaman Curry ${curry === 1 ? 'tray' : 'trays'}, and ${rolls} Spring Roll ${rolls === 1 ? 'tray' : 'trays'}.`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Khob khun, <strong>${name}</strong>. Your catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
+    });
+  </script>
+</body>
+</html>

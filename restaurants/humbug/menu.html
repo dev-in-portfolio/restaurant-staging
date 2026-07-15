@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Humbug Craft Cocktail Bar</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --humbug-black: #0d0d0d;
+      --humbug-charcoal: #1a1a1a;
+      --humbug-deep-red: #6b1d1d;
+      --humbug-gold: #c9a84c;
+      --humbug-gold-light: #e0c872;
+      --humbug-cream: #f5f0e8;
+      --humbug-text: #d4cfc8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--humbug-black);
+      color: var(--humbug-text);
+      line-height: 1.6;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+      padding: 8px 16px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    a { color: var(--humbug-gold); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--humbug-gold-light); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .site-header {
+      background: var(--humbug-charcoal);
+      border-bottom: 2px solid var(--humbug-deep-red);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--humbug-gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .logo span { color: #fff; font-weight: 400; }
+    .nav-list {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-list a {
+      color: var(--humbug-text);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .nav-list a:hover,
+    .nav-list a.active { color: var(--humbug-gold); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--humbug-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a0d0d 40%, #0d0d0d 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: #fff;
+    }
+    .page-hero p { color: var(--humbug-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.95rem; }
+
+    .section { padding: 64px 0; }
+    .section-dark { background: var(--humbug-charcoal); }
+    .section-black { background: var(--humbug-black); }
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-title span { color: var(--humbug-gold); }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .menu-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--humbug-deep-red);
+      padding: 20px 24px;
+      transition: border-color 0.3s;
+    }
+    .menu-item:hover { border-left-color: var(--humbug-gold); }
+    .menu-item h3 {
+      font-size: 1.1rem;
+      color: var(--humbug-gold);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .menu-item .desc { font-size: 0.9rem; opacity: 0.8; margin-bottom: 6px; }
+    .menu-item .price { color: #fff; font-weight: 500; font-size: 0.95rem; }
+    .menu-item .tags { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border: 1px solid var(--humbug-gold);
+      color: var(--humbug-gold);
+      border-radius: 2px;
+    }
+    .tag-spirit-free { border-color: var(--humbug-deep-red); color: #d47a7a; }
+
+    /* Mood Finder */
+    .mood-finder {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mood-finder h2 { margin-bottom: 16px; }
+    .mood-finder p { margin-bottom: 32px; opacity: 0.8; }
+    .mood-options {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .mood-btn {
+      padding: 14px 28px;
+      border: 2px solid var(--humbug-gold);
+      background: transparent;
+      color: var(--humbug-gold);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .mood-btn:hover,
+    .mood-btn.active {
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+    }
+    .mood-result {
+      display: none;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--humbug-gold);
+      padding: 32px;
+    }
+    .mood-result.visible { display: block; }
+    .mood-result h3 { color: var(--humbug-gold); margin-bottom: 8px; }
+    .mood-result .cocktail-name { font-size: 1.4rem; color: #fff; }
+    .mood-result p { margin-top: 8px; font-size: 0.95rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border: 2px solid var(--humbug-gold);
+      color: var(--humbug-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      background: transparent;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+    }
+    .btn-primary:hover {
+      background: var(--humbug-gold-light);
+    }
+
+    .site-footer {
+      background: var(--humbug-charcoal);
+      border-top: 2px solid var(--humbug-deep-red);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .site-footer p { font-size: 0.85rem; opacity: 0.7; }
+    .disclosure {
+      background: rgba(107,29,29,0.2);
+      border: 1px solid var(--humbug-deep-red);
+      color: var(--humbug-text);
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--humbug-charcoal);
+        padding: 24px;
+        border-bottom: 2px solid var(--humbug-deep-red);
+      }
+      .nav-list.open { display: flex; }
+      .nav-toggle { display: block; }
+      .header-inner { position: relative; }
+      .page-hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Humbug <span>Bar</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <h1>The Menu</h1>
+      <p>Always Delicious, Never Pretentious</p>
+    </section>
+
+    <!-- Cocktail Mood Finder -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="mood-finder">
+          <h2 class="section-title">What Are You <span>In the Mood For</span>?</h2>
+          <p>Not sure what to drink? Pick a vibe and we'll recommend something.</p>
+          <div class="mood-options">
+            <button class="mood-btn" data-mood="bold">Bold & Boozy</button>
+            <button class="mood-btn" data-mood="refreshing">Light & Refreshing</button>
+            <button class="mood-btn" data-mood="sweet">Sweet & Indulgent</button>
+            <button class="mood-btn" data-mood="smoky">Smoky & Complex</button>
+            <button class="mood-btn" data-mood="spirit-free">Spirit-Free</button>
+          </div>
+          <div class="mood-result" id="mood-result">
+            <h3>We Recommend</h3>
+            <div class="cocktail-name" id="mood-cocktail"></div>
+            <p id="mood-desc"></p>
+          </div>
+          <form class="demo-form" data-demo-form="mood-finder">
+            <p style="margin-top:24px;font-size:0.85rem;opacity:0.6;">Loved your recommendation? Join our list for new menu updates.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
+              <input type="email" placeholder="Your email" style="padding:12px 16px;background:var(--humbug-black);border:1px solid rgba(255,255,255,0.15);color:#fff;font-family:'DM Sans',sans-serif;min-width:240px;">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Cocktails -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">Signature <span>Cocktails</span></h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>Espresso Martini <span class="price">$15</span></h3>
+            <div class="desc">Vodka, fresh espresso, coffee liqueur, house demerara — smooth, bold, essential.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Moon Landing <span class="price">$16</span></h3>
+            <div class="desc">Gin, chartreuse, lemon, honey, egg white — floral, frothy, a giant leap.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Clock <span class="price">$16</span></h3>
+            <div class="desc">Rye, amaro, cynar, orange bitters — bitter, herbal, timeless.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Hoax <span class="price">$15</span></h3>
+            <div class="desc">Tequila, lime, agave, cucumber, jalapeño — smoky, spicy, deceivingly smooth.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Milk Punch Sucks <span class="price">$17</span></h3>
+            <div class="desc">Clarified milk punch with bourbon, lemon, black tea, spice — bright, clean, worth the name.</div>
+          </div>
+          <div class="menu-item">
+            <h3>New York Sour <span class="price">$16</span></h3>
+            <div class="desc">Bourbon, lemon, simple syrup, red wine float — a classic with a dry finish.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Delicate Hand <span class="price">$17</span></h3>
+            <div class="desc">Mezcal, yellow chartreuse, maraschino, lime, absinthe rinse — delicate, dangerous, delicious.</div>
+          </div>
+          <div class="menu-item">
+            <h3>Thundercat <span class="price">$16</span></h3>
+            <div class="desc">Rum, passionfruit, lime, orgeat, angostura — tropical, thunderous, a party in a glass.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spirit-Free -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Spirit-<span>Free</span></h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>No-Proof Paloma <span class="price">$10</span></h3>
+            <div class="desc">Seedlip, grapefruit, lime, agave, soda.</div>
+            <div class="tags"><span class="tag tag-spirit-free">Spirit-Free</span></div>
+          </div>
+          <div class="menu-item">
+            <h3>Zero Hour <span class="price">$11</span></h3>
+            <div class="desc">Lyres gin, cucumber, lime, tonic, rosemary.</div>
+            <div class="tags"><span class="tag tag-spirit-free">Spirit-Free</span></div>
+          </div>
+          <div class="menu-item">
+            <h3>Garden Spritz <span class="price">$10</span></h3>
+            <div class="desc">Shrub, soda, mint, seasonal berries — bright and refreshing.</div>
+            <div class="tags"><span class="tag tag-spirit-free">Spirit-Free</span></div>
+          </div>
+          <div class="menu-item">
+            <h3>Ginger Rogers <span class="price">$10</span></h3>
+            <div class="desc">Ginger beer, lime, agave, bitters, candied ginger.</div>
+            <div class="tags"><span class="tag tag-spirit-free">Spirit-Free</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beer & Wine -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">Beer &amp; <span>Wine</span></h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+          <div>
+            <h3 style="color:var(--humbug-gold);margin-bottom:16px;">Draft &amp; Cans</h3>
+            <div class="menu-item"><h3>Highland Gaelic Ale <span class="price">$7</span></h3><div class="desc">Rich, malty Scottish ale.</div></div>
+            <div class="menu-item"><h3>Burial Surf Wax <span class="price">$7</span></h3><div class="desc">West Coast IPA, bright and piney.</div></div>
+            <div class="menu-item"><h3>Blue Blazer Light Lager <span class="price">$6</span></h3><div class="desc">Crisp, crushable, local.</div></div>
+            <div class="menu-item"><h3>Wooden Robot Good Morning Vietnam <span class="price">$8</span></h3><div class="desc">Coffee stout, smooth and roasty.</div></div>
+            <div class="menu-item"><h3>Miller High Life <span class="price">$5</span></h3><div class="desc">The champagne of beers.</div></div>
+          </div>
+          <div>
+            <h3 style="color:var(--humbug-gold);margin-bottom:16px;">Wine</h3>
+            <div class="menu-item"><h3>House Red (Cabernet) <span class="price">$10</span></h3><div class="desc">Glass / bold and jammy.</div></div>
+            <div class="menu-item"><h3>House White (Sauvignon Blanc) <span class="price">$10</span></h3><div class="desc">Glass / bright and zesty.</div></div>
+            <div class="menu-item"><h3>Sparkling Bubbles <span class="price">$12</span></h3><div class="desc">Glass / because you deserve it.</div></div>
+            <div class="menu-item"><h3>Natural Wine Rotating <span class="price">$14</span></h3><div class="desc">Ask your bartender what's open.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Humbug Bar &mdash; Charlotte, NC</p>
+      <p style="font-size:0.85rem;margin-top:8px;">
+        <a href="https://humbugclt.com">humbugclt.com</a> &middot;
+        <a href="https://instagram.com/humbugclt" target="_blank">@humbugclt</a> &middot;
+        <a href="tel:+17049106436">(704) 910-6436</a>
+      </p>
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation — not operated by the restaurant
+    </div>
+  </footer>
+
+  <script src="../site-core.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Nav toggle
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.getElementById('nav-list');
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          navList.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+        });
+      }
+
+      // Mood finder
+      const moodBtns = document.querySelectorAll('.mood-btn');
+      const moodResult = document.getElementById('mood-result');
+      const moodName = document.getElementById('mood-cocktail');
+      const moodDesc = document.getElementById('mood-desc');
+
+      const cocktails = {
+        bold: {
+          name: 'Clock',
+          desc: 'Rye, amaro, cynar, orange bitters — bitter, herbal, and timeless. For those who like their drinks with backbone.'
+        },
+        refreshing: {
+          name: 'Moon Landing',
+          desc: 'Gin, chartreuse, lemon, honey, egg white — floral, frothy, and surprisingly light. Like a spring evening on the deck.'
+        },
+        sweet: {
+          name: 'Thundercat',
+          desc: 'Rum, passionfruit, lime, orgeat, angostura — tropical indulgence that goes down easy. Dangerously drinkable.'
+        },
+        smoky: {
+          name: 'Delicate Hand',
+          desc: 'Mezcal, yellow chartreuse, maraschino, lime, absinthe rinse — delicate, dangerous, delicious. A journey in a glass.'
+        },
+        'spirit-free': {
+          name: 'Zero Hour',
+          desc: 'Lyres gin, cucumber, lime, tonic, rosemary — all the complexity, zero proof. Perfectly crafted.'
+        }
+      };
+
+      moodBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          moodBtns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          const mood = btn.getAttribute('data-mood');
+          const pick = cocktails[mood];
+          if (pick) {
+            moodName.textContent = pick.name;
+            moodDesc.textContent = pick.desc;
+            moodResult.classList.add('visible');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

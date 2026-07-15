@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story — Humbug Craft Cocktail Bar</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --humbug-black: #0d0d0d;
+      --humbug-charcoal: #1a1a1a;
+      --humbug-deep-red: #6b1d1d;
+      --humbug-gold: #c9a84c;
+      --humbug-gold-light: #e0c872;
+      --humbug-cream: #f5f0e8;
+      --humbug-text: #d4cfc8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--humbug-black);
+      color: var(--humbug-text);
+      line-height: 1.6;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--humbug-gold);
+      color: var(--humbug-black);
+      padding: 8px 16px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    a { color: var(--humbug-gold); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--humbug-gold-light); }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .site-header {
+      background: var(--humbug-charcoal);
+      border-bottom: 2px solid var(--humbug-deep-red);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--humbug-gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .logo span { color: #fff; font-weight: 400; }
+    .nav-list {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-list a {
+      color: var(--humbug-text);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .nav-list a:hover,
+    .nav-list a.active { color: var(--humbug-gold); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--humbug-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a0d0d 40%, #0d0d0d 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: #fff;
+    }
+    .page-hero p { color: var(--humbug-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.95rem; }
+
+    .section { padding: 64px 0; }
+    .section-dark { background: var(--humbug-charcoal); }
+    .section-black { background: var(--humbug-black); }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-title span { color: var(--humbug-gold); }
+
+    .content-block {
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .content-block p { margin-bottom: 20px; opacity: 0.88; }
+
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--humbug-deep-red);
+      padding-left: 24px;
+    }
+    .timeline li {
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--humbug-gold);
+      border-radius: 50%;
+    }
+    .timeline .year {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--humbug-gold);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: rgba(107,29,29,0.15);
+      border-left: 4px solid var(--humbug-deep-red);
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .highlight-box h3 { color: var(--humbug-gold); margin-bottom: 8px; }
+
+    .site-footer {
+      background: var(--humbug-charcoal);
+      border-top: 2px solid var(--humbug-deep-red);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .site-footer p { font-size: 0.85rem; opacity: 0.7; }
+    .disclosure {
+      background: rgba(107,29,29,0.2);
+      border: 1px solid var(--humbug-deep-red);
+      color: var(--humbug-text);
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--humbug-charcoal);
+        padding: 24px;
+        border-bottom: 2px solid var(--humbug-deep-red);
+      }
+      .nav-list.open { display: flex; }
+      .nav-toggle { display: block; }
+      .header-inner { position: relative; }
+      .page-hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Humbug <span>Bar</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html" class="active">Story</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <h1>Our Story</h1>
+      <p>Always Delicious, Never Pretentious</p>
+    </section>
+
+    <!-- The Name -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">Where the Name <span>Comes From</span></h2>
+        <div class="content-block">
+          <p>Humbug takes its name from a defunct 1950s humor magazine — a publication that delighted in satire, wit, and puncturing the over-serious. It ran for just a handful of issues but left an impression on everyone who encountered it.</p>
+          <p>That same spirit lives on here. We refuse to take ourselves too seriously. A craft cocktail should be excellent — but it should also be fun. The name is a nod to finding joy in the irreverent, the unexpected, the delightfully unpretentious.</p>
+          <div class="highlight-box">
+            <h3>Why "Humbug"?</h3>
+            <p>Like the magazine, we're here to challenge the stuffiness that often surrounds craft cocktails. Great drinks don't need attitude. They need care, creativity, and a sense of humor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Our <span>Philosophy</span></h2>
+        <div class="content-block">
+          <p>We believe in bridging the gap between the modern craft cocktail bar and the laid-back neighborhood bar. That means every drink is made with precision and intention — but served without pretense or judgment.</p>
+          <p>Whether you're a cocktail connoisseur who knows your amari from your aperitifs, or someone who just wants a perfectly made Old Fashioned, you're welcome here. Ask questions. Take chances. Stay awhile.</p>
+          <p>Our bar is built on a few simple beliefs:</p>
+          <ul style="margin:16px 0 16px 24px;opacity:0.88;">
+            <li style="margin-bottom:8px;"><strong>Hospitality first.</strong> Every guest is a friend we haven't met yet.</li>
+            <li style="margin-bottom:8px;"><strong>Quality over quantity.</strong> A shorter list of exceptional drinks beats a book of mediocrity.</li>
+            <li style="margin-bottom:8px;"><strong>No judgment.</strong> Order what you like. We'll make it right.</li>
+            <li style="margin-bottom:8px;"><strong>21+ always.</strong> This is an adult space. No exceptions.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Villa Heights -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">Villa <span>Heights</span></h2>
+        <div class="content-block">
+          <p>We're proud to call Villa Heights home. Nestled between Plaza Midwood and NoDa, this neighborhood has a character all its own — industrial roots, a creative energy, and a community that values the real over the flashy.</p>
+          <p>Our spot at 2501 The Plaza puts us right at the crossroads of it all. The garage doors roll up, the deck fills with neighbors, and the night takes shape. We're not trying to be a destination — we're trying to be your local.</p>
+          <p>In a city growing as fast as Charlotte, places like Villa Heights remind you what makes a neighborhood special. We're here to be part of that.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Space -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">The <span>Space</span></h2>
+        <div class="content-block">
+          <p>Step inside and you'll find a dimly lit room — moody, intimate, and deliberately unpretentious. Dark walls, cozy booths, and warm candlelight set the tone. The bar is the heart of the room, where bartenders work with quiet focus.</p>
+          <p>On warm nights, the garage doors roll up, blurring the line between inside and out. Our deck becomes an extension of the bar — string lights overhead, friends gathered around, the hum of The Plaza in the background.</p>
+          <p>There's a pool table in the back, because every great neighborhood bar needs one. Challenge a stranger. Lose gracefully. Buy them a drink.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section section-black">
+      <div class="container">
+        <h2 class="section-title">The <span>Journey</span></h2>
+        <ul class="timeline content-block">
+          <li>
+            <span class="year">2021</span>
+            <p>The idea takes shape — a cocktail bar that doesn't take itself too seriously, in a neighborhood that deserves something special.</p>
+          </li>
+          <li>
+            <span class="year">2022</span>
+            <p>After months of searching, we find our home at 2501 The Plaza. The space is raw, the potential is undeniable.</p>
+          </li>
+          <li>
+            <span class="year">2023</span>
+            <p>Humbug opens its doors. The response is immediate and overwhelming. Our first holiday pop-up, House of Krampus, becomes a local phenomenon.</p>
+          </li>
+          <li>
+            <span class="year">2024</span>
+            <p>We settle into our rhythm. The menu evolves with the seasons. The deck becomes a summer staple. Bah Humbug is born.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Humbug Bar &mdash; Charlotte, NC</p>
+      <p style="font-size:0.85rem;margin-top:8px;">
+        <a href="https://humbugclt.com">humbugclt.com</a> &middot;
+        <a href="https://instagram.com/humbugclt" target="_blank">@humbugclt</a> &middot;
+        <a href="tel:+17049106436">(704) 910-6436</a>
+      </p>
+    </div>
+    <div class="disclosure">
+      Unofficial concept presentation — not operated by the restaurant
+    </div>
+  </footer>
+
+  <script src="../site-core.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.getElementById('nav-list');
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          navList.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+        });
+      }
+    });
+  </script>
+</body>
+</html>

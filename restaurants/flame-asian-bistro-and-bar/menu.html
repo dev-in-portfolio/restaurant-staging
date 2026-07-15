@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Flame: Asian Bistro &amp; Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b91c1c;--gold:#f59e0b;--charcoal:#0d0d0d;--cream:#fef3c7;--warm:#1a0f0a;--muted:#9a8a7a}
+body{margin:0;background:var(--charcoal);color:#f5f0ea;font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--warm);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(245,158,11,.12)}
+.nav a{color:#f5f0ea;text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0f0a,#0d0d0d);padding:3rem 2rem;text-align:center}
+.page-header h1{margin:0;font-size:2.2rem;color:var(--gold)}
+.page-header p{font-style:italic;opacity:.5;margin:.35rem 0 0}
+.tab-bar{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;padding:1.5rem 1rem;background:rgba(0,0,0,.2)}
+.tab-bar button{padding:.6rem 1.2rem;background:transparent;border:1px solid rgba(245,158,11,.15);border-radius:999px;color:#f5f0ea;font-weight:600;font-size:.78rem;letter-spacing:.06em;cursor:pointer;transition:.25s;text-transform:uppercase}
+.tab-bar button:hover{border-color:var(--gold);color:var(--gold)}
+.tab-bar button.active{background:var(--red);border-color:var(--red);color:#fff}
+.menu-panel{max-width:820px;margin:0 auto;padding:3rem 2rem}
+.menu-panel.hidden{display:none}
+.menu-cat{margin-bottom:2.5rem}
+.menu-cat h3{color:var(--gold);font-size:1.05rem;margin:0 0 .2rem;border-bottom:1px solid rgba(245,158,11,.08);padding-bottom:.5rem}
+.menu-cat .cat-note{font-size:.78rem;opacity:.4;font-style:italic;margin-bottom:1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.menu-item .name{font-size:.88rem;font-weight:600}
+.menu-item .desc{font-size:.76rem;opacity:.4;margin-top:.12rem;max-width:75%}
+.menu-item .price{font-family:'Fraunces',serif;color:var(--gold);font-size:.9rem;white-space:nowrap;margin-left:1rem}
+.promo-box{max-width:580px;margin:2.5rem auto;padding:1.75rem;background:rgba(185,28,28,.04);border:1px solid rgba(185,28,28,.1);border-radius:12px;text-align:center}
+.promo-box h3{color:var(--gold);margin:0 0 .25rem}
+.promo-box p{font-size:.85rem;opacity:.5;margin:0}
+.quiz-box{max-width:580px;margin:2.5rem auto;padding:2rem;background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1);border-radius:12px;text-align:center}
+.quiz-box h3{color:var(--gold);margin:0 0 .5rem}
+.quiz-box p{font-size:.85rem;opacity:.5;margin:0 0 1.5rem}
+.quiz-step{margin-bottom:1.25rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem;color:var(--gold)}
+.quiz-step select{width:100%;max-width:320px;padding:.75rem 1rem;border:1px solid rgba(245,158,11,.15);border-radius:8px;background:rgba(0,0,0,.3);color:#f5f0ea;font-size:.9rem}
+.quiz-step select option{background:var(--charcoal);color:#f5f0ea}
+.quiz-btn{display:inline-block;background:var(--red);color:#fff;padding:.75rem 2rem;border:none;border-radius:6px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;transition:.2s}
+.quiz-btn:hover{background:#991b1b}
+.quiz-result{margin-top:1.5rem;padding:1.25rem;border-radius:8px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.15);display:none}
+.quiz-result.show{display:block}
+.quiz-result h4{color:var(--gold);margin:0 0 .35rem}
+.quiz-result p{font-size:.88rem;opacity:.6;margin:0;line-height:1.5}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(245,158,11,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Flame</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Contact</a>
+    <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>Handmade dim sum, wok-fired noodles, chef specials &amp; craft cocktails</p>
+</header>
+<div class="tab-bar" data-toggle-group>
+  <button data-toggle="dimsum" class="active">Dim Sum</button>
+  <button data-toggle="appetizers">Appetizers</button>
+  <button data-toggle="entrees">Entr\u00E9es</button>
+  <button data-toggle="drinks">Drinks</button>
+</div>
+
+<section class="menu-panel" data-panel="dimsum" id="dimsum">
+  <div class="menu-cat">
+    <h3>Handmade Dim Sum \u70B9\u5FC3</h3>
+    <p class="cat-note">Freshly prepared daily by our dim sum chefs</p>
+    <div class="menu-item"><span><span class="name">Pork Soup Dumpling</span><div class="desc">Juicy pork xiaolongbao (6) \u2014 hand-folded with rich broth inside each wrapper</div></span><span class="price">$10.95</span></div>
+    <div class="menu-item"><span><span class="name">Steamed Crystal Shrimp Dumpling</span><div class="desc">Translucent har gow (4) \u2014 plump shrimp in delicate wrappers</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Pork &amp; Shrimp Siu Mai</span><div class="desc">Open-faced pork and shrimp dumplings (4)</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Steamed Char Siu Pork Bun</span><div class="desc">Fluffy bao filled with sweet barbecue pork (3)</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Black Golden Lava Custard Bun</span><div class="desc">Squid-ink bao with molten salted egg custard (3)</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Shanghai Pan-Fried Bun</span><div class="desc">Crispy-bottomed shengjian bao filled with pork and broth (6)</div></span><span class="price">$12.95</span></div>
+    <div class="menu-item"><span><span class="name">Pan-Fried Pork Potsticker</span><div class="desc">Golden-crisp guotie with pork filling (6)</div></span><span class="price">$10.95</span></div>
+    <div class="menu-item"><span><span class="name">Pan-Fried Chicken Potsticker</span><div class="desc">Crispy-bottomed chicken potstickers (6)</div></span><span class="price">$10.95</span></div>
+    <div class="menu-item"><span><span class="name">Crispy Shredded Radish Pastry</span><div class="desc">Flaky pastry filled with shredded daikon radish (3)</div></span><span class="price">$8.95</span></div>
+    <div class="menu-item"><span><span class="name">Spicy Wonton</span><div class="desc">Pork wontons in chili oil with Sichuan peppercorn (8)</div></span><span class="price">$9.95</span></div>
+    <div class="menu-item"><span><span class="name">Shanghai Mini Wonton Soup</span><div class="desc">Delicate pork wontons in savory broth (10)</div></span><span class="price">$10.95</span></div>
+    <div class="menu-item"><span><span class="name">Sticky Rice w. Chicken</span><div class="desc">Lotus leaf-wrapped sticky rice with chicken (2)</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Green Tea Sesame Ball</span><div class="desc">Crispy sesame balls with green tea filling (3)</div></span><span class="price">$7.95</span></div>
+    <div class="menu-item"><span><span class="name">Scallion Pancake</span><div class="desc">Flaky, pan-fried scallion flatbread</div></span><span class="price">$7.95</span></div>
+    <div class="menu-item"><span><span class="name">Chicken Feet in Black Bean Sauce</span><div class="desc">Steamed chicken feet with fermented black beans</div></span><span class="price">$6.95</span></div>
+    <div class="menu-item"><span><span class="name">Spare Rib in Black Bean Sauce</span><div class="desc">Pork spare ribs steamed with garlic and black bean</div></span><span class="price">$6.95</span></div>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Dim Sum Discovery</h3>
+    <p>Not sure which dumpling to start with? Tell us your preference.</p>
+    <div class="quiz-step">
+      <label for="dumpling-type">What are you craving?</label>
+      <select id="dumpling-type">
+        <option value="">Choose a craving\u2026</option>
+        <option value="soup">Soup-filled &amp; juicy</option>
+        <option value="crispy">Crispy &amp; pan-fried</option>
+        <option value="steamed">Steamed &amp; delicate</option>
+        <option value="sweet">Sweet &amp; indulgent</option>
+      </select>
+    </div>
+    <button class="quiz-btn" id="dumpling-btn">Find My Dumpling</button>
+    <div class="quiz-result" id="dumpling-result">
+      <h4 id="dumpling-name"></h4>
+      <p id="dumpling-desc"></p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-panel hidden" data-panel="appetizers" id="appetizers">
+  <div class="menu-cat">
+    <h3>Appetizers \u5F00\u80C3\u83DC</h3>
+    <div class="menu-item"><span><span class="name">Crab &amp; Brie Wontons</span><div class="desc">Crispy wontons with crab and brie \u2014 a signature Flame starter</div></span><span class="price">$9.95</span></div>
+    <div class="menu-item"><span><span class="name">Golden Crispy Wings</span><div class="desc">Five-spice marinated wings, golden fried (5 pc)</div></span><span class="price">$9.95</span></div>
+    <div class="menu-item"><span><span class="name">Salt &amp; Pepper Popcorn Chicken</span><div class="desc">Perfectly crisp, topped with Thai basil</div></span><span class="price">$9.95</span></div>
+    <div class="menu-item"><span><span class="name">Crispy Roasted Pork Belly</span><div class="desc">Served with fresh pineapple</div></span><span class="price">$13.95</span></div>
+    <div class="menu-item"><span><span class="name">Sichuan Chicken in Chili Oil</span><div class="desc">Boneless, served cold with cucumber</div></span><span class="price">$12.95</span></div>
+    <div class="menu-item"><span><span class="name">Shanghai Sweet &amp; Sour Pork Ribs</span><div class="desc">Sticky-sweet glazed spare ribs</div></span><span class="price">$12.95</span></div>
+    <div class="menu-item"><span><span class="name">Five-Spice Smoked Fish</span><div class="desc">Marinated and smoked fish fillet</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Crispy Squid Fronds</span><div class="desc">Seaweed-tossed crispy squid with peppers and garlic</div></span><span class="price">$9.95</span></div>
+    <div class="menu-item"><span><span class="name">Pine Nut Chicken Hash</span><div class="desc">Lettuce wraps with chicken, pine nuts, water chestnut, bamboo</div></span><span class="price">$10.95</span></div>
+  </div>
+</section>
+
+<section class="menu-panel hidden" data-panel="entrees" id="entrees">
+  <div class="menu-cat">
+    <h3>Wok-Fired Noodles &amp; Rice</h3>
+    <div class="menu-item"><span><span class="name">Cantonese Beef Chow Fun</span><div class="desc">Wide rice noodles, onion, bean sprout, yellow chive, scallion</div></span><span class="price">$15.95</span></div>
+    <div class="menu-item"><span><span class="name">Flame Stir-Fry Lo Mein</span><div class="desc">Egg noodles wok-tossed with vegetables and your choice of protein</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Singapore Curry Vermicelli</span><div class="desc">Thin rice noodles with shrimp, chicken, egg, curry powder</div></span><span class="price">$15.95</span></div>
+    <div class="menu-item"><span><span class="name">Flamb\u00E9ed Charcoal Briquette Fried Rice</span><div class="desc">Squid ink rice, crab, egg, dried scallop \u2014 a showstopper</div></span><span class="price">$17.95</span></div>
+    <div class="menu-item"><span><span class="name">Thai Crab Rice</span><div class="desc">Crab meat, egg yolk, corn</div></span><span class="price">$17.95</span></div>
+    <div class="menu-item"><span><span class="name">Cantonese Silk Egg Seafood Ho Fun</span><div class="desc">Wide rice noodles with scallop, shrimp, squid, velvety egg sauce</div></span><span class="price">$21.95</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Chef\u2019s Specials</h3>
+    <div class="menu-item"><span><span class="name">Seoul Fire Ribeye</span><div class="desc">Korean-style marinated ribeye with gochujang glaze</div></span><span class="price">$26.95</span></div>
+    <div class="menu-item"><span><span class="name">General Tso\u2019s Chicken</span><div class="desc">Crispy white meat chicken in sweet-spicy glaze</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Orange Chicken</span><div class="desc">Citrus-glazed crispy chicken \u2014 a crowd favorite</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Sesame Chicken</span><div class="desc">Honey-soy glazed with toasted sesame seeds</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Hunan Beer Duck</span><div class="desc">Wok-fried duck with beer and Hunan spices</div></span><span class="price">$22.95</span></div>
+    <div class="menu-item"><span><span class="name">Singapore Laksa Noodle Soup</span><div class="desc">Coconut curry broth, shrimp, scallop, green mussels, fish tofu</div></span><span class="price">$16.95</span></div>
+    <div class="menu-item"><span><span class="name">Mapo Tofu</span><div class="desc">Classic Sichuan mapo with ground pork and numbing peppercorn</div></span><span class="price">$14.95</span></div>
+    <div class="menu-item"><span><span class="name">Dry Sauteed Green Beans</span><div class="desc">Sichuan-style with garlic and chili</div></span><span class="price">$14.95</span></div>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Flame Fire Finder</h3>
+    <p>How adventurous are you feeling? Find your perfect dish.</p>
+    <div class="quiz-step">
+      <label for="heat">Pick your heat level</label>
+      <select id="heat">
+        <option value="">Choose your heat\u2026</option>
+        <option value="mild">Mild \u2014 I like it gentle</option>
+        <option value="medium">Medium \u2014 Some warmth, please</option>
+        <option value="hot">Hot \u2014 Bring the fire</option>
+        <option value="extreme">Extreme \u2014 No mercy</option>
+      </select>
+    </div>
+    <div class="quiz-step">
+      <label for="protein">Pick your protein</label>
+      <select id="protein">
+        <option value="">Choose protein\u2026</option>
+        <option value="chicken">Chicken</option>
+        <option value="beef">Beef</option>
+        <option value="seafood">Seafood</option>
+        <option value="tofu">Tofu / Veggie</option>
+      </select>
+    </div>
+    <button class="quiz-btn" id="flame-btn">Find My Dish</button>
+    <div class="quiz-result" id="flame-result">
+      <h4 id="flame-name"></h4>
+      <p id="flame-desc"></p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-panel hidden" data-panel="drinks" id="drinks">
+  <div class="menu-cat">
+    <h3>Signature Cocktails</h3>
+    <p class="cat-note">Crafted with fresh ingredients and Asian-inspired flavors</p>
+    <div class="menu-item"><span><span class="name">Lychee Lotus</span><div class="desc">Lychee-infused vodka, elderflower, lime, splash of soda</div></span><span class="price">$12</span></div>
+    <div class="menu-item"><span><span class="name">Spicy Mule</span><div class="desc">Jalape\u00F1o-infused tequila, ginger beer, lime, agave</div></span><span class="price">$12</span></div>
+    <div class="menu-item"><span><span class="name">Sakura Martini</span><div class="desc">Japanese gin, cherry blossom, sake, lemon</div></span><span class="price">$13</span></div>
+    <div class="menu-item"><span><span class="name">Thai Basil Smash</span><div class="desc">Vodka, Thai basil, cucumber, lime, simple syrup</div></span><span class="price">$11</span></div>
+    <div class="menu-item"><span><span class="name">Classic Mojito</span><div class="desc">Mint, lime, rum, soda \u2014 featured National Mojito Day special</div></span><span class="price">$10</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Beer &amp; Wine</h3>
+    <div class="menu-item"><span><span class="name">Tsingtao Beer</span><div class="desc">Classic Chinese lager</div></span><span class="price">$5</span></div>
+    <div class="menu-item"><span><span class="name">Sapporo Premium</span><div class="desc">Japanese rice lager</div></span><span class="price">$6</span></div>
+    <div class="menu-item"><span><span class="name">Local Craft Selection</span><div class="desc">Rotating Charlotte-area IPA or lager</div></span><span class="price">$7</span></div>
+    <div class="menu-item"><span><span class="name">House Red / White Wine</span><div class="desc">Ask your server for today\u2019s pour</div></span><span class="price">$8</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>Flame: Asian Bistro &amp; Bar · 10223 Mcintyre Ridge Rd #105 · Pineville, NC 28134 · (704) 243-8008</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="catering.html">Catering</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+document.getElementById('dumpling-btn').addEventListener('click',function(){const t=document.getElementById('dumpling-type').value;const r=document.getElementById('dumpling-result');const n=document.getElementById('dumpling-name');const d=document.getElementById('dumpling-desc');const picks={soup:{name:'Pork Soup Dumplings (Xiaolongbao)',desc:'Hand-folded parcels of pork and rich broth \u2014 bite carefully and savor the soup.'},crispy:{name:'Shanghai Pan-Fried Buns (Shengjian)',desc:'Crispy-bottomed buns stuffed with pork and broth. The best of both worlds \u2014 crunchy and juicy.'},steamed:{name:'Crystal Shrimp Dumplings (Har Gow)',desc:'Translucent, delicate and packed with plump shrimp. The benchmark of dim sum craftsmanship.'},sweet:{name:'Black Golden Lava Custard Buns',desc:'Squid-ink bao with molten salted egg custard. A dramatic, delicious surprise.'}};if(!t){r.classList.remove('show');return}const pick=picks[t];n.textContent=pick.name;d.textContent=pick.desc;r.classList.add('show')});
+document.getElementById('flame-btn').addEventListener('click',function(){const h=document.getElementById('heat').value;const p=document.getElementById('protein').value;const r=document.getElementById('flame-result');const n=document.getElementById('flame-name');const d=document.getElementById('flame-desc');const map={chicken:{mild:{name:'Sesame Chicken',desc:'Crispy white meat chicken in honey-soy glaze with toasted sesame \u2014 sweet, crunchy and universally loved.'},medium:{name:'General Tso\u2019s Chicken',desc:'The iconic sweet-spicy glaze with dried chilies \u2014 balanced heat that builds with every bite.'},hot:{name:'Sichuan Numbing Spicy Chicken',desc:'Cold boneless chicken drenched in Sichuan chili oil with Sichuan peppercorn \u2014 tingling and fiery.'},extreme:{name:'Red Pepper Crispy Chicken Cartilage',desc:'Deep-fried chicken cartilage tossed with dried red peppers and Sichuan salt \u2014 an authentic Sichuan drinking snack.'}},beef:{mild:{name:'Cantonese Beef Chow Fun',desc:'Wide rice noodles wok-seared with tender beef, bean sprouts and scallions \u2014 classic Cantonese comfort.'},medium:{name:'Seoul Fire Ribeye',desc:'Korean gochujang-glazed ribeye with sesame and scallion \u2014 bold, smoky and deeply savory.'},hot:{name:'Hunan Beer Duck',desc:'Wok-fried duck with beer and Hunan spices \u2014 rich, aromatic and properly spicy.'},extreme:{name:'Malay Curry Beef Brisket',desc:'Stewed brisket and tendon in spicy Malay curry with bell pepper and onion \u2014 intense and complex.'}},seafood:{mild:{name:'Thai Crab Rice',desc:'Crab meat, egg yolk and corn stir-fried with jasmine rice \u2014 delicate, sweet and satisfying.'},medium:{name:'Singapore Laksa Noodle Soup',desc:'Coconut curry broth loaded with shrimp, scallops, mussels and fish tofu \u2014 warming and aromatic.'},hot:{name:'Dry-Pot Crispy Grass Carp',desc:'Crispy whole fish in a dry-pot with chili, garlic and Sichuan pepper \u2014 a fiery centerpiece.'},extreme:{name:'Chongqing Blood Curd',desc:'Numbing Sichuan broth with duck blood curd, tripe and chili \u2014 for the true Sichuan adventurer.'}},tofu:{mild:{name:'Braised Tofu with Mushrooms',desc:'Silky fried tofu in rich soy glaze with bok choy \u2014 earthy, comforting and vegetarian-friendly.'},medium:{name:'Mapo Tofu',desc:'Classic Sichuan tofu with ground pork, chili bean paste and Sichuan peppercorn \u2014 the perfect medium-heat introduction to Sichuan cuisine.'},hot:{name:'Kung Pao Tofu',desc:'Fried tofu tossed with peanuts, dried red chili and scallion \u2014 spicy, crunchy and addictive.'},extreme:{name:'Dry Sauteed Green Beans',desc:'Sichuan dry-fried green beans with garlic, chili and preserved vegetables \u2014 simple but intensely flavorful.'}}};if(!h||!p){r.classList.remove('show');return}const pick=map[p][h];n.textContent=pick.name;d.textContent=pick.desc;r.classList.add('show')});
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit — Idlewild Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+.page-header {
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--cream);
+}
+.page-header h1 i { color: var(--amber); font-style: italic; }
+
+.info-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(201,149,46,0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.info-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.info-card h3 .icon { color: var(--amber); font-size: 1.4rem; }
+.info-card p, .info-card li { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+.info-card ul { list-style: none; }
+.info-card ul li { padding: 0.25rem 0; }
+.info-card ul li::before { content: '\2014'; color: var(--amber); margin-right: 0.5rem; }
+
+.embed-map {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,149,46,0.15);
+  overflow: hidden;
+  margin-top: 1.5rem;
+  background: var(--navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Idlewild<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cocktails.html">Cocktails</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="page-header">
+    <h1>Plan Your <i>Visit</i></h1>
+    <p>424 E 36th St, Unit 2 &middot; Charlotte, NC &middot; Walk-ins always welcome.</p>
+  </div>
+
+  <section class="section" aria-labelledby="info-heading">
+    <div class="section-inner" style="max-width:720px;">
+
+      <div class="info-card">
+        <h3><span class="icon">&#x1F552;</span> Hours</h3>
+        <ul class="hours-list">
+          <li><span>Monday &mdash; Wednesday</span><span>6 PM &ndash; 1 AM</span></li>
+          <li><span>Thursday &mdash; Saturday</span><span>6 PM &ndash; 2 AM</span></li>
+          <li><span>Sunday</span><span>6 PM &ndash; 1 AM</span></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3><span class="icon">&#x1F6CD;</span> Reservations & Walk-Ins</h3>
+        <p>We welcome walk-ins at the bar and in our lounge. For guaranteed seating, we offer a limited number of reservations through Resy &mdash; especially recommended for weekend evenings and groups of 4+.</p>
+        <ul>
+          <li>Walk-ins are always welcome</li>
+          <li>Limited reservations available via Resy</li>
+          <li>Cocktails ~$17 each</li>
+          <li>Small bites menu available all night</li>
+        </ul>
+        <a href="https://resy.com/cities/clt/idlewild" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2">Reserve on Resy</a>
+      </div>
+
+      <div class="info-card">
+        <h3><span class="icon">&#x1F698;</span> Getting Here & Parking</h3>
+        <p><strong>Address:</strong> 424 E 36th St, Unit 2, Charlotte, NC 28205 (Novel NoDa / 30Six building, ground floor)</p>
+        <ul>
+          <li>Street parking available on 36th St and surrounding blocks</li>
+          <li>Nearby parking lots within a 2-minute walk</li>
+          <li>0.3 miles from 36th Street Lynx Blue Line light rail station</li>
+          <li>Rideshare drop-off at the 30Six building entrance</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3><span class="icon">&#x1F5FA;</span> Location</h3>
+        <div class="embed-map" aria-label="Map showing Idlewild at 424 E 36th St, Charlotte NC">
+          <div class="text-center">
+            <p style="font-family:var(--font-heading);color:var(--amber);font-size:1.1rem;">424 E 36th St, Unit 2</p>
+            <p>Charlotte, NC 28205</p>
+            <p class="mt-2"><a href="https://maps.google.com/?q=424+E+36th+St+Charlotte+NC" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Open in Maps</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Unofficial concept presentation &mdash; not operated by the restaurant. <br>Idlewild &middot; 424 E 36th St, Unit 2, Charlotte, NC</p>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

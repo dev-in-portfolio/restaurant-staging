@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flame: Asian Bistro &amp; Bar · Pineville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b91c1c;--gold:#f59e0b;--charcoal:#0d0d0d;--cream:#fef3c7;--warm:#1a0f0a;--muted:#9a8a7a}
+body{margin:0;background:var(--charcoal);color:#f5f0ea;font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--warm);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(245,158,11,.12)}
+.nav a{color:#f5f0ea;text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:78vh;background:linear-gradient(135deg,#1a0f0a,#0d0d0d 50%,#2a0a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(185,28,28,.06),transparent 70%);pointer-events:none}
+.hero h1{font-size:3rem;margin:0;color:var(--gold);line-height:1.1}
+.hero h1 span{color:var(--red)}
+.hero .tagline{font-size:1.1rem;opacity:.5;font-style:italic;margin:.5rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .btn{display:inline-block;background:var(--red);color:#fff;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{background:#991b1b;transform:translateY(-2px)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--red);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(245,158,11,.06);border-radius:10px;padding:1.75rem;transition:.25s}
+.feature-card:hover{border-color:rgba(245,158,11,.2);transform:translateY(-3px)}
+.feature-card .icon{font-size:2rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1rem;color:var(--gold);margin:0 0 .35rem}
+.feature-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(245,158,11,.04)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--gold);display:block}
+.stat .label{font-size:.82rem;opacity:.4;margin-top:.3rem;display:block}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(245,158,11,.06)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Flame</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Contact</a>
+    <a href="flavor-guide.html">Flavor Guide</a>
+  </div>
+</nav>
+<header class="hero">
+  <div>
+    <h1>Flame <span>火</span></h1>
+    <p class="tagline">Asian Bistro &amp; Bar</p>
+    <p class="sub" style="opacity:.35;margin-bottom:1.8rem">Fresh ingredients. Authentic flavors. Modern fire.</p>
+    <a href="menu.html" class="btn">Explore the Menu</a>
+  </div>
+</header>
+<section class="section">
+  <h2>Welcome to Flame</h2>
+  <p class="subtitle">Where tradition meets innovation — Asian fusion crafted with passion</p>
+  <div class="featured-grid">
+    <div class="feature-card"><span class="icon" aria-hidden="true">🥟</span><h3>Handmade Dim Sum</h3><p>Soup dumplings, crystal shrimp dumplings, char siu buns and Shanghai pan-fried buns — crafted fresh daily by our dim sum chefs</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🔥</span><h3>Wok-Fired Noodles</h3><p>Cantonese beef chow fun, Singapore curry vermicelli, flame stir-fry lo mein — each dish wok-tossed at high heat for authentic wok hei</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍸</span><h3>Craft Cocktails &amp; Bar</h3><p>Full bar with signature cocktails like Lychee Lotus, weekend mojito specials and an extensive selection of beer, wine and spirits</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🎉</span><h3>Catering &amp; Private Events</h3><p>Fresh Asian catering for corporate lunches, birthday parties and special occasions — plus private dining for groups of all sizes</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">Pineville</span><span class="label">Near Charlotte, NC</span></div>
+    <div class="stat"><span class="num">Dim Sum</span><span class="label">Handmade Daily</span></div>
+    <div class="stat"><span class="num">Full Bar</span><span class="label">Cocktails, Wine &amp; Beer</span></div>
+    <div class="stat"><span class="num">Catering</span><span class="label">Corporate &amp; Events</span></div>
+  </div>
+</section>
+<footer>
+  <p>Flame: Asian Bistro &amp; Bar · 10223 Mcintyre Ridge Rd #105 · Pineville, NC 28134 · (704) 243-8008</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="catering.html">Catering</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

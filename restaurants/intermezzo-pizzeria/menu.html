@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Intermezzo Pizzeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --brick: #8b3a2a;
+  --cream: #f5efe6;
+  --olive: #4a6b3a;
+  --gold: #c9a84c;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+a { color: inherit; }
+.nav { background: var(--brick); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a1410, #2d1f16); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 3rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.3rem; color: var(--warm); margin: 0 0 1.25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.cat-tabs { display: flex; gap: .25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.cat-tab { background: rgba(255,255,255,.03); border: none; padding: .65rem 1.25rem; border-radius: 4px 4px 0 0; font-size: .82rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+.cat-tab:hover { color: var(--cream); }
+.cat-tab.active { background: rgba(201,168,76,.12); color: var(--gold); }
+.cat-panel { display: none; }
+.cat-panel.active { display: block; }
+.menu-cat-title { color: var(--gold); font-size: 1.1rem; margin: 0 0 1rem; }
+.menu-item { display: flex; justify-content: space-between; align-items: flex-start; padding: .75rem 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.menu-item:last-child { border-bottom: none; }
+.menu-item .name { font-weight: 600; font-size: .95rem; }
+.menu-item .desc { font-size: .82rem; opacity: .55; line-height: 1.4; margin: .15rem 0 0; max-width: 75%; }
+.menu-item .price { font-size: .9rem; color: var(--gold); font-weight: 600; white-space: nowrap; margin-left: 1rem; }
+.menu-item .badge { display: inline-block; font-size: .62rem; text-transform: uppercase; letter-spacing: .05em; background: rgba(74,107,58,.2); color: var(--olive); padding: .15rem .5rem; border-radius: 3px; margin-left: .5rem; }
+.menu-item .badge.spicy { background: rgba(139,58,42,.2); color: var(--brick); }
+.menu-item .badge.srb { background: rgba(201,168,76,.15); color: var(--gold); }
+.builder-section { background: rgba(255,255,255,.02); border: 1px solid rgba(201,168,76,.1); border-radius: 8px; padding: 1.5rem; margin-top: 2rem; }
+.builder-section h3 { color: var(--gold); margin: 0 0 1rem; }
+.builder-group { margin-bottom: 1.25rem; }
+.builder-group label { display: block; font-size: .85rem; font-weight: 600; opacity: .7; margin-bottom: .5rem; }
+.builder-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+.builder-option { padding: .55rem 1rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; background: rgba(255,255,255,.03); color: var(--cream); font-size: .82rem; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all .2s; }
+.builder-option:hover { border-color: var(--gold); }
+.builder-option.selected { background: rgba(201,168,76,.15); border-color: var(--gold); color: var(--gold); }
+.builder-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.06); }
+.builder-total { display: flex; align-items: center; gap: 1rem; }
+.builder-total strong { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--gold); }
+.builder-add-btn { background: var(--brick); color: var(--cream); border: none; padding: .75rem 2rem; border-radius: 3px; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.builder-add-btn:hover { background: #a84532; }
+.builder-qty { display: flex; align-items: center; gap: .5rem; }
+.builder-qty button { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; background: transparent; color: var(--cream); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.builder-qty button:hover { border-color: var(--gold); }
+.builder-qty-value { font-size: 1.1rem; font-weight: 700; min-width: 24px; text-align: center; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Intermezzo Pizzeria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="pizza-studio.html">Pizza Studio</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>Serbian family recipes + Italian classics — all made from scratch</p>
+</header>
+
+<main id="main-content">
+  <section class="section">
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-tab="pizza">Pizza</button>
+      <button class="cat-tab" data-tab="serbian">Serbian Specialties</button>
+      <button class="cat-tab" data-tab="pasta">Pasta &amp; Italian</button>
+      <button class="cat-tab" data-tab="starters">Starters &amp; Salads</button>
+      <button class="cat-tab" data-tab="desserts">Desserts</button>
+    </div>
+
+    <div class="cat-panel active" data-panel="pizza">
+      <h3 class="menu-cat-title">Pizza — Handmade Dough, House-Made Mozzarella</h3>
+      <div class="menu-item">
+        <div><span class="name">Margherita</span><span class="badge">Classic</span><p class="desc">San Marzano tomato, house-made mozzarella, fresh basil, olive oil</p></div>
+        <span class="price">$14/$18</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Pepperoni</span><span class="badge">Popular</span><p class="desc">Crispy pepperoni, house mozzarella, slow-simmered tomato sauce</p></div>
+        <span class="price">$15/$19</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Quattro Formaggi</span><p class="desc">House mozzarella, gorgonzola, fontina, parmesan — finished with honey</p></div>
+        <span class="price">$16/$20</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Serbian BBQ</span><span class="badge srb">Signature</span><p class="desc">House BBQ sauce, smoked chicken, red onion, jalapeño, house mozzarella</p></div>
+        <span class="price">$17/$22</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Vegetariana</span><p class="desc">Roasted peppers, mushrooms, red onion, olives, spinach, house mozzarella</p></div>
+        <span class="price">$15/$19</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Prosciutto &amp; Arugula</span><p class="desc">Thinly sliced prosciutto, fresh arugula, shaved parmesan, lemon olive oil</p></div>
+        <span class="price">$18/$23</span>
+      </div>
+
+      <div class="builder-section" data-demo="pizza-builder">
+        <h3>Build Your Own Pizza</h3>
+        <p style="opacity:.6;font-size:.9rem;margin-bottom:1.25rem">Choose your crust, sauce, and toppings — see the price update in real time</p>
+
+        <div class="builder-group">
+          <label>Crust</label>
+          <div class="builder-options" data-group="crust">
+            <button class="builder-option" data-value="Traditional">Traditional Handmade</button>
+            <button class="builder-option" data-value="NY Style">NY Style</button>
+            <button class="builder-option" data-value="Thin & Crispy">Thin & Crispy</button>
+            <button class="builder-option" data-value="Gluten-Free">Gluten-Free</button>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label>Sauce</label>
+          <div class="builder-options" data-group="sauce">
+            <button class="builder-option" data-value="Marinara">Classic Marinara</button>
+            <button class="builder-option" data-value="Alfredo">Creamy Alfredo</button>
+            <button class="builder-option" data-value="Pesto">Basil Pesto</button>
+            <button class="builder-option" data-value="BBQ">House BBQ</button>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label>Cheese</label>
+          <div class="builder-options" data-group="cheese">
+            <button class="builder-option" data-value="House Mozzarella">House Mozzarella</button>
+            <button class="builder-option" data-value="Mozzarella + Parmesan">Add Parmesan</button>
+            <button class="builder-option" data-value="Mozzarella + Gorgonzola">Add Gorgonzola</button>
+            <button class="builder-option" data-value="Triple Cheese">Triple Cheese Blend</button>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label>Toppings (choose up to 3)</label>
+          <div class="builder-options" data-group="toppings">
+            <button class="builder-option" data-value="Pepperoni">Pepperoni</button>
+            <button class="builder-option" data-value="Italian Sausage">Italian Sausage</button>
+            <button class="builder-option" data-value="Mushrooms">Mushrooms</button>
+            <button class="builder-option" data-value="Roasted Peppers">Roasted Peppers</button>
+            <button class="builder-option" data-value="Red Onion">Red Onion</button>
+            <button class="builder-option" data-value="Kalamata Olives">Kalamata Olives</button>
+            <button class="builder-option" data-value="Spinach">Spinach</button>
+            <button class="builder-option" data-value="Prosciutto">Prosciutto</button>
+          </div>
+        </div>
+
+        <div class="builder-footer">
+          <div class="builder-qty">
+            <button class="builder-qty-minus" aria-label="Decrease quantity">−</button>
+            <span class="builder-qty-value">1</span>
+            <button class="builder-qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+          <div class="builder-total">
+            <span style="opacity:.6;font-size:.9rem">Total:</span>
+            <strong class="builder-total-price">$14.00</strong>
+          </div>
+          <button class="builder-add-btn">Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-panel" data-panel="serbian">
+      <h3 class="menu-cat-title">Serbian Specialties — Family Recipes</h3>
+      <div class="menu-item">
+        <div><span class="name">Karadjordje's Schnitzel</span><span class="badge srb">Signature</span><p class="desc">Breaded veal cutlet rolled with ham and cheese — served with tartar sauce and roasted potatoes</p></div>
+        <span class="price">$22</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Stuffed Peppers</span><p class="desc">Bell peppers filled with seasoned ground beef and rice — simmered in tomato sauce</p></div>
+        <span class="price">$18</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Eggplant Musaka</span><p class="desc">Layers of eggplant, spiced ground beef, béchamel — baked until golden</p></div>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Cevapi</span><span class="badge srb">Signature</span><p class="desc">Grilled Serbian sausages served with warm lepinja bread, ajvar, and chopped onion</p></div>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Sarma</span><p class="desc">Cabbage rolls stuffed with ground beef, rice, and spices — slow-cooked in tomato broth</p></div>
+        <span class="price">$18</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Gibanica</span><p class="desc">Layered phyllo pie with feta cheese, eggs, and sour cream — a Serbian breakfast classic</p></div>
+        <span class="price">$14</span>
+      </div>
+    </div>
+
+    <div class="cat-panel" data-panel="pasta">
+      <h3 class="menu-cat-title">Pasta &amp; Italian</h3>
+      <div class="menu-item">
+        <div><span class="name">Veggie Lasagna</span><span class="badge">Popular</span><p class="desc">Layers of spinach, zucchini, mushrooms, ricotta, and mozzarella — house-made marinara</p></div>
+        <span class="price">$18</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Penne alla Vodka</span><p class="desc">Penne in creamy tomato-vodka sauce with pancetta and parmesan</p></div>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Spaghetti Bolognese</span><p class="desc">Traditional meat ragu slow-simmered with tomato, wine, and herbs</p></div>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Chicken Parmesan</span><span class="badge">Popular</span><p class="desc">Breaded chicken cutlet, house mozzarella, marinara — served with spaghetti</p></div>
+        <span class="price">$19</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Fettuccine Alfredo</span><p class="desc">Fettuccine in house-made Alfredo with parmesan, garlic, and fresh parsley</p></div>
+        <span class="price">$15</span>
+      </div>
+    </div>
+
+    <div class="cat-panel" data-panel="starters">
+      <h3 class="menu-cat-title">Starters &amp; Salads</h3>
+      <div class="menu-item">
+        <div><span class="name">Fried Calamari</span><p class="desc">Crispy calamari with marinara and lemon aioli</p></div>
+        <span class="price">$12</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Bruschetta Trio</span><p class="desc">Tomato basil, roasted pepper &amp; goat cheese, mushroom &amp; truffle oil</p></div>
+        <span class="price">$11</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Ajvar &amp; Lepinja</span><span class="badge srb">Traditional</span><p class="desc">House-made roasted red pepper spread with warm Balkan flatbread</p></div>
+        <span class="price">$9</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Serbian Mezze Plate</span><p class="desc">Ajvar, kajmak, cured meats, cheese, olives — with lepinja</p></div>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Caesar Salad</span><p class="desc">Romaine, house-made croutons, shaved parmesan, classic Caesar dressing</p></div>
+        <span class="price">$11</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Greek Salad</span><p class="desc">Tomato, cucumber, red onion, feta, Kalamata olives — oregano vinaigrette</p></div>
+        <span class="price">$12</span>
+      </div>
+    </div>
+
+    <div class="cat-panel" data-panel="desserts">
+      <h3 class="menu-cat-title">Desserts</h3>
+      <div class="menu-item">
+        <div><span class="name">Tufahije</span><span class="badge srb">Signature</span><p class="desc">Poached apples filled with walnuts and cream — a classic Serbian dessert</p></div>
+        <span class="price">$9</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Tiramisu</span><span class="badge">Popular</span><p class="desc">Espresso-soaked ladyfingers with mascarpone cream and cocoa</p></div>
+        <span class="price">$9</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Panna Cotta</span><p class="desc">Vanilla bean panna cotta with raspberry compote</p></div>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Baklava</span><p class="desc">Layers of phyllo with walnuts, honey, and cinnamon</p></div>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <div><span class="name">Chocolate Lava Cake</span><p class="desc">Warm chocolate cake with molten center — vanilla ice cream</p></div>
+        <span class="price">$10</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Intermezzo Pizzeria · 1427 East 10th Street · Charlotte, NC 28204 · (704) 347-2626</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  var tabs = document.querySelectorAll('[data-tab]');
+  var panels = document.querySelectorAll('[data-panel]');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      panels.forEach(function(p) { p.classList.toggle('active', p.dataset.panel === this.dataset.tab); }.bind(this));
+    });
+  });
+
+  var builder = document.querySelector('[data-demo="pizza-builder"]');
+  if (builder) {
+    var state = { crust: null, sauce: null, cheese: null, toppings: [], qty: 1 };
+    var pricing = { crust: { 'Traditional': 2, 'NY Style': 2, 'Thin & Crispy': 2, 'Gluten-Free': 3 }, sauce: { 'Marinara': 0, 'Alfredo': 0, 'Pesto': 1, 'BBQ': 0 }, cheese: { 'House Mozzarella': 0, 'Mozzarella + Parmesan': 1.5, 'Mozzarella + Gorgonzola': 2, 'Triple Cheese': 2.5 }, topping: 1.5 };
+    var basePrice = 12;
+    var totalEl = builder.querySelector('.builder-total-price');
+    var qtyEl = builder.querySelector('.builder-qty-value');
+    var qtyMinus = builder.querySelector('.builder-qty-minus');
+    var qtyPlus = builder.querySelector('.builder-qty-plus');
+    var addBtn = builder.querySelector('.builder-add-btn');
+
+    builder.querySelectorAll('.builder-option').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var group = this.closest('[data-group]');
+        if (!group) return;
+        var groupName = group.dataset.group;
+        var value = this.dataset.value;
+
+        if (groupName === 'toppings') {
+          this.classList.toggle('selected');
+          state.toppings = Array.from(group.querySelectorAll('.selected')).map(function(b) { return b.dataset.value; });
+          if (state.toppings.length > 3) {
+            this.classList.remove('selected');
+            state.toppings = Array.from(group.querySelectorAll('.selected')).map(function(b) { return b.dataset.value; });
+            if (typeof window.showToast === 'function') window.showToast('Maximum 3 toppings');
+          }
+        } else {
+          group.querySelectorAll('.builder-option').forEach(function(s) { s.classList.remove('selected'); });
+          this.classList.add('selected');
+          state[groupName] = value;
+        }
+        updateTotal();
+      });
+    });
+
+    if (qtyMinus) qtyMinus.addEventListener('click', function() { if (state.qty > 1) { state.qty--; updateQty(); } });
+    if (qtyPlus) qtyPlus.addEventListener('click', function() { if (state.qty < 99) { state.qty++; updateQty(); } });
+
+    function calcTotal() {
+      var t = basePrice;
+      if (state.crust && pricing.crust[state.crust]) t += pricing.crust[state.crust];
+      if (state.sauce && pricing.sauce[state.sauce]) t += pricing.sauce[state.sauce];
+      if (state.cheese && pricing.cheese[state.cheese]) t += pricing.cheese[state.cheese];
+      t += state.toppings.length * pricing.topping;
+      return t;
+    }
+
+    function updateTotal() {
+      if (totalEl) totalEl.textContent = '$' + (calcTotal() * state.qty).toFixed(2);
+    }
+
+    function updateQty() {
+      if (qtyEl) qtyEl.textContent = state.qty;
+      updateTotal();
+    }
+
+    if (addBtn) {
+      addBtn.addEventListener('click', function() {
+        var missing = [];
+        if (!state.crust) missing.push('crust');
+        if (!state.sauce) missing.push('sauce');
+        if (!state.cheese) missing.push('cheese');
+        if (missing.length > 0) {
+          if (typeof window.showToast === 'function') window.showToast('Please select: ' + missing.join(', '));
+          return;
+        }
+        var total = calcTotal() * state.qty;
+        if (typeof window.showToast === 'function') window.showToast(state.qty + 'x Custom Pizza added ($' + total.toFixed(2) + ') — demo only');
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

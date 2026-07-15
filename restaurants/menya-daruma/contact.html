@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Menya Daruma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--ink:#1a1a2e;--crimson:#c41e3a;--gold:#d4a045;--cream:#faf3e0;--charcoal:#0d0d0d}.page-hero{padding:6rem 24px 3rem;background:linear-gradient(135deg,var(--charcoal),var(--ink));color:var(--cream);text-align:center}.page-hero h1{color:var(--gold)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}.contact-info h3{color:var(--crimson);margin-bottom:1.5rem}.info-row{display:flex;gap:1rem;margin-bottom:1.5rem}.info-row .icon{font-size:1.25rem;min-width:32px;text-align:center}.info-row .detail h4{font-size:.9rem;margin-bottom:.2rem}.info-row .detail p{font-size:.85rem;color:var(--medium-gray)}.hours-table{width:100%;border-collapse:collapse;margin-top:1rem}.hours-table td{padding:.5rem 0;border-bottom:1px solid #eee;font-size:.9rem}.hours-table td:last-child{text-align:right;font-weight:600}.contact-form{background:var(--white);padding:2rem;border-radius:12px;box-shadow:var(--shadow)}.contact-form h3{color:var(--crimson);margin-bottom:1.5rem}.form-group{margin-bottom:1.25rem}.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.35rem;color:var(--charcoal)}.form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem;border:1px solid #ddd;border-radius:6px;font-family:inherit}.form-group textarea{resize:vertical;min-height:120px}.map-container{border-radius:12px;overflow:hidden;margin-top:3rem;border:2px solid #eee}.find-us{background:var(--cream);border-radius:12px;padding:2rem;margin-top:3rem;text-align:center;border:2px solid var(--gold)}.find-us h3{color:var(--crimson)}.find-us p{font-size:.9rem;color:var(--medium-gray);max-width:450px;margin:.5rem auto 0}</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Menya Daruma</a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="story.html">Our Story</a>
+<a href="events.html">Events</a>
+  <a href="flavor-guide.html">Flavor Guide</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Find <span style="color:var(--crimson)">Us</span></h1>
+<p class="tagline" style="font-size:.95rem;opacity:.7;letter-spacing:.08em;margin-top:.5rem">Elizabeth Neighborhood — 1941 E 7th St, Charlotte, NC</p>
+</section>
+
+<section class="section container">
+<div class="contact-grid">
+<div class="contact-info">
+<h3>Get in Touch</h3>
+<div class="info-row">
+<span class="icon">📍</span>
+<div class="detail">
+<h4>Address</h4>
+<p>1941 E 7th St<br>Charlotte, NC 28204</p>
+</div>
+</div>
+<div class="info-row">
+<span class="icon">📞</span>
+<div class="detail">
+<h4>Phone</h4>
+<p>(704) 123-4567</p>
+</div>
+</div>
+<div class="info-row">
+<span class="icon">✉️</span>
+<div class="detail">
+<h4>Email</h4>
+<p>hello@menyanoodles.com</p>
+</div>
+</div>
+<div class="info-row">
+<span class="icon">🌐</span>
+<div class="detail">
+<h4>Website</h4>
+<p>menyanoodles.com</p>
+</div>
+</div>
+
+<h3 style="margin-top:2rem">Hours</h3>
+<table class="hours-table">
+<tr><td>Wednesday</td><td>11:30 AM – 3:00 PM · 4:30 PM – 9:00 PM</td></tr>
+<tr><td>Thursday</td><td>11:30 AM – 3:00 PM · 4:30 PM – 9:00 PM</td></tr>
+<tr><td>Friday</td><td>11:30 AM – 3:00 PM · 4:30 PM – 9:00 PM</td></tr>
+<tr><td>Saturday</td><td>12:00 PM – 9:00 PM</td></tr>
+<tr><td>Sunday</td><td>12:00 PM – 9:00 PM</td></tr>
+<tr><td>Monday</td><td colspan="2" style="color:var(--crimson);font-weight:600">Closed</td></tr>
+<tr><td>Tuesday</td><td colspan="2" style="color:var(--crimson);font-weight:600">Closed</td></tr>
+</table>
+</div>
+
+<div class="contact-form demo-form">
+<h3>Send Us a Message</h3>
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" placeholder="Your name" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="your@email.com" required>
+</div>
+<div class="form-group">
+<label for="subject">Subject</label>
+<select id="subject">
+<option>General Inquiry</option>
+<option>Reservation</option>
+<option>Catering</option>
+<option>Private Event</option>
+<option>Feedback</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" placeholder="Tell us what you're looking for..." required></textarea>
+</div>
+<button type="submit" class="btn" style="background:var(--crimson);color:var(--white);font-weight:700;border:none;cursor:pointer;padding:.75rem 2rem;border-radius:6px">Send Message</button>
+</div>
+</div>
+
+<div class="find-us">
+<h3>Find Us in Elizabeth</h3>
+<p>We're located in the heart of Charlotte's Elizabeth neighborhood — just east of Uptown near Independence Park. Counter seating and an open kitchen await.</p>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:var(--charcoal);color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Menya Daruma — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem"><a href="https://menyanoodles.com" style="color:var(--gold)">menyanoodles.com</a></p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

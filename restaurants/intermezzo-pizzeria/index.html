@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intermezzo Pizzeria · Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --brick: #8b3a2a;
+  --cream: #f5efe6;
+  --olive: #4a6b3a;
+  --gold: #c9a84c;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+a { color: inherit; }
+.nav { background: var(--brick); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 80vh; background: linear-gradient(135deg, #1a1410, #2d1f16 50%, #1a1f12); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(139,58,42,.3), transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(74,107,58,.2), transparent 50%); }
+.hero > div { position: relative; z-index: 1; max-width: 720px; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin: 0; color: var(--gold); line-height: 1.05; }
+.hero .tagline { font-size: 1.1rem; opacity: .7; font-style: italic; margin: .75rem 0 1.5rem; }
+.hero .badge { display: inline-block; background: var(--olive); color: var(--cream); padding: .25rem 1rem; border-radius: 3px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 1rem; }
+.hero .btn { display: inline-block; background: var(--brick); color: var(--cream); padding: .9rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; transition: background .2s; }
+.hero .btn:hover { background: #a84532; }
+.hero .btn-outline { background: transparent; border: 2px solid var(--cream); margin-left: .75rem; }
+.hero .btn-outline:hover { background: var(--cream); color: var(--charcoal); }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.section.alt { background: rgba(255,255,255,.02); }
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.feature-card { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.5rem; }
+.feature-card .icon { font-size: 1.8rem; margin-bottom: .5rem; display: block; }
+.feature-card h3 { font-size: 1.05rem; color: var(--gold); margin: 0 0 .35rem; }
+.feature-card p { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.stat { text-align: center; padding: 1.5rem; background: rgba(255,255,255,.03); border-radius: 8px; border: 1px solid rgba(201,168,76,.06); }
+.stat .num { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--gold); }
+.stat .label { font-size: .82rem; opacity: .5; }
+.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+@media (max-width:640px) { .about-preview { grid-template-columns: 1fr; } }
+.about-preview p { font-size: .92rem; opacity: .65; line-height: 1.7; }
+.about-preview .btn { display: inline-block; background: var(--olive); color: var(--cream); padding: .7rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+.ribbon { background: var(--olive); color: var(--cream); text-align: center; padding: .5rem; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Intermezzo Pizzeria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="pizza-studio.html">Pizza Studio</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="badge">Since 2007 · Family-Owned</span>
+    <h1>Intermezzo Pizzeria</h1>
+    <p class="tagline">Serbian &amp; Italian cuisine — handmade dough, house-made mozzarella, zero freezers</p>
+    <div>
+      <a href="menu.html" class="btn">Explore the Menu</a>
+      <a href="story.html" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="ribbon">No freezers. No microwaves. Everything made fresh daily.</div>
+
+  <section class="section">
+    <h2>Welcome to Intermezzo</h2>
+    <p class="subtitle">Traditional Serbian family recipes meet Italian cuisine in Charlotte's Plaza-Midwood</p>
+    <div class="featured-grid">
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🍕</span>
+        <h3>Handmade Pizza</h3>
+        <p>NY-style pizza with handmade dough, house-made mozzarella, and slow-simmered sauce — fired fresh for every order</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🇷🇸</span>
+        <h3>Serbian Specialties</h3>
+        <p>Karadjordje's schnitzel, stuffed peppers, eggplant musaka, cevapi — family recipes from Serbia</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🥗</span>
+        <h3>Italian Classics</h3>
+        <p>Veggie lasagna, pasta, salads — Italian comfort made from scratch with the best ingredients</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🍷</span>
+        <h3>Full Bar</h3>
+        <p>Specialty cocktails, craft beer on tap, and a thoughtfully curated wine list</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🧱</span>
+        <h3>Cozy Atmosphere</h3>
+        <p>Stone and brick walls with a patio featuring a Charlotte skyline view — between Plaza-Midwood and Uptown</p>
+      </div>
+      <div class="feature-card">
+        <span class="icon" aria-hidden="true">🏠</span>
+        <h3>European Café</h3>
+        <p>Warm, intimate European-style café where every meal feels like a gathering around the family table</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <h2>No Freezers. No Microwaves.</h2>
+    <div class="about-preview">
+      <div>
+        <p>At Intermezzo Pizzeria, "fresh" isn't a marketing word — it's a kitchen rule. There are no freezers on site. No microwaves. Every pizza is built on handmade dough stretched to order. The mozzarella is made in-house. The sauces simmer for hours. The vegetables are prepped daily.</p>
+        <p>This commitment to scratch cooking extends across the entire menu — from Serbian classics like cevapi and stuffed peppers to Italian favorites like veggie lasagna and pasta.</p>
+        <a href="story.html" class="btn">Read Our Story</a>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border-radius:8px;height:240px;display:flex;align-items:center;justify-content:center;opacity:.25;font-style:italic;border:2px dashed rgba(201,168,76,.1)">Interior photo coming soon</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Hours &amp; Location</h2>
+    <div class="stats">
+      <div class="stat">
+        <span class="num">1427 East 10th Street</span>
+        <span class="label">Charlotte, NC 28204</span>
+      </div>
+      <div class="stat">
+        <span class="num">Mon–Thu 4–10pm</span>
+        <span class="label">Fri 4–11pm · Sat 12–11pm · Sun 12–10pm</span>
+      </div>
+      <div class="stat">
+        <span class="num">(704) 347-2626</span>
+        <span class="label">intermezzopizzeria@gmail.com</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <a href="contact.html" class="hero btn">Find Us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Intermezzo Pizzeria · 1427 East 10th Street · Charlotte, NC 28204 · (704) 347-2626</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

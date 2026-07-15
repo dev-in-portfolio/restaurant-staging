@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocktails — Idlewild Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+.page-header {
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--cream);
+}
+.page-header h1 i { color: var(--amber); font-style: italic; }
+.page-header p { color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 0; }
+
+.quiz-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--navy-light);
+  border: 1px solid rgba(201,149,46,0.15);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+}
+.quiz-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25em;
+}
+.quiz-card .step-indicator {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.quiz-card .question {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--amber-glow);
+  margin-bottom: 1rem;
+}
+.quiz-nav { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.quiz-nav .btn { min-width: 120px; text-align: center; }
+
+.spirit-list { list-style: none; }
+.spirit-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.spirit-list li:last-child { border-bottom: none; }
+.spirit-list h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+.spirit-list p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+.spirit-list .tags { margin-top: 0.35rem; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Idlewild<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cocktails.html">Cocktails</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="page-header">
+    <h1>The No-<i>Menu</i> Experience</h1>
+    <p>At Idlewild, the cocktail menu lives in your preferences. Tell us what you're in the mood for, and we'll build something unforgettable around it.</p>
+  </div>
+
+  <section class="section" aria-labelledby="quiz-heading">
+    <div class="section-inner">
+      <div class="quiz-card">
+        <h2 id="quiz-heading">Find Your Cocktail Mood</h2>
+        <p class="step-indicator" id="step-label">Step <span id="step-num">1</span> of 3</p>
+        <div id="quiz-container">
+
+          <div class="quiz-step active" data-step="1">
+            <p class="question">What kind of spirit are you craving?</p>
+            <div class="quiz-options" data-question="spirit">
+              <button class="quiz-option" data-value="vodka">Vodka</button>
+              <button class="quiz-option" data-value="gin">Gin</button>
+              <button class="quiz-option" data-value="whiskey">Whiskey</button>
+              <button class="quiz-option" data-value="rum">Rum</button>
+              <button class="quiz-option" data-value="tequila">Tequila</button>
+              <button class="quiz-option" data-value="surprise">Surprise Me</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="2">
+            <p class="question">What flavor profile speaks to you tonight?</p>
+            <div class="quiz-options" data-question="flavor">
+              <button class="quiz-option" data-value="sweet">Sweet & Fruity</button>
+              <button class="quiz-option" data-value="sour">Bright & Tart</button>
+              <button class="quiz-option" data-value="bitter">Bitter & Complex</button>
+              <button class="quiz-option" data-value="herbal">Herbal & Botanical</button>
+              <button class="quiz-option" data-value="smoky">Smoky & Bold</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="3">
+            <p class="question">What's your drinking vibe?</p>
+            <div class="quiz-options" data-question="mood">
+              <button class="quiz-option" data-value="celebratory">Celebratory</button>
+              <button class="quiz-option" data-value="relaxed">Relaxed & Unwinding</button>
+              <button class="quiz-option" data-value="adventurous">Adventurous & Curious</button>
+              <button class="quiz-option" data-value="classic">Classic & Timeless</button>
+            </div>
+          </div>
+
+          <div class="quiz-nav">
+            <button class="btn btn-outline" id="quiz-prev" style="display:none;">Back</button>
+            <button class="btn btn-primary" id="quiz-next" style="display:none;">Next</button>
+          </div>
+
+        </div>
+
+        <div class="quiz-result" id="quiz-result">
+          <div class="card-icon" style="font-size:3rem;">&#x1F942;</div>
+          <h3>Your Idlewild Cocktail</h3>
+          <p id="quiz-rec"></p>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-top:1.5rem;">Show this to your bartender at Idlewild — they'll make it perfect for you.</p>
+          <button class="btn btn-outline mt-2" id="quiz-reset">Start Over</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--navy-light);" aria-labelledby="spirit-heading">
+    <div class="section-inner">
+      <h2 id="spirit-heading" class="section-title">Spirit <i>Guide</i></h2>
+      <p class="section-sub">A quick reference to the spirits our bartenders love to work with. Not sure where to start? Just say the word.</p>
+      <ul class="spirit-list" style="max-width:700px;margin:0 auto;">
+        <li>
+          <h3>Vodka</h3>
+          <p>Clean and versatile. The perfect canvas for bright citrus, herbs, or a classic martini experience.</p>
+          <div class="tags"><span class="tag">Clean</span> <span class="tag">Versatile</span></div>
+        </li>
+        <li>
+          <h3>Gin</h3>
+          <p>Botanical and aromatic. Our bar carries both London dry and contemporary craft gins for every palate.</p>
+          <div class="tags"><span class="tag">Botanical</span> <span class="tag">Herbal</span></div>
+        </li>
+        <li>
+          <h3>Whiskey</h3>
+          <p>From smooth bourbons to smoky Scotches and experimental American single malts. Depth in every pour.</p>
+          <div class="tags"><span class="tag">Bold</span> <span class="tag">Warm</span></div>
+        </li>
+        <li>
+          <h3>Rum</h3>
+          <p>Not just tropical. Aged rums bring caramel, oak, and spice that rival any whiskey in complexity.</p>
+          <div class="tags"><span class="tag">Rich</span> <span class="tag">Complex</span></div>
+        </li>
+        <li>
+          <h3>Tequila & Mezcal</h3>
+          <p>Agave spirits range from bright and crisp to deeply smoky. A favorite for creative cocktails.</p>
+          <div class="tags"><span class="tag">Earthy</span> <span class="tag">Smoky</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Unofficial concept presentation &mdash; not operated by the restaurant. <br>Idlewild &middot; 424 E 36th St, Unit 2, Charlotte, NC</p>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  var quizContainer = document.getElementById('quiz-container');
+  var resultDiv = document.getElementById('quiz-result');
+  var stepNum = document.getElementById('step-num');
+  var prevBtn = document.getElementById('quiz-prev');
+  var nextBtn = document.getElementById('quiz-next');
+  var resetBtn = document.getElementById('quiz-reset');
+  var currentStep = 1;
+  var totalSteps = 3;
+  var answers = {};
+
+  var recommendations = {
+    'vodka': { 'sweet': 'A Vanilla Pear Martini — vodka shaken with fresh pear purée, vanilla bean, and a twist of lemon.',
+      'sour': 'The Cucumber Collins — vodka, fresh lime, cucumber, a touch of agave, topped with soda.',
+      'bitter': 'A Dirty Martini reimagined — vodka, dry vermouth, olive brine, lemon zest.',
+      'herbal': 'Vodka with rosemary-thyme syrup, fresh grapefruit, and a splash of soda.',
+      'smoky': 'Smoked Vesper — vodka, Lillet, a dash of Islay scotch rinse, lemon twist.' },
+    'gin': { 'sweet': 'Elderflower Gimlet — gin, St. Germain, fresh lime, cucumber ribbon.',
+      'sour': 'The Classic Corpse Reviver No. 2 — gin, Lillet, Cointreau, absinthe rinse, lemon.',
+      'bitter': 'A proper Negroni — gin, Campari, sweet vermouth, expressed orange oil.',
+      'herbal': 'The French 75 with thyme — gin, lemon, honey-thyme syrup, dry champagne.',
+      'smoky': 'Gin & Tonic with a twist — smoked grapefruit, rosemary sprig, pink peppercorns.' },
+    'whiskey': { 'sweet': 'A Whiskey Smash with blackberries, mint, and a touch of honey.',
+      'sour': 'The Paper Plane — bourbon, Amaro Nonino, Aperol, fresh lemon.',
+      'bitter': 'A Manhattan with black walnut bitters and a cherrywood-smoked cherry.',
+      'herbal': 'A Rye Old Fashioned with demerara and orange-bitters.',
+      'smoky': 'The Penicillin — scotch, lemon, honey-ginger, float of Islay scotch.' },
+    'rum': { 'sweet': 'A Daiquiri with tropical fruit — aged rum, lime, passionfruit, simple syrup.',
+      'sour': 'The Ti\' Punch — rhum agricole, lime, cane sugar, stirred with a cinnamon stick.',
+      'bitter': 'A Kingston Negroni — pot-still rum, Campari, sweet vermouth.',
+      'herbal': 'Mojito with fresh mint, lime, and a dark rum float.',
+      'smoky': 'A Corn n\' Oil with blackstrap rum, falernum, lime, and angostura.' },
+    'tequila': { 'sweet': 'A Paloma with fresh grapefruit, lime, agave, and a salt rim.',
+      'sour': 'The Tommy\'s Margarita — blanco tequila, fresh lime, agave nectar.',
+      'bitter': 'A Oaxaca Old Fashioned — reposado tequila, mezcal float, agave, chocolate bitters.',
+      'herbal': 'A Mexican Martini with cilantro-jalapeño brine and a salted rim.',
+      'smoky': 'Mezcal Negroni — mezcal, Campari, sweet vermouth, grapefruit twist.' },
+    'surprise': { 'sweet': 'The Bartender\'s Choice — something unexpected and delightful from our current seasonal creations.',
+      'sour': 'The Bartender\'s Choice — a bright, citrus-forward surprise using whatever looks freshest.',
+      'bitter': 'The Bartender\'s Choice — a complex, spirit-forward creation that will challenge and reward you.',
+      'herbal': 'The Bartender\'s Choice — something botanical and aromatic from our garden-shelf ingredients.',
+      'smoky': 'The Bartender\'s Choice — a deeply layered, smoky experience you won\'t find anywhere else.' }
+  };
+
+  function showStep(step) {
+    document.querySelectorAll('.quiz-step').forEach(function(s) {
+      s.classList.toggle('active', parseInt(s.dataset.step) === step);
+    });
+    stepNum.textContent = step;
+    prevBtn.style.display = step > 1 ? 'inline-block' : 'none';
+    var isLast = step === totalSteps;
+    var hasAnswer = answers[Object.keys(answers).filter(function(k) {
+      return document.querySelector('.quiz-step.active') && document.querySelector('.quiz-step.active').dataset.step == step;
+    })[0]];
+
+    if (isLast) {
+      nextBtn.textContent = 'Show My Cocktail';
+      nextBtn.style.display = 'inline-block';
+    } else {
+      nextBtn.textContent = 'Next';
+      nextBtn.style.display = !answers[getStepQuestion(step)] ? 'none' : 'inline-block';
+    }
+    currentStep = step;
+  }
+
+  function getStepQuestion(step) {
+    var el = document.querySelector('.quiz-step[data-step="' + step + '"]');
+    if (!el) return null;
+    return el.querySelector('.quiz-options').dataset.question;
+  }
+
+  document.querySelectorAll('.quiz-option').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var parent = this.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+      this.classList.add('selected');
+      var question = parent.dataset.question;
+      answers[question] = this.dataset.value;
+      var step = parseInt(this.closest('.quiz-step').dataset.step);
+      if (step < totalSteps) {
+        nextBtn.style.display = 'inline-block';
+      } else {
+        nextBtn.textContent = 'Show My Cocktail';
+        nextBtn.style.display = 'inline-block';
+      }
+    });
+  });
+
+  nextBtn.addEventListener('click', function() {
+    if (currentStep < totalSteps) {
+      showStep(currentStep + 1);
+    } else {
+      var spirit = answers['spirit'] || 'surprise';
+      var flavor = answers['flavor'] || 'sweet';
+      var mood = answers['mood'] || 'relaxed';
+      var rec = '';
+      if (recommendations[spirit] && recommendations[spirit][flavor]) {
+        rec = recommendations[spirit][flavor];
+      } else {
+        rec = 'A custom creation tailored to your mood. Tell the bartender your preferences and enjoy!';
+      }
+      document.getElementById('quiz-rec').textContent = rec;
+      quizContainer.style.display = 'none';
+      resultDiv.classList.add('show');
+    }
+  });
+
+  prevBtn.addEventListener('click', function() {
+    if (currentStep > 1) showStep(currentStep - 1);
+  });
+
+  resetBtn.addEventListener('click', function() {
+    answers = {};
+    currentStep = 1;
+    resultDiv.classList.remove('show');
+    quizContainer.style.display = 'block';
+    document.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+    showStep(1);
+  });
+
+  showStep(1);
+})();
+</script>
+</body>
+</html>

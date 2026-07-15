@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Luisa's Brick Oven Pizzeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--crust:#d4a045;--sauce:#c41e1e;--mozz:#f5f0e0;--olive:#5c7a3a;--cream:#faf3e0;--charcoal:#1a1a1a;--basil:#3b7a3b}.page-hero{background:linear-gradient(135deg,#1a0f0a,var(--sauce));color:var(--cream);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--cream)}.page-hero h1 span{color:var(--crust)}.page-hero p{opacity:.8;max-width:600px;margin:0 auto}.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;justify-content:center}.tab-btn{padding:10px 24px;border:2px solid var(--sauce);background:transparent;color:var(--charcoal);border-radius:4px;font-weight:600;cursor:pointer;transition:all .2s}.tab-btn:hover{background:var(--sauce);color:var(--white)}.tab-btn.active{background:var(--sauce);color:var(--white)}.tab-pane{display:none}.tab-pane.active{display:block}.menu-section{margin-bottom:2.5rem}.menu-section h2{color:var(--sauce);border-bottom:2px solid var(--olive);padding-bottom:.5rem;margin-bottom:1rem}.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.55rem 0;border-bottom:1px dotted #d4d0c8}.menu-item .name{font-weight:600}.menu-item .desc{font-size:.85rem;color:var(--medium-gray);margin-top:.15rem;flex-basis:100%}.menu-item .price{font-weight:700;color:var(--sauce);white-space:nowrap;margin-left:1rem}.menu-item-wrapper{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%}.pizza-size{display:flex;gap:1rem;font-size:.85rem;color:var(--medium-gray);margin-top:.25rem}.pizza-size span{background:var(--cream);padding:2px 10px;border-radius:999px}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Luisa's</a>
+<nav class="nav-links">
+<a href="menu.html">Menu</a>
+<a href="story.html">Our Story</a>
+<a href="events.html">Events</a>
+<a href="contact.html">Contact</a>
+  <a href="pizza-studio.html">Pizza Studio</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Our <span>Menu</span></h1>
+<p>Authentic brick oven pizzas, calzones, pasta, salads, wings, and more — made fresh daily.</p>
+</section>
+
+<section class="section container">
+<div class="tabs">
+<button class="tab-btn active" data-tab="pizza">Pizza</button>
+<button class="tab-btn" data-tab="specialties">Specialties</button>
+<button class="tab-btn" data-tab="pasta">Pasta &amp; More</button>
+<button class="tab-btn" data-tab="sides">Sides &amp; Dessert</button>
+</div>
+
+<div class="tab-pane active" id="tab-pizza">
+<div class="menu-section">
+<h2>Specialty Pizzas</h2>
+<p style="font-size:.85rem;color:var(--medium-gray);margin-bottom:1rem">All available in 12" Small, 15" Medium, or 17" Large. Half &amp; half available.</p>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Luisa Pizza</span><span class="price">16.95+</span></div><div class="desc">Salami, ground meat, green peppers, onions, mozzarella</div><div class="pizza-size"><span>12" $16.95</span><span>15" $22</span><span>17" $25</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Milano Pizza</span><span class="price">16.95+</span></div><div class="desc">Pepperoni, sausage, mushrooms, onions, green peppers</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Bianca Pizza</span><span class="price">16.95+</span></div><div class="desc">Ricotta, mozzarella, parmesan, garlic — white pizza perfection</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Margherita Pizza</span><span class="price">16.95+</span></div><div class="desc">Fresh mozzarella, tomato slices, basil, olive oil</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Buffalo Chicken Pizza</span><span class="price">16.95+</span></div><div class="desc">Buffalo sauce base, grilled chicken, mozzarella</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">BBQ Chicken Pizza</span><span class="price">16.95+</span></div><div class="desc">BBQ sauce, grilled chicken, mozzarella, red onion</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Chicken Bacon Ranch</span><span class="price">16.95+</span></div><div class="desc">Ranch base, chicken, bacon, tomato, mozzarella</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Rodolfo Pizza</span><span class="price">16.95+</span></div><div class="desc">Ham, mushrooms, artichokes, pesto</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Fiorentina Pizza</span><span class="price">16.95+</span></div><div class="desc">Spinach, feta, tomato, garlic, olive oil</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Four Cheese Special</span><span class="price">16.95+</span></div><div class="desc">Mozzarella, provolone, ricotta, blue cheese</div></div>
+</div>
+<div class="menu-section">
+<h2>Build Your Own Pizza</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">12" Small</span><span class="price">13.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">15" Medium</span><span class="price">17.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">17" Large</span><span class="price">20.95</span></div></div>
+<p style="font-size:.85rem;color:var(--medium-gray);margin-top:.5rem">Choose from 25+ toppings including pepperoni, sausage, mushrooms, onions, peppers, olives, anchovies, jalapeños, and more.</p>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-specialties">
+<div class="menu-section">
+<h2>Calzones &amp; Stromboli</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Cheese Calzone</span><span class="price">11.95</span></div><div class="desc">Ricotta, mozzarella, parmesan — baked golden</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Meat Calzone</span><span class="price">14.95</span></div><div class="desc">Stuffed with pepperoni, sausage, ham, and three cheeses</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Veggie Stromboli</span><span class="price">13.95</span></div><div class="desc">Mushrooms, onions, peppers, olives, spinach, mozzarella</div></div>
+</div>
+<div class="menu-section">
+<h2>Appetizers</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Mozzarella Sticks</span><span class="price">9.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Toasted Ravioli</span><span class="price">10.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Calamari</span><span class="price">12.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Chicken Fingers</span><span class="price">12.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Wings (10 pcs)</span><span class="price">15</span></div><div class="desc">Hot, BBQ, Teriyaki, Garlic Parmesan</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Meatballs</span><span class="price">11</span></div><div class="desc">House-made with marinara</div></div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-pasta">
+<div class="menu-section">
+<h2>Pasta &amp; Sandwiches</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Chicken Parmesan</span><span class="price">18.95</span></div><div class="desc">Breaded chicken, mozzarella, marinara, spaghetti</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Eggplant Parmesan</span><span class="price">16.95</span></div><div class="desc">Crispy eggplant, mozzarella, marinara, spaghetti</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Lasagna</span><span class="price">17.95</span></div><div class="desc">Layers of pasta, meat sauce, ricotta, mozzarella</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Spaghetti with Meatballs</span><span class="price">16.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Italian Hero</span><span class="price">12.95</span></div><div class="desc">Ham, salami, pepperoni, provolone, lettuce, tomato, onion, Italian dressing</div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Chicken Parmesan Sandwich</span><span class="price">13.95</span></div><div class="desc">Breaded chicken, mozzarella, marinara, hoagie roll</div></div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-sides">
+<div class="menu-section">
+<h2>Salads</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Antipasto Salad</span><span class="price">17.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">House Salad</span><span class="price">8.95</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Caesar Salad</span><span class="price">9.95</span></div></div>
+</div>
+<div class="menu-section">
+<h2>Desserts</h2>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Cannoli</span><span class="price">5.50</span></div></div>
+<div class="menu-item"><div class="menu-item-wrapper"><span class="name">Tiramisu</span><span class="price">6.50</span></div></div>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:#1a0f0a;color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Luisa's Brick Oven Pizzeria — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
+<a href="https://luisasbrickovenpizzerias.com" style="color:var(--crust)">luisasbrickovenpizzerias.com</a> &middot;
+<a href="tel:7045228782" style="color:var(--crust)">(704) 522-8782</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){var btns=document.querySelectorAll('.tab-btn');var panes=document.querySelectorAll('.tab-pane');btns.forEach(function(btn){btn.addEventListener('click',function(){btns.forEach(function(b){b.classList.remove('active')});panes.forEach(function(p){p.classList.remove('active')});btn.classList.add('active');document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active')})})});
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

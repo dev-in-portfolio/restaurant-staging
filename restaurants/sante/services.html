@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santé Fine Dining - Matthews, NC | Private Events & Catering</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Santé Fine Dining Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Santé
+          <span>Fine Dining</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="signature-experience.html">Signature Experience</a>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Private Dinners & Banquets</h2>
+    <p class="page-subtitle">Host your next rehearsal dinner, board meeting, or private anniversary banquet inside Santé's elegant dining rooms.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">The Salon Privé</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Host your guests in our elegant, secluded private dining room. Perfect for business dinners, bridal luncheons, and family gatherings. Accommodates seated dinner groups of up to 35 guests with dedicated butler service.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Sommelier Wine Pairings</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Elevate your event. In collaboration with Chef Adam, our in-house sommelier will select exceptional French and domestic wine pairings for each course of your custom dinner menu, complete with tasting introductions.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Custom Menu Curation</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Every group is unique. We provide bespoke menu curation, allowing you to design a three- or four-course menu selection featuring our signature escargots, duck breasts, and seasonal dessert soufflés.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Private Event Inquiry</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details below. Our events manager will contact you within 24 hours to begin planning your custom menu and event.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Requested Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="service-type">Event Type</label>
+              <select id="service-type" required>
+                <option value="dinner">Private Dinner Party</option>
+                <option value="wine">Wine Pairing Luncheon</option>
+                <option value="rehearsal">Rehearsal Dinner</option>
+                <option value="other">Other Event</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details & Special Requests (Dietary needs, wine preferences, guest count)</label>
+              <textarea id="notes" placeholder="Please share details such as guest counts, allergies, or wine pairing interests..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍾</div>
+          <h3 class="success-title">Inquiry Received!</h3>
+          <p class="success-msg" id="success-message">Thank you. Santé's private events coordinator will review your request and contact you to begin planning.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>165 N. Trade St.<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tuesday - Thursday: 5:00 PM - 9:00 PM<br>Friday - Saturday: 5:00 PM - 10:00 PM<br>Sunday - Monday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 845-1899<br>French Fine Dining | Dress Casual Elegant</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Santé Fine Dining. Serving Matthews since 2002.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Merci, <strong>${name}</strong>. Your private event details have been logged. We will contact you at <strong>${phone}</strong> shortly to curate your menu.`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Idlewild Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+.page-header {
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--cream);
+}
+.page-header h1 i { color: var(--amber); font-style: italic; }
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+.contact-detail .icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(201,149,46,0.1);
+  border: 1px solid rgba(201,149,46,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  color: var(--amber);
+}
+.contact-detail h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.1rem;
+}
+.contact-detail p, .contact-detail a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.contact-detail a:hover { color: var(--amber); }
+
+.faq-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item h4 .faq-toggle {
+  color: var(--amber);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.25s;
+}
+.faq-item h4.open .faq-toggle { transform: rotate(45deg); }
+.faq-item .faq-answer {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: none;
+  padding-top: 0.5rem;
+}
+.faq-item .faq-answer.open { display: block; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Idlewild<span>.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cocktails.html">Cocktails</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    <li><a href="flight-planner.html">Flight Planner</a></li></ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="page-header">
+    <h1>Get in <i>Touch</i></h1>
+    <p>Questions? Feedback? Just want to say hello? We'd love to hear from you.</p>
+  </div>
+
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="section-inner" style="max-width:720px;">
+      <div class="grid-2" style="gap:3rem;">
+        <div>
+          <h2 id="contact-heading" class="section-title" style="font-size:1.8rem;">Contact <i>Info</i></h2>
+
+          <div class="contact-detail">
+            <div class="icon-circle">&#x1F4DE;</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+17045728678">(704) 572-8678</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon-circle">&#x1F4CD;</div>
+            <div>
+              <h4>Address</h4>
+              <p>424 E 36th St, Unit 2<br>Charlotte, NC 28205</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon-circle">&#x1F310;</div>
+            <div>
+              <h4>Online</h4>
+              <p>
+                <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">idlewildbar.com</a><br>
+                <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">@idlewildbar on Instagram</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon-circle">&#x1F4E5;</div>
+            <div>
+              <h4>Reservations</h4>
+              <p><a href="https://resy.com/cities/clt/idlewild" target="_blank" rel="noopener noreferrer">Book via Resy</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title" style="font-size:1.8rem;">Send a <i>Message</i></h2>
+          <form class="demo-form" data-demo-form="Thanks for reaching out! This is a demo — in production, your message would be sent directly to the Idlewild team." novalidate>
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="">Select a topic</option>
+                <option value="general">General Inquiry</option>
+                <option value="reservation">Reservation Question</option>
+                <option value="event">Private Event</option>
+                <option value="feedback">Feedback</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--navy-light);" aria-labelledby="faq-heading">
+    <div class="section-inner" style="max-width:700px;">
+      <h2 id="faq-heading" class="section-title text-center">Frequently Asked <i>Questions</i></h2>
+
+      <div class="faq-item">
+        <h4 tabindex="0" role="button" aria-expanded="false">
+          Do you really not have a menu?
+          <span class="faq-toggle">+</span>
+        </h4>
+        <div class="faq-answer">That's right. Our bartenders will ask about your taste preferences — sweet, herbal, smoky, spirit-forward — and build a custom cocktail on the spot. No menu, no decisions, just discovery.</div>
+      </div>
+
+      <div class="faq-item">
+        <h4 tabindex="0" role="button" aria-expanded="false">
+          Do you serve food?
+          <span class="faq-toggle">+</span>
+        </h4>
+        <div class="faq-answer">We offer a small bites menu designed to complement our cocktails — think marinated olives, charcuterie, warm snacks, and seasonal plates. Perfect for sharing.</div>
+      </div>
+
+      <div class="faq-item">
+        <h4 tabindex="0" role="button" aria-expanded="false">
+          Is there a dress code?
+          <span class="faq-toggle">+</span>
+        </h4>
+        <div class="faq-answer">We encourage a date-night / night-out vibe but there's no strict dress code. Come as you are — just bring good energy.</div>
+      </div>
+
+      <div class="faq-item">
+        <h4 tabindex="0" role="button" aria-expanded="false">
+          Can I host a private event?
+          <span class="faq-toggle">+</span>
+        </h4>
+        <div class="faq-answer">We can accommodate buyouts and private events for groups. Reach out through the contact form or call us to discuss availability.</div>
+      </div>
+
+      <div class="faq-item">
+        <h4 tabindex="0" role="button" aria-expanded="false">
+          Do you have non-alcoholic options?
+          <span class="faq-toggle">+</span>
+        </h4>
+        <div class="faq-answer">Absolutely. Our bartenders create zero-proof cocktails with the same care and creativity as our spirit-based drinks. Just let them know your preference.</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Unofficial concept presentation &mdash; not operated by the restaurant. <br>Idlewild &middot; 424 E 36th St, Unit 2, Charlotte, NC</p>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  document.querySelectorAll('.faq-item h4').forEach(function(header) {
+    header.addEventListener('click', function() {
+      var answer = this.nextElementSibling;
+      var isOpen = answer.classList.contains('open');
+      answer.classList.toggle('open');
+      this.classList.toggle('open');
+      this.setAttribute('aria-expanded', !isOpen);
+    });
+    header.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

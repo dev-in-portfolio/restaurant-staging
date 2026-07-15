@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Intermezzo Pizzeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --brick: #8b3a2a;
+  --cream: #f5efe6;
+  --olive: #4a6b3a;
+  --gold: #c9a84c;
+  --charcoal: #1a1a1a;
+  --warm: #f5e6d0;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+a { color: inherit; }
+.nav { background: var(--brick); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a1410, #2d1f16); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 1.25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width:640px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.5rem; }
+.contact-info h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .75rem; }
+.hours-grid { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1.25rem; font-size: .88rem; margin-bottom: 1rem; }
+.hours-grid .day { font-weight: 600; opacity: .7; }
+.hours-grid .time { opacity: .6; }
+.contact-info p { font-size: .88rem; line-height: 1.6; opacity: .65; margin: 0 0 .35rem; }
+.contact-info a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.contact-info a:hover { opacity: .8; }
+.info-icon { display: inline-block; width: 1.1rem; text-align: center; margin-right: .35rem; opacity: .5; }
+.map-placeholder { background: rgba(255,255,255,.03); border: 2px dashed rgba(201,168,76,.1); border-radius: 8px; height: 220px; display: flex; align-items: center; justify-content: center; opacity: .35; font-style: italic; font-size: .85rem; margin: 2rem 0; }
+.amenities { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: 1rem; }
+.amenities li { font-size: .85rem; opacity: .55; display: flex; align-items: center; gap: .4rem; }
+.amenities li::before { content: '✓'; color: var(--olive); font-weight: 700; }
+.demo-form { max-width: 600px; margin: 2rem auto 0; background: rgba(255,255,255,.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(201,168,76,.1); }
+.demo-form h3 { text-align: center; color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width:480px) { .form-row { grid-template-columns: 1fr; } }
+.btn { display: inline-block; background: var(--brick); color: var(--cream); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background .2s; }
+.btn:hover { background: #a84532; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Intermezzo Pizzeria</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="pizza-studio.html">Pizza Studio</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Visit Us</h1>
+  <p>1427 East 10th Street · between Plaza-Midwood and Uptown</p>
+</header>
+
+<main id="main-content">
+  <section class="section">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info">
+          <h3>Location</h3>
+          <p><span class="info-icon" aria-hidden="true">📍</span>1427 East 10th Street<br>Charlotte, NC 28204</p>
+          <p style="margin-top:.5rem">Between Plaza-Midwood and Uptown — minutes from central Charlotte</p>
+          <p style="margin-top:.5rem"><a href="https://maps.google.com/?q=1427+East+10th+Street+Charlotte+NC+28204" target="_blank">Get Directions →</a></p>
+        </div>
+
+        <div class="contact-info" style="margin-top:1.25rem">
+          <h3>Hours</h3>
+          <div class="hours-grid">
+            <span class="day">Mon–Thu</span><span class="time">4:00 PM – 10:00 PM</span>
+            <span class="day">Friday</span><span class="time">4:00 PM – 11:00 PM</span>
+            <span class="day">Saturday</span><span class="time">12:00 PM – 11:00 PM</span>
+            <span class="day">Sunday</span><span class="time">12:00 PM – 10:00 PM</span>
+          </div>
+        </div>
+
+        <div class="contact-info" style="margin-top:1.25rem">
+          <h3>Contact</h3>
+          <p><span class="info-icon" aria-hidden="true">📞</span>Phone: <a href="tel:+17043472626">(704) 347-2626</a></p>
+          <p><span class="info-icon" aria-hidden="true">✉️</span>Email: <a href="mailto:intermezzopizzeria@gmail.com">intermezzopizzeria@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-info">
+          <h3>Patio &amp; Skyline View</h3>
+          <p>Our patio offers one of the best skyline views in Charlotte — perfect for al fresco dining, craft cocktails, and warm evenings with pizza and friends.</p>
+          <p style="margin-top:.5rem">Available on a first-come, first-served basis. Call ahead for larger groups.</p>
+        </div>
+
+        <div class="map-placeholder">Map &amp; Street View — coming soon</div>
+
+        <div class="contact-info">
+          <h3>Amenities</h3>
+          <ul class="amenities">
+            <li>Dine-in</li>
+            <li>Takeout</li>
+            <li>Full bar</li>
+            <li>Craft beer on tap</li>
+            <li>Patio seating</li>
+            <li>Street parking</li>
+            <li>Vegetarian options</li>
+            <li>Gluten-free crust</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <form class="demo-form" data-demo-form="contact">
+      <h3>Send Us a Message</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cname">Name</label>
+          <input id="cname" name="name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="cemail">Email</label>
+          <input id="cemail" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="csubject">Subject</label>
+        <input id="csubject" name="subject" type="text" placeholder="Reservation, catering, general inquiry...">
+      </div>
+      <div class="form-group">
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" name="message" rows="4" required placeholder="Tell us how we can help..."></textarea>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Send Message</button>
+      <p style="margin-top:.75rem;font-size:.78rem;opacity:.4;text-align:center;font-style:italic">Demo form — no information will be sent</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>Intermezzo Pizzeria · 1427 East 10th Street · Charlotte, NC 28204 · (704) 347-2626</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>
