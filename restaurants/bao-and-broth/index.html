@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao and Broth - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling absolute positions for bao toppings inside visualizer */
+    #food-filling { top: 70px; left: 50px; font-size: 1.15rem; color: #fff; background: rgba(0,0,0,0.8); border-radius: 4px; padding: 0.15rem 0.5rem; }
+    #food-pickles { top: 110px; left: 35px; }
+    #food-peanuts { top: 110px; left: 115px; }
+    #food-scallions { top: 30px; left: 55px; }
+    #food-sauce { top: 140px; left: 60px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bao & Broth
+          <span>Optimist Hall Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="ramen.html">Ramen Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Modern Street Food Stall</span>
+        <h2 class="hero-title">Bao and Broth</h2>
+        <p class="hero-desc">"Chef Larry Schreiber’s signature kitchen serving warm steamed bao buns, rich slow-cooked ramen broths, and fresh Asian street snacks."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>🍜 Located inside Optimist Hall: 1115 N Brevard St, Charlotte, NC 28206. Steaming Fresh Daily.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Asian Street Comfort Food</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Bao and Broth in Charlotte, NC. Located inside the historic Optimist Hall food hall, we specialize in authentic, vibrant Asian street comfort food. Crafted by award-winning Chef Larry Schreiber, our menu brings together fluffy steamed bao buns, 24-hour slow-cooked ramen broths, and hand-folded potstickers.
+      </p>
+      <a href="about.html" style="color: var(--color-orange); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-orange); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Steamer Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Steam Bao Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-craft your warm steamed bao buns. Select your bun wrapper style, protein filling, and toppings.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Steamer visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="bao-basket-wireframe">
+            <div class="bao-basket-rim"></div>
+            <!-- Steaming bao emojis -->
+            <div class="bao-bun-emoji" id="visual-bun">🥟</div>
+            
+            <!-- Graphic toppings absolute positioned -->
+            <div class="plate-food-item" id="food-filling">Pork Belly</div>
+            <div class="plate-food-item" id="food-pickles">🥒 Pickles</div>
+            <div class="plate-food-item" id="food-peanuts">🥜 Peanuts</div>
+            <div class="plate-food-item" id="food-scallions">🌿 Scallions</div>
+            <div class="plate-food-item" id="food-sauce">🍯 Sauce</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Bun Wrapper</label>
+            <div class="option-grid" id="bun-options">
+              <button class="option-btn active" onclick="setBun('traditional', 6.50, 'Steamed Wheat Bun')">Steamed Wheat ($6.50)</button>
+              <button class="option-btn" onclick="setBun('lotus', 6.50, 'Lotus Leaf Bun')">Lotus Leaf ($6.50)</button>
+              <button class="option-btn" onclick="setBun('gf', 7.50, 'Gluten-Free Bun')">Gluten-Free ($7.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Select Filling (2 pcs)</label>
+            <div class="option-grid" id="filling-options">
+              <button class="option-btn active" onclick="setFilling('pork', 'Braised Pork Belly')">Braised Pork Belly</button>
+              <button class="option-btn" onclick="setFilling('chicken', 'Soy Glazed Chicken')">Glazed Chicken</button>
+              <button class="option-btn" onclick="setFilling('beef', 'Sweet BBQ Beef')">Sweet BBQ Beef</button>
+              <button class="option-btn" onclick="setFilling('tofu', 'Crispy Fried Tofu')">Crispy Fried Tofu</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Garnishes</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-pickles" onclick="toggleGarnish('pickles')">Pickled Cucumber</button>
+              <button class="option-btn active" id="btn-peanuts" onclick="toggleGarnish('peanuts')">Crushed Peanuts</button>
+              <button class="option-btn active" id="btn-scallions" onclick="toggleGarnish('scallions')">Scallions</button>
+              <button class="option-btn active" id="btn-sauce" onclick="toggleGarnish('sauce')">Hoisin Drizzle</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Steamer Platter</span>
+        <h4 class="builder-display-title" id="display-bao-name">Braised Pork Belly Bao</h4>
+        <p id="display-bao-garnishes" style="color: var(--color-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Pickled Cucumber, Crushed Peanuts, Scallions, Hoisin Drizzle</p>
+        <div class="builder-display-price" id="display-bao-price">$6.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-bao-desc">Two fluffy steamed wheat buns stuffed with rich, melt-in-your-mouth Braised Pork Belly, garnished with pickled cucumber, crushed peanuts, green scallions, and sweet hoisin drizzle.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Ramen Mixer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Choose your 24-hour slow-cooked broth base, noodle style, and dial in your preferred spice tier. Click below to view the interactive Ramen Mixer.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Ramen Mixer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1115 N Brevard St, Ste 5/15<br>Charlotte, NC 28206</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Sun - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Located in Optimist Hall | Asian Street Food | Fast Casual</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bao and Broth. Optimist Hall Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBun = { key: 'traditional', price: 6.50, name: 'Steamed Wheat Bun' };
+    let selectedFilling = { key: 'pork', name: 'Braised Pork Belly' };
+    const garnishes = {
+      pickles: { active: true, name: 'Pickled Cucumber' },
+      peanuts: { active: true, name: 'Crushed Peanuts' },
+      scallions: { active: true, name: 'Scallions' },
+      sauce: { active: true, name: 'Hoisin Drizzle' }
+    };
+
+    function setBun(key, price, name) {
+      const buttons = document.getElementById('bun-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBun = { key, price, name };
+      
+      // Update visual bun style (emoji swap or size adjustment)
+      const visualBun = document.getElementById('visual-bun');
+      if (key === 'gf') {
+        visualBun.innerText = "🥟";
+        visualBun.style.filter = "sepia(0.3) drop-shadow(0 5px 8px rgba(0,0,0,0.3))";
+      } else {
+        visualBun.innerText = "🥟";
+        visualBun.style.filter = "sepia(0) drop-shadow(0 5px 8px rgba(0,0,0,0.3))";
+      }
+
+      updateDisplay();
+    }
+
+    function setFilling(key, name) {
+      const buttons = document.getElementById('filling-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedFilling = { key, name };
+      updateDisplay();
+    }
+
+    function toggleGarnish(key) {
+      garnishes[key].active = !garnishes[key].active;
+      const btn = document.getElementById(`btn-${key}`);
+      if (garnishes[key].active) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      document.getElementById('display-bao-price').innerText = `$${selectedBun.price.toFixed(2)}`;
+      document.getElementById('display-bao-name').innerText = `${selectedFilling.name} Bao`;
+
+      // Compile active garnishes
+      const activeGarnishes = [];
+      for (const k in garnishes) {
+        if (garnishes[k].active) {
+          activeGarnishes.push(garnishes[k].name);
+        }
+      }
+      document.getElementById('display-bao-garnishes').innerText = activeGarnishes.length > 0 ? activeGarnishes.join(', ') : 'No Toppings';
+
+      // Update descriptions
+      const garnishText = activeGarnishes.length > 0 ? `, garnished with ${activeGarnishes.join(', ').toLowerCase()}` : '';
+      document.getElementById('display-bao-desc').innerText = `Two fluffy ${selectedBun.name.toLowerCase()}s stuffed with rich, hot ${selectedFilling.name.toLowerCase()}${garnishText}.`;
+
+      // Update graphic overlay items
+      const allFoodItems = document.querySelectorAll('.plate-food-item');
+      allFoodItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.5)';
+      });
+
+      // Show filling overlay label
+      const fillingEl = document.getElementById('food-filling');
+      fillingEl.innerText = selectedFilling.name.replace('Braised ', '').replace('Soy ', '').replace('Sweet ', '').replace('Crispy ', '');
+      fillingEl.style.opacity = '1';
+      fillingEl.style.transform = 'scale(1)';
+
+      // Show active toppings
+      for (const k in garnishes) {
+        if (garnishes[k].active) {
+          const el = document.getElementById(`food-${k}`);
+          if (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'scale(1)';
+          }
+        }
+      }
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

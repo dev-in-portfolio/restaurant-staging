@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bart's Mart - Charlotte, NC | Arcade Lounge</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive arcade cabinet visualizer */
+    .arcade-box {
+      background: radial-gradient(circle, #2e123a 0%, #0a040d 100%);
+      border: 2px solid var(--color-pink);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bart's Mart
+          <span>Bottle Shop & Arcade</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Tap List</a>
+        <a href="arcade.html" class="active">Arcade Lounge</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">The Arcade Lounge</h2>
+    <p class="page-subtitle">Grab a draft pour, change your dollars for quarters, and play classic 80s & 90s retro games and pinball cabinets.</p>
+  </header>
+
+  <!-- Interactive Arcade Cabinet Selector -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Arcade Cabinet Selector & High Scores</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a retro machine to view its release year, gameplay controls, and current neighborhood high scores.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Cabinet Screen details -->
+        <div class="arcade-box" id="arcade-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="arcade-year-tag">Released: 1991</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="arcade-game-name">Street Fighter II</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-yellow); margin-bottom: 1.2rem;" id="arcade-high-score">High Score: 999,500 (JON)</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="arcade-game-desc">"Classic head-to-head fighting game cabinet. Choose your global warrior and master combinations to defeat M. Bison. Quarter play or free during Friday tournaments."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-pink); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Machine</label>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
+            <button class="option-btn active" onclick="selectCabinet('sf2', this)">Street Fighter II</button>
+            <button class="option-btn" onclick="selectCabinet('pacman', this)">Ms. Pac-Man</button>
+            <button class="option-btn" onclick="selectCabinet('addams', this)">Addams Family Pinball</button>
+            <button class="option-btn" onclick="selectCabinet('mariokart', this)">Mario Kart 64 (N64 Console)</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lounge Details -->
+    <h3 class="section-title">Lounge Machines & Taps</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Pinball & Cabinets</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Addams Family Pinball</span>
+            <span class="menu-item-price">50¢ / Play</span>
+          </div>
+          <p class="menu-item-desc">The best-selling pinball machine of all time, featuring show themes, multi-ball modes, and custom character audio clips.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Ms. Pac-Man Cabinet</span>
+            <span class="menu-item-price">25¢ / Play</span>
+          </div>
+          <p class="menu-item-desc">Original 1982 cabinet in perfect condition. Navigate mazes, eat ghosts, and beat the historic high score.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Galaga / Pac-Man Combo</span>
+            <span class="menu-item-price">25¢ / Play</span>
+          </div>
+          <p class="menu-item-desc">Dual retro game cabinet with classic space shooting and dot-munching maze gameplay.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Console Corner</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Nintendo 64 Station</span>
+            <span class="menu-item-price">Free Play</span>
+          </div>
+          <p class="menu-item-desc">Equipped with 4 controllers and classic cartridges including Mario Kart 64, Super Smash Bros., and GoldenEye 007.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sega Genesis Station</span>
+            <span class="menu-item-price">Free Play</span>
+          </div>
+          <p class="menu-item-desc">Retro console set up with Sonic the Hedgehog 2, Mortal Kombat, and NHL 94.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Board Game Shelf</span>
+            <span class="menu-item-price">Free Use</span>
+          </div>
+          <p class="menu-item-desc">Over 30 board games and card games available for casual group plays at our tables or patio booths.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Eastway Crossing Stand</h3>
+        <p>3042 Eastway Dr<br>Charlotte, NC 28205<br>Phone: (704) 535-0909</p>
+      </div>
+      <div class="info-block">
+        <h3>Lounge Operating Hours</h3>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Tournament Rules</h3>
+        <p>Tournament entry is free with any draft pint purchase. High score registrations require staff verification.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bart's Mart. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const cabinetData = {
+      sf2: {
+        year: "Released: 1991",
+        game: "Street Fighter II",
+        score: "High Score: 999,500 (JON)",
+        desc: "\"Classic head-to-head fighting game cabinet. Choose your global warrior and master combinations to defeat M. Bison. Quarter play or free during Friday tournaments.\""
+      },
+      pacman: {
+        year: "Released: 1982",
+        game: "Ms. Pac-Man",
+        score: "High Score: 284,330 (SAM)",
+        desc: "\"The ultimate 80s arcade cabinet. Navigate mazes, grab fruit bonuses, and outrun Blinky, Pinky, Inky, and Sue on our high-quality original CRT monitor.\""
+      },
+      addams: {
+        year: "Released: 1992",
+        game: "Addams Family Pinball",
+        score: "High Score: 412,880,500 (AMY)",
+        desc: "\"Expertly maintained physical pinball cabinet. Shoot the vault, activate the electric chair, and trigger Thing's hand magnet for high-scoring multi-ball runs.\""
+      },
+      mariokart: {
+        year: "Released: 1996",
+        game: "Mario Kart 64",
+        score: "Best Lap: 0:34.12 (CHRIS)",
+        desc: "\"Retro couch co-op corner. Grab up to 4 players for split-screen battle mode or GP cups on our custom living-room style couch setup.\""
+      }
+    };
+
+    function selectCabinet(key, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const display = document.getElementById('arcade-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = cabinetData[key];
+        document.getElementById('arcade-year-tag').innerText = data.year;
+        document.getElementById('arcade-game-name').innerText = data.game;
+        document.getElementById('arcade-high-score').innerText = data.score;
+        document.getElementById('arcade-game-desc').innerText = data.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

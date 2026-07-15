@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Grey's Diner and Community Kitchen</title>
+    <meta name="description" content="Grey's Diner menu — farm-to-table breakfast, lunch, and dinner in a 1948 Fodero Dining Car. Shipley Farms beef, Harmony Ridge eggs, Belly Brothers bacon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Grey's Diner</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="grill.html">Grill Builder</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="visit.html">Visit</a></li>
+                <li><a href="reserve.html" class="btn-nav">Order Online</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>The Menu</h1>
+            <p class="page-subtitle">Farm-to-table, locally sourced, made from scratch.</p>
+        </div>
+    </header>
+
+    <section class="menu-controls section">
+        <div class="container">
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="lunch-dinner">Lunch &amp; Dinner</button>
+                <button class="filter-btn" data-filter="drinks">Drinks</button>
+            </div>
+            <div class="menu-search">
+                <input type="text" id="menu-search" placeholder="Search the menu..." autocomplete="off">
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section section">
+        <div class="container">
+            <div class="menu-category" data-category="breakfast">
+                <h2 class="menu-category-title">Breakfast <span class="menu-hours">7am – 2pm</span></h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Eggs in the Skillet</h3>
+                            <p class="menu-item-desc">Farm eggs, skillet-cooked your way, with all the fixins.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>2 Egg Omelet</h3>
+                            <p class="menu-item-desc">Two-egg omelet, your choice of fillings, served with home fries.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Harmony Ridge Eggs</h3>
+                            <p class="menu-item-desc">Harmony Ridge Farm eggs, simply prepared. A Grey's classic.</p>
+                        </div>
+                        <span class="menu-item-price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Taylor Ham &amp; Cheese</h3>
+                            <p class="menu-item-desc">The Jersey classic — Taylor ham, egg, and cheese on a griddled roll.</p>
+                        </div>
+                        <span class="menu-item-price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Fried Chicken &amp; Biscuit</h3>
+                            <p class="menu-item-desc">Crispy fried chicken on a warm buttermilk biscuit. A Southern staple, elevated.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Dukes French Toast</h3>
+                            <p class="menu-item-desc">Thick-cut Dukes bread, French toast style, with seasonal toppings.</p>
+                        </div>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Buttermilk Pancakes</h3>
+                            <p class="menu-item-desc">Fluffy buttermilk pancakes, stacked and golden.</p>
+                        </div>
+                        <span class="menu-item-price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Overnight Yeast Waffles</h3>
+                            <p class="menu-item-desc">Overnight-fermented yeast waffles. Crisp outside, tender inside.</p>
+                        </div>
+                        <span class="menu-item-price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Black Bean Chilaquiles</h3>
+                            <p class="menu-item-desc">Vegan. Black beans, tortilla chips, salsa verde, all the fixins.</p>
+                        </div>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Mehta Platter</h3>
+                            <p class="menu-item-desc">Vegan. A complete plant-based breakfast platter.</p>
+                        </div>
+                        <span class="menu-item-price">$18</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Rock Shrimp Bowl</h3>
+                            <p class="menu-item-desc">Rock shrimp, seasoned rice, fresh vegetables, and house sauce.</p>
+                        </div>
+                        <span class="menu-item-price">$21</span>
+                    </div>
+                    <div class="menu-item signature">
+                        <div class="menu-item-info">
+                            <h3>Grey's Short Ribs + Egg <span class="badge">Signature</span></h3>
+                            <p class="menu-item-desc">Braised short ribs, farm egg, rich and unforgettable. The dish that defines Grey's.</p>
+                        </div>
+                        <span class="menu-item-price">$24</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category" data-category="lunch-dinner">
+                <h2 class="menu-category-title">Lunch &amp; Dinner <span class="menu-hours">3pm – 9pm (Fri–Sat 10pm)</span></h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Grey's Burger <span class="badge">Signature</span></h3>
+                            <p class="menu-item-desc">Shipley Farms beef, grilled diner-style. The kind of burger that makes you a regular.</p>
+                        </div>
+                        <span class="menu-item-price">$18</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Tuna Melt</h3>
+                            <p class="menu-item-desc">Classic tuna melt, perfectly griddled. Diner comfort at its best.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Eggplant Parm</h3>
+                            <p class="menu-item-desc">Breaded eggplant, marinara, melted mozzarella. Hearty and satisfying.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Fried Chicken Sandwich</h3>
+                            <p class="menu-item-desc">Crispy fried chicken, pickles, special sauce, on a toasted bun.</p>
+                        </div>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Gleezy Dog</h3>
+                            <p class="menu-item-desc">Brisket dawg. All-beef frank loaded with brisket and fixins.</p>
+                        </div>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Sloppy Joe</h3>
+                            <p class="menu-item-desc">House-ground beef, tangy sauce, classic diner sloppy joe.</p>
+                        </div>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Mehta Platter</h3>
+                            <p class="menu-item-desc">Vegan. The plant-based platter, available all day.</p>
+                        </div>
+                        <span class="menu-item-price">$18</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category" data-category="drinks">
+                <h2 class="menu-category-title">Drinks</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Campari &amp; Soda</h3>
+                            <p class="menu-item-desc">Classic aperitif. Simple, bittersweet, refreshing.</p>
+                        </div>
+                        <span class="menu-item-price">$13</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Valerie</h3>
+                            <p class="menu-item-desc">An Aperol Spritz, Grey's style. Light, bubbly, perfect for a diner afternoon.</p>
+                        </div>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Hot in Herre</h3>
+                            <p class="menu-item-desc">Our take on the Bloody Mary. Spicy, savory, built for brunch.</p>
+                        </div>
+                        <span class="menu-item-price">$13</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Boozy Root Beer Float</h3>
+                            <p class="menu-item-desc">Root beer, ice cream, and a pour of something spirited.</p>
+                        </div>
+                        <span class="menu-item-price">$15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Spiked Milkshake</h3>
+                            <p class="menu-item-desc">Classic diner milkshake, spiked. Choose your flavor.</p>
+                        </div>
+                        <span class="menu-item-price">$16</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-sides menu-category" data-category="breakfast lunch-dinner">
+                <h2 class="menu-category-title">Sides</h2>
+                <div class="menu-items sides-grid">
+                    <span class="side-item">Ann's Biscuits</span>
+                    <span class="side-item">Trey's Bagel</span>
+                    <span class="side-item">Country Ham</span>
+                    <span class="side-item">Belly Brothers Bacon</span>
+                    <span class="side-item">NC Sausage</span>
+                    <span class="side-item">Cheddar Grits</span>
+                    <span class="side-item">Home Fries</span>
+                    <span class="side-item">Onion Rings</span>
+                    <span class="side-item">Hush Puppies</span>
+                </div>
+            </div>
+
+            <div class="menu-source-note">
+                <p>Sourced from <strong>Shipley Farms</strong>, <strong>Harmony Ridge Farm</strong>, <strong>Belly Brothers</strong>, <strong>Enderly Coffee</strong>, <strong>Dukes</strong>, and <strong>Trey's Bagels</strong>. Prices and availability subject to change.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-order section section-alt">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>Walk in or order online for pickup.</p>
+            <div class="menu-order-actions">
+                <a href="reserve.html" class="btn btn-primary">Order Online</a>
+                <a href="visit.html" class="btn btn-secondary">Visit Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <p class="footer-name">Grey's Diner and Community Kitchen</p>
+                <p class="footer-tagline">A Finer Kind of Diner</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="visit.html">Visit</a>
+                <a href="reserve.html">Order Online</a>
+            </div>
+            <div class="footer-info">
+                <p>3100 The Plaza, Charlotte, NC 28205</p>
+                <p>(980) 277-2375</p>
+                <p>&copy; 2026 Grey's Diner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>

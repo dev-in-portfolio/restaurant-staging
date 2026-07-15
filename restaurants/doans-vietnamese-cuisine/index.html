@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doan's Vietnamese Cuisine · South Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --crimson: #a32020;
+  --golden: #d4a017;
+  --mint: #2d7a4f;
+  --charcoal: #1a1a1a;
+  --cream: #f7f0e6;
+  --warm-white: #faf5ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--crimson); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--golden); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--golden) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 70vh; background: linear-gradient(135deg, #0d0d0d, #2a0a0a 50%, #0d1a0d); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--golden); }
+.hero .tagline { font-size: 1rem; opacity: .6; font-style: italic; margin: .5rem 0 1.5rem; }
+.hero .btn { display: inline-block; background: var(--crimson); color: var(--cream); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; }
+.hero .btn:hover { background: #b82d2d; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--golden); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.feature-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,160,23,.08); border-radius: 8px; padding: 1.5rem; }
+.feature-card .icon { font-size: 1.5rem; margin-bottom: .5rem; display: block; }
+.feature-card h3 { font-size: 1.05rem; color: var(--golden); margin: 0 0 .35rem; }
+.feature-card p { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.stat { text-align: center; padding: 1.5rem; background: rgba(255,255,255,.03); border-radius: 8px; border: 1px solid rgba(212,160,23,.06); }
+.stat .num { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--golden); }
+.stat .label { font-size: .82rem; opacity: .5; }
+.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+@media (max-width:640px) { .about-preview { grid-template-columns: 1fr; } }
+.about-preview p { font-size: .92rem; opacity: .65; line-height: 1.7; }
+.about-preview .btn { display: inline-block; background: var(--mint); color: var(--cream); padding: .7rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+.testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.testimonial { background: rgba(255,255,255,.03); border: 1px solid rgba(212,160,23,.06); border-radius: 6px; padding: 1.25rem; font-style: italic; }
+.testimonial .text { font-size: .88rem; opacity: .65; line-height: 1.6; margin-bottom: .75rem; }
+.testimonial .author { font-size: .8rem; opacity: .4; font-style: normal; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,160,23,.08); }
+footer a { color: var(--golden); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Doan's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pho.html">Pho Customizer</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Doan's Vietnamese Cuisine</h1>
+    <p class="tagline">Authentic Vietnamese flavors — family-owned since 2009</p>
+    <a href="menu.html" class="btn">Explore Our Menu</a>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Welcome to Doan's</h2>
+  <p class="subtitle">South Charlotte's hidden gem for Vietnamese comfort food</p>
+  <div class="featured-grid">
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍜</span>
+      <h3>Phở</h3>
+      <p>Rich, aromatic broth simmered for hours — served with your choice of beef, chicken, or vegetarian</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🥟</span>
+      <h3>Fresh Spring Rolls</h3>
+      <p>Crisp vegetables and herbs wrapped in rice paper — served with savory peanut sauce</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍚</span>
+      <h3>Broken Rice Plates</h3>
+      <p>Marinated grilled pork, shredded pork skin, and pickled veggies over fragrant broken rice</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🥗</span>
+      <h3>Vermicelli Bowls</h3>
+      <p>Warm rice vermicelli topped with grilled meats, fresh herbs, and nuoc cham dressing</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,160,23,.06)">
+  <h2>Family-Owned Since 2009</h2>
+  <div class="about-preview">
+    <div>
+      <p>Doan's Vietnamese Cuisine has been serving Charlotte's South Boulevard corridor for over 15 years. What started as a small family operation has grown into a beloved destination for authentic pho, fresh spring rolls, and Vietnamese comfort food made from scratch every day.</p>
+      <p>We take pride in our no-MSG kitchen, generous portions, and the kind of hospitality that makes every guest feel like family.</p>
+      <a href="story.html" class="btn">Read Our Story</a>
+    </div>
+    <div style="background:rgba(255,255,255,.03);border-radius:8px;height:250px;display:flex;align-items:center;justify-content:center;opacity:.3;font-style:italic;border:2px dashed rgba(212,160,23,.1)">Photo coming soon</div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,160,23,.06)">
+  <h2>What Our Guests Say</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p class="text">"The pho here is some of the best in Charlotte — rich broth, generous portions, always fresh."</p>
+      <span class="author">— Steven J.</span>
+    </div>
+    <div class="testimonial">
+      <p class="text">"After 14 years, I finally found a Vietnamese restaurant that serves broken rice. Everything was delicious."</p>
+      <span class="author">— Hung D.</span>
+    </div>
+    <div class="testimonial">
+      <p class="text">"Of all the Vietnamese restaurants in Charlotte, this is my favorite. You can't go wrong with anything."</p>
+      <span class="author">— Kane S.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,160,23,.06)">
+  <h2>Visit Us</h2>
+  <p class="subtitle">5937 South Blvd, Charlotte, NC 28217</p>
+  <div class="stats">
+    <div class="stat">
+      <span class="num">Mon–Sat</span>
+      <span class="label">11:00 AM – 9:00 PM</span>
+    </div>
+    <div class="stat">
+      <span class="num">Sunday</span>
+      <span class="label">Closed</span>
+    </div>
+    <div class="stat">
+      <span class="num">(704) 733-9077</span>
+      <span class="label">Call for takeout</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem">
+    <a href="order.html" class="hero btn">Order Takeout</a>
+  </div>
+</section>
+
+<footer>
+  <p>Doan's Vietnamese Cuisine · 5937 South Blvd · Charlotte, NC 28217 · (704) 733-9077</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

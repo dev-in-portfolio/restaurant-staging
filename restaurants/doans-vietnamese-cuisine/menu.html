@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Doan's Vietnamese Cuisine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --crimson: #a32020;
+  --golden: #d4a017;
+  --mint: #2d7a4f;
+  --charcoal: #1a1a1a;
+  --cream: #f7f0e6;
+  --warm-white: #faf5ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--crimson); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--golden); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--golden) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a0505, #2a0a0a); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--golden); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 3rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.3rem; color: var(--warm-white); margin: 0 0 1.25rem; border-left: 3px solid var(--golden); padding-left: .75rem; }
+.filter-bar { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.filter-btn { background: rgba(255,255,255,.04); border: 1px solid rgba(212,160,23,.15); padding: .5rem 1.25rem; border-radius: 30px; font-size: .82rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: .06em; transition: all .2s; }
+.filter-btn:hover { border-color: var(--golden); color: var(--golden); }
+.filter-btn.active { background: var(--golden); border-color: var(--golden); color: var(--charcoal); }
+.cat-tabs { display: flex; gap: .25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.cat-tab { background: rgba(255,255,255,.03); border: none; padding: .65rem 1.25rem; border-radius: 4px 4px 0 0; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+.cat-tab:hover { color: var(--cream); }
+.cat-tab.active { background: rgba(212,160,23,.12); color: var(--golden); }
+.cat-panel { display: none; }
+.cat-panel.active { display: block; }
+.menu-cat-title { color: var(--golden); font-size: 1.1rem; margin: 0 0 1rem; }
+.menu-item { display: flex; justify-content: space-between; align-items: flex-start; padding: .75rem 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.menu-item:last-child { border-bottom: none; }
+.menu-item .name { font-weight: 600; font-size: .95rem; }
+.menu-item .desc { font-size: .82rem; opacity: .55; line-height: 1.4; margin: .15rem 0 0; max-width: 75%; }
+.menu-item .price { font-size: .9rem; color: var(--golden); font-weight: 600; white-space: nowrap; margin-left: 1rem; }
+.menu-item .badge { display: inline-block; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; background: rgba(45,122,79,.15); color: var(--mint); padding: .15rem .5rem; border-radius: 3px; margin-left: .5rem; }
+.menu-item .badge.spicy { background: rgba(163,32,32,.15); color: var(--crimson); }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,160,23,.08); }
+footer a { color: var(--golden); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Doan's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pho.html">Pho Customizer</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>Vietnamese classics made fresh daily — no MSG, always authentic</p>
+</header>
+
+<section class="section">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+    <button class="filter-btn" data-filter="spicy">Spicy</button>
+    <button class="filter-btn" data-filter="popular">Popular</button>
+  </div>
+
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="pho">Phở</button>
+    <button class="cat-tab" data-tab="rice">Broken Rice</button>
+    <button class="cat-tab" data-tab="vermicelli">Vermicelli</button>
+    <button class="cat-tab" data-tab="apps">Appetizers</button>
+    <button class="cat-tab" data-tab="grill">Grill &amp; Specials</button>
+    <button class="cat-tab" data-tab="drinks">Drinks</button>
+  </div>
+
+  <div class="cat-panel active" data-panel="pho">
+    <h3 class="menu-cat-title">Phở</h3>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Phở Dac Biet</span><span class="badge">Popular</span><p class="desc">House special combo — eye round steak, brisket, tendon, and tripe in savory broth</p></div>
+      <span class="price">$12.95</span>
+    </div>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Phở Tai</span><span class="badge">Popular</span><p class="desc">Rare eye round steak — the classic pho experience</p></div>
+      <span class="price">$11.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Phở Chin</span><p class="desc">Well-done brisket in rich, aromatic broth</p></div>
+      <span class="price">$11.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Phở Ga</span><p class="desc">Chicken pho — tender shredded chicken in fragrant broth</p></div>
+      <span class="price">$11.95</span>
+    </div>
+    <div class="menu-item" data-tags="vegetarian">
+      <div><span class="name">Phở Chay</span><span class="badge">Vegetarian</span><p class="desc">Vegetable pho with mushroom broth and fresh herbs</p></div>
+      <span class="price">$10.95</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="rice">
+    <h3 class="menu-cat-title">Cơm Tấm (Broken Rice)</h3>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Cơm Tấm Suon</span><span class="badge">Popular</span><p class="desc">Grilled pork chop marinated in lemongrass — served with broken rice, pickled carrots, and scallion oil</p></div>
+      <span class="price">$13.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Cơm Tấm Thit Nuong</span><p class="desc">Grilled thinly sliced pork shoulder over broken rice</p></div>
+      <span class="price">$13.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Cơm Tấm Ga Nuong</span><p class="desc">Grilled lemongrass chicken over broken rice</p></div>
+      <span class="price">$13.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Cơm Tấm Tom Nuong</span><p class="desc">Grilled shrimp over broken rice with scallion oil</p></div>
+      <span class="price">$15.95</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="vermicelli">
+    <h3 class="menu-cat-title">Bún (Vermicelli Bowls)</h3>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Bún Thit Nuong</span><span class="badge">Popular</span><p class="desc">Grilled pork over vermicelli with lettuce, cucumber, pickled carrots, and nuoc cham</p></div>
+      <span class="price">$12.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Bún Cha Gio</span><p class="desc">Crispy egg rolls sliced over vermicelli with fresh herbs and dipping sauce</p></div>
+      <span class="price">$11.95</span>
+    </div>
+    <div class="menu-item" data-tags="spicy">
+      <div><span class="name">Bún Bo Hue</span><span class="badge">Spicy</span><p class="desc">Spicy beef noodle soup from the royal city — lemongrass, chili, and pork broth</p></div>
+      <span class="price">$12.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Bún Tom Nuong</span><p class="desc">Grilled shrimp vermicelli with fresh herbs and peanut sauce</p></div>
+      <span class="price">$14.95</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="apps">
+    <h3 class="menu-cat-title">Khai Vị (Appetizers)</h3>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Goi Cuon</span><span class="badge">Popular</span><p class="desc">Fresh summer rolls — shrimp, pork, vermicelli, lettuce, and herbs wrapped in rice paper</p></div>
+      <span class="price">$4.50</span>
+    </div>
+    <div class="menu-item" data-tags="vegetarian">
+      <div><span class="name">Goi Cuon Chay</span><span class="badge">Vegetarian</span><p class="desc">Vegetarian summer rolls — tofu, vermicelli, and fresh herbs</p></div>
+      <span class="price">$4.35</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Cha Gio</span><p class="desc">Crispy fried spring rolls — pork and vegetable filling</p></div>
+      <span class="price">$4.95</span>
+    </div>
+    <div class="menu-item" data-tags="vegetarian">
+      <div><span class="name">Cha Gio Chay</span><span class="badge">Vegetarian</span><p class="desc">Vegetarian crispy spring rolls</p></div>
+      <span class="price">$4.35</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Banh Xeo</span><p class="desc">Vietnamese crispy crepe — shrimp, pork, bean sprouts, and herbs</p></div>
+      <span class="price">$12.95</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="grill">
+    <h3 class="menu-cat-title">Mon Nuong &amp; Dac Biet (Grill &amp; Specials)</h3>
+    <div class="menu-item" data-tags="popular">
+      <div><span class="name">Bo Nuong Combo</span><span class="badge">Popular</span><p class="desc">Grilled beef combination plate with rice, salad, and dipping sauce</p></div>
+      <span class="price">$16.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Tom Nuong (10 pieces)</span><p class="desc">Grilled shrimp — perfectly charred and seasoned</p></div>
+      <span class="price">$15.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Ga Nuong Combo</span><p class="desc">Grilled chicken combo with rice, salad, and dipping sauce</p></div>
+      <span class="price">$16.95</span>
+    </div>
+    <div class="menu-item" data-tags="spicy">
+      <div><span class="name">Cari Ga (Cay)</span><span class="badge">Spicy</span><p class="desc">Spicy chicken curry — fragrant, rich, and warming</p></div>
+      <span class="price">$10.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Ca Hap</span><p class="desc">Steamed whole fish with ginger and scallion</p></div>
+      <span class="price">$12.95</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Ca Xao Rau Cai</span><p class="desc">Pan-seared fish with mixed vegetables</p></div>
+      <span class="price">$12.95</span>
+    </div>
+  </div>
+
+  <div class="cat-panel" data-panel="drinks">
+    <h3 class="menu-cat-title">Thức Uống (Drinks)</h3>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Vietnamese Iced Coffee</span><p class="desc">Strong dark roast dripped over sweetened condensed milk — served over ice</p></div>
+      <span class="price">$4.50</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Thai Iced Tea</span><p class="desc">Creamy, sweet Thai tea served over ice</p></div>
+      <span class="price">$4.25</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Soda Chanh</span><p class="desc">Sparkling lime soda — refreshing and bright</p></div>
+      <span class="price">$3.50</span>
+    </div>
+    <div class="menu-item" data-tags="">
+      <div><span class="name">Sinh To</span><p class="desc">Fresh fruit smoothie — ask your server for today's selection</p></div>
+      <span class="price">$4.95</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Doan's Vietnamese Cuisine · 5937 South Blvd · Charlotte, NC 28217 · (704) 733-9077</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  const items = document.querySelectorAll('[data-tags]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const f = this.dataset.filter;
+      const activePanel = document.querySelector('.cat-panel.active');
+      const panelItems = activePanel.querySelectorAll('[data-tags]');
+      panelItems.forEach(item => {
+        const tags = item.dataset.tags || '';
+        item.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+      });
+    });
+  });
+
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('[data-panel]');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      panels.forEach(p => {
+        p.classList.toggle('active', p.dataset.panel === this.dataset.tab);
+      });
+      filterBtns.forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-filter="all"]').classList.add('active');
+      panels.forEach(p => {
+        const its = p.querySelectorAll('[data-tags]');
+        its.forEach(it => it.style.display = '');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

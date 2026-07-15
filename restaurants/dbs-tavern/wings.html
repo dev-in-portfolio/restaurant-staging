@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legendary Wings · DB's Tavern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.hero{min-height:40vh;background:linear-gradient(135deg,#0d1219,#1a2a3a 50%,#2a1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
+.hero .tagline{font-size:1rem;opacity:.6;font-style:italic;margin:.5rem 0 1.5rem}
+.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--warm);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
+
+/* Interactive Platter Styling */
+.wings-mat {
+  background: radial-gradient(circle, #2e120d 0%, #0d0604 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.wings-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .wings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select, input[type="checkbox"] {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 168, 75, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">DB's Tavern</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wings.html" style="color: var(--gold);">Wings</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Legendary Tavern Wings</h1>
+    <p class="tagline">Since 1988 — Ballantyne's favorite wings, tossed in 18 custom sauces</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Wing Customizer &amp; Planner</h2>
+  <p class="subtitle">Draft your perfect wing basket. Select count, style, sauce, and dipping sauce in real-time.</p>
+  
+  <div class="wings-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(212,168,75,0.05);">
+    
+    <!-- Left: Platter Visualizer -->
+    <div class="wings-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="wings-count-tag">12 WING PLATTER</span>
+      <h3 style="font-size: 2.2rem; color: var(--warm); margin: 0 0 0.8rem 0;" id="wings-title-display">Crispy Boneless Basket</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="wings-price-display">$17.49</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="wings-desc-display">12 crispy boneless wings tossed in Spicy Buffalo sauce, served with a side of Ranch Dip.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Select Wing Count</label>
+        <select id="wing-count" onchange="updateWings()">
+          <option value="6">6 Wings ($8.99)</option>
+          <option value="12" selected>12 Wings ($16.99)</option>
+          <option value="18">18 Wings ($23.99)</option>
+          <option value="24">24 Wings ($29.99)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Select Wing Style</label>
+        <select id="wing-style" onchange="updateWings()">
+          <option value="traditional">Traditional Bone-In (+$0.00)</option>
+          <option value="boneless" selected>Crispy Boneless (+$0.50)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>3. Choose Sauce &amp; Heat</label>
+        <select id="wing-sauce" onchange="updateWings()">
+          <option value="lucifer">Lucifer's Own (Extreme Heat)</option>
+          <option value="buffalo" selected>Spicy Buffalo (Hot)</option>
+          <option value="bbq">Bourbon BBQ (Sweet &amp; Mild)</option>
+          <option value="garlic">Garlic Parmesan (No Heat)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>4. Add Dipping Sauce</label>
+        <select id="wing-dip" onchange="updateWings()">
+          <option value="ranch" selected>House Ranch Dip</option>
+          <option value="blue">Chunky Blue Cheese Dip</option>
+          <option value="none">No Dipping Sauce</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,168,75,.06)">
+  <h2>Wing Sauce Varieties</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+    <div class="feature-card">
+      <h3 style="color:#ef4444;">Lucifer's Own</h3>
+      <p>Our hottest house sauce. Blend of habanero, ghost pepper extract, and fiery cayenne spices.</p>
+    </div>
+    <div class="feature-card">
+      <h3 style="color:var(--gold);">Spicy Buffalo</h3>
+      <p>Classic cayenne pepper sauce whipped with real butter and garlic. Tangy and spicy.</p>
+    </div>
+    <div class="feature-card">
+      <h3 style="color:#fb923c;">Bourbon BBQ</h3>
+      <p>Sweet southern molasses base spiked with oak-barrel aged bourbon whiskey.</p>
+    </div>
+    <div class="feature-card">
+      <h3 style="color:#a7f3d0;">Garlic Parmesan</h3>
+      <p>Rich melted parmesan cheese mixed with roasted garlic puree and garden herbs.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
+  <p><a href="menu.html">Menu</a> · <a href="wings.html">Wings</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const wingCountData = {
+    "6": { tag: "6 WING BASKET", price: 8.99, word: "6" },
+    "12": { tag: "12 WING PLATTER", price: 16.99, word: "12" },
+    "18": { tag: "18 WING PLATTER", price: 23.99, word: "18" },
+    "24": { tag: "24 WING PLATTER", price: 29.99, word: "24" }
+  };
+
+  const styleData = {
+    traditional: { name: "Traditional Bone-In Basket", desc: "traditional bone-in wings", surcharge: 0.00 },
+    boneless: { name: "Crispy Boneless Basket", desc: "crispy boneless wings", surcharge: 0.50 }
+  };
+
+  const sauceData = {
+    lucifer: { name: "Lucifer's Own", color: "#ef4444", heat: "Extreme Heat" },
+    buffalo: { name: "Spicy Buffalo", color: "#f97316", heat: "Hot" },
+    bbq: { name: "Bourbon BBQ", color: "#b45309", heat: "Sweet & Mild" },
+    garlic: { name: "Garlic Parmesan", color: "#d97706", heat: "No Heat" }
+  };
+
+  const dipData = {
+    ranch: { name: "Ranch Dip", word: "side of Ranch Dip" },
+    blue: { name: "Blue Cheese Dip", word: "side of Chunky Blue Cheese Dip" },
+    none: { name: "No Dip", word: "no dipping sauce" }
+  };
+
+  function updateWings() {
+    const cntKey = document.getElementById('wing-count').value;
+    const styleKey = document.getElementById('wing-style').value;
+    const sauceKey = document.getElementById('wing-sauce').value;
+    const dipKey = document.getElementById('wing-dip').value;
+
+    const cnt = wingCountData[cntKey];
+    const style = styleData[styleKey];
+    const sauce = sauceData[sauceKey];
+    const dip = dipData[dipKey];
+
+    const totalPrice = cnt.price + style.surcharge;
+
+    document.getElementById('wings-count-tag').innerText = cnt.tag;
+    document.getElementById('wings-title-display').innerText = style.name;
+    document.getElementById('wings-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let dipPhrase = dip.word !== "no dipping sauce" ? `served with a ${dip.word}.` : `served with no dipping sauce.`;
+    let desc = `${cnt.word} ${style.desc} tossed in ${sauce.name} sauce (${sauce.heat}), ${dipPhrase}`;
+    
+    document.getElementById('wings-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updateWings();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

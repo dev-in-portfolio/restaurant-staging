@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - El Valle Mexican Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">El Valle</a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tacos.html">Taco Builder</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html" class="btn btn-sm">Visit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="section-tag">Our Menu</span>
+      <h1>Menu</h1>
+      <p>From our famous cheese dip to our signature plates, every dish is made with authentic family recipes.</p>
+    </div>
+  </header>
+
+  <section class="menu-section section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="menu-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="appetizers">Appetizers</button>
+          <button class="filter-btn" data-filter="entrees">Entrees</button>
+          <button class="filter-btn" data-filter="fajitas">Fajitas</button>
+          <button class="filter-btn" data-filter="tacos">Tacos &amp; Burritos</button>
+          <button class="filter-btn" data-filter="desserts">Desserts</button>
+        </div>
+        <div class="menu-search">
+          <input type="text" id="menu-search" placeholder="Search menu...">
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="appetizers">
+        <h3 class="menu-cat-title">Appetizers</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Cheese Dip</h4>
+              <p>Our famous creamy, perfectly seasoned cheese dip made fresh daily</p>
+            </div>
+            <span class="menu-item-price">$8</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Queso con Chorizo</h4>
+              <p>Creamy cheese dip with seasoned chorizo crumbles</p>
+            </div>
+            <span class="menu-item-price">$10</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Guacamole</h4>
+              <p>Fresh-made guacamole with ripe avocados, tomatoes, and cilantro</p>
+            </div>
+            <span class="menu-item-price">$10</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Chicken Soup</h4>
+              <p>Traditional Mexican chicken soup with vegetables and rice</p>
+            </div>
+            <span class="menu-item-price">$10</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Nachos</h4>
+              <p>Crispy tortilla chips loaded with cheese, beans, jalapeños, and toppings</p>
+            </div>
+            <span class="menu-item-price">$12</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Quesadilla</h4>
+              <p>Grilled flour tortilla with melted cheese and your choice of filling</p>
+            </div>
+            <span class="menu-item-price">$10</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="entrees">
+        <h3 class="menu-cat-title">Entrees</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Karen's Special</h4>
+              <p>A family favorite with all the fixings — a must-try signature dish</p>
+            </div>
+            <span class="menu-item-price">$17</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Shrimp Yucatan</h4>
+              <p>Grilled shrimp prepared in authentic Yucatan-style sauce with rice</p>
+            </div>
+            <span class="menu-item-price">$19</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Filet Ala Parilla</h4>
+              <p>Grilled beef filet served with rice, beans, and tortillas</p>
+            </div>
+            <span class="menu-item-price">$20</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Pollo Especial</h4>
+              <p>Seasoned grilled chicken breast with rice, beans, and guacamole</p>
+            </div>
+            <span class="menu-item-price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Arroz Con Camaron</h4>
+              <p>Sautéed shrimp with Mexican rice, vegetables, and cheese</p>
+            </div>
+            <span class="menu-item-price">$18</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Chimichanga</h4>
+              <p>Deep-fried burrito stuffed with your choice of meat, topped with cheese sauce</p>
+            </div>
+            <span class="menu-item-price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Enchiladas Verde</h4>
+              <p>Corn tortillas filled with chicken, topped with green tomatillo sauce</p>
+            </div>
+            <span class="menu-item-price">$15</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="fajitas">
+        <h3 class="menu-cat-title">Fajitas</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Chicken Fajitas</h4>
+              <p>Sizzling grilled chicken with onions, peppers, and all the fixings</p>
+            </div>
+            <span class="menu-item-price">$17</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Steak Fajitas</h4>
+              <p>Sizzling grilled steak with onions, peppers, and all the fixings</p>
+            </div>
+            <span class="menu-item-price">$19</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Shrimp Fajitas</h4>
+              <p>Sizzling grilled shrimp with onions, peppers, and all the fixings</p>
+            </div>
+            <span class="menu-item-price">$19</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Combo Fajitas</h4>
+              <p>Chicken, steak, and shrimp sizzling together with all the fixings</p>
+            </div>
+            <span class="menu-item-price">$22</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="tacos">
+        <h3 class="menu-cat-title">Tacos &amp; Burritos</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Quesabirria Tacos</h4>
+              <p>Birria-stuffed crispy tacos served with rich consommé for dipping</p>
+            </div>
+            <span class="menu-item-price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Street Tacos</h4>
+              <p>Authentic corn tortilla tacos with cilantro, onion, and lime</p>
+            </div>
+            <span class="menu-item-price">$14</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Burrito Grande</h4>
+              <p>Massive flour tortilla stuffed with meat, rice, beans, cheese, and salsa</p>
+            </div>
+            <span class="menu-item-price">$15</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Tortas</h4>
+              <p>Mexican sandwich on a telera roll with your choice of meat and toppings</p>
+            </div>
+            <span class="menu-item-price">$14</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="desserts">
+        <h3 class="menu-cat-title">Desserts</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Sopapillas</h4>
+              <p>Golden fried pastry drizzled with honey and cinnamon sugar</p>
+            </div>
+            <span class="menu-item-price">$7</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Churros</h4>
+              <p>Crispy cinnamon-sugar churros served with chocolate dipping sauce</p>
+            </div>
+            <span class="menu-item-price">$8</span>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Flan</h4>
+              <p>Classic Mexican vanilla custard with caramel sauce</p>
+            </div>
+            <span class="menu-item-price">$7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-empty" style="display:none;">
+        <p>No items match your search.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">El Valle</span>
+          <p>Authentic Mexican cuisine serving the Charlotte community since 1998.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Locations</h5>
+          <ul>
+            <li>Matthews: 704-845-1417</li>
+            <li>Charlotte: 704-398-9696</li>
+            <li>Mt Holly: 704-820-0798</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 El Valle Mexican Restaurant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

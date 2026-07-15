@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kegs &amp; Cocktails - E.L.K. Tavern | Monroe, NC</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Local style adjustments to match E.L.K. Tavern's branding */
+.kegs-mat {
+  background: radial-gradient(circle, #2a1505 0%, #0d0602 100%);
+  border: 1.5px solid var(--color-amber);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-premium);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.kegs-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .kegs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: var(--color-text-light);
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--color-amber);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-amber);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">E</div>
+        <h1 class="brand-name">
+          E.L.K. Tavern
+          <span>Eggs Legs Kegs</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="kegs.html" class="active">Kegs &amp; Cocktails</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero-section" style="padding: 4rem 2rem; min-height: 35vh;">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">NC Craft Drafts &amp; Signature Mixes</span>
+        <h2 class="hero-title">Drafts &amp; Cocktail Pairings</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="margin-top: 2rem;">
+    <section class="interactive-panel" style="margin-bottom: 5.5rem; padding: 40px 30px; border-radius: 12px; border: 1px solid var(--color-border); background: var(--color-card-bg);">
+      <h2 class="section-title" style="margin-bottom: 1rem; text-align: center;">Tavern Pairing Planner</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your favorite draft beer or craft cocktail and explore its recommended culinary egg or wing pairing.</p>
+      
+      <div class="kegs-grid">
+        
+        <!-- Left: Platter Visualizer -->
+        <div class="kegs-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--color-amber); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="kegs-tag-display">NC CRAFT DRAFT</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--font-heading); margin: 0 0 0.8rem 0;" id="kegs-title-display">Sycamore Hazy IPA</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: var(--color-amber); margin: 0 0 1.2rem 0;" id="kegs-price-display">$7.00</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="kegs-desc-display">Juicy tropical Hazy IPA with citrus fruit aroma, paired with our house deviled eggs topped with crispy smoked bacon.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Select Tavern Beverage</label>
+            <select id="kegs-drink" onchange="updatePairing()">
+              <option value="ipa" selected>Sycamore Mountain Candy Hazy IPA ($7.00)</option>
+              <option value="hopdrop">NoDa Hop Drop &apos;N Roll West Coast IPA ($7.00)</option>
+              <option value="oldfashioned">Tavern Smoked Old Fashioned ($12.00)</option>
+              <option value="mary">Spicy Diner Bloody Mary ($9.00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">2. Select Food Pairing</label>
+            <select id="kegs-pairing" onchange="updatePairing()">
+              <option value="deviled" selected>Tavern Signature Deviled Eggs (+$0.00)</option>
+              <option value="scotch">House Sausage Scotch Egg (+$2.00)</option>
+              <option value="wings">Jumbo Crispy Buffalo Wings (+$5.00)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #080a0d; color: var(--color-text-muted); text-align: center; padding: 2rem; border-top: 1px solid var(--color-border); font-size: 0.85rem;">
+    <p>E.L.K. Bar &amp; Restaurant · 116 East Franklin St · Monroe, NC 28112 · (704) 993-0744</p>
+    <p class="disclosure" style="margin-top: 0.5rem; opacity: 0.5; font-style: italic;">Unofficial concept presentation — not operated by the restaurant</p>
+  </footer>
+
+  <script>
+    const drinkData = {
+      ipa: { tag: "NC CRAFT DRAFT", name: "Sycamore Hazy IPA", price: 7.00, label: "juicy tropical Hazy IPA with bright citrus fruit aroma" },
+      hopdrop: { tag: "NC CRAFT DRAFT", name: "NoDa Hop Drop IPA", price: 7.00, label: "crisp, piney, and aggressively hopped West Coast IPA" },
+      oldfashioned: { tag: "SIGNATURE COCKTAIL", name: "Tavern Smoked Old Fashioned", price: 12.00, label: "house smoked bourbon stirred with molasses bitters and orange peel" },
+      mary: { tag: "SIGNATURE COCKTAIL", name: "Spicy Diner Bloody Mary", price: 9.00, label: "vodka blended with house spicy tomato mix, celery salt, and pickle brine" }
+    };
+
+    const pairingData = {
+      deviled: { name: "Deviled Eggs", label: "paired with our signature whipped Deviled Eggs topped with crispy local smoked bacon", charge: 0.00 },
+      scotch: { name: "Scotch Egg", label: "paired with a whole soft-boiled egg wrapped in country pork sausage and panko-crusted", charge: 2.00 },
+      wings: { name: "Jumbo Wings", label: "paired with a basket of our crispy double-fried jumbo chicken wings tossed in buffalo sauce", charge: 5.00 }
+    };
+
+    function updatePairing() {
+      const drinkKey = document.getElementById('kegs-drink').value;
+      const pairingKey = document.getElementById('kegs-pairing').value;
+
+      const drink = drinkData[drinkKey];
+      const pairing = pairingData[pairingKey];
+
+      const totalPrice = drink.price + pairing.charge;
+
+      document.getElementById('kegs-tag-display').innerText = drink.tag;
+      document.getElementById('kegs-title-display').innerText = `${drink.name}`;
+      document.getElementById('kegs-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A pour of ${drink.label}, perfectly ${pairing.label}.`;
+      
+      document.getElementById('kegs-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updatePairing();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

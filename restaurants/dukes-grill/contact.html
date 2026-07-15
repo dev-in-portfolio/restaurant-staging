@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Duke's Grill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b31b1b;--yellow:#e8b830;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--yellow)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--yellow)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--yellow)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--yellow);margin:0 0 1rem;border-left:3px solid var(--yellow);padding-left:.75rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
+.contact-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.5rem}
+.contact-card .icon{font-size:1.3rem;margin-bottom:.5rem;display:block}
+.contact-card h3{font-size:1rem;color:var(--yellow);margin:0 0 .35rem}
+.contact-card p{font-size:.85rem;opacity:.65;margin:0;line-height:1.5}
+.demo-form{max-width:500px;margin:2rem auto 0}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.7}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:.7rem;border:1px solid rgba(232,184,48,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:100px;resize:vertical}
+.demo-form button{background:var(--yellow);color:var(--charcoal);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#d4a520}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--yellow);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Duke's Grill</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="shakes.html">Milkshakes</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Stop by or get in touch</p>
+</header>
+<section class="section">
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-card"><span class="icon" aria-hidden="true">📍</span><h3>Location</h3><p>1114 Concord Ave<br>Monroe, NC 28110</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">📞</span><h3>Phone</h3><p>(704) 283-4960</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">🕐</span><h3>Hours</h3><p>Tuesday–Saturday: 6:00 AM – 8:00 PM<br>Sunday–Monday: Closed</p></div>
+  </div>
+  <h2>Send Us a Message</h2>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="subject">Subject</label>
+    <select id="subject"><option>General Inquiry</option><option>Catering</option><option>Feedback</option><option>Other</option></select>
+    <label for="message">Message</label>
+    <textarea id="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<footer>
+  <p>Duke's Grill · 1114 Concord Ave · Monroe, NC 28110 · (704) 283-4960</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

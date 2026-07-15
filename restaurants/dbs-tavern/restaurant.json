@@ -1,0 +1,34 @@
+{
+  "id": "dbs-tavern",
+  "name": "DB",
+  "slug": "dbs-tavern",
+  "location": {
+    "city": "Ballantyne",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/dbs-tavern",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/dbs-tavern/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:01:28.225Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "tabletReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}

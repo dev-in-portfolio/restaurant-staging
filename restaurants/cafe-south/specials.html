@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cafe South — family-owned breakfast and lunch in South Charlotte. View our daily home-cooked specials and plan your comfort meal.">
+<title>Cafe South | Daily Home-Cooked Specials</title>
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Styling for the interactive daily specials planner */
+  .specials-card {
+    background: var(--card);
+    border: 1.5px solid var(--bdr);
+    border-radius: var(--r);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-lg);
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: transform .3s;
+    color: var(--tx);
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Unofficial six-page redesign demo &bull; forms are demonstration only &bull; not affiliated with Cafe South</div>
+<nav>
+  <a class="brand" href="index.html"><span>☕</span> Cafe South</a>
+  <button class="toggle-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="specials.html" aria-current="page">Daily Specials</a>
+    <a href="about.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="visit.html">Visit Us</a>
+  </div>
+</nav>
+
+<header class="hero" style="padding: 60px 0 40px; text-align: center;">
+  <div class="wrap">
+    <h1>Daily Comfort Specials</h1>
+    <p style="margin-inline: auto;">Generous Southern comfort specials prepared fresh in our kitchen, served with Southern sides and fresh sweet tea.</p>
+  </div>
+</header>
+
+<main id="main" class="wrap" style="margin-top: 40px;">
+  
+  <section class="interactive-panel" style="margin-bottom: 5.5rem; background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
+    <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Specials & Meal Planner</h3>
+    <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a weekday and your beverage choice to plan your perfect home-cooked lunch visit.</p>
+    
+    <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+      
+      <!-- Left Side: Interactive specials display -->
+      <div class="specials-card" id="specials-display">
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--p); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; font-family: system-ui,sans-serif;" id="specials-day-tag">Wednesday Special</span>
+        <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="specials-plate-title">Country Fried Steak</h4>
+        <p style="font-size: 1.5rem; font-weight: 800; color: var(--p); margin-bottom: 1.2rem; font-family: system-ui,sans-serif;" id="specials-plate-price">$14.50</p>
+        <p style="font-size: 0.95rem; color: var(--tx2); line-height: 1.7;" id="specials-plate-desc">"Crispy buttermilk-battered beef cutlet smothered in rich white country gravy, served with garlic mashed potatoes and sweet green beans."</p>
+      </div>
+
+      <!-- Right Side: Controls -->
+      <div class="form-group" style="margin-bottom: 0;">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Select Weekday</label>
+          <select id="day-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+            <option value="mon">Monday Specials</option>
+            <option value="tue">Tuesday Specials</option>
+            <option value="wed" selected>Wednesday Specials</option>
+            <option value="thu">Thursday Specials</option>
+            <option value="fri">Friday Specials</option>
+            <option value="sat">Saturday Specials</option>
+            <option value="sun">Sunday Specials</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Beverage</label>
+          <select id="drink-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+            <option value="tea">Southern Sweet Tea (+$2.50)</option>
+            <option value="lemonade">Fresh Lemonade (+$3.00)</option>
+            <option value="coffee">Fresh Drip Coffee (+$2.00)</option>
+            <option value="none">No Drink (+$0.00)</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Specials Menu Grid -->
+  <h3 style="font-size: 1.5rem; margin-bottom: 24px; text-align: center;">Weekly Specials Schedule</h3>
+  <div class="menu-preview" style="margin-bottom: 40px;">
+    
+    <div class="menu-item">
+      <h4>Monday: Chicken & Waffles <span class="price">$13.50</span></h4>
+      <p>Crispy hand-breaded chicken tenders served over a fluffy Belgian waffle, drizzled with hot honey maple syrup.</p>
+    </div>
+
+    <div class="menu-item">
+      <h4>Tuesday: Meatloaf Plate <span class="price">$14.00</span></h4>
+      <p>Thick-sliced seasoned beef meatloaf glazed in sweet ketchup sauce, served with mashed potatoes and peas.</p>
+    </div>
+
+    <div class="menu-item">
+      <h4>Wednesday: Country Fried Steak <span class="price">$14.50</span></h4>
+      <p>Smothered in creamy pepper gravy, served with green beans and garlic butter mashed potatoes.</p>
+    </div>
+
+    <div class="menu-item">
+      <h4>Thursday: Turkey & Dressing <span class="price">$15.00</span></h4>
+      <p>Oven-roasted turkey breast, cornbread dressing, cranberry sauce, and rich giblet gravy, served with sweet potato casserole.</p>
+    </div>
+
+    <div class="menu-item">
+      <h4>Friday: Crispy Fried Catfish <span class="price">$15.50</span></h4>
+      <p>Cornmeal-crusted farm-raised catfish fillets pan-fried, served with hushpuppies, french fries, and house tartar sauce.</p>
+    </div>
+
+    <div class="menu-item">
+      <h4>Weekend: Southern Benedict <span class="price">$12.50</span></h4>
+      <p>Split buttermilk biscuit topped with country ham, poached eggs, and sausage gravy, served with home fries.</p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <h3>☕ Cafe South</h3>
+      <p>Family-owned breakfast and lunch restaurant serving South Charlotte since 2012. Homestyle Southern hospitality and fresh cooking daily.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Address</h4>
+      <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+        7901 Forest Pine Dr<br>
+        Charlotte, NC 28273<br>
+        Phone: (704) 527-0909
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="specials.html">Daily Specials</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Cafe South. All rights reserved. Unofficial concept presentation.</p>
+  </div>
+</footer>
+
+<script>
+  const specialsData = {
+    mon: {
+      day: "Monday Special",
+      title: "Chicken & Waffles",
+      price: 13.50,
+      desc: "Crispy hand-breaded chicken tenders served over a fluffy Belgian waffle, drizzled with hot honey maple syrup."
+    },
+    tue: {
+      day: "Tuesday Special",
+      title: "Southern Meatloaf Plate",
+      price: 14.00,
+      desc: "Thick-sliced seasoned beef meatloaf glazed in sweet ketchup sauce, served with mashed potatoes and peas."
+    },
+    wed: {
+      day: "Wednesday Special",
+      title: "Country Fried Steak",
+      price: 14.50,
+      desc: "Crispy buttermilk-battered beef cutlet smothered in rich white country gravy, served with garlic mashed potatoes and sweet green beans."
+    },
+    thu: {
+      day: "Thursday Special",
+      title: "Turkey & Dressing",
+      price: 15.00,
+      desc: "Oven-roasted turkey breast, cornbread dressing, cranberry sauce, and rich giblet gravy, served with sweet potato casserole."
+    },
+    fri: {
+      day: "Friday Special",
+      title: "Crispy Fried Catfish",
+      price: 15.50,
+      desc: "Cornmeal-crusted farm-raised catfish fillets pan-fried, served with hushpuppies, french fries, and house tartar sauce."
+    },
+    sat: {
+      day: "Saturday Special",
+      title: "Southern Benedict",
+      price: 12.50,
+      desc: "Split buttermilk biscuit topped with country ham, poached eggs, and sausage gravy, served with home fries."
+    },
+    sun: {
+      day: "Sunday Special",
+      title: "Fluffy Pecan Pancakes",
+      price: 11.50,
+      desc: "Three large buttermilk pancakes packed with chopped local pecans, griddled golden and topped with whipped butter and syrup."
+    }
+  };
+
+  const drinkData = {
+    tea: { name: "Southern Sweet Tea", price: 2.50 },
+    lemonade: { name: "Fresh Lemonade", price: 3.00 },
+    coffee: { name: "Fresh Drip Coffee", price: 2.00 },
+    none: { name: "No Drink", price: 0.00 }
+  };
+
+  function updateSpecials() {
+    const day = document.getElementById('day-select').value;
+    const drink = document.getElementById('drink-select').value;
+
+    const display = document.getElementById('specials-display');
+    display.style.opacity = '0';
+    display.style.transform = 'translateY(10px)';
+
+    setTimeout(() => {
+      const s = specialsData[day];
+      const d = drinkData[drink];
+      const total = s.price + d.price;
+
+      document.getElementById('specials-day-tag').innerText = s.day;
+      document.getElementById('specials-plate-title').innerText = s.title;
+      document.getElementById('specials-plate-price').innerText = `$${total.toFixed(2)}`;
+
+      let desc = `"${s.desc}`;
+      if (d.price > 0) {
+        desc += ` Paired with cold, refreshing ${d.name}.`;
+      }
+      desc += `"`;
+      document.getElementById('specials-plate-desc').innerText = desc;
+
+      display.style.opacity = '1';
+      display.style.transform = 'translateY(0)';
+    }, 250);
+  }
+
+  // Trigger initial show
+  window.addEventListener('load', () => {
+    updateSpecials();
+  });
+</script>
+</body>
+</html>

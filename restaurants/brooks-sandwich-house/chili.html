@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooks' Sandwich House - Charlotte, NC | Legendary Chili</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the visual chili pot customizer */
+    .chili-pot-container {
+      background: radial-gradient(circle, #1a120b 0%, #08080a 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .chili-pot-graphic {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #be123c 0%, #881337 100%);
+      border: 3px solid var(--color-amber);
+      border-radius: 50% 50% 15% 15%;
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+      transition: var(--transition-smooth);
+    }
+    .chili-pot-graphic:before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 10%;
+      right: 10%;
+      height: 10px;
+      background: var(--color-amber);
+      border-radius: 5px;
+    }
+    .chili-heat-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.8) 0%, transparent 70%);
+      opacity: 0;
+      transition: var(--transition-fast);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Brooks' Sandwich House Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Brooks'
+          <span>Sandwich House</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="chili.html" class="active">Legendary Chili</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">The Legendary Chili</h2>
+    <p class="page-subtitle">The recipe that defined Charlotte's Noda district for half a century. Take home quarts or party tubs of our signature beef chili.</p>
+  </header>
+
+  <!-- Interactive Chili Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Chili To-Go Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your container size, heat adjustments, and condiment packages to calculate to-go orders.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Pot Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="chili-pot-container" id="pot-box">
+            <div class="chili-pot-graphic" id="pot-graphic">
+              <div class="chili-heat-glow" id="pot-glow"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="pot-display-title">1 Pint Tub</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-amber); margin: 0.5rem 0;" id="pot-display-price">$8.00</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Container Size</label>
+            <div class="option-grid" id="size-options">
+              <button class="option-btn active" onclick="setSize('pint', '1 Pint Tub', 8.00, '100px')">Pint ($8)</button>
+              <button class="option-btn" onclick="setSize('quart', '1 Quart Tub', 15.00, '125px')">Quart ($15)</button>
+              <button class="option-btn" onclick="setSize('gallon', '1 Gallon Party Tub', 55.00, '160px')">Gallon ($55)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Agave Chili Heat level</label>
+            <div class="option-grid" id="heat-options">
+              <button class="option-btn active" onclick="setHeat('mild', 'Standard Mild', 0.00, 0)">Mild</button>
+              <button class="option-btn" onclick="setHeat('hot', 'Texas Pete Hot', 1.00, 0.6)">Hot (+$1)</button>
+              <button class="option-btn" onclick="setHeat('reaper', 'Carolina Reaper Fiery', 2.50, 0.95)">Reaper (+$2.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Condiments Package</label>
+            <div class="option-grid" id="condiment-options">
+              <button class="option-btn active" onclick="setCondiments('none', 'No Extra Condiments', 0.00)">None</button>
+              <button class="option-btn" onclick="setCondiments('standard', 'Buns & Onions Package', 3.00)">Buns/Onions (+$3)</button>
+              <button class="option-btn" onclick="setCondiments('picnic', 'Full Picnic Pack', 6.00)">Picnic Pack (+$6)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Secret Family Recipe</span>
+        <h4 class="builder-display-title" id="display-chili-name">1 Pint Tub</h4>
+        <p id="display-chili-heat" style="color: var(--color-amber); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Standard Mild</p>
+        <div class="builder-display-price" id="display-chili-price">$8.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-chili-desc">Our signature hand-stirred beef chili in a 1 Pint Tub container, prepared at standard mild spice with no extra condiments.</p>
+      </div>
+    </section>
+
+    <!-- Large Order Inquiry Form -->
+    <section class="form-wrapper" style="margin-top: 5rem;">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Large Chili Orders & Tailgates</h2>
+        
+        <form id="tailgate-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Planning a backyard cookout or tailgating at Bank of America Stadium? Request bulk chili pickup with 48 hours notice.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="tg-name">Contact Name</label>
+              <input type="text" id="tg-name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="tg-phone">Phone Number</label>
+              <input type="tel" id="tg-phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="tg-date">Pickup Date</label>
+              <input type="date" id="tg-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tg-qty">Planned Gallons</label>
+              <select id="tg-qty">
+                <option value="1">1 Gallon (Serves 15-20)</option>
+                <option value="2">2 Gallons (Serves 30-40)</option>
+                <option value="5">5 Gallons (Serves 75-100)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Chili Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🌶️</div>
+          <h3 class="success-title">Inquiry Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have logged your bulk order request. Our stand manager will call you shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Walk-Up Stand</h3>
+        <p>2710 N Brevard St<br>Charlotte, NC 28205<br>Phone: (704) 375-7808</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Fri: 10:00 AM - 5:00 PM<br>Sat - Sun: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Payment Policy</h3>
+        <p>Cash-Only. ATM on-site inside the walk-up queue.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Brooks' Sandwich House. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedSize = { key: 'pint', name: '1 Pint Tub', price: 8.00, size: '100px' };
+    let selectedHeat = { key: 'mild', name: 'Standard Mild', price: 0.00, glow: 0 };
+    let selectedCondiments = { key: 'none', name: 'No Extra Condiments', price: 0.00 };
+
+    function setSize(key, name, price, size) {
+      const buttons = document.getElementById('size-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSize = { key, name, price, size };
+      updateDisplay();
+    }
+
+    function setHeat(key, name, price, glow) {
+      const buttons = document.getElementById('heat-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedHeat = { key, name, price, glow };
+      updateDisplay();
+    }
+
+    function setCondiments(key, name, price) {
+      const buttons = document.getElementById('condiment-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedCondiments = { key, name, price };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedSize.price + selectedHeat.price + selectedCondiments.price;
+      document.getElementById('display-chili-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-chili-name').innerText = selectedSize.name;
+      document.getElementById('display-chili-heat').innerText = selectedHeat.name;
+
+      document.getElementById('pot-display-title').innerText = selectedSize.name;
+      document.getElementById('pot-display-price').innerText = `$${total.toFixed(2)}`;
+
+      // Update graphic size and glow
+      const graphic = document.getElementById('pot-graphic');
+      graphic.style.width = selectedSize.size;
+      graphic.style.height = selectedSize.size;
+
+      const glow = document.getElementById('pot-glow');
+      glow.style.opacity = selectedHeat.glow;
+
+      // Update description
+      const desc = `Our signature hand-stirred beef chili in a ${selectedSize.name} container, prepared at ${selectedHeat.name.toLowerCase()} spice with ${selectedCondiments.name.toLowerCase()}.`;
+      document.getElementById('display-chili-desc').innerText = desc;
+    }
+
+    // Handle tailgate inquiries
+    const form = document.getElementById('tailgate-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('tg-name').value;
+      const phone = document.getElementById('tg-phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your bulk chili inquiry has been logged. Our stand manager will call you at <strong>${phone}</strong> shortly to review timing.`;
+    });
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

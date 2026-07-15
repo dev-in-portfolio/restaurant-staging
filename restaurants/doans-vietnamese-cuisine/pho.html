@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pho Customizer · Doan's Vietnamese Cuisine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --crimson: #a32020;
+  --golden: #d4a017;
+  --mint: #2d7a4f;
+  --charcoal: #1a1a1a;
+  --cream: #f7f0e6;
+  --warm-white: #faf5ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--crimson); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--golden); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--golden) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 40vh; background: linear-gradient(135deg, #0d0d0d, #2a0a0a 50%, #0d1a0d); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--golden); }
+.hero .tagline { font-size: 1.1rem; opacity: .5; font-style: italic; margin: .5rem 0 1.5rem; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--golden); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+
+/* Interactive Pho Styling */
+.pho-mat {
+  background: radial-gradient(circle, #2a0a0a 0%, #0c0303 100%);
+  border: 1.5px solid var(--golden);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.pho-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .pho-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select, input[type="checkbox"] {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--golden);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--golden);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,160,23,.08); }
+footer a { color: var(--golden); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Doan's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pho.html" style="color: var(--golden);">Pho Customizer</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Traditional Phở Bowl Customizer</h1>
+    <p class="tagline">Explore our 24-hour slow-simmered beef, chicken, or vegan broths and toppings</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Design Your Phở Bowl</h2>
+  <p class="subtitle">Select your bowl size, signature broth base, protein addition, and table garnishes in real-time.</p>
+  
+  <div class="pho-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(212,160,23,0.05);">
+    
+    <!-- Left: Platter Visualizer -->
+    <div class="pho-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--golden); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="pho-tag-display">MEDIUM BOWL PHO</span>
+      <h3 style="font-size: 2.2rem; color: var(--warm-white); margin: 0 0 0.8rem 0;" id="pho-title-display">Traditional Beef Phở</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--golden); margin: 0 0 1.2rem 0;" id="pho-price-display">$13.95</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="pho-desc-display">Medium bowl of traditional beef bone broth slow-simmered for 24 hours, topped with rare eye round steak, finished with fresh Thai basil, bean sprouts, and jalapeños.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Select Bowl Size</label>
+        <select id="pho-size" onchange="updatePho()">
+          <option value="medium" selected>Medium Bowl ($12.95)</option>
+          <option value="large">Large Bowl ($14.95)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Choose Broth Base</label>
+        <select id="pho-broth" onchange="updatePho()">
+          <option value="beef" selected>Beef Bone Broth (24-Hour)</option>
+          <option value="chicken">Free-Range Chicken Broth</option>
+          <option value="vegan">Vegan Star Anise Broth</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>3. Add Protein</label>
+        <select id="pho-protein" onchange="updatePho()">
+          <option value="steak" selected>Rare Eye Round Steak (+$1.00)</option>
+          <option value="flank">Well-Done Flank (+$1.00)</option>
+          <option value="meatballs">Beef Meatballs (+$1.00)</option>
+          <option value="tendon">Soft Beef Tendon (+$1.50)</option>
+          <option value="tofu">Organic Cubed Tofu (+$0.00)</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="margin-bottom: 0.5rem; display: block;">4. Table Garnishes</label>
+        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; text-transform: none; color: var(--cream); font-weight: normal; margin-top: 0.25rem;">
+          <input type="checkbox" id="chk-garnish" checked onchange="updatePho()" style="width: auto;"> Include Basil, Sprouts, & Jalapeños
+        </label>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,160,23,.06)">
+  <h2>Our Broth Preparation Process</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <div class="feature-card">
+      <h3>Beef Bone Broth</h3>
+      <p>Beef marrow bones simmered for a full 24 hours with charred ginger, onions, cinnamon, cloves, cardamom, coriander, and star anise.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Chicken Broth</h3>
+      <p>Light, sweet broth prepared with free-range chickens, roasted ginger, onion, and cilantro roots. Simmered for 8 hours.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Doan's Vietnamese Cuisine · 5937 South Blvd · Charlotte, NC 28217 · (704) 552-0909</p>
+  <p><a href="menu.html">Menu</a> · <a href="pho.html">Pho Customizer</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const sizeData = {
+    medium: { tag: "MEDIUM BOWL PHO", basePrice: 12.95, word: "Medium bowl" },
+    large: { tag: "LARGE BOWL PHO", basePrice: 14.95, word: "Large bowl" }
+  };
+
+  const brothData = {
+    beef: { name: "Traditional Beef Phở", label: "traditional beef bone broth slow-simmered for 24 hours" },
+    chicken: { name: "Chicken Phở (Phở Gà)", label: "free-range chicken bone broth simmered for 8 hours" },
+    vegan: { name: "Vegan Star Anise Phở", label: "vegan vegetable broth infused with star anise and roasted ginger" }
+  };
+
+  const proteinData = {
+    steak: { name: "Rare Eye Round Steak", label: "rare eye round steak", charge: 1.00 },
+    flank: { name: "Well-Done Flank", label: "well-done flank", charge: 1.00 },
+    meatballs: { name: "Beef Meatballs", label: "beef meatballs", charge: 1.00 },
+    tendon: { name: "Soft Beef Tendon", label: "soft beef tendon", charge: 1.50 },
+    tofu: { name: "Organic Tofu", label: "organic cubed tofu", charge: 0.00 }
+  };
+
+  function updatePho() {
+    const sizeKey = document.getElementById('pho-size').value;
+    const brothKey = document.getElementById('pho-broth').value;
+    const proteinKey = document.getElementById('pho-protein').value;
+    const hasGarnish = document.getElementById('chk-garnish').checked;
+
+    const size = sizeData[sizeKey];
+    const broth = brothData[brothKey];
+    const protein = proteinData[proteinKey];
+
+    const totalPrice = size.basePrice + protein.charge;
+
+    document.getElementById('pho-tag-display').innerText = size.tag;
+    document.getElementById('pho-title-display').innerText = broth.name;
+    document.getElementById('pho-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let garnishText = hasGarnish ? ", finished with fresh Thai basil, bean sprouts, and jalapeños." : ".";
+    let desc = `${size.word} of ${broth.label}, topped with ${protein.label}${garnishText}`;
+    
+    document.getElementById('pho-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updatePho();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

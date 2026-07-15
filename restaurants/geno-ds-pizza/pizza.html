@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Builder · Geno D's Pizza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#c1121f;--green:#2d6a4f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1a10;--gold:#e8b830;--muted:#8a7a6a}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#fff;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.nav a{color:var(--dark);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.7;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a.active{opacity:1;color:var(--red)}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:35vh;background:linear-gradient(135deg,#fff,#faf3e0 50%,#f0e0c0);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:3rem;margin:0;color:var(--dark);line-height:1.1}
+.hero .tagline{font-size:1.05rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif;color:var(--dark)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+
+.pizza-mat {
+  background: radial-gradient(circle, #c1121f 0%, #3a0004 100%);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.pizza-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .pizza-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  color: var(--dark);
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--red);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--red);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Geno D's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pizza.html" class="active">Pizza Builder</a>
+    <a href="story.html">Our Story</a>
+    <a href="uptown.html">Uptown</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <p style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:.8rem;margin:0 0 .5rem">THE MARKET AT 7TH ST · UPTOWN CHARLOTTE</p>
+    <h1>Jersey Shore<br><span>Pizza Customizer</span></h1>
+    <p class="tagline">Select your crust, sauce style, and premium toppings for an authentic Jersey bake</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="pizza-grid" style="background: #fff; padding: 40px 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 4px 20px rgba(0,0,0,.03);">
+    
+    <!-- Left: Pizza Display -->
+    <div class="pizza-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="pz-tag-display">SIGNATURE BAKE</span>
+      <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Fraunces', serif; margin: 0 0 0.8rem 0;" id="pz-title-display">Square Thin Grandma</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="pz-price-display">$20.00</p>
+      <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="pz-desc-display">Baked square thin Sicilian style dough topped with garlic pesto strips, fresh mozzarella, and cup-and-char pepperoni.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label class="control-label">1. Choose Pizza Crust</label>
+        <select id="pz-crust" onchange="updatePizza()">
+          <option value="grandma" selected>Square Thin Grandma Crust ($20.00)</option>
+          <option value="nystyle">18" Large Round NY-Style ($18.00)</option>
+          <option value="gf">10" Personal Gluten-Friendly ($14.00)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label class="control-label">2. Select Sauce Base</label>
+        <select id="pz-sauce" onchange="updatePizza()">
+          <option value="pesto" selected>Grandma Pesto &amp; Red Sauce Strips (+$2.00)</option>
+          <option value="classic">Old World Red Tomato Sauce (+$0.00)</option>
+          <option value="white">White Garlic Ricotta Cheese (+$1.50)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="control-label">3. Select Premium Toppings</label>
+        <select id="pz-toppings" onchange="updatePizza()">
+          <option value="pepperoni" selected>Cup-and-Char Pepperoni (+$2.00)</option>
+          <option value="peppadew">Sweet Peppadew Peppers (+$1.50)</option>
+          <option value="honey">Spicy Hot Honey Drizzle (+$1.00)</option>
+          <option value="none">Classic Cheese Only (+$0.00)</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>Geno D's Pizza · The Market at 7th St · 224 E 7th St · Charlotte, NC 28202 · (980) 296-6140</p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const crustData = {
+    grandma: { tag: "JERSEY SHORE SIGNATURE", name: "Grandma Pizza Pie", basePrice: 20.00, label: "square-cut thin Sicilian style crispy dough" },
+    nystyle: { tag: "CLASSIC ROUND PIE", name: "NY-Style Large Pie", basePrice: 18.00, label: "hand-tossed large 18-inch NY-style thin round crust" },
+    gf: { tag: "GLUTEN-FRIENDLY CRUST", name: "Personal GF Pizza", basePrice: 14.00, label: "crispy 10-inch personal gluten-free crust" }
+  };
+
+  const sauceData = {
+    pesto: { name: "Pesto", label: "striped with Grandma pesto sauce and fresh mozzarella", charge: 2.00 },
+    classic: { name: "Classic Red", label: "spread with Old World tomato sauce and shredded whole milk mozzarella", charge: 0.00 },
+    white: { name: "White Garlic", label: "slathered with white garlic ricotta cheese, dried oregano, and mozzarella", charge: 1.50 }
+  };
+
+  const toppingsData = {
+    pepperoni: { name: "Pepperoni", label: "and loaded with premium crispy cup-and-char pepperoni slices", charge: 2.00 },
+    peppadew: { name: "Peppadew", label: "and sprinkled with tangy sweet South African Peppadew peppers", charge: 1.50 },
+    honey: { name: "Hot Honey", label: "and drizzled with fiery, organic hot honey syrup", charge: 1.00 },
+    none: { name: "Cheese", label: "with standard cheese finish", charge: 0.00 }
+  };
+
+  function updatePizza() {
+    const crustKey = document.getElementById('pz-crust').value;
+    const sauceKey = document.getElementById('pz-sauce').value;
+    const toppingsKey = document.getElementById('pz-toppings').value;
+
+    const crust = crustData[crustKey];
+    const sauce = sauceData[sauceKey];
+    const toppings = toppingsData[toppingsKey];
+
+    const totalPrice = crust.basePrice + sauce.charge + toppings.charge;
+
+    document.getElementById('pz-tag-display').innerText = crust.tag;
+    
+    let titleName = toppingsKey === "none" ? `${crust.name}` : `${toppings.name} ${crust.name}`;
+    if (toppingsKey === "honey") {
+      titleName = `Hot Honey ${crust.name}`;
+    }
+    document.getElementById('pz-title-display').innerText = titleName;
+    document.getElementById('pz-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let desc = `Our signature pizza made on ${crust.label}, ${sauce.label} ${toppings.label}.`;
+    
+    document.getElementById('pz-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updatePizza();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

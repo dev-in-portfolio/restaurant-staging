@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taco Builder · El Valle Mexican Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style adjustments to match El Valle's branding */
+.taco-mat {
+  background: radial-gradient(circle, #5c2c10 0%, #1a0b04 100%);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.taco-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .taco-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">El Valle</a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tacos.html" class="active">Taco Builder</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html" class="btn btn-sm">Visit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 4rem 2rem; min-height: 30vh;">
+    <div class="hero-bg"></div>
+    <div class="hero-content container">
+      <h1>Street Taco &amp; Quesabirria Builder</h1>
+      <p class="hero-sub">Design your custom street taco platter or quesabirria plate using our authentic Mexican recipes</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-family: 'Fraunces', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Taco Customizer</h2>
+      
+      <div class="taco-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
+        
+        <!-- Left: Platter Visualizer -->
+        <div class="taco-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: #f4b251; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="taco-tag-display">SIGNATURE QUESABIRRIA</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Fraunces', serif; margin: 0 0 0.8rem 0;" id="taco-title-display">Quesabirria Plate</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #f4b251; margin: 0 0 1.2rem 0;" id="taco-price-display">$16.00</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="taco-desc-display">Three folded corn tortillas stuffed with slow-cooked braised beef birria and melted Monterey Jack cheese, served with a cup of hot birria consommé.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Choose Taco Base</label>
+            <select id="taco-base" onchange="updateTaco()">
+              <option value="quesabirria" selected>Quesabirria Tacos with Consommé ($16.00)</option>
+              <option value="street">Three Street Tacos Platter ($13.00)</option>
+              <option value="bowl">Jumbo Burrito Bowl ($12.00)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">2. Select Protein Filling</label>
+            <select id="taco-protein" onchange="updateTaco()">
+              <option value="birria" selected>Slow-Cooked Braised Beef Birria</option>
+              <option value="asada">Grilled Marinated Steak (Asada)</option>
+              <option value="pastor">Chili-Rubbed Pork with Pineapple (Pastor)</option>
+              <option value="pollo">Flame-Grilled Chicken Breast</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">3. Add Legend Sides</label>
+            <select id="taco-side" onchange="updateTaco()">
+              <option value="none" selected>No Extras (+$0.00)</option>
+              <option value="queso">Legendary Cheese Dip (+$4.00)</option>
+              <option value="guac">Fresh-Muddled Guacamole (+$3.50)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>El Valle Mexican Restaurant · Charlotte, NC</p>
+      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script>
+    const baseData = {
+      quesabirria: { tag: "SIGNATURE QUESABIRRIA", name: "Quesabirria Plate", basePrice: 16.00, label: "three folded griddled corn tortillas melted with Monterey Jack cheese" },
+      street: { tag: "AUTHENTIC STREET TACOS", name: "Street Taco Platter", basePrice: 13.00, label: "three soft corn tortillas topped with fresh onions, cilantro, and radishes" },
+      bowl: { tag: "FIESTA BOWL", name: "Jumbo Burrito Bowl", basePrice: 12.00, label: "steamed rice and black bean bowl loaded with fresh romaine lettuce, pico de gallo, and sour cream" }
+    };
+
+    const proteinData = {
+      birria: { name: "Braised Beef Birria", label: "stuffed with rich braised beef birria", sauce: "served with hot consommé dipping broth" },
+      asada: { name: "Carne Asada", label: "stuffed with grilled marinated steak (carne asada)", sauce: "paired with mild green tomatillo salsa" },
+      pastor: { name: "Al Pastor", label: "stuffed with chili-rubbed pork and charred pineapple", sauce: "paired with smoky salsa roja" },
+      pollo: { name: "Pollo Asado", label: "stuffed with citrus-marinated grilled chicken", sauce: "paired with creamy avocado lime sauce" }
+    };
+
+    const sideData = {
+      none: { label: "", charge: 0.00 },
+      queso: { label: ", served with a side of our legendary creamy warm Cheese Dip and tortilla chips", charge: 4.00 },
+      guac: { label: ", served with a side of fresh hand-muddled avocado guacamole", charge: 3.50 }
+    };
+
+    function updateTaco() {
+      const baseKey = document.getElementById('taco-base').value;
+      const proteinKey = document.getElementById('taco-protein').value;
+      const sideKey = document.getElementById('taco-side').value;
+
+      const base = baseData[baseKey];
+      const protein = proteinData[proteinKey];
+      const side = sideData[sideKey];
+
+      const totalPrice = base.basePrice + side.charge;
+
+      document.getElementById('taco-tag-display').innerText = base.tag;
+      
+      let titleName = baseKey === "bowl" ? `Birria Burrito Bowl` : `${protein.name} ${base.name}`;
+      if (baseKey === "bowl") {
+        titleName = `${protein.name} Burrito Bowl`;
+      }
+      document.getElementById('taco-title-display').innerText = titleName;
+      document.getElementById('taco-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A platter of ${base.label}, ${protein.label}. ${protein.sauce}${side.label}.`;
+      
+      document.getElementById('taco-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateTaco();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · DB's Tavern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d1219,#1a2a3a);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
+@media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{background:rgba(255,255,255,.03);border:1px solid rgba(212,168,75,.08);border-radius:8px;padding:1.5rem}
+.contact-info h3{font-size:1rem;color:var(--gold);margin:0 0 .75rem}
+.contact-info p{font-size:.88rem;line-height:1.6;opacity:.65;margin:0 0 .35rem}
+.contact-info a{color:var(--gold);text-decoration:none;font-weight:600}
+.hours-grid{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.25rem;font-size:.85rem}
+.hours-grid .day{font-weight:600;opacity:.7}
+.hours-grid .time{opacity:.6}
+.map-placeholder{background:rgba(255,255,255,.03);border:2px dashed rgba(212,168,75,.1);border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;opacity:.35;font-style:italic;font-size:.85rem;margin:1.5rem 0}
+.demo-form{max-width:600px;margin:2rem auto;background:rgba(255,255,255,.03);padding:2rem;border-radius:8px;border:1px solid rgba(212,168,75,.1)}
+.demo-form h3{text-align:center;color:var(--gold);font-family:'Fraunces',serif;font-size:1.2rem;margin:0 0 1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.35rem;opacity:.7}
+.form-group input,.form-group textarea{width:100%;padding:.65rem;border:1px solid rgba(255,255,255,.15);border-radius:4px;font-size:.9rem;font-family:'DM Sans',sans-serif;background:rgba(255,255,255,.05);color:var(--cream)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn{display:inline-block;background:var(--red);color:var(--cream);padding:.8rem 2.5rem;border-radius:3px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;border:none;cursor:pointer;width:100%}
+.toast{background:var(--gold);color:var(--charcoal);padding:1rem;border-radius:6px;text-align:center;margin-top:1rem;display:none;font-weight:600}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">DB's Tavern</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wings.html">Wings</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Come see us in Ballantyne</p>
+</header>
+<section class="section">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-info">
+        <h3>Location</h3>
+        <p>8155 Ardrey Kell Rd<br>Charlotte, NC 28277</p>
+        <p style="margin-top:.5rem">Ballantyne — plenty of parking in front</p>
+        <p style="margin-top:.5rem"><a href="https://maps.google.com/?q=8155+Ardrey+Kell+Rd+Charlotte+NC+28277" target="_blank">Get Directions →</a></p>
+      </div>
+      <div class="contact-info" style="margin-top:1.25rem">
+        <h3>Hours</h3>
+        <div class="hours-grid">
+          <span class="day">Mon–Sat</span><span class="time">11:00 AM – 2:00 AM</span>
+          <span class="day">Sunday</span><span class="time">11:00 AM – 12:00 AM</span>
+        </div>
+      </div>
+      <div class="contact-info" style="margin-top:1.25rem">
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17048440534">(704) 844-0534</a></p>
+        <p>Email: dbs.tavern@gmail.com</p>
+      </div>
+    </div>
+    <div>
+      <div class="map-placeholder">Map coming soon</div>
+      <div class="contact-info">
+        <h3>Services</h3>
+        <p>✔ Dine-in · Takeout · Delivery</p>
+        <p>✔ Family-friendly · Dog-friendly patio</p>
+        <p>✔ Open late · Game day specials</p>
+        <p>✔ Catering available</p>
+      </div>
+    </div>
+  </div>
+  <form class="demo-form" data-demo-form>
+    <h3>Send a Message</h3>
+    <div class="form-row">
+      <div class="form-group"><label for="cname">Name</label><input id="cname" type="text" required></div>
+      <div class="form-group"><label for="cemail">Email</label><input id="cemail" type="email" required></div>
+    </div>
+    <div class="form-group"><label for="cmsg">Message</label><textarea id="cmsg" rows="4" required></textarea></div>
+    <button class="btn" type="submit">Send</button>
+    <div class="toast" role="alert">Thanks! We'll get back to you.</div>
+  </form>
+</section>
+<footer>
+  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

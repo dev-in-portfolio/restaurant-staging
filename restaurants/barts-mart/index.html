@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bart's Mart - Charlotte, NC | Beer Shop & Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bart's Mart
+          <span>Bottle Shop & Arcade</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Tap List</a>
+        <a href="arcade.html">Arcade Lounge</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Eclectic Social Hangout</span>
+        <h2 class="hero-title">Bart's Mart</h2>
+        <p class="hero-desc">"A neighborhood draft bar, massive craft beer & wine bottle shop, retro video game corner, and local community patio in Eastway."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>🕹️ Eastway Crossing Shopping Center: 3042 Eastway Dr. Arcade game tournament every Friday!</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Taproom, Coolers & Games</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Bart's Mart in Charlotte, NC. Located inside the Eastway Crossing shopping center, we are a hybrid craft beer bar, wine bottle shop, and retro arcade hang. Browse our extensive selection of local and rare cans in the coolers, grab a fresh pint from our rotating draft list, or play some classic cabinet games on our patio.
+      </p>
+      <a href="about.html" style="color: var(--color-pink); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-pink); padding-bottom: 4px; transition: var(--transition-fast);">
+        Learn Our Backstory ➔
+      </a>
+    </section>
+
+    <!-- Interactive Draft Pint Mixer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Interactive Draft Pint Mixer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a glass size and click a tap option to visually pour and review active draft selections.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Pint Glass visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="pint-glass-wireframe" id="visual-glass">
+            <div class="glass-liquid" id="liquid-pour">
+              <div class="glass-foam" id="liquid-foam"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Glass Style & Size</label>
+            <div class="option-grid" id="glass-options">
+              <button class="option-btn active" onclick="setGlass('pint', 7.00, 'Pint Glass', '140px', '260px')">Pint ($7.00)</button>
+              <button class="option-btn" onclick="setGlass('tulip', 7.50, 'Tulip Glass', '130px', '220px')">Tulip ($7.50)</button>
+              <button class="option-btn" onclick="setGlass('snifter', 8.00, 'Snifter Glass', '150px', '180px')">Snifter ($8.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Tap Pour</label>
+            <div class="option-grid" id="tap-options">
+              <button class="option-btn active" onclick="pourBeer('ipa', 'Eastway Haze IPA', 6.8, '#f59e0b')">Hazy IPA</button>
+              <button class="option-btn" onclick="pourBeer('sour', 'Pink Laser Fruited Sour', 5.2, '#ec4899')">Fruited Sour</button>
+              <button class="option-btn" onclick="pourBeer('stout', 'Midnight Cabinet Imperial Stout', 9.5, '#1e1b4b')">Imperial Stout</button>
+              <button class="option-btn" onclick="pourBeer('pilsner', 'Patio Session Pilsner', 4.5, '#fef08a')">Session Pilsner</button>
+              <button class="option-btn" onclick="emptyGlass()" style="border-color: rgba(239, 68, 68, 0.4); color: #ef4444;">Empty Glass</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;" id="display-beer-style">Hazy IPA</span>
+        <h4 class="builder-display-title" id="display-beer-name">Eastway Haze IPA</h4>
+        <p id="display-beer-meta" style="color: var(--color-cyan); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">6.8% ABV • Pint Glass</p>
+        <div class="builder-display-price" id="display-beer-price">$7.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-beer-desc">Double dry-hopped with Citra and Mosaic, yielding tropical notes of passionfruit, ripe mango, and grapefruit pith. Served fresh on draft.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Mix-a-Six pack</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Build a custom 6-pack to-go from our coolers. Mix local stouts, hazy IPAs, cider, and sours, and review package discounts automatically. Click below to view the estimator.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Build To-Go Six Pack
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>3042 Eastway Dr<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Located in Eastway Crossing | Bottle Shop & Bar | Retro Arcade</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bart's Mart. Eastway Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedGlass = { key: 'pint', price: 7.00, name: 'Pint Glass' };
+    let selectedBeer = { key: 'ipa', name: 'Eastway Haze IPA', abv: 6.8, color: '#f59e0b', desc: 'Double dry-hopped with Citra and Mosaic, yielding tropical notes of passionfruit, ripe mango, and grapefruit pith. Served fresh on draft.' };
+
+    function setGlass(key, price, name, width, height) {
+      const buttons = document.getElementById('glass-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedGlass = { key, price, name };
+      
+      const visualGlass = document.getElementById('visual-glass');
+      visualGlass.style.width = width;
+      visualGlass.style.height = height;
+
+      if (key === 'snifter') {
+        visualGlass.style.borderRadius = '30% 30% 50% 50%';
+      } else if (key === 'tulip') {
+        visualGlass.style.borderRadius = '20% 20% 40% 40%';
+      } else {
+        visualGlass.style.borderRadius = '8px 8px 15px 15px';
+      }
+
+      updateDisplay();
+    }
+
+    function pourBeer(key, name, abv, color) {
+      const buttons = document.getElementById('tap-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      let desc = '';
+      let styleLabel = '';
+      if (key === 'ipa') {
+        desc = 'Double dry-hopped with Citra and Mosaic, yielding tropical notes of passionfruit, ripe mango, and grapefruit pith. Served fresh on draft.';
+        styleLabel = 'Hazy IPA';
+      } else if (key === 'sour') {
+        desc = 'Kettle sour infused with fresh raspberry and lemon zest, giving a tart, refreshing pucker and dry bubbly finish.';
+        styleLabel = 'Fruited Sour';
+      } else if (key === 'stout') {
+        desc = 'Rich, velvety imperial stout brewed with local cocoa nibs and roasted coffee beans. Silky mouthfeel with dark chocolate warmth.';
+        styleLabel = 'Imperial Stout';
+      } else if (key === 'pilsner') {
+        desc = 'Crisp, clean German-style pilsner brewed with noble Hallertau hops. Dry, refreshing cracker malt profile.';
+        styleLabel = 'Session Pilsner';
+      }
+
+      selectedBeer = { key, name, abv, color, desc, styleLabel };
+      
+      // Liquid animation
+      const liquid = document.getElementById('liquid-pour');
+      liquid.style.height = '0%';
+      setTimeout(() => {
+        liquid.style.background = color;
+        liquid.style.height = '90%';
+      }, 100);
+
+      updateDisplay();
+    }
+
+    function emptyGlass() {
+      const buttons = document.getElementById('tap-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById('liquid-pour').style.height = '0%';
+      document.getElementById('display-beer-name').innerText = 'Empty Glass';
+      document.getElementById('display-beer-price').innerText = '$0.00';
+      document.getElementById('display-beer-meta').innerText = `Select tap above`;
+      document.getElementById('display-beer-desc').innerText = `Tap the pour buttons to fill the glass container.`;
+    }
+
+    function updateDisplay() {
+      if (document.getElementById('liquid-pour').style.height === '0%') return;
+
+      document.getElementById('display-beer-price').innerText = `$${selectedGlass.price.toFixed(2)}`;
+      document.getElementById('display-beer-name').innerText = selectedBeer.name;
+      document.getElementById('display-beer-style').innerText = selectedBeer.styleLabel;
+      document.getElementById('display-beer-meta').innerText = `${selectedBeer.abv}% ABV • ${selectedGlass.name}`;
+      document.getElementById('display-beer-desc').innerText = selectedBeer.desc;
+    }
+
+    // Trigger initial pour
+    window.addEventListener('load', () => {
+      pourBeer('ipa', 'Eastway Haze IPA', 6.8, '#f59e0b');
+    });
+  </script>
+</body>
+</html>

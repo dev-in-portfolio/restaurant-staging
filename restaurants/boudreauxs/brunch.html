@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Join us for weekend Cajun brunch at Boudreaux’s Kitchen & Tavern in NoDa. Beignets, Bloody Marys, and Louisiana favorites.">
+  <title>Cajun Brunch | Boudreaux’s Kitchen & Tavern</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling specific to the customizer options */
+    .brunch-options {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .brunch-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .brunch-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--steel);
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .brunch-checkbox-label input {
+      accent-color: var(--amber);
+      width: 16px;
+      height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html">
+        <img src="assets/gator-mark.svg" alt="">
+        <span class="brand-type">
+          <strong>BOUDREAUX’S</strong>
+          <span>NODA · CLT · KITCHEN & TAVERN</span>
+        </span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false">Menu</button>
+      <nav class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="brunch.html" aria-current="page">Brunch</a>
+        <a href="story.html">The Joint</a>
+        <a href="gatherings.html">Bring the Crew</a>
+        <a class="visit-link" href="visit.html">36th Street</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Hero -->
+    <section class="page-hero metal" data-ghost="BRUNCH">
+      <div class="shell">
+        <div class="eyebrow">Weekend Cajun Morning</div>
+        <h1>Saturday & Sunday Brunch</h1>
+        <p>From 11:00 AM to 3:00 PM, enjoy our signature Cajun comfort dishes, hot fresh beignets, and customized Bloody Mary creations right here in NoDa.</p>
+      </div>
+    </section>
+
+    <!-- Brunch Menu Section -->
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">01 / Brunch Menu</div>
+          <div>
+            <h2 class="section-title">Morning Comfort Lanes</h2>
+            <p class="section-copy">Louisiana flavor moving at the slower rhythm of a NoDa morning. Made fresh from scratch daily.</p>
+          </div>
+        </div>
+
+        <div class="menu-ledger">
+          <article class="dish">
+            <div class="tag">Beignets</div>
+            <div>
+              <h3>Traditional Beignets</h3>
+              <p>Hot, pillowy French-style donuts buried in a mountain of powdered sugar. Perfect beside a fresh brew ($6.00).</p>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="tag">Mains</div>
+            <div>
+              <h3>Crawfish Étouffée Benedict</h3>
+              <p>Two poached eggs served over a toasted English muffin, topped with rich crawfish étouffée and red breakfast potatoes ($14.00).</p>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="tag">Mains</div>
+            <div>
+              <h3>Gator & Grits</h3>
+              <p>Spicy blackened alligator tail served over a bowl of creamy stone-ground white cheddar cheese grits ($15.00).</p>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="tag">Mains</div>
+            <div>
+              <h3>Pain Perdu (French Toast)</h3>
+              <p>Thick-sliced French baguette soaked in cinnamon sweet cream, griddled golden and finished with praline syrup and toasted pecans ($12.00).</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customizer Widget Section -->
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">02 / Customizer</div>
+          <div>
+            <h2 class="section-title">Bloody Mary & Beignet Planner</h2>
+            <p class="section-copy">Build your ideal morning combination. Custom-mix your Bloody Mary base and choose your style of hot fried beignets.</p>
+          </div>
+        </div>
+
+        <div class="planner" id="brunch-customizer">
+          <!-- Left side: Controls -->
+          <div class="planner-form">
+            <div class="brunch-options">
+              
+              <label>1. Select Beignet Flavor
+                <select id="beignet-select">
+                  <option value="traditional" data-price="6.00">Traditional Powdered Sugar ($6.00)</option>
+                  <option value="praline" data-price="8.00">Praline Caramel Drizzle ($8.00)</option>
+                  <option value="crawfish" data-price="9.00">Crawfish Savory & Herb ($9.00)</option>
+                </select>
+              </label>
+
+              <label>2. Select Bloody Mary Base
+                <select id="mary-select">
+                  <option value="classic" data-price="8.00">Classic Tomato & Horse Radish ($8.00)</option>
+                  <option value="spicy" data-price="9.00">Spicy Creole Jalapeño Mix ($9.00)</option>
+                  <option value="none" data-price="0.00">No Drink - Just Beignets ($0.00)</option>
+                </select>
+              </label>
+
+              <div class="brunch-checkbox-group" id="garnish-group">
+                <span style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.4rem;">3. Optional Skewer Garnishes</span>
+                
+                <label class="brunch-checkbox-label">
+                  <input type="checkbox" value="okra" data-price="0.00" checked>
+                  Pickled Okra & Celery ($0.00)
+                </label>
+                
+                <label class="brunch-checkbox-label">
+                  <input type="checkbox" value="bacon" data-price="1.50">
+                  Crisp Bacon Strips (+$1.50)
+                </label>
+                
+                <label class="brunch-checkbox-label">
+                  <input type="checkbox" value="gator" data-price="2.50">
+                  Blackened Gator Jerky (+$2.50)
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right side: Visual receipt output -->
+          <div class="planner-output">
+            <div class="eyebrow">Ticket Copy</div>
+            <h2 id="pair-title">Custom Brunch Pair</h2>
+            <p id="pair-summary" style="font-weight:700; color:var(--amber); margin-bottom:1rem;"></p>
+            <ul id="pair-list"></ul>
+            <div style="font-size:2.8rem; font-family:var(--display); color:var(--steel); margin:1.5rem 0;" id="pair-price">$14.00</div>
+            <div class="actions">
+              <a class="btn hot" href="visit.html">Check Location Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mural band decorative divider -->
+    <div class="mural-band" aria-hidden="true">
+      <div class="track">
+        <span>Beignets & Broadways</span>
+        <span>Spicy Marys on 36th</span>
+        <span>Roux before rules</span>
+        <span>Beignets & Broadways</span>
+        <span>Spicy Marys on 36th</span>
+        <span>Roux before rules</span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>Boudreaux’s Kitchen & Tavern</strong>
+        <p>501 East 36th Street · Charlotte, NC 28205</p>
+      </div>
+      <div>
+        <a href="visit.html">Find the front door →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>
+    // Self-contained JS customizer controller
+    (() => {
+      const beignetSelect = document.getElementById('beignet-select');
+      const marySelect = document.getElementById('mary-select');
+      const garnishGroup = document.getElementById('garnish-group');
+      const checkboxes = garnishGroup.querySelectorAll('input[type="checkbox"]');
+      
+      const pairTitle = document.getElementById('pair-title');
+      const pairSummary = document.getElementById('pair-summary');
+      const pairList = document.getElementById('pair-list');
+      const pairPrice = document.getElementById('pair-price');
+
+      function updateBrunchInvoice() {
+        const beignetOpt = beignetSelect.options[beignetSelect.selectedIndex];
+        const maryOpt = marySelect.options[marySelect.selectedIndex];
+        
+        const beignetPrice = parseFloat(beignetOpt.dataset.price);
+        const maryPrice = parseFloat(maryOpt.dataset.price);
+        
+        let subtotal = beignetPrice + maryPrice;
+        let selectedList = [];
+
+        // Main items descriptions
+        selectedList.push(`Beignet Style: ${beignetOpt.text}`);
+        if (maryOpt.value !== 'none') {
+          selectedList.push(`Bloody Mary: ${maryOpt.text}`);
+        } else {
+          selectedList.push(`Beverage: None Selected`);
+        }
+
+        // Garnishes (only apply if a Bloody Mary is selected)
+        if (maryOpt.value !== 'none') {
+          checkboxes.forEach(cb => {
+            cb.disabled = false;
+            if (cb.checked) {
+              const price = parseFloat(cb.dataset.price);
+              subtotal += price;
+              selectedList.push(`+ Garnish: ${cb.parentElement.innerText.trim()}`);
+            }
+          });
+        } else {
+          // Disable checkboxes since no drink is selected
+          checkboxes.forEach(cb => {
+            cb.disabled = true;
+          });
+          selectedList.push(`(Garnishes disabled - Select a drink)`);
+        }
+
+        // Update displays
+        pairPrice.textContent = `$${subtotal.toFixed(2)}`;
+        
+        let titleText = '';
+        if (maryOpt.value !== 'none') {
+          titleText = `${beignetOpt.text.split(' ')[0]} & ${maryOpt.text.split(' ')[0]}`;
+        } else {
+          titleText = `${beignetOpt.text.split(' ')[0]} Beignets`;
+        }
+        pairTitle.textContent = titleText;
+        
+        pairSummary.textContent = `${beignetOpt.text.split(' ($')[0]} combo`;
+        
+        // Render checklist items
+        pairList.innerHTML = selectedList.map(item => `<li>${item}</li>`).join('');
+      }
+
+      // Add event listeners
+      [beignetSelect, marySelect].forEach(el => el.addEventListener('change', updateBrunchInvoice));
+      checkboxes.forEach(cb => cb.addEventListener('change', updateBrunchInvoice));
+
+      // Initial run
+      updateBrunchInvoice();
+    })();
+  </script>
+</body>
+</html>

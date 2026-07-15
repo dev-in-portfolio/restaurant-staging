@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao and Broth - Charlotte, NC | Ramen Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive ramen bowl visualizer */
+    .ramen-bowl-container {
+      background: radial-gradient(circle, #1f140e 0%, #0d0806 100%);
+      border: 1.5px solid var(--color-orange);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .ramen-bowl-graphic {
+      width: 140px;
+      height: 90px;
+      border: 3.5px solid var(--color-text-light);
+      border-radius: 10px 10px 80px 80px;
+      background: rgba(255,255,255,0.05);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+    .ramen-liquid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55px; /* Liquid level */
+      background: #c29363; /* Tonkotsu broth default */
+      transition: var(--transition-smooth);
+    }
+    .ramen-noodles {
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      right: 15px;
+      height: 35px;
+      background: repeating-linear-gradient(45deg, #fef08a, #fef08a 4px, #eab308 4px, #eab308 8px);
+      border-radius: 5px;
+      opacity: 0.85;
+      z-index: 2;
+    }
+    .ramen-protein {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      width: 45px;
+      height: 25px;
+      background: #be123c; /* Chashu pork default */
+      border-radius: 4px;
+      z-index: 3;
+      transition: var(--transition-smooth);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bao & Broth
+          <span>Optimist Hall Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="ramen.html" class="active">Ramen Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Ramen & Broth Bar</h2>
+    <p class="page-subtitle">Rich 24-hour slow-cooked tonkotsu and shoyu broths, fresh ramen noodles, and chef-curated toppings.</p>
+  </header>
+
+  <!-- Interactive Ramen Customizer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Ramen Bowl Builder</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your signature broth base, noodle style, and protein toppings to build a custom bowl.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Ramen Bowl Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="ramen-bowl-container" id="bowl-box">
+            <div class="ramen-bowl-graphic">
+              <div class="ramen-liquid" id="liquid-layer"></div>
+              <div class="ramen-noodles" id="noodles-layer"></div>
+              <div class="ramen-protein" id="protein-layer"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="bowl-display-title">Rich Tonkotsu Ramen</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-orange); margin: 0.5rem 0;" id="bowl-display-price">$18.50</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Broth Base</label>
+            <div class="option-grid" id="broth-options">
+              <button class="option-btn active" onclick="setBroth('tonkotsu', 'Rich Tonkotsu Pork Broth', 15.00, '#c29363')">Tonkotsu ($15)</button>
+              <button class="option-btn" onclick="setBroth('shoyu', 'Shoyu Chicken Broth', 14.00, '#854d0e')">Shoyu ($14)</button>
+              <button class="option-btn" onclick="setBroth('miso', 'Creamy Spicy Miso', 14.50, '#ea580c')">Spicy Miso ($14.50)</button>
+              <button class="option-btn" onclick="setBroth('shio', 'Shio Veggie Broth', 13.50, '#eab308')">Shio Veggie ($13.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Noodle style</label>
+            <div class="option-grid" id="noodle-options">
+              <button class="option-btn active" onclick="setNoodle('thin', 'Thin Wavy Noodles')">Thin Wavy</button>
+              <button class="option-btn" onclick="setNoodle('thick', 'Thick Straight Noodles')">Thick Straight</button>
+              <button class="option-btn" onclick="setNoodle('rice', 'Gluten-Free Rice Noodles')">Rice Noodles</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('chashu', 'Chashu Pork Belly', 3.50, '#be123c')">Chashu Pork Belly (+$3.50)</button>
+              <button class="option-btn" onclick="setProtein('chicken', 'Lemongrass Grilled Chicken', 3.00, '#fb923c')">Lemongrass Chicken (+$3)</button>
+              <button class="option-btn" onclick="setProtein('tofu', 'Crispy Organic Tofu', 2.50, '#a3e635')">Crispy Tofu (+$2.50)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Kitchen Special</span>
+        <h4 class="builder-display-title" id="display-bowl-name">Rich Tonkotsu Pork Broth</h4>
+        <p id="display-bowl-protein" style="color: var(--color-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Chashu Pork Belly</p>
+        <div class="builder-display-price" id="display-bowl-price">$18.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-bowl-desc">Slow-simmered Rich Tonkotsu Pork Broth served with thin wavy noodles, topped with savory chashu pork belly.</p>
+      </div>
+    </section>
+
+    <!-- Ramen Specialty Lists -->
+    <h3 class="section-title">Chef Signature Ramen Bowls</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Signature Bowls</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Optimist Tonkotsu</span>
+            <span class="menu-item-price">$18.50</span>
+          </div>
+          <p class="menu-item-desc">Rich pork bone broth, custom thin noodles, chashu pork belly, ajitama egg, wood-ear mushrooms, bamboo shoots, nori, scallions, and black garlic oil.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Schreiber Shoyu</span>
+            <span class="menu-item-price">$17.50</span>
+          </div>
+          <p class="menu-item-desc">Clean chicken and soy sauce broth, wavy noodles, lemongrass grilled chicken, ajitama egg, bamboo shoots, narutomaki fish cake, nori, and scallions.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Spicy Miso Ramen</span>
+            <span class="menu-item-price">$18.00</span>
+          </div>
+          <p class="menu-item-desc">Creamy spicy miso sesame broth, thick noodles, chashu pork belly, sweet corn, soft egg, bean sprouts, chili thread, and chili oil drizzle.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Steamed Potstickers & Sides</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pork Potstickers</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Hand-folded pork and scallion potstickers, pan-fried and served with spicy soy vinegar dipping sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Garlic Edamame</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Steamed soybeans tossed in coarse sea salt, garlic butter, and visual chili flakes.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Seaweed Salad</span>
+            <span class="menu-item-price">$7.00</span>
+          </div>
+          <p class="menu-item-desc">Sweet and tangy marinated green seaweed tossed with toasted sesame seeds and fresh cucumber ribbon.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Optimist Hall Stall</h3>
+        <p>1115 N Brevard St<br>Charlotte, NC 28206<br>Phone: (704) 910-0909</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Ramen Details</h3>
+        <p>Our tonkotsu broth is slow-simmered for 24 hours to maximize collagen and depth. Vegan options available.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bao and Broth. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBroth = { key: 'tonkotsu', name: 'Rich Tonkotsu Pork Broth', price: 15.00, color: '#c29363' };
+    let selectedNoodle = { key: 'thin', name: 'Thin Wavy Noodles' };
+    let selectedProtein = { key: 'chashu', name: 'Chashu Pork Belly', price: 3.50, color: '#be123c' };
+
+    function setBroth(key, name, price, color) {
+      const buttons = document.getElementById('broth-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBroth = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function setNoodle(key, name) {
+      const buttons = document.getElementById('noodle-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedNoodle = { key, name };
+      updateDisplay();
+    }
+
+    function setProtein(key, name, price, color) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedBroth.price + selectedProtein.price;
+      document.getElementById('bowl-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('bowl-display-title').innerText = selectedBroth.name;
+
+      document.getElementById('display-bowl-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-bowl-name').innerText = selectedBroth.name;
+      document.getElementById('display-bowl-protein').innerText = selectedProtein.name;
+
+      // Update liquid color
+      document.getElementById('liquid-layer').style.backgroundColor = selectedBroth.color;
+
+      // Update protein color representation
+      document.getElementById('protein-layer').style.backgroundColor = selectedProtein.color;
+
+      // Update description text
+      const desc = `Slow-simmered ${selectedBroth.name} served with ${selectedNoodle.name.toLowerCase()}, topped with savory ${selectedProtein.name.toLowerCase()}.`;
+      document.getElementById('display-bowl-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

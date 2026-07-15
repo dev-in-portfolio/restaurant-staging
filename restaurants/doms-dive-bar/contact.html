@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Dom's Dive Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
+.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--neon)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0a0a,#1a0a0f);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--neon)}
+.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--neon);margin:0 0 1rem;border-left:3px solid var(--neon);padding-left:.75rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
+.contact-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,59,111,.08);border-radius:8px;padding:1.5rem}
+.contact-card .icon{font-size:1.3rem;margin-bottom:.5rem;display:block}
+.contact-card h3{font-size:1rem;color:var(--neon);margin:0 0 .35rem}
+.contact-card p{font-size:.85rem;opacity:.6;margin:0;line-height:1.5}
+.demo-form{max-width:500px;margin:2rem auto 0}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.6}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:.7rem;border:1px solid rgba(255,59,111,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--warm);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:100px;resize:vertical}
+.demo-form button{background:var(--neon);color:var(--dark);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#ff2a5f}
+footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
+footer a{color:var(--neon);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dom's Dive</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="games.html">Games &amp; Leagues</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Come hang out — we're on South Boulevard</p>
+</header>
+<section class="section">
+  <h2>Find Us</h2>
+  <div class="contact-grid">
+    <div class="contact-card"><span class="icon" aria-hidden="true">📍</span><h3>Location</h3><p>3609 South Blvd Suite C<br>Charlotte, NC 28209<br>Sedgefield / South End</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">📞</span><h3>Phone</h3><p>(704) 900-5068</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">🕐</span><h3>Hours</h3><p>Mon–Tue: 3pm–12am<br>Wed–Thu: 3pm–1am<br>Fri: 3pm–2am<br>Sat: 11am–2am<br>Sun: 11am–12am</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">🎱</span><h3>Free Pool &amp; Darts</h3><p>Always free to play — just walk in and grab a cue</p></div>
+  </div>
+  <h2>Drop Us a Line</h2>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="subject">Subject</label>
+    <select id="subject"><option>General Inquiry</option><option>Private Party</option><option>Booking</option><option>Feedback</option></select>
+    <label for="message">Message</label>
+    <textarea id="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<footer>
+  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
+  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

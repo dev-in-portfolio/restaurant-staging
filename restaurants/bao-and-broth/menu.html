@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao and Broth - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ramen bowl visualizer */
+    .ramen-bowl-visualizer {
+      height: 220px;
+      width: 220px;
+      border: 6px solid #ef4444; /* Bright red ceramic bowl */
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle, #facc15 0%, #d97706 100%); /* Rich broth color */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ramen-noodle-swirl {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border: 3px double rgba(255,255,255,0.25);
+      border-radius: 50%;
+      animation: swirl 8s linear infinite;
+    }
+    .ramen-topping-emoji {
+      position: absolute;
+      font-size: 1.5rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    #ramen-egg { top: 40px; left: 55px; }
+    #ramen-chashu { top: 110px; left: 50px; }
+    #ramen-bamboo { top: 60px; left: 120px; }
+    #ramen-nori { top: 105px; left: 125px; }
+
+    @keyframes swirl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bao & Broth
+          <span>Optimist Hall Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="ramen.html">Ramen Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Steamed Bao & Ramen Menu</h2>
+    <p class="page-subtitle">Savor fluffy buns and rich slow-simmered noodle bowls. Design your custom ramen bowl in our interactive mixer below.</p>
+  </header>
+
+  <!-- Interactive Ramen Mixer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Ramen Customizer</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Ramen Bowl Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="ramen-bowl-visualizer" id="bowl-color-box">
+            <div class="ramen-noodle-swirl"></div>
+            <div style="font-size: 2.2rem; z-index: 5;">🍜</div>
+            <!-- Toppings overlays -->
+            <div class="ramen-topping-emoji" id="ramen-egg">🥚</div>
+            <div class="ramen-topping-emoji" id="ramen-chashu">🥩</div>
+            <div class="ramen-topping-emoji" id="ramen-bamboo">🎍</div>
+            <div class="ramen-topping-emoji" id="ramen-nori">🟫</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Broth Base</label>
+            <div class="option-grid" id="broth-options">
+              <button class="option-btn active" onclick="setBroth('tonkotsu', 13.50, 'Tonkotsu Broth', '#f3d69c')">Tonkotsu ($13.50)</button>
+              <button class="option-btn" onclick="setBroth('miso', 14.00, 'Spicy Miso Broth', '#e06b3e')">Spicy Miso ($14.00)</button>
+              <button class="option-btn" onclick="setBroth('shoyu', 13.00, 'Shoyu Soy Broth', '#ca8a04')">Shoyu ($13.00)</button>
+              <button class="option-btn" onclick="setBroth('vegan', 12.50, 'Mushroom Broth', '#a38a75')">Vegan Mushroom ($12.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Spice Tier</label>
+            <div class="option-grid" id="spice-options">
+              <button class="option-btn active" onclick="setSpice('0', 'Non-Spicy')">None (0)</button>
+              <button class="option-btn" onclick="setSpice('1', 'Mild Spice 🌶️')">Mild (1)</button>
+              <button class="option-btn" onclick="setSpice('2', 'Spicy 🌶️🌶️')">Spicy (2)</button>
+              <button class="option-btn" onclick="setSpice('3', 'Fire Hot 🌶️🌶️🌶️')">Fire (3)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Premium Toppings</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-egg" onclick="toggleTopping('egg', 1.50)">Soft Boiled Egg (+$1.50)</button>
+              <button class="option-btn active" id="btn-chashu" onclick="toggleTopping('chashu', 3.00)">Pork Chashu (+$3.00)</button>
+              <button class="option-btn active" id="btn-bamboo" onclick="toggleTopping('bamboo', 1.00)">Bamboo Shoots (+$1.00)</button>
+              <button class="option-btn active" id="btn-nori" onclick="toggleTopping('nori', 1.00)">Nori Sheets (+$1.00)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Noodle Bowl</span>
+        <h4 class="builder-display-title" id="display-ramen-name">Tonkotsu Ramen</h4>
+        <p id="display-ramen-toppings" style="color: var(--color-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Soft Boiled Egg, Pork Chashu, Bamboo Shoots, Nori Sheets</p>
+        <div class="builder-display-price" id="display-ramen-price">$20.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-ramen-desc">Classic wavy ramen noodles served in rich Tonkotsu Broth (Non-Spicy), topped with soft boiled egg, pork chashu, bamboo shoots, and nori sheets.</p>
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Bao & Broth Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Steamed Bao Buns (2 pcs)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Braised Pork Belly Bao<span class="menu-item-badge">Bestseller</span></span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">Two fluffy steamed wheat buns stuffed with rich braised pork belly, pickled cucumber, scallions, crushed roasted peanuts, and sweet hoisin sauce drizzle.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Soy Glazed Chicken Bao</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">Tender chicken breast glazed in caramelized ginger soy sauce, served inside steamed buns with fresh cilantro and chopped peanuts.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Crispy Fried Tofu Bao</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">Golden fried organic tofu glazed in garlic soy syrup, paired with house vegan mayo and fresh pickled scallion garnishes.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Steaming Ramen Bowls</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tonkotsu Ramen Bowl</span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Rich, creamy 24-hour slow-cooked pork bone broth served with wavy ramen noodles, tender pork chashu, soft boiled egg, bamboo shoots, and nori.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Spicy Miso Ramen Bowl</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Fermented miso paste broth blended with hot chili garlic oil, topped with pork chashu, nori sheets, soft boiled egg, and fresh scallions.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pork Potstickers (5 pcs)</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Hand-folded pork and vegetable dumplings pan-fried to a golden crisp. Served with our house vinegar soy dipping sauce.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1115 N Brevard St, Ste 5/15<br>Charlotte, NC 28206</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Sun - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Located in Optimist Hall | Asian Street Food | Fast Casual</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bao and Broth. Optimist Hall Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBroth = { key: 'tonkotsu', basePrice: 13.50, name: 'Tonkotsu Ramen', color: '#f3d69c' };
+    let selectedSpice = { key: '0', name: 'Non-Spicy' };
+    const toppings = {
+      egg: { active: true, price: 1.50, name: 'Soft Boiled Egg' },
+      chashu: { active: true, price: 3.00, name: 'Pork Chashu' },
+      bamboo: { active: true, price: 1.00, name: 'Bamboo Shoots' },
+      nori: { active: true, price: 1.00, name: 'Nori Sheets' }
+    };
+
+    function setBroth(key, price, name, color) {
+      const buttons = document.getElementById('broth-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBroth = { key, basePrice: price, name, color };
+      updateDisplay();
+    }
+
+    function setSpice(key, name) {
+      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSpice = { key, name };
+      updateDisplay();
+    }
+
+    function toggleTopping(key, price) {
+      toppings[key].active = !toppings[key].active;
+      const btn = document.getElementById(`btn-${key}`);
+      if (toppings[key].active) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      let toppingCost = 0;
+      const activeToppings = [];
+      for (const k in toppings) {
+        if (toppings[k].active) {
+          toppingCost += toppings[k].price;
+          activeToppings.push(toppings[k].name);
+        }
+      }
+
+      const totalCost = (selectedBroth.basePrice + toppingCost).toFixed(2);
+      document.getElementById('display-ramen-price').innerText = `$${totalCost}`;
+
+      document.getElementById('display-ramen-name').innerText = selectedBroth.name;
+      document.getElementById('display-ramen-toppings').innerText = activeToppings.length > 0 ? activeToppings.join(', ') : 'No Extra Toppings';
+
+      // Update description text
+      const toppingsText = activeToppings.length > 0 ? `, topped with ${activeToppings.join(', ').toLowerCase()}` : '';
+      document.getElementById('display-ramen-desc').innerText = `Classic wavy ramen noodles served in rich ${selectedBroth.name} (${selectedSpice.name})${toppingsText}.`;
+
+      // Update fluid color of ramen bowl
+      const bowl = document.getElementById('bowl-color-box');
+      bowl.style.background = `radial-gradient(circle, #facc15 0%, ${selectedBroth.color} 100%)`;
+
+      // Show/hide graphic toppings overlays
+      for (const k in toppings) {
+        const el = document.getElementById(`ramen-${k}`);
+        if (toppings[k].active) {
+          el.style.opacity = '1';
+          el.style.transform = 'scale(1)';
+        } else {
+          el.style.opacity = '0';
+          el.style.transform = 'scale(0.5)';
+        }
+      }
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

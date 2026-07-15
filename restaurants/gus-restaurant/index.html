@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gus' Family Restaurant - Monroe, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">G</div>
+        <h1 class="brand-name">
+          Gus' Family
+          <span>Comfort Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="greek.html">Greek Customizer</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner Section -->
+  <header class="hero-section" style="background-image: url('hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Monroe's Favorite Family Diner</span>
+        <h2 class="hero-title">Gus' Family Restaurant</h2>
+        <p class="hero-desc">"Savor the rich comfort of home cooking, from sizzling hamburger steaks with gravy to fresh Mediterranean gyros and Italian bakes."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- To-Go Pickup Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Walkup Avenue Takeout Counter: (704) 218-2193. Cozy Diner Booths & Carry-Out.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Home Cooking Made with Love</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Located on Walkup Avenue in Monroe, Gus' Family Restaurant has been dedicated to serving generous portions of American comfort favorites and Greek-inspired specialties. Blending family diner traditions with Mediterranean seasonings, our menu ranges from slow-braised beef tips to fresh Greek gyros.
+      </p>
+      <a href="about.html" style="color: var(--color-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-blue); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Family Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Daily Specials Blackboard Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Daily Specials Chalkboard</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a day to view our hand-chalked home-cooked dinner special.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Blackboard -->
+        <div class="blackboard-frame" id="blackboard-specials-box">
+          <h4 class="blackboard-chalk-title" id="chalk-title">Hamburger Steak Special</h4>
+          <p class="blackboard-chalk-desc" id="chalk-desc">10oz fresh ground beef patty seared on the flat grill, topped with caramelized onions, sautéed mushrooms, and rich brown gravy. Served with creamy mashed potatoes, green beans, and a warm dinner roll.</p>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-top: 1rem; font-family: 'Outfit';" id="chalk-price">$10.99</p>
+        </div>
+
+        <!-- Right Side: Day Selectors -->
+        <div class="selector-grid" style="grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0;">
+          <button class="option-btn active" onclick="showChalkSpecials('mon', this)">Monday</button>
+          <button class="option-btn" onclick="showChalkSpecials('tue', this)">Tuesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('wed', this)">Wednesday</button>
+          <button class="option-btn" onclick="showChalkSpecials('thu', this)">Thursday</button>
+          <button class="option-btn" onclick="showChalkSpecials('fri', this)">Friday</button>
+          <button class="option-btn" onclick="showChalkSpecials('sat', this)">Saturday</button>
+          <button class="option-btn" style="grid-column: span 2;" onclick="showChalkSpecials('sun', this)">Sunday Specials</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Mediterranean Plate Customizer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From customized gyro plates and chicken parmesan pasta to golden seafood baskets. Click below to customize your comfort plate.
+      </p>
+      <a href="greek.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Launch Customizer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1627 Walkup Ave<br>Monroe, NC 28110</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sun: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 218-2193<br>American Comfort & Greek Diner | Carry-Out</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Gus' Family Restaurant. Monroe comfort landmark since 1998.</p>
+    </div>
+  </footer>
+
+  <script>
+    const specials = {
+      mon: {
+        title: "Monday: Hamburger Steak Special",
+        desc: "10oz fresh ground beef patty seared on the flat grill, topped with caramelized onions, sautéed mushrooms, and rich brown gravy. Served with creamy mashed potatoes, green beans, and a warm dinner roll.",
+        price: "$10.99"
+      },
+      tue: {
+        title: "Tuesday: Traditional Greek Gyro",
+        desc: "Sliced lamb and beef gyro meat folded inside a warm pita bread with lettuce, tomatoes, red onions, and homemade tzatziki yogurt sauce. Served with crispy seasoned french fries.",
+        price: "$11.99"
+      },
+      wed: {
+        title: "Wednesday: Baked Spaghetti Bake",
+        desc: "Linguine tossed in rich meat marinara sauce, loaded with mozzarella and parmesan cheeses, and baked in the oven until bubbling golden. Served with warm buttered garlic toast.",
+        price: "$9.99"
+      },
+      thu: {
+        title: "Thursday: Chicken Parmesan",
+        desc: "Breaded pan-fried chicken breast topped with marinara and melted mozzarella cheese, served over a bed of linguine pasta with a crisp side garden salad and garlic toast.",
+        price: "$12.99"
+      },
+      fri: {
+        title: "Friday: Calabash Seafood Platter",
+        desc: "Crispy calabash fried shrimp and flounder fillets battered in cornmeal, fried golden. Served with french fries, creamy coleslaw, and hushpuppies.",
+        price: "$14.99"
+      },
+      sat: {
+        title: "Saturday: Slow-Roasted Prime Rib",
+        desc: "Generous cut of slow-roasted prime rib roast, served with savory au jus broth, baked potato with sour cream, green beans, and dinner rolls.",
+        price: "$17.99"
+      },
+      sun: {
+        title: "Sunday: Country Fried Steak",
+        desc: "Crispy breaded country fried steak smothered in traditional Southern white pepper gravy. Served with yellow corn, mashed potatoes, and dinner rolls.",
+        price: "$11.99"
+      }
+    };
+
+    function showChalkSpecials(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const blackboard = document.getElementById('blackboard-specials-box');
+      blackboard.style.opacity = '0';
+      blackboard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = specials[key];
+        document.getElementById('chalk-title').innerText = data.title;
+        document.getElementById('chalk-desc').innerText = data.desc;
+        document.getElementById('chalk-price').innerText = data.price;
+        
+        blackboard.style.opacity = '1';
+        blackboard.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

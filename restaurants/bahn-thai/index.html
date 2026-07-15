@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahn Thai Restaurant - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Absolute Positioning for Curry Platter Food Items */
+    #food-green { top: 30px; left: 40px; }
+    #food-red { top: 30px; left: 45px; }
+    #food-panang { top: 30px; left: 35px; }
+    #food-massaman { top: 30px; left: 50px; }
+    
+    #food-tofu { top: 100px; left: 75px; }
+    #food-chicken { top: 100px; left: 70px; }
+    #food-beef { top: 105px; left: 75px; }
+    #food-shrimp { top: 95px; left: 80px; }
+    #food-duck { top: 100px; left: 65px; }
+    
+    #food-mild { bottom: 40px; left: 40px; }
+    #food-medium { bottom: 40px; left: 35px; }
+    #food-spicy { bottom: 40px; left: 45px; }
+    #food-thaihot { bottom: 40px; left: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bahn Thai
+          <span>Ballantyne Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="sushi.html">Sushi & Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Premium Thai & Fresh Sushi</span>
+        <h2 class="hero-title">Bahn Thai</h2>
+        <p class="hero-desc">"Savor the exquisite balance of fresh lemongrass, hand-ground galangal, sweet coconut curries, and signature sushi rolls in Ballantyne."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Takeout Pickup Line: (704) 919-0111. 12206 Copper Way, Charlotte, NC 28277.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Authentic Culinary Heritage</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Bahn Thai in Charlotte's Ballantyne community. We combine traditional Thai cooking techniques with an extensive selection of fresh sushi rolls. From our slow-simmered Massaman and Green Curries to our specialty chef sushi rolls, every dish highlights the fresh, vibrant, and balanced flavors of Thai hospitality.
+      </p>
+      <a href="about.html" style="color: var(--color-copper); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-copper); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Curry & Spice Selector -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Curry & Spice Selector</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-craft your perfect curry bowl. Choose your curry style, select your protein, and set your spice level.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Platter -->
+        <div class="plate-canvas">
+          <div class="plate-wireframe">
+            <div class="plate-gold-rim"></div>
+            <!-- Food Graphics (text + emoji representations for fast rendering) -->
+            <div class="plate-food-item" id="food-green">🍲 Green Curry</div>
+            <div class="plate-food-item" id="food-red">🍲 Red Curry</div>
+            <div class="plate-food-item" id="food-panang">🍲 Panang Curry</div>
+            <div class="plate-food-item" id="food-massaman">🍲 Massaman Curry</div>
+            
+            <div class="plate-food-item" id="food-tofu">🥦 Tofu & Veggies</div>
+            <div class="plate-food-item" id="food-chicken">🍗 Sliced Chicken</div>
+            <div class="plate-food-item" id="food-beef">🥩 Sirloin Beef</div>
+            <div class="plate-food-item" id="food-shrimp">🦐 Tiger Shrimp</div>
+            <div class="plate-food-item" id="food-duck">🍖 Roast Duck</div>
+            
+            <div class="plate-food-item" id="food-mild">🌶️ Mild Spice</div>
+            <div class="plate-food-item" id="food-medium">🌶️🌶️ Medium Spice</div>
+            <div class="plate-food-item" id="food-spicy">🌶️🌶️🌶️ Spicy Hot</div>
+            <div class="plate-food-item" id="food-thaihot">🌶️🌶️🌶️🌶️ Thai Hot</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>1. Select Curry Base</label>
+            <div class="option-grid" id="curry-options">
+              <button class="option-btn active" onclick="setCurry('green', 'Green Curry')">Green Curry</button>
+              <button class="option-btn" onclick="setCurry('red', 'Red Curry')">Red Curry</button>
+              <button class="option-btn" onclick="setCurry('panang', 'Panang Curry')">Panang Curry</button>
+              <button class="option-btn" onclick="setCurry('massaman', 'Massaman Curry')">Massaman Curry</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Select Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('tofu', 0.00, 'Tofu & Veggies')">Tofu & Veg (+$0)</button>
+              <button class="option-btn" onclick="setProtein('chicken', 2.00, 'Chicken')">Chicken (+$2)</button>
+              <button class="option-btn" onclick="setProtein('beef', 3.00, 'Beef')">Beef (+$3)</button>
+              <button class="option-btn" onclick="setProtein('shrimp', 4.00, 'Tiger Shrimp')">Shrimp (+$4)</button>
+              <button class="option-btn" onclick="setProtein('duck', 6.00, 'Roast Duck')">Roast Duck (+$6)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Set Spice Level</label>
+            <div class="option-grid" id="spice-options">
+              <button class="option-btn active" onclick="setSpice('mild', 'Mild')">Mild 🌶️</button>
+              <button class="option-btn" onclick="setSpice('medium', 'Medium')">Medium 🌶️🌶️</button>
+              <button class="option-btn" onclick="setSpice('spicy', 'Spicy')">Spicy 🌶️🌶️🌶️</button>
+              <button class="option-btn" onclick="setSpice('thaihot', 'Thai Hot')">Thai Hot 🌶️🌶️🌶️🌶️</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Thai Kitchen Recommendation</span>
+        <h4 class="builder-display-title" id="display-plate-name">Green Curry with Tofu & Veggies</h4>
+        <p id="display-plate-sides" style="color: var(--color-copper); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Spice Level: Mild</p>
+        <div class="builder-display-price" id="display-plate-price">$14.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">Authentic green curry broth simmered with bamboo shoots, basil, eggplant, bell peppers, and peas. Served hot with jasmine rice.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Sushi & Curry Pairing Guide</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Discover which micro-brews, sakes, or curries pair best with our signature sushi rolls. Click below to view the interactive guide.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Pairing Guide
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>12206 Copper Way, Ste 122<br>Charlotte, NC 28277</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 2:30 PM, 5:00 PM - 9:00 PM<br>Saturday: 12:00 PM - 9:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 919-0111<br>Thai Cuisine & Sushi | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedCurry = { key: 'green', name: 'Green Curry' };
+    let selectedProtein = { key: 'tofu', price: 0.00, name: 'Tofu & Veggies' };
+    let selectedSpice = { key: 'mild', name: 'Mild' };
+
+    const descriptions = {
+      green: "Vibrant sweet coconut-milk green curry simmered with basil leaves, eggplant, bell peppers, peas, and bamboo shoots.",
+      red: "Traditional red chili paste curry simmered in rich coconut milk with bell peppers, bamboo shoots, and fresh sweet basil.",
+      panang: "Creamy, nutty Panang curry with sliced bell peppers, fresh green peas, and finely cut lime leaves.",
+      massaman: "Slow-simmered Southern Thai curry flavored with cloves, cardamoms, potatoes, sweet onions, and roasted peanuts."
+    };
+
+    function setCurry(key, name) {
+      const buttons = document.getElementById('curry-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedCurry = { key, name };
+      updateDisplay();
+    }
+
+    function setProtein(key, price, name) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, price, name };
+      updateDisplay();
+    }
+
+    function setSpice(key, name) {
+      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSpice = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      const baseFee = 14.00;
+      const totalPrice = (baseFee + selectedProtein.price).toFixed(2);
+      document.getElementById('display-plate-price').innerText = `$${totalPrice}`;
+
+      document.getElementById('display-plate-name').innerText = `${selectedCurry.name} with ${selectedProtein.name}`;
+      document.getElementById('display-plate-sides').innerText = `Spice Level: ${selectedSpice.name}`;
+
+      // Pair description
+      document.getElementById('display-plate-desc').innerText = `${descriptions[selectedCurry.key]} Cooked with fresh ${selectedProtein.name} and seasoned to ${selectedSpice.name} spice. Served with Jasmine rice.`;
+
+      // Animate graphics on virtual plate
+      const allFoodItems = document.querySelectorAll('.plate-food-item');
+      allFoodItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.5)';
+      });
+
+      // Show selected items
+      const curryEl = document.getElementById(`food-${selectedCurry.key}`);
+      if (curryEl) {
+        curryEl.style.opacity = '1';
+        curryEl.style.transform = 'scale(1)';
+      }
+
+      const proteinEl = document.getElementById(`food-${selectedProtein.key}`);
+      if (proteinEl) {
+        proteinEl.style.opacity = '1';
+        proteinEl.style.transform = 'scale(1)';
+      }
+
+      const spiceEl = document.getElementById(`food-${selectedSpice.key}`);
+      if (spiceEl) {
+        spiceEl.style.opacity = '1';
+        spiceEl.style.transform = 'scale(1)';
+      }
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

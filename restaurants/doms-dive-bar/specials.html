@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specials · Dom's Dive Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
+.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--neon)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0a0a,#1a0a0f);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--neon)}
+.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--neon);margin:0 0 1rem;border-left:3px solid var(--neon);padding-left:.75rem}
+.day-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,59,111,.08);border-radius:8px;padding:1.25rem;margin-bottom:1rem}
+.day-card .day{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--neon);margin:0 0 .35rem}
+.day-card .deal{font-size:.88rem;opacity:.65;line-height:1.6;margin:0}
+.day-card .time{font-size:.78rem;opacity:.4;margin-top:.35rem}
+.quiz-box{background:rgba(255,59,111,.04);border:1px solid rgba(255,59,111,.12);border-radius:8px;padding:2rem;margin:2rem 0}
+.quiz-box h3{color:var(--neon);margin:0 0 1rem;font-size:1.2rem}
+.quiz-step{margin-bottom:1.25rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem;opacity:.6}
+.quiz-step select{width:100%;padding:.7rem;border:1px solid rgba(255,59,111,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--warm);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.quiz-result{background:rgba(255,59,111,.08);padding:1rem;border-radius:6px;margin-top:1rem;text-align:center;display:none}
+.quiz-result.show{display:block}
+.quiz-result .name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--neon)}
+.quiz-result .desc{font-size:.85rem;opacity:.55;margin-top:.25rem}
+footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
+footer a{color:var(--neon);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dom's Dive</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="games.html">Games &amp; Leagues</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Weekly Specials</h1>
+  <p>Something new every day — cheap drinks, food deals, and more</p>
+</header>
+<section class="section">
+  <h2>This Week's Deals</h2>
+  <div class="day-card">
+    <h3 class="day">Monday</h3>
+    <p class="deal">$2 Busch Light cans · $6 Tullamore Dew &amp; Guinness · 1/2 Price Draft Cocktails</p>
+    <p class="deal"><strong>Half Off Chicken Wings</strong> (dine-in only)</p>
+    <p class="time">3:00 PM – 12:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Tuesday</h3>
+    <p class="deal">$4 Rotating Beer · $6 Elijah Craig &amp; Lunazul Tequila · Happy Hour Food ALL Day</p>
+    <p class="time">3:00 PM – 12:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Wednesday</h3>
+    <p class="deal">$4 Local Drafts · $6 Shanky's Whip whiskey · 1/2 off Wine</p>
+    <p class="deal"><strong>$12 Meatball Sub</strong></p>
+    <p class="time">3:00 PM – 1:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Thursday</h3>
+    <p class="deal">$3 PBR Tall Boys · $8 Don Julio Tequila · $4 Mighty Swell Seltzers</p>
+    <p class="deal"><strong>$11 Pulled Pork Sandwich</strong></p>
+    <p class="time">3:00 PM – 1:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Friday</h3>
+    <p class="deal">$4 Rotating Beer · $6 Elijah Craig &amp; Lunazul Tequila · Happy Hour Food ALL Day</p>
+    <p class="time">3:00 PM – 2:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Saturday</h3>
+    <p class="deal">$4 Modelo · $6 Smirnoff Vodkas · $6 Rotating Whiskey/Bourbon</p>
+    <p class="deal"><strong>$12 Gameday Cheesesteak Sub</strong></p>
+    <p class="time">11:00 AM – 2:00 AM</p>
+  </div>
+  <div class="day-card">
+    <h3 class="day">Sunday</h3>
+    <p class="deal">$3 Twisted Tea · $6 Carlsberg &amp; Magners · $6 Rotating Whiskey/Bourbon</p>
+    <p class="deal"><strong>$9 Gameday Flatbreads</strong> (pepperoni, cheese, or sausage)</p>
+    <p class="time">11:00 AM – 12:00 AM</p>
+  </div>
+  <h2>Find Your Dive Drink</h2>
+  <p style="font-size:.9rem;opacity:.5;margin:-.5rem 0 1rem">Not sure what to order? Let us pick your poison.</p>
+  <div class="quiz-box">
+    <h3>Pick Your Poison</h3>
+    <div class="quiz-step">
+      <label for="mood">What's your vibe tonight?</label>
+      <select id="mood"><option value="">Select...</option><option value="cheap">Keep it cheap &amp; easy</option><option value="whiskey">Whiskey, neat or on rocks</option><option value="beer">Ice cold beer</option><option value="cocktail">Something mixed</option></select>
+    </div>
+    <div class="quiz-step">
+      <label for="strength">How strong?</label>
+      <select id="strength"><option value="">Select...</option><option value="light">Easy sipper</option><option value="medium">Just right</option><option value="strong">Knock me out</option></select>
+    </div>
+    <div class="quiz-result" id="quiz-result">
+      <p class="name" id="quiz-name"></p>
+      <p class="desc" id="quiz-desc"></p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
+  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function(){const mood=document.getElementById('mood'),strength=document.getElementById('strength'),res=document.getElementById('quiz-result'),name=document.getElementById('quiz-name'),desc=document.getElementById('quiz-desc');const drinks={cheap:{light:'$2 Busch Light can — cold, cheap, reliable',medium:'$4 Local Draft — support local, save money',strong:'$3 PBR Tall Boy — the dive bar classic'},whiskey:{light:'$6 Tullamore Dew — smooth Irish whiskey',medium:'$6 Elijah Craig — smooth bourbon, no regrets',strong:'$8 Don Julio Reposado — top-shelf tequila, sipping slow'},beer:{light:'$4 Rotating Beer — whatever's new on tap',medium:'Guinness — rich, creamy, satisfying',strong:'$6 Carlsberg — Danish import, crisp and bold'},cocktail:{light:'1/2 Price Draft Cocktail — ask the bartender',medium:'$6 Smirnoff Vodka — clean, classic mixer',strong:'$6 Shanky's Whip — spiced whiskey, dangerously smooth'}};function update(){if(!mood.value||!strength.value){res.classList.remove('show');return}
+const d=drinks[mood.value][strength.value];const parts=d.split(' — ');name.textContent=parts[0];desc.textContent=parts[1];res.classList.add('show')}
+mood.addEventListener('change',update);strength.addEventListener('change',update)})();
+</script>
+</body>
+</html>

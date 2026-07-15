@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uptown · Geno D's Pizza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#c1121f;--green:#2d6a4f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1a10;--gold:#e8b830;--muted:#8a7a6a}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#fff;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.08)}
+.nav a{color:var(--dark);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.7;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#fff,#faf3e0);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0;color:var(--dark)}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--green);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.section p{font-size:.9rem;opacity:.65;line-height:1.75}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.info-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.03);margin-bottom:1rem}
+.info-card h3{color:var(--red);font-size:.95rem;margin:0 0 .4rem}
+.info-card p{font-size:.85rem;opacity:.55;line-height:1.6;margin:.2rem 0}
+.info-card .label{opacity:.35;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.nearby-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+.nearby-item{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.25rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.nearby-item .icon{font-size:1.5rem;display:block;margin-bottom:.35rem}
+.nearby-item .name{font-weight:600;font-size:.85rem}
+.nearby-item .note{font-size:.75rem;opacity:.4;margin-top:.2rem}
+.pizza-finder{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:2rem;margin-top:2rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.pizza-finder h3{color:var(--red);margin:0 0 .4rem}
+.pizza-finder p{margin:0 0 1rem;font-size:.85rem;opacity:.5}
+.finder-form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}@media(max-width:600px){.finder-form{grid-template-columns:1fr}}
+.finder-form label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.finder-form select,.finder-form button{width:100%;padding:.8rem 1rem;border-radius:8px;font-size:.85rem}
+.finder-form select{border:1px solid rgba(0,0,0,.12);background:#fff;color:var(--dark)}
+.finder-form button{background:var(--red);color:#fff;border:none;font-weight:700;cursor:pointer;transition:.2s}
+.finder-form button:hover{opacity:.9}
+footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Geno D's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pizza.html">Pizza Builder</a>
+    <a href="story.html">Our Story</a>
+    <a href="uptown.html">Uptown</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Uptown Charlotte</h1>
+  <p>Find us inside The Market at 7th Street — a food hall in the heart of the city</p>
+</div>
+<section class="section">
+  <div class="two-col">
+    <div>
+      <h2>The Market at 7th Street</h2>
+      <p class="note">A food hall experience in the center of Uptown</p>
+      <p>Geno D's Pizza is proudly located inside The Market at 7th Street — Uptown Charlotte's premier food hall at the corner of 7th and Brevard. Just steps from the Charlotte Hornets' Spectrum Center, this historic building brings together a curated collection of local food vendors under one roof.</p>
+      <p>You can smell Geno D's the second you hit the door. Follow your nose to our corner of the market, where Geno D and Gena are serving up hot slices, Grandma pies, garlic knots, and cannoli fresh daily.</p>
+    </div>
+    <div>
+      <div class="info-card">
+        <h3>Location</h3>
+        <p>224 East 7th Street<br>Charlotte, NC 28202</p>
+        <p style="font-size:.78rem;opacity:.35;margin-top:.3rem">Inside The Market at 7th Street — corner of 7th and Brevard</p>
+      </div>
+      <div class="info-card">
+        <h3>Nearby Landmarks</h3>
+        <div class="nearby-grid" style="margin:0">
+          <div class="nearby-item"><span class="icon">🏀</span><span class="name">Spectrum Center</span><span class="note">Hornets home court</span></div>
+          <div class="nearby-item"><span class="icon">🎭</span><span class="name">Blumenthal PAC</span><span class="note">Performing arts</span></div>
+          <div class="nearby-item"><span class="icon">🏛️</span><span class="name">Romare Bearden Park</span><span class="note">City green space</span></div>
+          <div class="nearby-item"><span class="icon">🏙️</span><span class="name">Tryon Street</span><span class="note">Main Uptown corridor</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:#fff">
+  <div class="pizza-finder" data-demo-form>
+    <h3>Build Your Slice</h3>
+    <p>Tell us your pizza personality — we'll tell you what to order</p>
+    <form class="finder-form" data-demo-form>
+      <label>What's your pizza style?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="classic">Classic cheese — keep it simple</option>
+          <option value="loaded">Loaded with toppings — the more the merrier</option>
+          <option value="spicy">Bring the heat — I like it spicy</option>
+          <option value="veggie">Light and fresh — pile on the veggies</option>
+          <option value="gf">I need gluten-free</option>
+        </select>
+      </label>
+      <label>How hungry are you?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="slice">Just a slice</option>
+          <option value="whole">A whole pie</option>
+          <option value="combo">Pie + knots + cannoli</option>
+        </select>
+      </label>
+      <div style="grid-column:1/-1">
+        <button type="submit" style="width:100%">Find My Order</button>
+      </div>
+    </form>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--gold);font-size:.9rem">Geno D's Pizza</strong><br>224 E 7th St · The Market at 7th Street · Charlotte, NC 28202 · (704) 900-5202</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="story.html">Our Story</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

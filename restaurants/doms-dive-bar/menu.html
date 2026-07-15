@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Dom's Dive Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
+.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--neon)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0a0a,#1a0a0f);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--neon)}
+.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cat-tab{background:rgba(255,255,255,.02);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
+.cat-tab:hover{color:var(--warm)}
+.cat-tab.active{background:rgba(255,59,111,.1);color:var(--neon)}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.menu-cat-title{color:var(--neon);font-size:1.1rem;margin:0 0 1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.menu-item:last-child{border-bottom:none}
+.menu-item .name{font-weight:600;font-size:.95rem}
+.menu-item .desc{font-size:.82rem;opacity:.5;line-height:1.4;margin:.15rem 0 0;max-width:75%}
+.menu-item .price{font-size:.9rem;color:var(--neon);font-weight:600;white-space:nowrap;margin-left:1rem}
+.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,59,111,.12);color:var(--neon);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
+footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
+footer a{color:var(--neon);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dom's Dive</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="games.html">Games &amp; Leagues</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Menu</h1>
+  <p>Bar snacks, flatbreads, sandwiches, and weekend breakfast</p>
+</header>
+<section class="section">
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="snacks">Bar Snacks</button>
+    <button class="cat-tab" data-tab="flatbreads">Flatbreads</button>
+    <button class="cat-tab" data-tab="sandwiches">Sandwiches</button>
+    <button class="cat-tab" data-tab="breakfast">Breakfast</button>
+    <button class="cat-tab" data-tab="sides">Sides &amp; Kids</button>
+  </div>
+  <div class="cat-panel active" data-panel="snacks">
+    <h3 class="menu-cat-title">Bar Snacks</h3>
+    <div class="menu-item"><div><span class="name">Buffalo Wings</span><span class="badge">Popular</span><p class="desc">Crispy wings tossed in spicy buffalo sauce, celery sticks, ranch dressing — half off Mondays</p></div><span class="price">$12.00</span></div>
+    <div class="menu-item"><div><span class="name">Loaded Nachos</span><p class="desc">Tortilla chips with melted cheese, jalapeños, guacamole, sour cream, pico de gallo</p></div><span class="price">$11.00</span></div>
+    <div class="menu-item"><div><span class="name">Chili Cheese Fries</span><p class="desc">Crispy fries smothered in house chili and melted cheddar</p></div><span class="price">$9.00</span></div>
+    <div class="menu-item"><div><span class="name">Popcorn</span><p class="desc">Fresh-popped, lightly salted — the perfect bar snack</p></div><span class="price">$4.00</span></div>
+    <div class="menu-item"><div><span class="name">Chicken Bacon Ranch Flatbread</span><span class="badge">Popular</span><p class="desc">Grilled chicken, crispy bacon, ranch drizzle, melted cheese on flatbread</p></div><span class="price">$12.00</span></div>
+  </div>
+  <div class="cat-panel" data-panel="flatbreads">
+    <h3 class="menu-cat-title">Flatbreads</h3>
+    <div class="menu-item"><div><span class="name">Pepperoni Flatbread</span><p class="desc">Classic pepperoni with mozzarella and house marinara</p></div><span class="price">$9.00</span></div>
+    <div class="menu-item"><div><span class="name">Cheese Flatbread</span><p class="desc">Three-cheese blend on crispy flatbread with marinara</p></div><span class="price">$9.00</span></div>
+    <div class="menu-item"><div><span class="name">Sausage Flatbread</span><p class="desc">Italian sausage, peppers, onions, mozzarella</p></div><span class="price">$10.00</span></div>
+    <div class="menu-item"><div><span class="name">Chicken Bacon Ranch Flatbread</span><span class="badge">Popular</span><p class="desc">Grilled chicken, bacon, ranch, mozzarella — a fan favorite</p></div><span class="price">$12.00</span></div>
+  </div>
+  <div class="cat-panel" data-panel="sandwiches">
+    <h3 class="menu-cat-title">Sandwiches</h3>
+    <div class="menu-item"><div><span class="name">Classic Cheeseburger</span><span class="badge">Popular</span><p class="desc">Juicy beef patty, melted cheese, lettuce, tomato, special sauce on toasted bun</p></div><span class="price">$11.00</span></div>
+    <div class="menu-item"><div><span class="name">Reuben Sandwich</span><p class="desc">Corned beef, Swiss, sauerkraut, Thousand Island on grilled rye</p></div><span class="price">$12.00</span></div>
+    <div class="menu-item"><div><span class="name">BBQ Brisket Dip</span><span class="badge">Signature</span><p class="desc">Slow-smoked brisket, caramelized onions, provolone, au jus for dipping</p></div><span class="price">$13.00</span></div>
+    <div class="menu-item"><div><span class="name">Italian Sub</span><p class="desc">Genoa salami, capicola, provolone, lettuce, tomato, oil &amp; vinegar on hoagie</p></div><span class="price">$11.00</span></div>
+    <div class="menu-item"><div><span class="name">Fish Tacos</span><span class="badge">Popular</span><p class="desc">Grilled fish, cabbage slaw, lime crema in soft tortillas — two per order</p></div><span class="price">$12.00</span></div>
+    <div class="menu-item"><div><span class="name">Veggie Burger</span><p class="desc">Hearty plant-based patty with fresh toppings and fries</p></div><span class="price">$11.00</span></div>
+    <div class="menu-item"><div><span class="name">Pulled Pork Sandwich</span><p class="desc">Slow-cooked pork with house BBQ sauce on brioche bun</p></div><span class="price">$11.00</span></div>
+  </div>
+  <div class="cat-panel" data-panel="breakfast">
+    <h3 class="menu-cat-title">Weekend Breakfast</h3>
+    <p style="font-size:.82rem;opacity:.45;margin-top:-.5rem;margin-bottom:1rem">Served Saturday &amp; Sunday 11am–2pm</p>
+    <div class="menu-item"><div><span class="name">Breakfast Burrito</span><span class="badge">Weekend</span><p class="desc">Scrambled eggs, cheese, bacon or sausage, hash browns in a flour tortilla</p></div><span class="price">$10.00</span></div>
+    <div class="menu-item"><div><span class="name">Biscuits &amp; Gravy</span><p class="desc">Two house-made biscuits smothered in sausage gravy</p></div><span class="price">$9.00</span></div>
+    <div class="menu-item"><div><span class="name">Hangover Hash</span><p class="desc">Hash browns, eggs any style, cheese, choice of meat, toast</p></div><span class="price">$11.00</span></div>
+    <div class="menu-item"><div><span class="name">French Toast</span><p class="desc">Thick-cut brioche, cinnamon batter, maple syrup, powdered sugar</p></div><span class="price">$10.00</span></div>
+  </div>
+  <div class="cat-panel" data-panel="sides">
+    <h3 class="menu-cat-title">Sides &amp; Kids Menu</h3>
+    <div class="menu-item"><div><span class="name">Hand-Cut Fries</span><p class="desc">Crispy, seasoned, golden</p></div><span class="price">$5.00</span></div>
+    <div class="menu-item"><div><span class="name">Onion Rings</span><p class="desc">Beer-battered and fried until golden</p></div><span class="price">$6.00</span></div>
+    <div class="menu-item"><div><span class="name">Coleslaw</span><p class="desc">Creamy house-made slaw</p></div><span class="price">$4.00</span></div>
+    <div class="menu-item"><div><span class="name">Kids Cheeseburger</span><p class="desc">Junior patty with fries</p></div><span class="price">$7.00</span></div>
+    <div class="menu-item"><div><span class="name">Kids Chicken Tenders</span><p class="desc">Two tenders with fries</p></div><span class="price">$7.00</span></div>
+  </div>
+</section>
+<footer>
+  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
+  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();</script>
+</body>
+</html>

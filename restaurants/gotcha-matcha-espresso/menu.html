@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — Gotcha Matcha & Espresso</title>
+    <meta name="description" content="Full menu at Gotcha Matcha & Espresso — ceremonial grade matcha lattes, espresso drinks, Thai-inspired pastries. Uptown Charlotte.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐼</span>
+                <span class="logo-text">Gotcha Matcha</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="matcha.html">Matcha Lab</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="visit.html">Visit</a></li>
+                <li><a href="reserve.html">Find Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="section-label">🐼 Our Menu</span>
+            <h1>Menu</h1>
+            <p class="page-header-sub">Ceremonial grade matcha, espresso drinks, and Thai-inspired pastries.<br>Customize sweetness and ice levels on any drink.</p>
+        </div>
+    </header>
+
+    <section class="menu-section">
+        <div class="container">
+
+            <div class="menu-controls">
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="matcha">Matcha Lattes</button>
+                    <button class="filter-btn" data-filter="espresso">Espresso</button>
+                    <button class="filter-btn" data-filter="pastry">Pastries</button>
+                </div>
+                <div class="menu-search">
+                    <input type="text" id="menuSearch" placeholder="Search menu..." aria-label="Search menu">
+                </div>
+            </div>
+
+            <div class="menu-note">
+                <span>💡</span> Customize sweetness and ice levels on any drink. Ask your barista!
+            </div>
+
+            <!-- Matcha Lattes -->
+            <div class="menu-category" data-category="matcha">
+                <h2 class="menu-category-title">🍵 Matcha Lattes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="gotcha matcha latte">
+                        <div class="menu-item-header">
+                            <h3>Gotcha Matcha Latte</h3>
+                            <span class="menu-price">$6.75</span>
+                        </div>
+                        <p>The signature. Ceremonial grade matcha, perfectly smooth and vibrant.</p>
+                    </div>
+                    <div class="menu-item" data-name="the panda pandan">
+                        <div class="menu-item-header">
+                            <h3>The Panda</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Pandan-infused matcha latte. Sweet, earthy, unmistakable.</p>
+                    </div>
+                    <div class="menu-item" data-name="to the yams ube">
+                        <div class="menu-item-header">
+                            <h3>To The Yams</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Ube and matcha — a stunning purple-green pairing.</p>
+                    </div>
+                    <div class="menu-item" data-name="caramel matchiato">
+                        <div class="menu-item-header">
+                            <h3>Caramel Matchiato</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Caramel-kissed matcha for the sweet tooth.</p>
+                    </div>
+                    <div class="menu-item" data-name="coconut matcha">
+                        <div class="menu-item-header">
+                            <h3>Coconut</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Coconut milk matcha latte. Creamy, tropical, refreshing.</p>
+                    </div>
+                    <div class="menu-item" data-name="the lav lavender">
+                        <div class="menu-item-header">
+                            <h3>The Lav</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Lavender-infused matcha. Floral, calming, beautiful.</p>
+                    </div>
+                    <div class="menu-item" data-name="lemongrass matcha">
+                        <div class="menu-item-header">
+                            <h3>Lemongrass</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Thai-inspired lemongrass meets ceremonial matcha.</p>
+                    </div>
+                    <div class="menu-item" data-name="strawberry matchiato">
+                        <div class="menu-item-header">
+                            <h3>Strawberry Matchiato</h3>
+                            <span class="menu-price">$7.50</span>
+                        </div>
+                        <p>Fresh strawberry and matcha — sweet and vibrant.</p>
+                    </div>
+                    <div class="menu-item" data-name="mango matchiato">
+                        <div class="menu-item-header">
+                            <h3>Mango Matchiato</h3>
+                            <span class="menu-price">$7.50</span>
+                        </div>
+                        <p>Tropical mango blended with smooth matcha.</p>
+                    </div>
+                    <div class="menu-item" data-name="hojicha">
+                        <div class="menu-item-header">
+                            <h3>Hojicha</h3>
+                            <span class="menu-price">$7.50</span>
+                        </div>
+                        <p>Roasted Japanese green tea — nutty, warm, deeply comforting.</p>
+                    </div>
+                    <div class="menu-item" data-name="dirty matcha">
+                        <div class="menu-item-header">
+                            <h3>Dirty Matcha</h3>
+                            <span class="menu-price">$7.53</span>
+                        </div>
+                        <p>Matcha latte with a shot of espresso. Best of both worlds.</p>
+                    </div>
+                    <div class="menu-item" data-name="matcha soda">
+                        <div class="menu-item-header">
+                            <h3>Matcha Soda</h3>
+                            <span class="menu-price">$5.25</span>
+                        </div>
+                        <p>Sparkling matcha refreshment. Light, fizzy, energizing.</p>
+                    </div>
+                    <div class="menu-item" data-name="matchamericano">
+                        <div class="menu-item-header">
+                            <h3>Matchamericano</h3>
+                            <span class="menu-price">$3.00</span>
+                        </div>
+                        <p>Matcha meets americano — bold, clean, no milk needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Espresso -->
+            <div class="menu-category" data-category="espresso">
+                <h2 class="menu-category-title">☕ Espresso</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="latte">
+                        <div class="menu-item-header">
+                            <h3>Latte</h3>
+                            <span class="menu-price">$6.75</span>
+                        </div>
+                        <p>Classic espresso latte, perfectly pulled.</p>
+                    </div>
+                    <div class="menu-item" data-name="cappuccino">
+                        <div class="menu-item-header">
+                            <h3>Cappuccino</h3>
+                            <span class="menu-price">$5.50</span>
+                        </div>
+                        <p>Espresso with steamed milk and a thick foam cap.</p>
+                    </div>
+                    <div class="menu-item" data-name="americano">
+                        <div class="menu-item-header">
+                            <h3>Americano</h3>
+                            <span class="menu-price">$4.00</span>
+                        </div>
+                        <p>Espresso and hot water. Simple, strong, clean.</p>
+                    </div>
+                    <div class="menu-item" data-name="cold brew">
+                        <div class="menu-item-header">
+                            <h3>Cold Brew</h3>
+                            <span class="menu-price">$5.00</span>
+                        </div>
+                        <p>Slow-steeped, smooth, and naturally sweet.</p>
+                    </div>
+                    <div class="menu-item" data-name="dolce cold brew">
+                        <div class="menu-item-header">
+                            <h3>Dolce Cold Brew</h3>
+                            <span class="menu-price">$6.25</span>
+                        </div>
+                        <p>Sweet cream cold brew — rich and velvety.</p>
+                    </div>
+                    <div class="menu-item" data-name="vietnamese coffee">
+                        <div class="menu-item-header">
+                            <h3>Vietnamese Coffee</h3>
+                            <span class="menu-price">$4.75</span>
+                        </div>
+                        <p>Bold brew with sweetened condensed milk.</p>
+                    </div>
+                    <div class="menu-item" data-name="pandan caramel macchiato">
+                        <div class="menu-item-header">
+                            <h3>Pandan Caramel Macchiato</h3>
+                            <span class="menu-price">$7.50</span>
+                        </div>
+                        <p>Thai pandan twist on the caramel macchiato.</p>
+                    </div>
+                    <div class="menu-item" data-name="ubesso ube espresso">
+                        <div class="menu-item-header">
+                            <h3>Ubesso</h3>
+                            <span class="menu-price">$7.25</span>
+                        </div>
+                        <p>Ube-infused espresso drink. Purple, creamy, unique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastries -->
+            <div class="menu-category" data-category="pastry">
+                <h2 class="menu-category-title">🥐 Pastries</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="ube donut">
+                        <div class="menu-item-header">
+                            <h3>Ube Donut</h3>
+                            <span class="menu-price">$4.00</span>
+                        </div>
+                        <p>Thai-inspired ube donut. Purple, sweet, unforgettable.</p>
+                    </div>
+                    <div class="menu-item" data-name="pandan donut">
+                        <div class="menu-item-header">
+                            <h3>Pandan Donut</h3>
+                            <span class="menu-price">$4.00</span>
+                        </div>
+                        <p>Green pandan donut with a subtly sweet, aromatic flavor.</p>
+                    </div>
+                    <div class="menu-item" data-name="ube cinnamon roll">
+                        <div class="menu-item-header">
+                            <h3>Ube Cinnamon Roll</h3>
+                            <span class="menu-price">$8.58</span>
+                        </div>
+                        <p>Warm ube cinnamon roll — gooey, fluffy, purple perfection.</p>
+                    </div>
+                    <div class="menu-item" data-name="pandan cinnamon roll">
+                        <div class="menu-item-header">
+                            <h3>Pandan Cinnamon Roll</h3>
+                            <span class="menu-price">$8.58</span>
+                        </div>
+                        <p>Pandan-swirled cinnamon roll with cream cheese glaze.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-delivery-note">
+                <span>🚗</span>
+                <div>
+                    <strong>Takeout & Delivery</strong>
+                    <p>Order ahead via <a href="https://www.ubereats.com" target="_blank" rel="noopener">Uber Eats</a> for pickup or delivery.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">🐼</span>
+                    <span class="logo-text">Gotcha Matcha & Espresso</span>
+                    <p>Ceremonial grade matcha bar with Thai-inspired flavors in Uptown Charlotte.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="about.html">About</a>
+                    <a href="visit.html">Visit</a>
+                    <a href="reserve.html">Find Us</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="tel:6463424707">(646) 342-4707</a>
+                    <a href="visit.html">200 S Tryon St, Suite S112</a>
+                    <p class="footer-hours">Mon–Sat 7am–6pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gotcha Matcha & Espresso. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>

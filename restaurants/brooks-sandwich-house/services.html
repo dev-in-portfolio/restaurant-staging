@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooks' Sandwich House - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="Brooks' Sandwich House Logo" class="brand-logo">
+        <h1 class="brand-name">
+          Brooks'
+          <span>Sandwich House</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="chili.html">Legendary Chili</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Bulk Grab-And-Go Boxes</h2>
+    <p class="page-subtitle">Feed your crew, office, or tailgate party with Charlotte's legendary chili burgers.</p>
+  </header>
+
+  <!-- Services Offerings -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Service 1 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Office Lunch Boxes</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Elevate your next team meeting. We package individual boxes of hamburgers, cheeseburgers, and fries. Everything is wrapped hot in foil and labeled so your crew can grab-and-go. Recommended for groups of 10 to 30.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Tailgate & Party Packs</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          Headed to a Carolina Panthers tailgate or neighborhood block party? Order bulk trays of hot dogs, hamburgers, and quarts of our famous signature beef chili so you can assemble them hot on site.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Window Pickups</h3>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+          To avoid long wait times at our walk-up windows, we support call-ahead orders for groups of 10 or more. Simply give us a time, and we'll have your entire box boxed and ready at our designated pickup window.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Bulk Curation Inquiry</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Please submit your group size and order details below. Note: Bulk orders are cash-only upon window pickup.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Pickup Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="burgers-count">Burgers Count</label>
+              <select id="burgers-count" required>
+                <option value="10">10 Burgers</option>
+                <option value="20">20 Burgers</option>
+                <option value="30">30+ Burgers</option>
+                <option value="0">None (Dogs only)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of Order (Hot dog count, cheese, "All The Way" toppings)</label>
+              <textarea id="notes" placeholder="e.g. 15 Double Cheeseburgers all the way, 10 hot dogs with mustard and chili, 15 orders of fries..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Bulk Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍔</div>
+          <h3 class="success-title">Order Received!</h3>
+          <p class="success-msg" id="success-message">Thank you. We will review your request and call your phone to verify details and quote a pickup time.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>2710 N. Brevard St.<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 10:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Cash-Only | ATM on Site<br>Walk-Up Windows Only</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Brooks' Sandwich House. Charlotte landmark since 1973.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thanks, <strong>${name}</strong>. Your bulk request has been sent to the kitchen. We will call you at <strong>${phone}</strong> shortly. Remember that all orders are <strong>cash-only</strong> upon pickup!`;
+    });
+  </script>
+</body>
+</html>

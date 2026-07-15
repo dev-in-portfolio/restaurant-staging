@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Doan's Vietnamese Cuisine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --crimson: #a32020;
+  --golden: #d4a017;
+  --mint: #2d7a4f;
+  --charcoal: #1a1a1a;
+  --cream: #f7f0e6;
+  --warm-white: #faf5ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--crimson); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--golden); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--golden) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, #1a0505, #2a0a0a); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--golden); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 1.25rem; border-left: 3px solid var(--golden); padding-left: .75rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width:640px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info { background: rgba(255,255,255,.03); border: 1px solid rgba(212,160,23,.08); border-radius: 8px; padding: 1.5rem; }
+.contact-info h3 { font-size: 1rem; color: var(--golden); margin: 0 0 .75rem; }
+.hours-grid { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1.25rem; font-size: .88rem; margin-bottom: 1rem; }
+.hours-grid .day { font-weight: 600; opacity: .7; }
+.hours-grid .time { opacity: .6; }
+.contact-info p { font-size: .88rem; line-height: 1.6; opacity: .65; margin: 0 0 .35rem; }
+.contact-info a { color: var(--golden); text-decoration: none; font-weight: 600; }
+.map-placeholder { background: rgba(255,255,255,.03); border: 2px dashed rgba(212,160,23,.1); border-radius: 8px; height: 220px; display: flex; align-items: center; justify-content: center; opacity: .35; font-style: italic; font-size: .85rem; margin: 2rem 0; }
+.demo-form { max-width: 600px; margin: 2rem auto 0; background: rgba(255,255,255,.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212,160,23,.1); }
+.demo-form h3 { text-align: center; color: var(--golden); font-family: 'Fraunces', serif; font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
+.form-group input, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--golden); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--crimson); color: var(--cream); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; }
+.btn:hover { background: #b82d2d; }
+.toast { background: var(--golden); color: var(--charcoal); padding: 1rem 2rem; border-radius: 6px; text-align: center; margin-top: 1rem; display: none; font-weight: 600; }
+.toast.show { display: block; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,160,23,.08); }
+footer a { color: var(--golden); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Doan's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pho.html">Pho Customizer</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Stop by, give us a call, or send us a message</p>
+</header>
+
+<section class="section">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-info">
+        <h3>Location</h3>
+        <p>5937 South Blvd<br>Charlotte, NC 28217</p>
+        <p style="margin-top:.5rem">South Charlotte — entrance and parking in front</p>
+        <p style="margin-top:.5rem"><a href="https://maps.google.com/?q=5937+South+Blvd+Charlotte+NC+28217" target="_blank">Get Directions →</a></p>
+      </div>
+      <div class="contact-info" style="margin-top:1.25rem">
+        <h3>Hours</h3>
+        <div class="hours-grid">
+          <span class="day">Monday–Thursday</span><span class="time">11:00 AM – 9:00 PM</span>
+          <span class="day">Friday–Saturday</span><span class="time">11:00 AM – 9:30 PM</span>
+          <span class="day">Sunday</span><span class="time">Closed</span>
+        </div>
+      </div>
+      <div class="contact-info" style="margin-top:1.25rem">
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17047339077">(704) 733-9077</a></p>
+        <p>Email: doansvietnamesecuisine.shop@gmail.com</p>
+      </div>
+    </div>
+    <div>
+      <div class="map-placeholder">Map coming soon</div>
+      <div class="contact-info">
+        <h3>Services</h3>
+        <p>✔ Dine-in · Takeout · Delivery</p>
+        <p>✔ Vegetarian &amp; vegan options available</p>
+        <p>✔ Family-friendly</p>
+        <p>✔ No MSG</p>
+      </div>
+    </div>
+  </div>
+
+  <form class="demo-form" data-demo-form>
+    <h3>Send Us a Message</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cname">Name</label>
+        <input id="cname" type="text" required>
+      </div>
+      <div class="form-group">
+        <label for="cemail">Email</label>
+        <input id="cemail" type="email" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="csubject">Subject</label>
+      <input id="csubject" type="text" placeholder="Catering inquiry, feedback, general question...">
+    </div>
+    <div class="form-group">
+      <label for="cmsg">Message</label>
+      <textarea id="cmsg" rows="4" required></textarea>
+    </div>
+    <button class="btn" type="submit" style="width:100%">Send Message</button>
+    <div class="toast" role="alert">Thanks for reaching out! We'll get back to you soon.</div>
+  </form>
+</section>
+
+<footer>
+  <p>Doan's Vietnamese Cuisine · 5937 South Blvd · Charlotte, NC 28217 · (704) 733-9077</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

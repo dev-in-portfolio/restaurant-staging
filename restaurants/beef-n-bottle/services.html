@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Private Banquets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          BEEF 'N BOTTLE
+          <span>Steakhouse Est. 1958</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html">Wine & Bar</a>
+        <a href="about.html">History</a>
+        <a href="services.html" class="active">Banquets</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Banquets & Boardrooms</h2>
+    <p class="page-subtitle">Host your corporate luncheon, business mixer, or rehearsal dinner in our private wood-paneled banquets room.</p>
+  </header>
+
+  <!-- Interactive Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Group Dinner Cost Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count, course tier, and bar package to calculate estimated banquet invoices.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: #ffffff;">20</span> people</label>
+        <input type="range" id="guests-count" min="15" max="80" value="20" step="5" style="width: 100%; accent-color: var(--color-gold); cursor: pointer;" oninput="calculateEvent(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Dining Course Tier</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <button class="option-btn" id="btn-tier-bistro" onclick="selectTier(45, 'Tavern Tier')">Tavern ($45)</button>
+            <button class="option-btn active" id="btn-tier-exec" onclick="selectTier(75, 'Legacy Tier')">Legacy ($75)</button>
+            <button class="option-btn" id="btn-tier-sig" onclick="selectTier(110, 'Proprietor\'s Tier')">Proprietor ($110)</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Custom steak menus prepared daily.</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Bar & Beverage Package</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <button class="option-btn active" id="btn-bar-dry" onclick="selectBar(0, 'Dry Event')">Dry ($0)</button>
+            <button class="option-btn" id="btn-bar-beer" onclick="selectBar(20, 'Beer & Wine')">Beer/Wine ($20)</button>
+            <button class="option-btn" id="btn-bar-open" onclick="selectBar(35, 'Full Bar')">Full Bar ($35)</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Calculated per guest attending.</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
+        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Banquet Invoice</span>
+        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="event-cost">$2,100.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 20 guests with Legacy Tier & Dry Event ($300 setup + $1,500 food & drink + $300 auto gratuity).</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper" style="margin-top: 5rem;">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit details below. Banquet bookings require at least 96 hours notice to coordinate prep sheets.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Requested Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="20" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(217, 119, 6, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details & Requests (Specify boardroom setup preferences, allergy notes, or drink wishes)</label>
+              <textarea id="notes" placeholder="e.g. This is a business rehearsal dinner. We would like to request double platters of Caesar salad for the table..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Booking Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">💼</div>
+          <h3 class="success-title">Booking Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. Beef 'N Bottle's event director will check calendar lists and call you shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Steakhouse Lounge</h3>
+        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Reservations</h3>
+        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentGuests = 20;
+    let selectedTierCost = 75;
+    let selectedTierName = 'Legacy Tier';
+    let selectedBarCost = 0;
+    let selectedBarName = 'Dry Event';
+
+    function selectTier(cost, name) {
+      selectedTierCost = cost;
+      selectedTierName = name;
+
+      document.getElementById('btn-tier-bistro').classList.remove('active');
+      document.getElementById('btn-tier-exec').classList.remove('active');
+      document.getElementById('btn-tier-sig').classList.remove('active');
+      
+      if (cost === 45) {
+        document.getElementById('btn-tier-bistro').classList.add('active');
+      } else if (cost === 75) {
+        document.getElementById('btn-tier-exec').classList.add('active');
+      } else {
+        document.getElementById('btn-tier-sig').classList.add('active');
+      }
+
+      calculateEvent(currentGuests);
+    }
+
+    function selectBar(cost, name) {
+      selectedBarCost = cost;
+      selectedBarName = name;
+
+      document.getElementById('btn-bar-dry').classList.remove('active');
+      document.getElementById('btn-bar-beer').classList.remove('active');
+      document.getElementById('btn-bar-open').classList.remove('active');
+      
+      if (cost === 0) {
+        document.getElementById('btn-bar-dry').classList.add('active');
+      } else if (cost === 20) {
+        document.getElementById('btn-bar-beer').classList.add('active');
+      } else {
+        document.getElementById('btn-bar-open').classList.add('active');
+      }
+
+      calculateEvent(currentGuests);
+    }
+
+    function calculateEvent(guests) {
+      currentGuests = parseInt(guests);
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      const baseSetup = 300;
+      const subtotal = currentGuests * (selectedTierCost + selectedBarCost);
+      const gratuity = subtotal * 0.20;
+      const totalCost = baseSetup + subtotal + gratuity;
+
+      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests with ${selectedTierName} & ${selectedBarName} ($300 setup + $${subtotal.toLocaleString('en-US')} food & drink + $${gratuity.toLocaleString('en-US')} auto-gratuity).`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your private room request has been logged. Our banquet coordinator will call you at <strong>${phone}</strong> shortly to review calendar availability.`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geno D's Pizza · Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#c1121f;--green:#2d6a4f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1a10;--gold:#e8b830;--muted:#8a7a6a}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:#fff;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.nav a{color:var(--dark);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.7;transition:.2s}
+.nav a:hover{opacity:1;color:var(--red)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:78vh;background:linear-gradient(135deg,#fff,#faf3e0 50%,#f0e0c0);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:3rem;margin:0;color:var(--dark);line-height:1.1}
+.hero h1 span{color:var(--red)}
+.hero .tagline{font-size:1.05rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif;color:var(--dark)}
+.hero .btn{display:inline-block;background:var(--red);color:#fff;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{opacity:.9;transform:translateY(-2px)}
+.hero .btn-outline{background:transparent;border:2px solid var(--red);color:var(--red);margin-left:.5rem}
+.hero .btn-outline:hover{background:rgba(193,18,31,.05)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--red);margin:0 0 .25rem;border-left:3px solid var(--green);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.75rem;transition:.25s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.feature-card:hover{border-color:rgba(193,18,31,.15);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.feature-card .icon{font-size:2rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1rem;color:var(--red);margin:0 0 .35rem}
+.feature-card p{font-size:.82rem;opacity:.55;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.5rem;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--red);display:block}
+.stat .label{font-size:.82rem;opacity:.4;margin-top:.3rem;display:block}
+footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Geno D's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="pizza.html">Pizza Builder</a>
+    <a href="story.html">Our Story</a>
+    <a href="uptown.html">Uptown</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <div>
+    <p style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:.8rem;margin:0 0 .5rem">THE MARKET AT 7TH ST · UPTOWN CHARLOTTE</p>
+    <h1>Jersey Shore<br><span>Style Pizza</span></h1>
+    <p class="tagline">Family-owned · 35 years of Old World recipes · NY-style dough</p>
+    <div>
+      <a href="menu.html" class="btn">View Menu</a>
+      <a href="contact.html" class="btn btn-outline">Find Us</a>
+    </div>
+  </div>
+</div>
+<section class="section" id="about">
+  <h2>Welcome to Geno D's</h2>
+  <p class="subtitle">Bringing Jersey Shore pizza straight to Charlotte</p>
+  <p style="font-size:.92rem;opacity:.6;line-height:1.7;max-width:720px;margin:0 0 2.5rem">You can smell Geno D's the second you hit the door in The Market at 7th Street. Family-owned and operated, we bring Jersey Shore style pizza straight to Charlotte — crafted from 35 years of perfected "Old World" family recipes. Our version of New York style dough, topped with quality ingredients and served up fast by Geno D and his daughter Gena, makes this your go-to pizzeria Uptown.</p>
+  <div class="featured-grid">
+    <div class="feature-card">
+      <span class="icon">🍕</span>
+      <h3>Grandma Pizza</h3>
+      <p>Thin Sicilian crust, fresh mozzarella, strips of sauce, and a special pesto finish — our signature.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🍯</span>
+      <h3>Hot Honey Pizza</h3>
+      <p>Peppadew peppers, pepperoni, and spicy honey — sweet heat on a perfect crust.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🧄</span>
+      <h3>Garlic Knots & More</h3>
+      <p>Hand-tied garlic knots, pizza knots, focca cheese stix, and cannoli for dessert.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🥗</span>
+      <h3>Salads & Sandwiches</h3>
+      <p>Antipasto salad, house-made focaccia sandwiches, and gluten-friendly options.</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:#fff;padding-top:3rem;padding-bottom:3rem">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center">@media(max-width:700px){grid-template-columns:1fr}
+    <div>
+      <h2 style="margin-top:0">Meet the Pizza Guy</h2>
+      <p style="font-size:.88rem;opacity:.6;line-height:1.7">Geno D has spent 35 years perfecting these recipes. Now he and his daughter Gena are serving up Uptown Charlotte — big flavors, quality ingredients, and the kind of hospitality that makes you feel like family.</p>
+      <a href="story.html" style="color:var(--red);font-weight:600">Read the full story →</a>
+    </div>
+    <div class="stats" style="margin:0">
+      <div class="stat">
+        <span class="num">35</span>
+        <span class="label">Years of Recipes</span>
+      </div>
+      <div class="stat">
+        <span class="num">15+</span>
+        <span class="label">Specialty Pies</span>
+      </div>
+      <div class="stat">
+        <span class="num">⭐</span>
+        <span class="label">GF Cauliflower Crust</span>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--gold);font-size:.9rem">Geno D's Pizza</strong><br>224 E 7th St · The Market at 7th Street · Charlotte, NC 28202 · (704) 900-5202</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="story.html">Our Story</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Daily drink features and wing specials at Cornerstone Pub & Grill. Custom plan your tavern visit.">
+  <title>Daily Specials | Cornerstone Pub & Grill</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive specials visualizer */
+    .specials-mat {
+      background: radial-gradient(circle, #1a2f24 0%, #080f0c 100%);
+      border: 1.5px solid #8f3e2c;
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial six-page redesign demo • premium visual QA pending • forms do not submit</div>
+
+  <nav>
+    <a href="index.html">Cornerstone Pub &amp; Grill</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Pub Menu</a>
+      <a href="specials.html" aria-current="page">Daily Specials</a>
+      <a href="about.html">Neighborhood Story</a>
+      <a href="gameday.html">Game Day</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="hero" style="text-align: center; padding: 60px 0 40px;">
+      <div>
+        <h1>Daily Tavern Specials</h1>
+        <p style="margin-inline: auto;">Every day has a feature at Cornerstone. Check out our rotating food specials and premium tap pairings.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Specials Builder -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: #fffdf8; border: 1px solid #e0d4c0; padding: 40px 32px; border-radius: 12px;">
+        <h3 style="text-align: center; font-size: 1.6rem; color: #244b38; margin-bottom: 8px;">Daily Specials & Pint Planner</h3>
+        <p style="text-align: center; color: #5a4a3a; font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a weekday special and your craft draft pairing to preview your combo meal and total price.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Specials Mat -->
+          <div class="specials-mat">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #8f3e2c; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="special-day-tag">Wednesday Night</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="special-plate-title">75¢ Wing Night</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: #8f3e2c; margin-bottom: 1.2rem;" id="special-plate-price">$13.50</p>
+            <p style="font-size: 0.95rem; color: #a3b8cc; line-height: 1.7;" id="special-plate-desc">Order of 10 crispy pub wings tossed in buffalo sauce paired with local Hazy IPA draft.</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #244b38; display: block; margin-bottom: 0.5rem;">1. Select Daily Special</label>
+              <select id="special-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="mon">Monday: Half-Price Burgers ($7.50)</option>
+                <option value="tue">Tuesday: Taco Night ($2.00 / taco)</option>
+                <option value="wed" selected>Wednesday: 75¢ Wing Night (10 Wings: $7.50)</option>
+                <option value="thu">Thursday: Ribeye Steak Night ($14.99)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #244b38; display: block; margin-bottom: 0.5rem;">2. Select Draft Beer</label>
+              <select id="beer-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="ipa" selected>Local Hazy IPA (+$6.00)</option>
+                <option value="lager">Amber Lager (+$5.50)</option>
+                <option value="stout">Dark Roasted Stout (+$6.50)</option>
+                <option value="none">No Drink (+$0.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Weekly Specials Lists -->
+    <section class="alt">
+      <div class="wrap">
+        <h3 style="text-align: center; color: #244b38; font-size: 1.8rem; margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Burger Monday <span class="price">Half-Price</span></h4>
+            <p>Our half-pound seasoned Angus beef burgers served with lettuce, tomato, and seasoned fries. Available all day with drink purchase.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Taco Tuesday <span class="price">$2.00 / Taco</span></h4>
+            <p>Choice of seasoned beef, shredded chicken, or black bean tacos, topped with cilantro lime slaw and house salsa.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Wednesday Wing Night <span class="price">75¢ / Wing</span></h4>
+            <p>Crispy tavern wings tossed in your choice of Buffalo, BBQ, Sweet Chili, or Lemon Pepper. Minimum order of 10.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Steak Thursday <span class="price">$14.99</span></h4>
+            <p>10oz hand-cut sirloin steak grilled to temp, served with baked potato and house garden salad. Available from 4:00 PM.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Concept only — not affiliated with or operated by Cornerstone Pub &amp; Grill. Current operational details require owner confirmation.</footer>
+  
+  <script>
+    const foodData = {
+      mon: { day: "Monday Special", title: "Half-Price Burger", price: 7.50, desc: "Our half-pound seasoned Angus beef burger with fries" },
+      tue: { day: "Tuesday Special", title: "Taco Platter (4 Tacos)", price: 8.00, desc: "Four seasoned beef or chicken street tacos with salsa" },
+      wed: { day: "Wednesday Special", title: "10-Piece Wing Basket", price: 7.50, desc: "Ten crispy pub wings tossed in choice of wing sauce" },
+      thu: { day: "Thursday Special", title: "10oz Sirloin Steak Night", price: 14.99, desc: "10oz hand-cut sirloin steak grilled to temp with baked potato" }
+    };
+
+    const beerData = {
+      ipa: { name: "Local Hazy IPA", price: 6.00 },
+      lager: { name: "Amber Lager", price: 5.50 },
+      stout: { name: "Dark Roasted Stout", price: 6.50 },
+      none: { name: "No Drink", price: 0.00 }
+    };
+
+    function updateSpecials() {
+      const foodKey = document.getElementById('special-select').value;
+      const beerKey = document.getElementById('beer-select').value;
+
+      const fd = foodData[foodKey];
+      const br = beerData[beerKey];
+
+      const total = fd.price + br.price;
+
+      document.getElementById('special-day-tag').innerText = fd.day;
+      document.getElementById('special-plate-title').innerText = fd.title;
+      document.getElementById('special-plate-price').innerText = `$${total.toFixed(2)}`;
+
+      let description = `${fd.desc}`;
+      if (br.price > 0) {
+        description += ` paired with a cold pint of ${br.name}.`;
+      } else {
+        description += `.`;
+      }
+      document.getElementById('special-plate-desc').innerText = description;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateSpecials();
+    });
+  </script>
+</body>
+</html>

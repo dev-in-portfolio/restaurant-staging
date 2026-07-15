@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Artisanal ice cream flavor flights at Carolina Scoops. Design your custom four-scoop sampler flight.">
+  <title>Flavor Flights | Carolina Scoops</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive flight visualizer */
+    .flight-tray {
+      background: radial-gradient(circle, #fbf0f3 0%, #fae8eb 100%);
+      border: 1.5px solid #e2b6c5;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #b83c68;
+    }
+    .tray-bowls-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .tray-bowl {
+      border: 2px dashed rgba(184, 60, 104, 0.2);
+      border-radius: 50%;
+      padding: 1rem 0.5rem;
+      background: rgba(255,255,255,0.7);
+      transition: all 0.3s;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .tray-scoop {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #fbf0f3; /* Empty scoop */
+      transition: all 0.3s;
+      box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial six-page redesign demo • premium visual QA pending • forms do not submit</div>
+
+  <nav>
+    <a href="index.html">Carolina Scoops</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Flavors</a>
+      <a href="flight.html" aria-current="page">Flavor Flights</a>
+      <a href="about.html">Our Story</a>
+      <a href="parties.html">Parties</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="hero" style="text-align: center; padding: 60px 0 40px;">
+      <div>
+        <h1>Artisanal Flavor Flights</h1>
+        <p style="margin-inline: auto;">Can't settle on just one flavor? Create your own tasting flight with four miniature scoops of our handcrafted ice creams.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Flight Builder -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: #fffdf8; border: 1px solid #e0d4c0; padding: 40px 32px; border-radius: 12px;">
+        <h3 style="text-align: center; font-size: 1.6rem; color: #b83c68; margin-bottom: 8px;">Tasting Tray Flight Builder</h3>
+        <p style="text-align: center; color: #5a4a3a; font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your four custom scoops and a gourmet topping to construct your dream sampler flight.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Flight Tray Visualizer -->
+          <div class="flight-tray">
+            <div class="tray-bowls-grid">
+              <div class="tray-bowl" id="bowl-0">
+                <div class="tray-scoop" id="scoop-0"></div>
+              </div>
+              <div class="tray-bowl" id="bowl-1">
+                <div class="tray-scoop" id="scoop-1"></div>
+              </div>
+              <div class="tray-bowl" id="bowl-2">
+                <div class="tray-scoop" id="scoop-2"></div>
+              </div>
+              <div class="tray-bowl" id="bowl-3">
+                <div class="tray-scoop" id="scoop-3"></div>
+              </div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #b83c68;" id="flight-display-title">Custom 4-Scoop Flight</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: #b83c68; margin: 0.5rem 0;" id="flight-display-price">$8.50</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #b83c68; display: block; margin-bottom: 0.4rem;">Scoop 1</label>
+              <select id="select-0" onchange="updateFlight()" style="width: 100%; padding: 10px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="vanilla">Madagascar Vanilla ($2.00)</option>
+                <option value="chocolate">Deep Chocolate Fudge ($2.00)</option>
+                <option value="caramel">Salted Caramel Bourbon ($2.50)</option>
+                <option value="mint">Mint Chocolate Chunk ($2.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #b83c68; display: block; margin-bottom: 0.4rem;">Scoop 2</label>
+              <select id="select-1" onchange="updateFlight()" style="width: 100%; padding: 10px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="chocolate" selected>Deep Chocolate Fudge ($2.00)</option>
+                <option value="vanilla">Madagascar Vanilla ($2.00)</option>
+                <option value="caramel">Salted Caramel Bourbon ($2.50)</option>
+                <option value="mint">Mint Chocolate Chunk ($2.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #b83c68; display: block; margin-bottom: 0.4rem;">Scoop 3</label>
+              <select id="select-2" onchange="updateFlight()" style="width: 100%; padding: 10px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="caramel" selected>Salted Caramel Bourbon ($2.50)</option>
+                <option value="vanilla">Madagascar Vanilla ($2.00)</option>
+                <option value="chocolate">Deep Chocolate Fudge ($2.00)</option>
+                <option value="mint">Mint Chocolate Chunk ($2.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #b83c68; display: block; margin-bottom: 0.4rem;">Scoop 4</label>
+              <select id="select-3" onchange="updateFlight()" style="width: 100%; padding: 10px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="mint" selected>Mint Chocolate Chunk ($2.00)</option>
+                <option value="vanilla">Madagascar Vanilla ($2.00)</option>
+                <option value="chocolate">Deep Chocolate Fudge ($2.00)</option>
+                <option value="caramel">Salted Caramel Bourbon ($2.50)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #b83c68; display: block; margin-bottom: 0.4rem;">Topping</label>
+              <select id="select-topping" onchange="updateFlight()" style="width: 100%; padding: 10px; border: 1px solid #e0d4c0; border-radius: 6px;">
+                <option value="none" selected>No Topping (+$0.00)</option>
+                <option value="fudge">Hot Fudge (+50¢)</option>
+                <option value="cherry">Whipped Cream & Cherry (+75¢)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 2rem;">
+          <h4 style="font-size: 1.3rem; color: #b83c68; margin-bottom: 0.5rem;" id="display-flight-name">Custom 4-Scoop Flight</h4>
+          <p style="font-size: 0.9rem; color: #5a4a3a; max-width: 600px; margin: 0 auto;" id="display-flight-desc">A tasting flight of Madagascar Vanilla, Deep Chocolate Fudge, Salted Caramel Bourbon, and Mint Chocolate Chunk.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Flights -->
+    <section class="alt">
+      <div class="wrap">
+        <h3 style="text-align: center; color: #b83c68; font-size: 1.8rem; margin-bottom: 2rem;">Signature Curated Flights</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Chocoholic Dream Flight <span class="price">$9.00</span></h4>
+            <p>A rich flight of our deep dark chocolate variants: Dark Chocolate Fudge, Milk Chocolate Chunk, Oreo Cookies & Cream, and Rocky Road, drizzled with hot fudge.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Sweet & Salty Flight <span class="price">$9.50</span></h4>
+            <p>A caramel lover's flight: Salted Caramel Bourbon, Butter Pecan, Toffee Crunch, and Vanilla Caramel Ripple, topped with sea salt flakes and caramel drizzle.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Fruit Orchard Flight <span class="price">$8.50</span></h4>
+            <p>A refreshing flight of fruity profiles: Strawberry Fields, Summer Peach, Lemon Sorbet, and Wildberry Swirl, served with waffle cone wedges.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Concept only — not affiliated with or operated by Carolina Scoops. Current operational details require owner confirmation.</footer>
+  <script>
+    const scoopColors = {
+      vanilla: "#fef3c7",
+      chocolate: "#451a03",
+      caramel: "#d97706",
+      mint: "#a7f3d0"
+    };
+
+    const flavorNames = {
+      vanilla: "Madagascar Vanilla",
+      chocolate: "Deep Chocolate Fudge",
+      caramel: "Salted Caramel Bourbon",
+      mint: "Mint Chocolate Chunk"
+    };
+
+    const basePrices = {
+      vanilla: 2.00,
+      chocolate: 2.00,
+      caramel: 2.50,
+      mint: 2.00
+    };
+
+    const toppingData = {
+      none: { name: "No Topping", price: 0.00 },
+      fudge: { name: "Hot Fudge", price: 0.50 },
+      cherry: { name: "Whipped Cream & Cherry", price: 0.75 }
+    };
+
+    function updateFlight() {
+      let total = 0;
+      const names = [];
+
+      for (let i = 0; i < 4; i++) {
+        const val = document.getElementById(`select-${i}`).value;
+        total += basePrices[val];
+        names.push(flavorNames[val]);
+
+        // Update scoop visual color
+        document.getElementById(`scoop-${i}`).style.backgroundColor = scoopColors[val];
+      }
+
+      const topVal = document.getElementById('select-topping').value;
+      const t = toppingData[topVal];
+      total += t.price;
+
+      document.getElementById('flight-display-price').innerText = `$${total.toFixed(2)}`;
+      
+      let desc = `A tasting flight of ${names.join(', ')}.`;
+      if (t.price > 0) {
+        desc += ` Topped with ${t.name}.`;
+      }
+      document.getElementById('display-flight-desc').innerText = desc;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateFlight();
+    });
+  </script>
+</body>
+</html>

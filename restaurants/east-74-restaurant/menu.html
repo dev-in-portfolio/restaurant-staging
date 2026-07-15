@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — East 74 Restaurant</title>
+  <meta name="description" content="Full menu at East 74 Restaurant in Matthews, NC — breakfast, omelets, gyros, burgers, fried favorites, kids menu, desserts, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">East 74</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="platter.html">Platter Builder</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="catering.html">Catering</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Menu</h1>
+      <p class="page-header-sub">Fresh, made-to-order homestyle cooking</p>
+    </div>
+  </header>
+
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="menu-search">
+          <input type="text" id="menuSearch" placeholder="Search the menu..." aria-label="Search menu">
+        </div>
+        <div class="menu-filters" id="menuFilters">
+          <button class="filter-pill active" data-category="all">All</button>
+          <button class="filter-pill" data-category="breakfast">Breakfast</button>
+          <button class="filter-pill" data-category="salads">Salads</button>
+          <button class="filter-pill" data-category="pitas">Pitas &amp; Wraps</button>
+          <button class="filter-pill" data-category="burgers">Burgers &amp; Sandwiches</button>
+          <button class="filter-pill" data-category="fried">Fried Favorites</button>
+          <button class="filter-pill" data-category="kids">Kids Menu</button>
+          <button class="filter-pill" data-category="desserts">Desserts</button>
+          <button class="filter-pill" data-category="drinks">Drinks</button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- Breakfast -->
+        <div class="menu-item" data-category="breakfast" data-name="Cheese Omelet">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Cheese Omelet</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Three eggs, choice of cheese, served with toast and home fries</p>
+        </div>
+
+        <div class="menu-item" data-category="breakfast" data-name="Ham & Cheese Omelet">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Ham &amp; Cheese Omelet</h3>
+            <span class="menu-item-price">$6.69</span>
+          </div>
+          <p class="menu-item-desc">Diced ham and melted cheese in a fluffy three-egg omelet</p>
+        </div>
+
+        <div class="menu-item" data-category="breakfast" data-name="Western Omelet">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Western Omelet</h3>
+            <span class="menu-item-price">$6.89</span>
+          </div>
+          <p class="menu-item-desc">Ham, peppers, onions, and cheese — a diner classic</p>
+        </div>
+
+        <div class="menu-item" data-category="breakfast" data-name="Greek Omelet">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Greek Omelet</h3>
+            <span class="menu-item-price">$7.25</span>
+          </div>
+          <p class="menu-item-desc">Feta, tomatoes, onions, and gyro meat — our signature</p>
+        </div>
+
+        <div class="menu-item" data-category="breakfast" data-name="Country Breakfast">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Country Breakfast</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Eggs, biscuit and gravy, grits, and your choice of meat</p>
+        </div>
+
+        <div class="menu-item" data-category="breakfast" data-name="2 Eggs Special">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">2 Eggs Special</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Two eggs any style with toast and home fries</p>
+        </div>
+
+        <!-- Salads -->
+        <div class="menu-item" data-category="salads" data-name="House Salad">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">House Salad</h3>
+            <span class="menu-item-price">$3.45+</span>
+          </div>
+          <p class="menu-item-desc">Fresh greens, tomatoes, cucumbers, and croutons</p>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="Chef Salad">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Chef Salad</h3>
+            <span class="menu-item-price">$6.09+</span>
+          </div>
+          <p class="menu-item-desc">Mixed greens with ham, turkey, cheese, egg, and veggies</p>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="Grilled Chicken Salad">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Grilled Chicken Salad</h3>
+            <span class="menu-item-price">$6.69+</span>
+          </div>
+          <p class="menu-item-desc">Seasoned grilled chicken breast over fresh salad greens</p>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="Greek Salad">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Greek Salad</h3>
+            <span class="menu-item-price">$6.89+</span>
+          </div>
+          <p class="menu-item-desc">Tomatoes, cucumbers, olives, feta, and red onion with Greek dressing</p>
+        </div>
+
+        <!-- Pitas & Wraps -->
+        <div class="menu-item" data-category="pitas" data-name="Gyro Pita">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Gyro Pita</h3>
+            <span class="menu-item-price">$7.85</span>
+          </div>
+          <p class="menu-item-desc">Seasoned gyro meat, tomatoes, onions, and tzatziki in a warm pita</p>
+        </div>
+
+        <div class="menu-item" data-category="pitas" data-name="Grilled Chicken Pita">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Grilled Chicken Pita</h3>
+            <span class="menu-item-price">$7.55</span>
+          </div>
+          <p class="menu-item-desc">Seasoned grilled chicken, lettuce, tomato, and tzatziki in a pita</p>
+        </div>
+
+        <div class="menu-item" data-category="pitas" data-name="Buffalo Chicken Wrap">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Buffalo Chicken Wrap</h3>
+            <span class="menu-item-price">$7.55</span>
+          </div>
+          <p class="menu-item-desc">Crispy chicken tossed in buffalo sauce, ranch, lettuce, and tomato</p>
+        </div>
+
+        <!-- Burgers & Sandwiches -->
+        <div class="menu-item" data-category="burgers" data-name="Hamburger">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Hamburger</h3>
+            <span class="menu-item-price">$6.49</span>
+          </div>
+          <p class="menu-item-desc">Half-pound Angus beef patty, lettuce, tomato, and onion</p>
+        </div>
+
+        <div class="menu-item" data-category="burgers" data-name="Cheeseburger">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Cheeseburger</h3>
+            <span class="menu-item-price">$6.99</span>
+          </div>
+          <p class="menu-item-desc">Half-pound Angus beef with melted American cheese</p>
+        </div>
+
+        <div class="menu-item" data-category="burgers" data-name="Patty Melt">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Patty Melt</h3>
+            <span class="menu-item-price">$7.49</span>
+          </div>
+          <p class="menu-item-desc">Beef patty, Swiss cheese, grilled onions on toasted rye</p>
+        </div>
+
+        <div class="menu-item" data-category="burgers" data-name="Grilled Chicken Sandwich">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Grilled Chicken Sandwich</h3>
+            <span class="menu-item-price">$7.49</span>
+          </div>
+          <p class="menu-item-desc">Marinated grilled chicken breast on a toasted bun</p>
+        </div>
+
+        <div class="menu-item" data-category="burgers" data-name="BLT">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">BLT</h3>
+            <span class="menu-item-price">$5.95</span>
+          </div>
+          <p class="menu-item-desc">Bacon, lettuce, tomato, and mayo on toasted bread</p>
+        </div>
+
+        <!-- Fried Favorites -->
+        <div class="menu-item" data-category="fried" data-name="Fried Pickles">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Fried Pickles</h3>
+            <span class="menu-item-price">$8.74</span>
+          </div>
+          <p class="menu-item-desc">Crispy battered pickle chips with ranch dipping sauce</p>
+        </div>
+
+        <div class="menu-item" data-category="fried" data-name="Fried Squash">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Fried Squash</h3>
+            <span class="menu-item-price">$4.95</span>
+          </div>
+          <p class="menu-item-desc">Golden, crispy Southern fried yellow squash</p>
+        </div>
+
+        <div class="menu-item" data-category="fried" data-name="Fried Okra">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Fried Okra</h3>
+            <span class="menu-item-price">$4.95</span>
+          </div>
+          <p class="menu-item-desc">Crispy cornmeal-breaded okra — a Southern classic</p>
+        </div>
+
+        <div class="menu-item" data-category="fried" data-name="Fried Flounder">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Fried Flounder</h3>
+            <span class="menu-item-price">$9.95</span>
+          </div>
+          <p class="menu-item-desc">Golden fried flounder fillets, a seafood favorite</p>
+        </div>
+
+        <div class="menu-item" data-category="fried" data-name="Chicken Tenders">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Chicken Tenders</h3>
+            <span class="menu-item-price">$8.49</span>
+          </div>
+          <p class="menu-item-desc">Hand-breaded chicken tenders with your choice of dipping sauce</p>
+        </div>
+
+        <!-- Kids Menu -->
+        <div class="menu-item" data-category="kids" data-name="Hot Dog">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Hot Dog</h3>
+            <span class="menu-item-price">$4.59</span>
+          </div>
+          <p class="menu-item-desc">All-beef hot dog on a toasted bun</p>
+        </div>
+
+        <div class="menu-item" data-category="kids" data-name="Kids Hamburger">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Hamburger</h3>
+            <span class="menu-item-price">$4.59</span>
+          </div>
+          <p class="menu-item-desc">Simple and classic — a kids favorite</p>
+        </div>
+
+        <div class="menu-item" data-category="kids" data-name="Kids Cheeseburger">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Cheeseburger</h3>
+            <span class="menu-item-price">$5.19</span>
+          </div>
+          <p class="menu-item-desc">With melted American cheese</p>
+        </div>
+
+        <div class="menu-item" data-category="kids" data-name="Kids Chicken Fingers">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Chicken Fingers</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Crispy chicken fingers with honey mustard</p>
+        </div>
+
+        <div class="menu-item" data-category="kids" data-name="Kids Fried Flounder">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Fried Flounder</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Crispy fried fish — kid-sized portion</p>
+        </div>
+
+        <div class="menu-item" data-category="kids" data-name="Spaghetti">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Spaghetti</h3>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Classic spaghetti with marinara sauce</p>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-item" data-category="desserts" data-name="Baklava">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Baklava</h3>
+            <span class="menu-item-price">$2.90</span>
+          </div>
+          <p class="menu-item-desc">Homemade layers of phyllo, walnuts, and honey — our signature dessert</p>
+        </div>
+
+        <div class="menu-item" data-category="desserts" data-name="Apple Pie">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Apple Pie</h3>
+            <span class="menu-item-price">$2.65</span>
+          </div>
+          <p class="menu-item-desc">Classic homemade apple pie</p>
+        </div>
+
+        <div class="menu-item" data-category="desserts" data-name="Pecan Pie">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Pecan Pie</h3>
+            <span class="menu-item-price">$2.65</span>
+          </div>
+          <p class="menu-item-desc">Rich, sweet pecan pie — a Southern staple</p>
+        </div>
+
+        <div class="menu-item" data-category="desserts" data-name="Lemon Pie">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Lemon Pie</h3>
+            <span class="menu-item-price">$3.19</span>
+          </div>
+          <p class="menu-item-desc">Tangy and sweet lemon cream pie</p>
+        </div>
+
+        <div class="menu-item" data-category="desserts" data-name="Specialty Cake">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Specialty Cake</h3>
+            <span class="menu-item-price">$4.59</span>
+          </div>
+          <p class="menu-item-desc">Rotating selection — ask your server what's fresh today</p>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-item" data-category="drinks" data-name="Coffee">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Coffee</h3>
+            <span class="menu-item-price">$1.75</span>
+          </div>
+          <p class="menu-item-desc">Fresh brewed, bottomless refills</p>
+        </div>
+
+        <div class="menu-item" data-category="drinks" data-name="Iced Tea">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Iced Tea</h3>
+            <span class="menu-item-price">$1.75</span>
+          </div>
+          <p class="menu-item-desc">Fresh brewed, sweetened or unsweetened</p>
+        </div>
+
+        <div class="menu-item" data-category="drinks" data-name="Soft Drinks">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">Soft Drinks</h3>
+            <span class="menu-item-price">$2.29</span>
+          </div>
+          <p class="menu-item-desc">Coke, Diet Coke, Sprite, and more</p>
+        </div>
+
+      </div>
+
+      <p class="menu-note" id="menuNote">Prices subject to change. Please inform your server of any allergies.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">East 74</span>
+        <p>Fresh homestyle cooking in the heart of Matthews, NC.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="catering.html">Catering</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>10915 Monroe Rd<br>Matthews, NC 28105</p>
+        <p>(704) 847-5035</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 East 74 Restaurant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

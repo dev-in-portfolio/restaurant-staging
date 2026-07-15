@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahn Thai Restaurant - Charlotte, NC | Sushi & Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom layout styling for the interactive sushi tray */
+    .sushi-tray-container {
+      background: radial-gradient(circle, #1a100a 0%, #0d0603 100%);
+      border: 1.5px solid var(--color-copper);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .sushi-graphic-tray {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+      background: #2a160d;
+      border: 2px solid var(--color-copper);
+      border-radius: 6px;
+      padding: 1rem;
+      min-height: 80px;
+    }
+    .sushi-roll-piece {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--color-text-light);
+      border-radius: 50%;
+      background: #ffffff; /* Rice base */
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sushi-core {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #f43f5e; /* Tuna core default */
+      transition: var(--transition-smooth);
+    }
+    .sushi-wrap {
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 3.5px solid #0f3f2d; /* Nori seaweed wrap */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bahn Thai
+          <span>Ballantyne Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="sushi.html" class="active">Sushi & Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Sushi & Saké Bar</h2>
+    <p class="page-subtitle">Savor fresh hand-rolled classics and specialty rolls at our modern Ballantyne sushi counter.</p>
+  </header>
+
+  <!-- Interactive Sushi Builder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Sushi Roll Customizer</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Design your custom roll. Choose your base roll cut, select your core filling protein, and garnish with premium toppings.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Sushi Tray Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="sushi-tray-container" id="tray-box">
+            <div class="sushi-graphic-tray" id="graphic-tray">
+              <div class="sushi-roll-piece">
+                <div class="sushi-core" id="core-0"></div>
+                <div class="sushi-wrap"></div>
+              </div>
+              <div class="sushi-roll-piece">
+                <div class="sushi-core" id="core-1"></div>
+                <div class="sushi-wrap"></div>
+              </div>
+              <div class="sushi-roll-piece">
+                <div class="sushi-core" id="core-2"></div>
+                <div class="sushi-wrap"></div>
+              </div>
+              <div class="sushi-roll-piece">
+                <div class="sushi-core" id="core-3"></div>
+                <div class="sushi-wrap"></div>
+              </div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="roll-display-title">Uramaki Roll</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-copper); margin: 0.5rem 0;" id="roll-display-price">$15.00</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Roll Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('uramaki', 'Uramaki (Inside-out)', 11.00, 4)">Uramaki (8pcs)</button>
+              <button class="option-btn" onclick="setBase('futomaki', 'Futomaki (Thick cut)', 12.00, 3)">Futomaki (6pcs)</button>
+              <button class="option-btn" onclick="setBase('hosomaki', 'Hosomaki (Skinny)', 8.00, 5)">Hosomaki (6pcs)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Select Core Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('tuna', 'Yellowfin Tuna', 4.00, '#be123c')">Tuna (+$4)</button>
+              <button class="option-btn" onclick="setProtein('salmon', 'Atlantic Salmon', 3.50, '#fb923c')">Salmon (+$3.50)</button>
+              <button class="option-btn" onclick="setProtein('shrimp', 'Tempura Shrimp', 3.00, '#fed7aa')">Shrimp (+$3)</button>
+              <button class="option-btn" onclick="setProtein('avocado', 'Organic Avocado', 0.00, '#84cc16')">Avocado</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Premium Garnish</label>
+            <div class="option-grid" id="garnish-options">
+              <button class="option-btn active" onclick="setGarnish('spicy', 'Spicy Mayo & Unagi Sauce', 0.00)">Spicy Mayo</button>
+              <button class="option-btn" onclick="setGarnish('masago', 'Black Masago Caviar', 2.00)">Masago (+$2)</button>
+              <button class="option-btn" onclick="setGarnish('shallots', 'Crispy Shallots', 0.00)">Crispy Shallots</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Fresh Roll Creator</span>
+        <h4 class="builder-display-title" id="display-roll-name">Uramaki (Inside-out)</h4>
+        <p id="display-roll-protein" style="color: var(--color-copper); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Yellowfin Tuna</p>
+        <div class="builder-display-price" id="display-roll-price">$15.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-roll-desc">A premium Uramaki (Inside-out) sushi roll filled with fresh yellowfin tuna, topped with spicy mayo & unagi sauce.</p>
+      </div>
+    </section>
+
+    <!-- Sushi Specialty Lists -->
+    <h3 class="section-title">Specialty Chef Rolls</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Signature Creations</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Volcano Roll</span>
+            <span class="menu-item-price">$16.00</span>
+          </div>
+          <p class="menu-item-desc">California roll topped with baked spicy scallop, crab stick, masago, green onion, and spicy mayo.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Metropolitan Roll</span>
+            <span class="menu-item-price">$17.50</span>
+          </div>
+          <p class="menu-item-desc">Shrimp tempura, cucumber inside, topped with spicy tuna, avocado, eel sauce, and tempura flakes.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Red Dragon Roll</span>
+            <span class="menu-item-price">$16.50</span>
+          </div>
+          <p class="menu-item-desc">Soft shell crab tempura, asparagus inside, topped with fresh yellowfin tuna and sweet chili glaze.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Premium Saké Flights</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Kyoto Flight</span>
+            <span class="menu-item-price">$22.00</span>
+          </div>
+          <p class="menu-item-desc">A tasting flight of three premium Kyoto sakes ranging from dry Junmai to sweet unfiltered Nigori.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Warm House Saké</span>
+            <span class="menu-item-price">$9.00</span>
+          </div>
+          <p class="menu-item-desc">Traditional Sho Chiku Bai junmai sake served steaming in a ceramic flask.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sparkling Peach Saké</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">Lightly sparkling cold sake infused with sweet white peach puree. Refreshing and aromatic.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Ballantyne Stand</h3>
+        <p>12206 Copper Way<br>Charlotte, NC 28277<br>Phone: (704) 919-0111</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 11:30 AM - 9:30 PM<br>Fri - Sat: 11:30 AM - 10:30 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Reservations</h3>
+        <p>Book directly on OpenTable or call for sushi bar counter bookings.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bahn Thai Restaurant. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBase = { key: 'uramaki', name: 'Uramaki (Inside-out)', price: 11.00, count: 4 };
+    let selectedProtein = { key: 'tuna', name: 'Yellowfin Tuna', price: 4.00, color: '#be123c' };
+    let selectedGarnish = { key: 'spicy', name: 'Spicy Mayo & Unagi Sauce', price: 0.00 };
+
+    function setBase(key, name, price, count) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, name, price, count };
+      updateDisplay();
+    }
+
+    function setProtein(key, name, price, color) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function setGarnish(key, name, price) {
+      const buttons = document.getElementById('garnish-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedGarnish = { key, name, price };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedBase.price + selectedProtein.price + selectedGarnish.price;
+      document.getElementById('roll-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('roll-display-title').innerText = selectedBase.name;
+
+      document.getElementById('display-roll-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-roll-name').innerText = selectedBase.name;
+      document.getElementById('display-roll-protein').innerText = selectedProtein.name;
+
+      // Update visual pieces on the tray
+      const tray = document.getElementById('graphic-tray');
+      tray.innerHTML = '';
+      for (let i = 0; i < selectedBase.count; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'sushi-roll-piece';
+        
+        const core = document.createElement('div');
+        core.className = 'sushi-core';
+        core.style.backgroundColor = selectedProtein.color;
+        
+        const wrap = document.createElement('div');
+        wrap.className = 'sushi-wrap';
+        
+        piece.appendChild(core);
+        piece.appendChild(wrap);
+        tray.appendChild(piece);
+      }
+
+      // Update description text
+      const desc = `A premium ${selectedBase.name.toLowerCase()} sushi roll filled with fresh ${selectedProtein.name.toLowerCase()}, topped with ${selectedGarnish.name.toLowerCase()}.`;
+      document.getElementById('display-roll-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

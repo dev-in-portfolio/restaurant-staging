@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .temp-visual-box {
+      background: radial-gradient(circle, #251815 0%, #0d0807 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .temp-color-indicator {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem auto;
+      border: 3px solid var(--color-text-light);
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0.2);
+      transition: all 0.3s ease;
+    }
+    .temp-name {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .temp-degrees {
+      font-size: 1.25rem;
+      color: var(--color-gold);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .temp-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          BEEF 'N BOTTLE
+          <span>Steakhouse Est. 1958</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="wine.html">Wine & Bar</a>
+        <a href="about.html">History</a>
+        <a href="services.html">Banquets</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Classic Steakhouse Menu</h2>
+    <p class="page-subtitle">Savor premium hand-cut steaks, fresh local catches, and vintage sides. Adjust your cooking expectations using our interactive temp guide below.</p>
+  </header>
+
+  <!-- Interactive Temp Guide -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Steak Cooking Guide</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Temp Visual Box -->
+        <div class="temp-visual-box" id="temp-box">
+          <div class="temp-color-indicator" id="temp-indicator" style="background: radial-gradient(circle, #b91c1c 0%, #450a0a 100%);"></div>
+          <h4 class="temp-name" id="temp-display-name">Medium Rare</h4>
+          <div class="temp-degrees" id="temp-display-degrees">130°F - 135°F</div>
+          <p class="temp-desc" id="temp-display-desc">"Warm red center. This is the sommelier and chef recommended cooking temperature for all choice bone-in strips and ribeyes to maximize tenderness."</p>
+        </div>
+
+        <!-- Right Side: Temperature Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 0.70rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Grilling Finish</label>
+          <button class="option-btn" onclick="switchTemp('rare', this)">Rare (Cool Red)</button>
+          <button class="option-btn active" onclick="switchTemp('medrare', this)">Medium Rare (Warm Red)</button>
+          <button class="option-btn" onclick="switchTemp('medium', this)">Medium (Warm Pink)</button>
+          <button class="option-btn" onclick="switchTemp('medwell', this)">Medium Well (Slight Pink)</button>
+          <button class="option-btn" onclick="switchTemp('well', this)">Well Done (No Pink)</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu Items -->
+    <h3 class="section-title">Scratch Menu Items</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Appetizers & Salads</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Famous Gator Bites</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Tender cutlets of fresh alligator tail, lightly battered and fried golden brown. Served with spicy remoulade.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fried Select Oysters</span>
+            <span class="menu-item-price">$16.00</span>
+          </div>
+          <p class="menu-item-desc">Fresh coastal select oysters rolled in cornmeal, fried golden and served with house cocktail sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Classic Caesar Salad</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">Crisp romaine tossed in our signature garlic-anchovy dressing, finished with shaved parmesan and herb croutons.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Hand-Cut Steaks</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">8oz Filet Mignon</span>
+            <span class="menu-item-price">$42.00</span>
+          </div>
+          <p class="menu-item-desc">Aged center-cut filet, exceptionally lean and tender, grilled to your precise temperature specifications.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">14oz Ribeye</span>
+            <span class="menu-item-price">$48.00</span>
+          </div>
+          <p class="menu-item-desc">Center-cut ribeye steak, heavily marbled for rich flavor and juiciness, grilled over high heat.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">16oz Kansas City Strip</span>
+            <span class="menu-item-price">$54.00</span>
+          </div>
+          <p class="menu-item-desc">Bone-in strip steak, aged for 28 days for optimal flavor depth. A classic steakhouse standard.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Steakhouse Lounge</h3>
+        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Reservations</h3>
+        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const tempGuides = {
+      rare: {
+        name: "Rare",
+        degrees: "120°F - 125°F",
+        gradient: "radial-gradient(circle, #dc2626 0%, #7f1d1d 100%)",
+        desc: "\"Cool red center. Grilled briefly on both sides. Soft texture. Excellent choice for lean filets if you prefer classic cold centers.\""
+      },
+      medrare: {
+        name: "Medium Rare",
+        degrees: "130°F - 135°F",
+        gradient: "radial-gradient(circle, #b91c1c 0%, #450a0a 100%)",
+        desc: "\"Warm red center. This is the sommelier and chef recommended cooking temperature for all choice bone-in strips and ribeyes to maximize tenderness.\""
+      },
+      medium: {
+        name: "Medium",
+        degrees: "140°F - 145°F",
+        gradient: "radial-gradient(circle, #f43f5e 0%, #881337 100%)",
+        desc: "\"Warm pink center. A balanced finish with firm texture. Ideal for guests who want juicy marbled cuts without any red coloring.\""
+      },
+      medwell: {
+        name: "Medium Well",
+        degrees: "150°F - 155°F",
+        gradient: "radial-gradient(circle, #f87171 0%, #451a03 100%)",
+        desc: "\"Slightly pink center. Mostly cooked through with a firm brown band. Recommended only if you prefer firm texture.\""
+      },
+      well: {
+        name: "Well Done",
+        degrees: "160°F+",
+        gradient: "radial-gradient(circle, #78350f 0%, #1e1b4b 100%)",
+        desc: "\"Fully cooked, no pink. Steamed throughout and firm. Expect a longer cook time. Note: lean cuts may dry out significantly at this temperature.\""
+      }
+    };
+
+    function switchTemp(key, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const box = document.getElementById('temp-box');
+      box.style.opacity = '0';
+      box.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = tempGuides[key];
+        document.getElementById('temp-display-name').innerText = data.name;
+        document.getElementById('temp-display-degrees').innerText = data.degrees;
+        document.getElementById('temp-display-desc').innerText = data.desc;
+        document.getElementById('temp-indicator').style.background = data.gradient;
+
+        box.style.opacity = '1';
+        box.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Dom's Dive Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
+.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--neon)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d0a0a,#1a0a0f);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--neon)}
+.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--neon);margin:2rem 0 1rem;border-left:3px solid var(--neon);padding-left:.75rem}
+.section p{font-size:.92rem;line-height:1.7;opacity:.65}
+.values{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.value-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,59,111,.08);border-radius:8px;padding:1.25rem}
+.value-card h3{font-size:1rem;color:var(--neon);margin:0 0 .25rem}
+.value-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
+.quote-block{margin:2rem 0;padding:2rem;background:rgba(255,59,111,.04);border:1px solid rgba(255,59,111,.1);border-radius:8px;text-align:center}
+.quote-block p{font-style:italic;font-size:1rem;opacity:.7;max-width:500px;margin:0 auto}
+footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
+footer a{color:var(--neon);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dom's Dive</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="specials.html">Specials</a>
+    <a href="games.html">Games &amp; Leagues</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>About Dom's</h1>
+  <p>South End's neighborhood dive — unfussy, affordable, and yours</p>
+</header>
+<section class="section">
+  <h2>The Dive Life</h2>
+  <p>Dom's Dive Bar is exactly what it sounds like — a comfy neighborhood dive bar where the drinks are cheap, the food is craveable, and nobody's pretending to be anything they're not. Tucked into a strip on South Boulevard in Sedgefield, Dom's is the kind of place where you walk in, grab a pool cue, and suddenly it's last call.</p>
+  <p>With two free pool tables, dart boards, board games, and an impressive TV and sound system, Dom's is built for hanging out. Whether you're coming for Monday's half-off wings, Wednesday's $4 local drafts, or just a Saturday afternoon with $4 Modelos and a Gameday Cheesesteak — there's always a reason to stop by.</p>
+  <div class="quote-block">
+    <p>"Low-key neighborhood bar vibe. Exactly the kind of bar food you want — no frills, satisfying, and hits the spot."</p>
+  </div>
+  <h2>What Makes Dom's Different</h2>
+  <div class="values">
+    <div class="value-card"><h3>Free Pool &amp; Darts</h3><p>Two pool tables, dart boards, and board games — all free, all the time. No quarters needed.</p></div>
+    <div class="value-card"><h3>Daily Specials</h3><p>Every day has its own deal — from $2 Busch Lights on Monday to $9 flatbreads on Sunday.</p></div>
+    <div class="value-card"><h3>Craveable Kitchen</h3><p>Buffalo wings, brisket dip, flatbreads, breakfast on weekends — proper bar food done right.</p></div>
+    <div class="value-card"><h3>South End Local</h3><p>Tucked off South Boulevard, Dom's is the neighborhood spot that flies under the radar — for now.</p></div>
+  </div>
+</section>
+<footer>
+  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
+  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

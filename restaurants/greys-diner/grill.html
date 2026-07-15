@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grill Builder · Grey's Diner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Grey's Diner style */
+.grill-mat {
+  background: radial-gradient(circle, #1a2a3a 0%, #0a1118 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.grill-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .grill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--a);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--a);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Grey's Diner</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="grill.html" class="active">Grill Builder</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="visit.html">Visit</a></li>
+                <li><a href="reserve.html" class="btn-nav">Order Online</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  <main id="main">
+    <header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
+        <div class="hero-content">
+            <p class="hero-est">Est. April 27, 2026 &mdash; Charlotte, NC</p>
+            <h1>Skillet &amp; Breakfast Planner</h1>
+            <p class="hero-tagline">Design your custom farmhouse skillet with locally sourced ingredients</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 4rem 0;">
+      <div class="container">
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Skillet Customizer</h2>
+        
+        <div class="grill-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);">
+          
+          <!-- Left: Skillet Visualizer -->
+          <div class="grill-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #f4c2c2; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="gr-tag-display">LOCAL PARTNERSHIP</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--font-heading); margin: 0 0 0.8rem 0;" id="gr-title-display">Harmony Ridge Skillet</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #f4c2c2; margin: 0 0 1.2rem 0;" id="gr-price-display">$12.00</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="gr-desc-display">Harmony Ridge Farm pasture eggs scrambled fluffy, served over local farmhouse home fries and topped with Belly Brothers bacon.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Select Breakfast Base</label>
+              <select id="gr-base" onchange="updateSkillet()">
+                <option value="scramble" selected>Harmony Ridge Egg Scramble ($12.00)</option>
+                <option value="potatoes">Home Fries Skillet ($10.00)</option>
+                <option value="bagel">Trey's Hand-Rolled Bagel ($9.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Select Local Protein</label>
+              <select id="gr-protein" onchange="updateSkillet()">
+                <option value="bacon" selected>Belly Brothers Crispy Bacon</option>
+                <option value="shortrib">Shipley Farms Beef Short Rib (+$6.00)</option>
+                <option value="soysage">Soy Sage Veggie Patties (+$1.50)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Select Local Extra</label>
+              <select id="gr-cheese" onchange="updateSkillet()">
+                <option value="none" selected>No Extras (+$0.00)</option>
+                <option value="cheddar">Chapel Hill Creamery Cheddar (+$1.50)</option>
+                <option value="toast">Duke's Sourdough Toast (+$1.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer style="background:#111; color:rgba(255,255,255,0.4); text-align:center; padding:2rem; font-size:0.82rem; border-top:1px solid var(--border)">
+        <p>Grey's Diner · Plaza Midwood · Charlotte, NC</p>
+        <p class="disclosure" style="color:rgba(255,255,255,0.2); margin-top:0.5rem;">Unofficial concept presentation — not operated by the restaurant</p>
+    </footer>
+  </main>
+
+  <script>
+    const baseData = {
+      scramble: { tag: "HARMONY RIDGE FARM EGGS", name: "Egg Scramble Plate", basePrice: 12.00, label: "three scrambled Harmony Ridge Farm pasture eggs served with local home fries" },
+      potatoes: { tag: "FARMHOUSE COMFORT", name: "Home Fries Skillet", basePrice: 10.00, label: "a sizzling cast-iron skillet filled with skin-on farmhouse home fries, peppers, and onions" },
+      bagel: { tag: "LOCAL BAKERY", name: "Trey's Bagel Sandwich", basePrice: 9.00, label: "a toasted hand-rolled Trey's plain bagel spread with local herb butter" }
+    };
+
+    const proteinData = {
+      bacon: { name: "Belly Brothers Bacon", label: ", loaded with crispy Belly Brothers applewood-smoked bacon", charge: 0.00 },
+      shortrib: { name: "Shipley Short Rib", label: ", topped with slow-braised tender Shipley Farms beef short ribs", charge: 6.00 },
+      soysage: { name: "Soy Sage", label: ", topped with grilled house-spiced soy sage veggie sausage patties", charge: 1.50 }
+    };
+
+    const cheeseData = {
+      none: { label: "", charge: 0.00 },
+      cheddar: { label: " and melted local Chapel Hill Creamery sharp cheddar cheese", charge: 1.50 },
+      toast: { label: " and served with a side of griddled Duke's sourdough toast", charge: 1.00 }
+    };
+
+    function updateSkillet() {
+      const baseKey = document.getElementById('gr-base').value;
+      const proteinKey = document.getElementById('gr-protein').value;
+      const cheeseKey = document.getElementById('gr-cheese').value;
+
+      const base = baseData[baseKey];
+      const protein = proteinData[proteinKey];
+      const cheese = cheeseData[cheeseKey];
+
+      const totalPrice = base.basePrice + protein.charge + cheese.charge;
+
+      document.getElementById('gr-tag-display').innerText = base.tag;
+      
+      let titleName = baseKey === "bagel" ? `Trey's ${protein.name} Bagel` : `${protein.name} Skillet`;
+      if (baseKey === "bagel") {
+        titleName = `Trey's ${protein.name} Bagel`;
+      }
+      document.getElementById('gr-title-display').innerText = titleName;
+      document.getElementById('gr-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A gourmet diner plate of ${base.label}${protein.label}${cheese.label}.`;
+      
+      document.getElementById('gr-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateSkillet();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

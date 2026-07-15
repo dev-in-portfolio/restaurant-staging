@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          BEEF 'N BOTTLE
+          <span>Steakhouse Est. 1958</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html">Wine & Bar</a>
+        <a href="about.html">History</a>
+        <a href="services.html">Banquets</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Landmark Steakhouse Since 1958</span>
+        <h2 class="hero-title">Beef 'N Bottle</h2>
+        <p class="hero-desc">"Consistently serving premium choice cut steaks, fresh local seafood, and vintage highballs in a cozy, dimly-lit retro lounge."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>🥩 Open for Dinner Daily. Reservations Recommended via phone at (704) 523-9977.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">An Honest Charlotte Legacy</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Beef 'N Bottle. For over 65 years, our dining room has welcomed Charlotteans with its signature dark wood walls, red leather booths, and celebrity headshots. We focus on premium beef cuts grilled to absolute precision, classic sides, and a tavern pour that keeps the history of Charlotte's culinary scene alive.
+      </p>
+      <a href="about.html" style="color: var(--color-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our 1958 Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Steak Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Steak Platter Customizer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your cut of aged beef, grilling temperature, gourmet crust toppings, and classic side to arrange a custom steak platter.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Platter visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="steak-wireframe">
+            <div class="steak-graphic-piece" id="steak-graphic">
+              <div class="steak-crust-overlay" id="steak-crust"></div>
+            </div>
+            <div class="side-graphic-piece" id="side-graphic">Mashed</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Beef Cut</label>
+            <div class="option-grid" id="cut-options">
+              <button class="option-btn active" onclick="setCut('filet', '8oz Filet Mignon', 42.00, '120px', '80px')">8oz Filet ($42)</button>
+              <button class="option-btn" onclick="setCut('ribeye', '14oz Hand-Cut Ribeye', 48.00, '150px', '95px')">14oz Ribeye ($48)</button>
+              <button class="option-btn" onclick="setCut('tbone', '16oz Kansas City T-Bone', 54.00, '165px', '105px')">16oz T-Bone ($54)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Grilling Temperature</label>
+            <div class="option-grid" id="temp-options">
+              <button class="option-btn active" onclick="setTemp('Medium Rare', 'warm red center')">Medium Rare</button>
+              <button class="option-btn" onclick="setTemp('Medium', 'warm pink center')">Medium</button>
+              <button class="option-btn" onclick="setTemp('Rare', 'cool red center')">Rare</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Premium Crust / Topping</label>
+            <div class="option-grid" id="topping-options">
+              <button class="option-btn active" onclick="setTopping('garlic', 'Garlic Butter Melt', 0.00, 0)">Garlic Butter</button>
+              <button class="option-btn" onclick="setTopping('horseradish', 'Horseradish Crust', 3.50, 0.7)">Horseradish (+$3.50)</button>
+              <button class="option-btn" onclick="setTopping('bleu', 'Melted Bleu Cheese', 4.00, 0.8)">Bleu Cheese (+$4.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>4. Steakhouse Side</label>
+            <div class="option-grid" id="side-options">
+              <button class="option-btn active" onclick="setSide('mashed', 'Red-Skin Garlic Mashed Potatoes')">Mashed Potatoes</button>
+              <button class="option-btn" onclick="setSide('spinach', 'Creamed Spinach')">Creamed Spinach</button>
+              <button class="option-btn" onclick="setSide('brussels', 'Balsamic Brussels Sprouts')">Brussels Sprouts</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Gourmet Dinner Platter</span>
+        <h4 class="builder-display-title" id="display-steak-name">8oz Filet Mignon</h4>
+        <p id="display-steak-garnish" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Garlic Butter Melt</p>
+        <div class="builder-display-price" id="display-steak-price">$42.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-steak-desc">Premium 8oz Filet Mignon grilled to medium rare (warm red center), finished with garlic butter melt and served with red-skin garlic mashed potatoes.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Check out our Grilling Temp Guide</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Learn the secret to steakhouse precision. View steak cross-sections, chef advice, and internal temperatures.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Cooking Guide
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Steakhouse Lounge</h3>
+        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Reservations</h3>
+        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedCut = { key: 'filet', name: '8oz Filet Mignon', price: 42.00, width: '120px', height: '80px' };
+    let selectedTemp = { name: 'Medium Rare', desc: 'warm red center' };
+    let selectedTopping = { key: 'garlic', name: 'Garlic Butter Melt', price: 0.00, opacity: 0 };
+    let selectedSide = { key: 'mashed', name: 'Red-Skin Garlic Mashed Potatoes' };
+
+    function setCut(key, name, price, width, height) {
+      const buttons = document.getElementById('cut-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedCut = { key, name, price, width, height };
+      updateDisplay();
+    }
+
+    function setTemp(name, desc) {
+      const buttons = document.getElementById('temp-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedTemp = { name, desc };
+      updateDisplay();
+    }
+
+    function setTopping(key, name, price, opacity) {
+      const buttons = document.getElementById('topping-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedTopping = { key, name, price, opacity };
+      updateDisplay();
+    }
+
+    function setSide(key, name) {
+      const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSide = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedCut.price + selectedTopping.price;
+      document.getElementById('display-steak-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-steak-name').innerText = selectedCut.name;
+      document.getElementById('display-steak-garnish').innerText = selectedTopping.name;
+
+      // Update steak graphic
+      const graphic = document.getElementById('steak-graphic');
+      graphic.style.width = selectedCut.width;
+      graphic.style.height = selectedCut.height;
+
+      const overlay = document.getElementById('steak-crust');
+      overlay.style.opacity = selectedTopping.opacity;
+
+      // Update side graphic text
+      const sideText = selectedSide.key === 'mashed' ? 'Mashed' : selectedSide.key === 'spinach' ? 'Spinach' : 'Brussels';
+      document.getElementById('side-graphic').innerText = sideText;
+
+      // Update description
+      const desc = `Premium ${selectedCut.name} grilled to ${selectedTemp.name.toLowerCase()} (${selectedTemp.desc}), finished with ${selectedTopping.name.toLowerCase()} and served with a side of ${selectedSide.name.toLowerCase()}.`;
+      document.getElementById('display-steak-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

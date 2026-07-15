@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Visit & Reservations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          BEEF 'N BOTTLE
+          <span>Steakhouse Est. 1958</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html">Wine & Bar</a>
+        <a href="about.html">History</a>
+        <a href="services.html">Banquets</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Find our Table</h2>
+    <p class="page-subtitle">Reserve a cozy leather booth, find street directions, and check live wait-times below.</p>
+  </header>
+
+  <!-- Live wait status banner -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 800;">📍 Seating Status:</span>
+        <span class="wait-badge wait-low" id="seating-wait">No Wait</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Locations Cards -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Steakhouse Details</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Our Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            4538 South Blvd<br>Charlotte, NC 28209<br>
+            <strong>Phone:</strong> (704) 523-9977
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">General Sourcing</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            We offer complimentary street parking directly in front of the restaurant lounge. Smart casual dress code is highly recommended.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Booking Request Form -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Request Table</h3>
+        
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-guests">Guests</label>
+              <select id="contact-guests" required>
+                <option value="2">2 Guests (Standard Booth)</option>
+                <option value="4">4 Guests (Standard Booth)</option>
+                <option value="6">6 Guests (Corner Lounge)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-notes">Special Requests</label>
+              <input type="text" id="contact-notes" placeholder="e.g. Birthday anniversary, request celebrity wall seating">
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Table Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">🍷</div>
+          <h3 class="success-title">Table Requested!</h3>
+          <p class="success-msg">Thank you. We have sent your request to the host desk. You will receive an OpenTable text confirmation shortly.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateWaitTimes() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const badge = document.getElementById('seating-wait');
+
+      // Check open hours: 5:00 PM to 10:00 PM (11:00 PM Fri-Sat, 9:00 PM Sun)
+      let closeHour = 22; // 10 PM
+      if (day === 0) { // Sunday
+        closeHour = 21; // 9 PM
+      } else if (day === 5 || day === 6) { // Fri-Sat
+        closeHour = 23; // 11 PM
+      }
+
+      if (hour < 17 || hour >= closeHour) {
+        badge.innerText = "CLOSED";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Friday/Saturday Night: 6 PM - 9 PM
+      const isWeekendPeak = (day === 5 || day === 6) && (hour >= 18 && hour < 21);
+      // Weekday rush: 6 PM - 8 PM
+      const isWeekdayPeak = (day >= 1 && day <= 4) && (hour >= 18 && hour < 20);
+
+      if (isWeekendPeak) {
+        badge.innerText = "30-45 MIN WAIT (PEAK)";
+        badge.className = "wait-badge wait-high";
+      } else if (isWeekdayPeak) {
+        badge.innerText = "15-20 MIN WAIT";
+        badge.className = "wait-badge wait-medium";
+      } else {
+        badge.innerText = "WALK-INS WELCOME (NO WAIT)";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTimes();
+
+    // Handle contact submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

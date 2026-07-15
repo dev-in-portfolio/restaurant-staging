@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · DB's Tavern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0d1219,#1a2a3a);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--warm);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.story-text{max-width:720px;margin:0 auto}
+.story-text p{font-size:.95rem;line-height:1.7;opacity:.7;margin-bottom:1rem}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+@media(max-width:640px){.values-grid{grid-template-columns:1fr}}
+.value-card{background:rgba(255,255,255,.03);border:1px solid rgba(212,168,75,.06);border-radius:8px;padding:1.5rem}
+.value-card h3{font-size:1rem;color:var(--gold);margin:0 0 .5rem}
+.value-card p{font-size:.88rem;opacity:.65;line-height:1.6;margin:0}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">DB's Tavern</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wings.html">Wings</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>Locally owned, family-run since 2014</p>
+</header>
+<section class="section">
+  <div class="story-text">
+    <p>DB's Tavern was founded in 2014 by Don Burgoon and his son Don Jr. — a father-son team with deep roots in Charlotte's restaurant scene. Already known for running Picasso's Sports Cafe, the Burgoons saw a need for a welcoming neighborhood tavern in the growing Ballantyne area and decided to build one from the ground up.</p>
+    <p>The concept was simple: great food, cold beer, and a place where everyone knows your name. DB's quickly became exactly that — a go-to spot for families, sports fans, and neighbors looking for a reliable meal and a friendly face. The menu was built around the things people actually want: hand-rolled pizza rolls, award-winning wings, hand-pressed burgers, and ice-cold drafts.</p>
+    <p>Over the years, DB's has become a Ballantyne institution. The walls are lined with TVs for game day, the kitchen stays open late, and the staff treats every guest like a regular. Whether you're coming in for lunch after a soccer game or closing the place down after a late shift, DB's is always ready for you.</p>
+  </div>
+</section>
+<section class="section" style="border-top:1px solid rgba(212,168,75,.06)">
+  <h2>What We Stand For</h2>
+  <div class="values-grid">
+    <div class="value-card"><h3>Family Owned</h3><p>The Burgoon family runs it every day. When you walk in, you're supporting a local family business.</p></div>
+    <div class="value-card"><h3>Made from Scratch</h3><p>Pizza dough, wings sauces, burgers — we make it in-house. No frozen patties, no shortcuts.</p></div>
+    <div class="value-card"><h3>Community First</h3><p>We sponsor local teams, host fundraisers, and support the Ballantyne community every way we can.</p></div>
+    <div class="value-card"><h3>Always Welcoming</h3><p>Families, sports fans, late-night crowds — everyone gets a seat at the table and a cold beer in hand.</p></div>
+  </div>
+</section>
+<footer>
+  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

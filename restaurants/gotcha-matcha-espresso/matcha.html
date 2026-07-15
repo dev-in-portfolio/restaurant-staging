@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matcha Lab · Gotcha Matcha &amp; Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Gotcha Matcha's aesthetic */
+.matcha-mat {
+  background: radial-gradient(circle, #2d5a3d 0%, #0f1d14 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius-md);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.matcha-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .matcha-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--p);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🐼</span>
+                <span class="logo-text">Gotcha Matcha</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="matcha.html" class="active">Matcha Lab</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="visit.html">Visit</a></li>
+                <li><a href="reserve.html">Find Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  <main id="main">
+    <header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🐼 The Panda Bar Customizer</div>
+            <h1>The Matcha Lab</h1>
+            <p class="hero-sub">Design your signature Thai-inspired matcha or hojicha cup</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 4rem 0;">
+      <div class="container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Beverage Planner</h2>
+        
+        <div class="matcha-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+          
+          <!-- Left: Cup Visualizer -->
+          <div class="matcha-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #d4b96a; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="mt-tag-display">CEREMONIAL DRINK</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--font-heading); margin: 0 0 0.8rem 0;" id="mt-title-display">Uji Ceremonial Matcha</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #d4b96a; margin: 0 0 1.2rem 0;" id="mt-price-display">$6.50</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="mt-desc-display">Double whisk of pure Uji ceremonial grade matcha whisked with water, swirled with sweet pandan leaf blossom syrup.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Choose Tea Base</label>
+              <select id="mt-base" onchange="updateDrink()">
+                <option value="uji" selected>Ceremonial Grade Uji Matcha ($6.50)</option>
+                <option value="hojicha">Hojicha Roasted Green Tea ($6.00)</option>
+                <option value="duo">Matcha &amp; Cold Brew Espresso Duo ($7.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Select Thai Flavor Syrup</label>
+              <select id="mt-flavor" onchange="updateDrink()">
+                <option value="pandan" selected>Sweet Pandan Blossom Syrup (+$0.75)</option>
+                <option value="ube">Creamy Purple Ube Swirl (+$0.75)</option>
+                <option value="coconut">Sweet Organic Coconut Milk (+$0.50)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Select Cup Accent</label>
+              <select id="mt-accent" onchange="updateDrink()">
+                <option value="none" selected>No Extras (+$0.00)</option>
+                <option value="waffle">Belgian Waffle Cone Crumb Rim (+$0.50)</option>
+                <option value="boba">Tapioca Boba Pearls (+$0.75)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="background:#111; color:rgba(255,255,255,0.4); text-align:center; padding:2rem; font-size:0.82rem; border-top:1px solid rgba(232,184,48,0.06)">
+        <p>Gotcha Matcha &amp; Espresso · Uptown Charlotte, NC</p>
+        <p class="disclosure" style="color:rgba(255,255,255,0.2); margin-top:0.5rem;">Unofficial concept presentation — not operated by the restaurant</p>
+    </footer>
+  </main>
+
+  <script>
+    const baseData = {
+      uji: { tag: "CEREMONIAL GRADE", name: "Uji Matcha", basePrice: 6.50, label: "double whisk of pure Uji ceremonial grade green tea matcha" },
+      hojicha: { tag: "ROASTED GREEN TEA", name: "Roasted Hojicha", basePrice: 6.00, label: "earthy, nutty roasted hojicha green tea powder whisked smooth" },
+      duo: { tag: "MATCHA COFFEE DUO", name: "Matcha Espresso Duo", basePrice: 7.00, label: "layered cup of cold brew espresso and pure whisked ceremonial matcha" }
+    };
+
+    const flavorData = {
+      pandan: { name: "Pandan", label: "swirled with sweet, fragrant pandan blossom syrup", charge: 0.75 },
+      ube: { name: "Ube", label: "swirled with a rich creamy sweet purple ube root syrup", charge: 0.75 },
+      coconut: { name: "Coconut", label: "blended with sweet organic pressed coconut milk", charge: 0.50 }
+    };
+
+    const accentData = {
+      none: { label: "", charge: 0.00 },
+      waffle: { label: ", finished with a Belgian waffle cone crushed sugar rim", charge: 0.50 },
+      boba: { label: ", topped with slow-cooked sweet brown sugar tapioca boba pearls", charge: 0.75 }
+    };
+
+    function updateDrink() {
+      const baseKey = document.getElementById('mt-base').value;
+      const flavorKey = document.getElementById('mt-flavor').value;
+      const accentKey = document.getElementById('mt-accent').value;
+
+      const base = baseData[baseKey];
+      const flavor = flavorData[flavorKey];
+      const accent = accentData[accentKey];
+
+      const totalPrice = base.basePrice + flavor.charge + accent.charge;
+
+      document.getElementById('mt-tag-display').innerText = base.tag;
+      document.getElementById('mt-title-display').innerText = `${flavor.name} ${base.name}`;
+      document.getElementById('mt-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A premium cup of ${base.label}, ${flavor.label}${accent.label}.`;
+      
+      document.getElementById('mt-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateDrink();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

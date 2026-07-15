@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Wine & Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .sommelier-box {
+      background: radial-gradient(circle, #251815 0%, #0d0807 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          BEEF 'N BOTTLE
+          <span>Steakhouse Est. 1958</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html" class="active">Wine & Bar</a>
+        <a href="about.html">History</a>
+        <a href="services.html">Banquets</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Wine & Vintage Spirits</h2>
+    <p class="page-subtitle">A cellar collection of premium Napa Valley Cabernets and iconic hand-stirred classic cocktails. Choose your pairing below.</p>
+  </header>
+
+  <!-- Interactive Sommelier Widget -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Sommelier Pairing Assistant</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select an entree below to see our sommelier-recommended wine pairings, vintage details, and glass/bottle prices.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Wine Details Display -->
+        <div class="sommelier-box" id="sommelier-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-steak-tag">For 8oz Filet Mignon</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="pairing-wine-name">Duckhorn Merlot</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;" id="pairing-wine-price">$16 Glass / $62 Bottle</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="pairing-wine-desc">"Napa Valley. A plush and elegant red with red cherry and cocoa accents. Its refined tannins provide a soft finish that elevates the lean filet mignon."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Steak / Entree</label>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
+            <button class="option-btn active" onclick="selectPairing('filet', this)">8oz Filet Mignon</button>
+            <button class="option-btn" onclick="selectPairing('ribeye', this)">14oz Hand-Cut Ribeye</button>
+            <button class="option-btn" onclick="selectPairing('tbone', this)">16oz Kansas City T-Bone</button>
+            <button class="option-btn" onclick="selectPairing('salmon', this)">Cedar Plank Salmon</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wine & Drink Lists -->
+    <h3 class="section-title">Cellar Reserve Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Red Reserves</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Caymus Cabernet Sauvignon</span>
+            <span class="menu-item-price">$120 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Napa Valley. Rich and smooth with dark berries, chocolate, and oak tones.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Belle Glos Pinot Noir</span>
+            <span class="menu-item-price">$72 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Monterey County. Robust flavors of black cherry, pie crust, and warm spice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Duckhorn Merlot</span>
+            <span class="menu-item-price">$85 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Napa Valley. Layers of cherry, plum, and cedar, finished with refined tannins.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Classic Cocktails</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The 1958 Old Fashioned</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Premium Kentucky bourbon, bitters, muddled orange and cherry, served over a single rock.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Classic Manhattan</span>
+            <span class="menu-item-price">$15.00</span>
+          </div>
+          <p class="menu-item-desc">Rye whiskey, sweet vermouth, Angostura bitters, stirred and served up with a brandied cherry.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Whiskey Sour</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Sour mash whiskey, fresh lemon juice, simple syrup, shaken with egg white and served on the rocks.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Steakhouse Lounge</h3>
+        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Reservations</h3>
+        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairingData = {
+      filet: {
+        entree: "For 8oz Filet Mignon",
+        wine: "Duckhorn Merlot",
+        price: "$16 Glass / $62 Bottle",
+        desc: "\"Napa Valley. A plush and elegant red with red cherry and cocoa accents. Its refined tannins provide a soft finish that elevates the lean filet mignon.\""
+      },
+      ribeye: {
+        entree: "For 14oz Hand-Cut Ribeye",
+        wine: "Caymus Cabernet Sauvignon",
+        price: "$28 Glass / $120 Bottle",
+        desc: "\"Napa Valley. Rich and smooth with dark berries, chocolate, and oak tones. Its structure cuts through the heavy marbling of our hand-cut ribeye.\""
+      },
+      tbone: {
+        entree: "For 16oz Kansas City T-Bone",
+        wine: "Stags' Leap Cabernet Sauvignon",
+        price: "$22 Glass / $85 Bottle",
+        desc: "\"Napa Valley. Features bold flavors of blackberry, black currant, and cocoa. Its firm tannins balance the rich marbled cuts of our T-Bone.\""
+      },
+      salmon: {
+        entree: "For Cedar Plank Salmon",
+        wine: "Belle Glos Pinot Noir",
+        price: "$15 Glass / $58 Bottle",
+        desc: "\"Monterey County. Robust flavors of black cherry, pie crust, and warm spice. Its rich, velvety structure complements the smokiness of our cedar salmon.\""
+      }
+    };
+
+    function selectPairing(key, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const display = document.getElementById('sommelier-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairingData[key];
+        document.getElementById('pairing-steak-tag').innerText = data.entree;
+        document.getElementById('pairing-wine-name').innerText = data.wine;
+        document.getElementById('pairing-wine-price').innerText = data.price;
+        document.getElementById('pairing-wine-desc').innerText = data.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

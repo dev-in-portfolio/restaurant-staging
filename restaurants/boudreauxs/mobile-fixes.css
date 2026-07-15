@@ -1,0 +1,69 @@
+.dish[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 560px) {
+  .hero h1 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.7rem, 12.5vw, 4.8rem);
+    line-height: .86;
+    letter-spacing: -.065em;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero h1,
+  .section h2,
+  .story-block h2,
+  .story-block h3,
+  .planner-result h2,
+  .feature h3,
+  .menu-card h3,
+  .map-label {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .story-block h2,
+  .story-block h3,
+  .planner-result h2 {
+    font-size: clamp(2.25rem, 12vw, 4rem);
+  }
+
+  .story-block,
+  .story-block.large,
+  .planner-form,
+  .planner-result,
+  .feature,
+  .dish,
+  .info {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .story-block.large {
+    padding: 1.55rem;
+  }
+
+  .section-head,
+  .story-layout,
+  .planner,
+  .visit-grid,
+  .menu-preview {
+    min-width: 0;
+  }
+
+  .feature h3 {
+    font-size: 1.85rem;
+  }
+
+  .cta-row {
+    gap: .55rem;
+  }
+
+  .btn {
+    padding-inline: .85rem;
+    font-size: .76rem;
+  }
+}

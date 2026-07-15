@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahn Thai Restaurant - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Pairing Board specific styles */
+    .pairing-board {
+      background: radial-gradient(circle, #1a0f0a 0%, #0d0604 100%);
+      border: 2px solid var(--color-copper);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .pairing-title {
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pairing-curry {
+      font-size: 1.25rem;
+      color: var(--color-copper);
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+    .pairing-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bahn Thai
+          <span>Ballantyne Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="sushi.html">Sushi & Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Traditional & Sushi Menu</h2>
+    <p class="page-subtitle">Savor hand-rolled sushi and slow-simmered curries. Discover our chef recommendations on the pairing board below.</p>
+  </header>
+
+  <!-- Interactive Sushi & Curry Pairing Guide -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Sushi & Curry Pairing Guide</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Board -->
+        <div class="pairing-board" id="pairing-board-box">
+          <h4 class="pairing-title" id="pair-roll-name">Spicy Tuna Roll</h4>
+          <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-text-muted);">Pairs Best With</span>
+          <div class="pairing-curry" id="pair-curry-name">Green Curry</div>
+          <p class="pairing-desc" id="pair-desc">The rich coconut milk base and sweet herbaceous notes of Green Curry perfectly balance the spicy tuna’s kick, cool cucumber, and seaweed crispness. Recommended with cold Ozeki Sake.</p>
+        </div>
+
+        <!-- Right Side: Selection list -->
+        <div style="display: flex; flex-direction: column; gap: 0.80rem;">
+          <button class="option-btn active" onclick="showPairing('tuna', this)">Spicy Tuna Roll ($7.95)</button>
+          <button class="option-btn" onclick="showPairing('rainbow', this)">Rainbow Specialty Roll ($12.95)</button>
+          <button class="option-btn" onclick="showPairing('dragon', this)">Eel Dragon Roll ($11.95)</button>
+          <button class="option-btn" onclick="showPairing('fire', this)">Ballantyne Fire Roll ($13.95)</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Bahn Thai Specialties</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Traditional Thai Entrees</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pad Thai<span class="menu-item-badge">Favorite</span></span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Thin rice noodles stir-fried with fresh eggs, sweet tamarind juice, red onions, bean sprouts, chives, and ground roasted peanuts.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pad See Ew</span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Wide flat rice noodles stir-fried in a hot wok with Chinese broccoli, eggs, and sweet dark soy sauce, with your choice of protein.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Green Curry Bowl</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Spicy green chili curry simmered with fresh basil, bamboo shoots, bell peppers, eggplant, and peas. Served with jasmine rice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Massaman Curry Bowl</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Southern Thai style coconut curry slow-cooked with tender potatoes, sweet onions, cardamom, and roasted peanuts.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Sushi & Specialties</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Ballantyne Fire Roll</span>
+            <span class="menu-item-price">$13.95</span>
+          </div>
+          <p class="menu-item-desc">Spicy crabmeat and fresh avocado inside, topped with seared salmon, spicy mayo, sweet eel sauce, and a sprinkle of dynamic red chili dust.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rainbow Roll</span>
+            <span class="menu-item-price">$12.95</span>
+          </div>
+          <p class="menu-item-desc">A classic California roll wrapped on the outside with fresh sliced salmon, tuna, red snapper, and avocado.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Dragon Roll</span>
+            <span class="menu-item-price">$11.95</span>
+          </div>
+          <p class="menu-item-desc">Crab stick and cucumber rolled inside, topped with fresh avocado, glazed grilled freshwater eel, and sweet kabayaki sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Thai Iced Tea</span>
+            <span class="menu-item-price">$4.50</span>
+          </div>
+          <p class="menu-item-desc">Traditional brewed black tea spiced with star anise and cardamoms, sweetened and poured over ice with evaporated milk cream.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>12206 Copper Way, Ste 122<br>Charlotte, NC 28277</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 2:30 PM, 5:00 PM - 9:00 PM<br>Saturday: 12:00 PM - 9:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 919-0111<br>Thai Cuisine & Sushi | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairings = {
+      tuna: {
+        roll: "Spicy Tuna Roll",
+        curry: "Green Curry",
+        desc: "The rich coconut milk base and sweet herbaceous notes of Green Curry perfectly balance the spicy tuna’s kick, cool cucumber, and seaweed crispness. Recommended with cold Ozeki Sake."
+      },
+      rainbow: {
+        roll: "Rainbow Specialty Roll",
+        curry: "Massaman Curry",
+        desc: "The slow-simmered, warm cardamoms and roasted peanuts in Massaman curry complement the clean flavors of fresh salmon, yellowtail, and tuna slices. Recommended with Singha Lager Beer."
+      },
+      dragon: {
+        roll: "Eel Dragon Roll",
+        curry: "Red Curry Bowl",
+        desc: "Sweet caramelized freshwater eel and fresh cucumber slices pair beautifully with the bold red chili heat and lemongrass depth of traditional Red Curry. Recommended with warm house sake."
+      },
+      fire: {
+        roll: "Ballantyne Fire Roll",
+        curry: "Panang Curry Bowl",
+        desc: "Nutty, lime-leaf Panang cream creates a smooth, luxurious pairing with seared salmon, spicy crabmeat, and rich avocado. Recommended with traditional sweet Thai Iced Tea."
+      }
+    };
+
+    function showPairing(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const board = document.getElementById('pairing-board-box');
+      board.style.opacity = '0';
+      board.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairings[key];
+        document.getElementById('pair-roll-name').innerText = data.roll;
+        document.getElementById('pair-curry-name').innerText = data.curry;
+        document.getElementById('pair-desc').innerText = data.desc;
+        
+        board.style.opacity = '1';
+        board.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

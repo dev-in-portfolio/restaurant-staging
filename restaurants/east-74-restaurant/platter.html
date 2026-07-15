@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platter Builder · East 74 Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style adjustments to match the site's design */
+.platter-mat {
+  background: radial-gradient(circle, #2a5a8c 0%, #0f2840 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.platter-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .platter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--a);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">East 74</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="platter.html" class="active">Platter Builder</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="catering.html">Catering</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 4rem 2rem; min-height: 30vh;">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Greek &amp; American Platter Builder</h1>
+        <p class="hero-subtitle">Design your customized lunch or dinner combo platter from our traditional family kitchen</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Platter Customizer</h2>
+      
+      <div class="platter-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
+        
+        <!-- Left: Platter Visualizer -->
+        <div class="platter-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--a-light); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="plat-tag-display">SIGNATURE GREEK CLASSIC</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin: 0 0 0.8rem 0;" id="plat-title-display">Gyro Pita Plate</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: var(--a-light); margin: 0 0 1.2rem 0;" id="plat-price-display">$12.95</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="plat-desc-display">Traditional Greek Gyro Pita loaded with onions, tomatoes, and tzatziki sauce, served with lemon potatoes.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Select Main Dish</label>
+            <select id="plat-main" onchange="updatePlatter()">
+              <option value="gyro" selected>Greek Gyro Pita Plate ($12.95)</option>
+              <option value="souvlaki">Chicken Souvlaki Skewers ($13.95)</option>
+              <option value="steak">Country Fried Steak ($11.95)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">2. Select Side</label>
+            <select id="plat-side" onchange="updatePlatter()">
+              <option value="potatoes" selected>Greek Lemon Potatoes (+$0.00)</option>
+              <option value="squash">Southern Fried Squash (+$0.50)</option>
+              <option value="fries">Crinkle-Cut French Fries (+$0.00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">3. Add Sweet Finish</label>
+            <select id="plat-dessert" onchange="updatePlatter()">
+              <option value="none" selected>No Dessert (+$0.00)</option>
+              <option value="baklava">Slice of Homemade Baklava (+$1.50)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>East 74 Restaurant · 10110 E John St · Matthews, NC 28105 · (704) 847-7400</p>
+      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script>
+    const mainData = {
+      gyro: { tag: "SIGNATURE GREEK CLASSIC", name: "Gyro Pita Plate", basePrice: 12.95, label: "traditional Greek Gyro Pita loaded with fresh onions, tomatoes, and tzatziki sauce" },
+      souvlaki: { tag: "GREEK SPECIALTY", name: "Chicken Souvlaki Skewers", basePrice: 13.95, label: "lemon-herb marinated grilled chicken skewers with pita bread and tzatziki" },
+      steak: { tag: "SOUTHERN AMERICAN DINER", name: "Country Fried Steak", basePrice: 11.95, label: "crispy country fried steak smothered in rich white pepper gravy" }
+    };
+
+    const sideData = {
+      potatoes: { name: "Lemon Potatoes", label: "herbed Greek lemon potatoes", charge: 0.00 },
+      squash: { name: "Fried Squash", label: "crispy golden Southern fried squash", charge: 0.50 },
+      fries: { name: "French Fries", label: "salted crinkle-cut French fries", charge: 0.00 }
+    };
+
+    const dessertData = {
+      none: { label: "", charge: 0.00 },
+      baklava: { label: ", paired with a sweet slice of our homemade honey-phyllo Baklava", charge: 1.50 }
+    };
+
+    function updatePlatter() {
+      const mainKey = document.getElementById('plat-main').value;
+      const sideKey = document.getElementById('plat-side').value;
+      const dessertKey = document.getElementById('plat-dessert').value;
+
+      const main = mainData[mainKey];
+      const side = sideData[sideKey];
+      const dessert = dessertData[dessertKey];
+
+      const totalPrice = main.basePrice + side.charge + dessert.charge;
+
+      document.getElementById('plat-tag-display').innerText = main.tag;
+      document.getElementById('plat-title-display').innerText = main.name;
+      document.getElementById('plat-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A generous plate featuring our ${main.label}, served with a side of ${side.label}${dessert.label}.`;
+      
+      document.getElementById('plat-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updatePlatter();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

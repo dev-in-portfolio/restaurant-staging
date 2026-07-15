@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gus' Family Restaurant - Monroe, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">G</div>
+        <h1 class="brand-name">
+          Gus' Family
+          <span>Comfort Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="greek.html">Greek Customizer</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Comfort Dining Board</h2>
+    <p class="page-subtitle">Savor home-cooked classics. Customize your plate using our interactive builder below, or explore our traditional American and Greek listings.</p>
+  </header>
+
+  <!-- Interactive Customizer Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Mediterranean Plate Customizer</h3>
+      
+      <div class="builder-grid">
+        
+        <div class="plate-controls">
+          
+          <!-- Base selection -->
+          <div class="control-group">
+            <label>Select Base Style</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('gyro', 9.50, 'Gyro Sub Wrap')">Gyro Sub Wrap ($9.50)</button>
+              <button class="option-btn" onclick="setBase('salad', 8.50, 'Greek Salad Bowl')">Greek Salad Bowl ($8.50)</button>
+              <button class="option-btn" onclick="setBase('steak', 11.50, 'Salisbury Steak Plate')">Salisbury Plate ($11.50)</button>
+            </div>
+          </div>
+
+          <!-- Topping Protein selection -->
+          <div class="control-group">
+            <label>Select Added Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('gyro', 3.50, 'Lamb & Beef Gyro')">Lamb/Beef Gyro (+$3.50)</button>
+              <button class="option-btn" onclick="setProtein('chicken', 3.00, 'Grilled Chicken Breast')">Grilled Chicken (+$3.00)</button>
+              <button class="option-btn" onclick="setProtein('steak-patty', 4.00, 'Salisbury Beef Patty')">Salisbury Patty (+$4.00)</button>
+              <button class="option-btn" onclick="setProtein('none', 0.00, 'No Extra Protein')">No Extra (+$0)</button>
+            </div>
+          </div>
+
+          <!-- Side choice -->
+          <div class="control-group">
+            <label>Select Diner Side</label>
+            <div class="option-grid" id="side-options">
+              <button class="option-btn active" onclick="setSide('fries', 0.00, 'French Fries')">French Fries</button>
+              <button class="option-btn" onclick="setSide('rings', 1.00, 'Onion Rings')">Onion Rings (+$1.00)</button>
+              <button class="option-btn" onclick="setSide('pickles', 1.50, 'Fried Pickle Chips')">Fried Pickles (+$1.50)</button>
+              <button class="option-btn" onclick="setSide('beans', 0.00, 'Green Beans')">Green Beans</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Builder Display Card -->
+        <div class="builder-display">
+          <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Diner Wok Order</span>
+          <h4 class="builder-display-title" id="display-plate-name">Gyro Sub Wrap with Lamb & Beef Gyro</h4>
+          <p id="display-plate-side" style="color: var(--color-blue); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">French Fries</p>
+          <div class="builder-display-price" id="display-plate-price">$13.00</div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">Warm pita sub sandwich loaded with Lamb & Beef Gyro, served with French Fries.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Comfort Dinner Board</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">American Diner Favorites</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Slow-Braised Beef Tips<span class="menu-item-badge">Family Recipe</span></span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Tender beef sirloin tips slow-simmered in rich beef mushroom gravy, served over a piping hot bed of buttered egg noodles or rice with green beans.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Country Fried Steak</span>
+            <span class="menu-item-price">$11.99</span>
+          </div>
+          <p class="menu-item-desc">Crispy breaded Southern-style country steak fried golden and smothered in house-made white pepper milk gravy, served with mashed potatoes and yellow corn.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Calabash Seafood Basket</span>
+            <span class="menu-item-price">$14.99</span>
+          </div>
+          <p class="menu-item-desc">Generous serving of crispy cornmeal-battered Calabash shrimp and flounder fillets, fried golden and served with hushpuppies, seasoned fries, and tartar sauce.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Greek Comfort & Appetizers</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Baked Spaghetti</span>
+            <span class="menu-item-price">$9.99</span>
+          </div>
+          <p class="menu-item-desc">Linguine tossed in seasoned beef marinara sauce, loaded with mozzarella and parmesan cheeses, baked in the oven until bubbling golden. Served with buttered garlic toast.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Mediterranean Salad</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Crisp romaine lettuce topped with tomatoes, cucumbers, red onions, kalamata olives, pepperoncini, and thick feta cheese blocks, drizzled with Greek vinaigrette.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fried Pickle Chips</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">A basket of thinly sliced dill pickle chips coated in seasoned cornmeal batter, fried crisp and served with a side of cool buttermilk ranch dipping sauce.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1627 Walkup Ave<br>Monroe, NC 28110</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sun: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 218-2193<br>American Comfort & Greek Diner | Carry-Out</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Gus' Family Restaurant. Monroe comfort landmark since 1998.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Builder State
+    let selectedBase = { key: 'gyro', price: 9.50, name: 'Gyro Sub Wrap' };
+    let selectedProtein = { key: 'gyro', price: 3.50, name: 'Lamb & Beef Gyro' };
+    let selectedSide = { key: 'fries', price: 0.00, name: 'French Fries' };
+
+    function setBase(key, price, name) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, price, name };
+      updateDisplay();
+    }
+
+    function setProtein(key, price, name) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, price, name };
+      updateDisplay();
+    }
+
+    function setSide(key, price, name) {
+      const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSide = { key, price, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const totalPrice = (selectedBase.price + selectedProtein.price + selectedSide.price).toFixed(2);
+      document.getElementById('display-plate-price').innerText = `$${totalPrice}`;
+      
+      let title = selectedBase.name;
+      if (selectedProtein.key !== 'none') {
+        title += ` with ${selectedProtein.name}`;
+      }
+      document.getElementById('display-plate-name').innerText = title;
+      document.getElementById('display-plate-side').innerText = selectedSide.name;
+
+      let baseText = '';
+      if (selectedBase.key === 'gyro') {
+        baseText = 'Warm pita sub sandwich loaded with tomatoes, lettuce, red onions, and tzatziki';
+      } else if (selectedBase.key === 'salad') {
+        baseText = 'Fresh crisp romaine lettuce topped with kalamata olives, red onions, pepperoncini, and feta';
+      } else if (selectedBase.key === 'steak') {
+        baseText = 'Grilled comfort Salisbury steak plate layered with sautéed mushrooms, onions, and gravy';
+      }
+
+      let proteinText = '';
+      if (selectedProtein.key !== 'none') {
+        proteinText = `, topped with ${selectedProtein.name}`;
+      }
+
+      const desc = `${baseText}${proteinText}, served with ${selectedSide.name}.`;
+      document.getElementById('display-plate-desc').innerText = desc;
+    }
+  </script>
+</body>
+</html>

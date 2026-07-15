@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order · Duke's Grill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b31b1b;--yellow:#e8b830;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--yellow)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--yellow)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--yellow)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--yellow);margin:0 0 1rem;border-left:3px solid var(--yellow);padding-left:.75rem}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.action-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.5rem;text-align:center;text-decoration:none;color:var(--cream)}
+.action-card:hover{border-color:var(--yellow)}
+.action-card .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;opacity:.5}
+.action-card .val{font-size:1rem;font-weight:600;margin-top:.25rem;color:var(--yellow)}
+.quiz-box{background:rgba(232,184,48,.04);border:1px solid rgba(232,184,48,.12);border-radius:8px;padding:2rem;margin:2rem 0}
+.quiz-box h3{color:var(--yellow);margin:0 0 1rem;font-size:1.2rem}
+.quiz-step{margin-bottom:1.25rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem;opacity:.7}
+.quiz-step select{width:100%;padding:.7rem;border:1px solid rgba(232,184,48,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.quiz-result{background:rgba(232,184,48,.08);padding:1rem;border-radius:6px;margin-top:1rem;text-align:center;display:none}
+.quiz-result.show{display:block}
+.quiz-result .name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--yellow)}
+.quiz-result .desc{font-size:.85rem;opacity:.6;margin-top:.25rem}
+.demo-form{max-width:500px;margin:0 auto}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.7}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:.7rem;border:1px solid rgba(232,184,48,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:80px;resize:vertical}
+.demo-form button{background:var(--yellow);color:var(--charcoal);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#d4a520}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--yellow);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Duke's Grill</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="shakes.html">Milkshakes</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Order</h1>
+  <p>Call ahead, order delivery, or stop by</p>
+</header>
+<section class="section">
+  <h2>Quick Actions</h2>
+  <div class="actions">
+    <a href="tel:+17042834960" class="action-card"><span class="label">Call In</span><span class="val">(704) 283-4960</span></a>
+    <a href="#" class="action-card"><span class="label">Visit</span><span class="val">1114 Concord Ave, Monroe</span></a>
+    <a href="#" class="action-card"><span class="label">Delivery</span><span class="val">Check UberEats / DoorDash</span></a>
+  </div>
+  <h2>Find Your Burger</h2>
+  <p style="font-size:.9rem;opacity:.55;margin:-.5rem 0 0">Not sure what to order? Let us suggest your perfect burger.</p>
+  <div class="quiz-box">
+    <h3>Build Your Burger</h3>
+    <div class="quiz-step">
+      <label for="size">How hungry are you?</label>
+      <select id="size"><option value="">Select...</option><option value="single">One patty, please</option><option value="double">I'm hungry — double it</option></select>
+    </div>
+    <div class="quiz-step">
+      <label for="topping">Pick your topping style</label>
+      <select id="topping"><option value="">Select...</option><option value="classic">Cheese &amp; ketchup — classic</option><option value="bacon">Throw bacon on it</option><option value="slaw">Slaw burger — a Duke's legend</option><option value="rings">Onion rings &amp; ranch — All the Way</option></select>
+    </div>
+    <div class="quiz-result" id="quiz-result">
+      <p class="name" id="quiz-name"></p>
+      <p class="desc" id="quiz-desc"></p>
+    </div>
+  </div>
+  <h2>Order Request</h2>
+  <p style="font-size:.9rem;opacity:.55;margin:-.5rem 0 1rem">Want to place an order by phone or just let us know you're coming?</p>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" required>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" required>
+    <label for="order-items">What would you like to order?</label>
+    <textarea id="order-items" required></textarea>
+    <label for="pickup">Pickup Time</label>
+    <select id="pickup"><option>As soon as ready</option><option>In 30 minutes</option><option>In 1 hour</option><option>This afternoon</option></select>
+    <button type="submit">Send Order Request</button>
+  </form>
+</section>
+<footer>
+  <p>Duke's Grill · 1114 Concord Ave · Monroe, NC 28110 · (704) 283-4960</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function(){const size=document.getElementById('size'),top=document.getElementById('topping'),res=document.getElementById('quiz-result'),name=document.getElementById('quiz-name'),desc=document.getElementById('quiz-desc');function update(){if(!size.value||!topping.value){res.classList.remove('show');return}
+let n='',d='';const s=size.value;if(topping.value==='classic'){n=s==='single'?'Classic Cheeseburger':'Double Classic';d='American cheese, crisp lettuce, ripe tomato, and ketchup on a golden bun'}
+else if(topping.value==='bacon'){n=s==='single'?'Bacon Cheeseburger':'Bacon Double Cheeseburger';d='Three strips of crispy bacon melted together with American cheese'}
+else if(topping.value==='slaw'){n=s==='single'?'Slaw Burger':'Double Slaw Burger';d='Our signature coleslaw piled high on a fresh ground chuck patty — voted best burger in NC'}
+else if(topping.value==='rings'){n='All the Way Burger';d='Hand-battered onion rings, homemade ranch dressing — the full Duke\u2019s experience'}
+name.textContent=n;desc.textContent=d;res.classList.add('show')}
+size.addEventListener('change',update);topping.addEventListener('change',update)})();
+</script>
+</body>
+</html>

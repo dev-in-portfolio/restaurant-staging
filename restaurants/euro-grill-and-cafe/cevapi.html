@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cevapi &amp; Coffee · Euro Grill &amp; Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Euro Grill's look */
+.cevapi-mat {
+  background: radial-gradient(circle, #5a3e2b 0%, #1e1510 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.cevapi-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cevapi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--p);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Euro Grill & Cafe Home">
+        <span class="logo-text">Euro Grill &amp; Cafe</span>
+        <span class="logo-sub">House of Cevaps</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cevapi.html" class="active">Cevapi &amp; Coffee</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="market.html">Bosna Market</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="wrap">
+        <div class="hero-content">
+          <h1>Cevapi &amp; Bosnian Coffee</h1>
+          <p class="hero-sub">Explore our authentic house Cevaps, hand-stretched Burek pastries, and traditional copper pot coffee service</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 0;">
+      <div class="wrap">
+        <h2 style="font-family: var(--head); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Balkan Platter Builder</h2>
+        
+        <div class="cevapi-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+          
+          <!-- Left: Platter Visualizer -->
+          <div class="cevapi-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #dfc8b3; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="cev-tag-display">BALKAN SPECIALTY</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--head); margin: 0 0 0.8rem 0;" id="cev-title-display">Bosnian Cevapi Plate</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #dfc8b3; margin: 0 0 1.2rem 0;" id="cev-price-display">$12.95</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="cev-desc-display">10-piece grilled skinless beef sausages served inside our homemade fluffy lepinja flatbread, spread with creamy kajmak cheese.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Select Main Dish</label>
+              <select id="cev-main" onchange="updatePlatter()">
+                <option value="cevapi" selected>10-Piece Cevaps on Lepinja ($12.95)</option>
+                <option value="pljeskavica">Pljeskavica Burger on Lepinja ($13.95)</option>
+                <option value="burek">Homemade Ground Beef Burek Slice ($6.50)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Select Condiment / Spread</label>
+              <select id="cev-spread" onchange="updatePlatter()">
+                <option value="kajmak" selected>Creamy Kajmak Cheese (+$1.50)</option>
+                <option value="ajvar">Sweet Red Pepper Ajvar Sauce (+$0.00)</option>
+                <option value="onions">Minced White Onions (+$0.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Select Drink Pairing</label>
+              <select id="cev-drink" onchange="updatePlatter()">
+                <option value="coffee" selected>Traditional Džezva Bosnian Coffee (+$4.00)</option>
+                <option value="yogurt">Balkan Salty Yogurt Drink (+$2.50)</option>
+                <option value="none">No Beverage (+$0.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
+      <div class="wrap">
+        <p>Euro Grill &amp; Cafe · 2719 South Blvd · Charlotte, NC 28209 · (704) 343-9823</p>
+        <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const mainData = {
+      cevapi: { tag: "BALKAN SPECIALTY", name: "Bosnian Cevapi Plate", basePrice: 12.95, label: "10-piece grilled skinless beef sausages served inside our homemade fluffy lepinja flatbread" },
+      pljeskavica: { tag: "BALKAN GRILLED BURGER", name: "Pljeskavica Burger Plate", basePrice: 13.95, label: "giant spiced beef and pork patty grilled and served inside warm lepinja bread" },
+      burek: { tag: "FLAKY burek pastry", name: "Minced Beef Burek", basePrice: 6.50, label: "hand-stretched flaky filo pastry baked in spirals and stuffed with seasoned beef" }
+    };
+
+    const spreadData = {
+      kajmak: { name: "Kajmak", label: "with rich creamy kajmak cheese", charge: 1.50 },
+      ajvar: { name: "Ajvar", label: "with sweet roasted red pepper and eggplant ajvar sauce", charge: 0.00 },
+      onions: { name: "Onions", label: "with minced white onions", charge: 0.00 }
+    };
+
+    const drinkData = {
+      coffee: { name: "Bosnian Coffee", label: ", paired with a copper pot džezva of strong Bosnian coffee and Turkish delight", charge: 4.00 },
+      yogurt: { name: "Balkan Yogurt", label: ", paired with a glass of savory liquid Balkan yogurt", charge: 2.50 },
+      none: { name: "", label: "", charge: 0.00 }
+    };
+
+    function updatePlatter() {
+      const mainKey = document.getElementById('cev-main').value;
+      const spreadKey = document.getElementById('cev-spread').value;
+      const drinkKey = document.getElementById('cev-drink').value;
+
+      const main = mainData[mainKey];
+      const spread = spreadData[spreadKey];
+      const drink = drinkData[drinkKey];
+
+      const totalPrice = main.basePrice + spread.charge + drink.charge;
+
+      document.getElementById('cev-tag-display').innerText = main.tag;
+      document.getElementById('cev-title-display').innerText = main.name;
+      document.getElementById('cev-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A traditional plate of ${main.label}, spread ${spread.label}${drink.label}.`;
+      
+      document.getElementById('cev-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updatePlatter();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

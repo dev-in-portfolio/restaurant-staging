@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.L.K. Bar & Restaurant - Monroe, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">E</div>
+        <h1 class="brand-name">
+          E.L.K. Tavern
+          <span>Eggs Legs Kegs</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="kegs.html">Kegs &amp; Cocktails</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Scratch Tavern Board</h2>
+    <p class="page-subtitle">Savor Southern-inspired pub classics. Check our live tavern status below, or browse our eggs, wings, burgers, and drafts.</p>
+  </header>
+
+  <!-- Interactive Tavern Status Section -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1.5rem;">Live Tavern Cooking Status</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Our scratch kitchen prepares daily deviled eggs and sears fresh patties. Check if our draft pumps are currently active.
+      </p>
+      
+      <!-- Display Panel -->
+      <div class="result-card" id="kitchen-display" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); padding: 3rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block; background: var(--color-amber-dim); color: var(--color-amber); border-color: rgba(245, 158, 11, 0.2);" id="kitchen-status-badge">Checking Draft Pumps...</span>
+        <h4 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 0.5rem;" id="kitchen-title">Tavern Status</h4>
+        <p style="font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.6;" id="kitchen-desc">Determining if fresh pints are pouring based on your local clock...</p>
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Tavern Board Favorites</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Eggs & Wings (Legs)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Deviled Eggs<span class="menu-item-badge">Tavern Classic</span></span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Three whipped egg yolk halves seasoned with local honey and sweet relish, lightly dusted with sweet smoked paprika.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Scotch Eggs</span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Boiled egg wrapped in house-ground pork sausage and seasonings, rolled in crispy panko, fried golden and served with honey mustard.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Jumbo Chicken Wings</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">Six crispy fried wings tossed in your choice of sweet Hickory BBQ, traditional tangy Buffalo, or lemon pepper dry rub.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Kegs & Grills</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Half-Pound Tavern Burger</span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Freshly seared Angus beef patty layered with sharp cheddar cheese, applewood smoked bacon, lettuce, tomato, and house pickle chips on a toasted brioche bun.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">NC Craft IPA Draft</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Rotating local North Carolina India Pale Ale draft, loaded with bright piney hops and refreshing citrus tones.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Bourbon Specialty Cocktail</span>
+            <span class="menu-item-price">$10.00</span>
+          </div>
+          <p class="menu-item-desc">Small-batch Kentucky bourbon stirred with aromatic bitters, simple syrup, and a fresh orange peel twist.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>301 E. Franklin St<br>Monroe, NC 28112</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Thu - Mon: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Tue - Wed: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 993-0744<br>Eggs, Legs, and Kegs | Downtown Tavern</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 E.L.K. of Monroe. Historic downtown tavern since 2022.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateTavernTracker() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+      
+      const badge = document.getElementById('kitchen-status-badge');
+      const title = document.getElementById('kitchen-title');
+      const desc = document.getElementById('kitchen-desc');
+
+      // Check closed days: Tuesday (2) and Wednesday (3)
+      if (day === 2 || day === 3) {
+        badge.innerText = "TAVERN CLOSED TODAY";
+        badge.className = "menu-item-badge wait-high";
+        badge.style.background = "rgba(239, 68, 68, 0.1)";
+        badge.style.color = "#ef4444";
+        badge.style.borderColor = "rgba(239, 68, 68, 0.2)";
+        title.innerText = "😴 Tavern is Resting";
+        desc.innerText = "We are closed Tuesdays and Wednesdays prepping fresh sausage rolls and brewing draft lines. Doors open Thursday at 11:00 AM!";
+        return;
+      }
+
+      // Check open hours
+      let openHour = 11;
+      let closeHour = 20; // Mon, Thu, Sun close at 8pm
+      if (day === 5 || day === 6) { // Fri-Sat close at 10pm (22)
+        closeHour = 22;
+      }
+
+      if (hour < openHour || hour >= closeHour) {
+        badge.innerText = "TAVERN CLOSED FOR THE NIGHT";
+        badge.className = "menu-item-badge wait-medium";
+        badge.style.background = "rgba(245, 158, 11, 0.1)";
+        badge.style.color = "var(--color-amber)";
+        badge.style.borderColor = "rgba(245, 158, 11, 0.2)";
+        title.innerText = "🌙 Draft Pumps are Off";
+        desc.innerText = "Our register is closed for the night. Visit us during operating hours to grab a cold pint!";
+      } else {
+        badge.innerText = "TAPS POURING & COOKING";
+        badge.className = "menu-item-badge wait-low";
+        badge.style.background = "rgba(5, 150, 105, 0.1)";
+        badge.style.color = "var(--color-green)";
+        badge.style.borderColor = "rgba(5, 150, 105, 0.2)";
+        title.innerText = "🔥 Pints are Pouring!";
+        desc.innerText = "Open and pouring! Click the contact button to book a table or grab tavern carryout.";
+      }
+    }
+
+    // Run on load
+    updateTavernTracker();
+  </script>
+</body>
+</html>

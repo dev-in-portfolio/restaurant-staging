@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Customizer - Gus' Family Restaurant | Monroe, NC</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Local style overrides to match Gus' Family Restaurant style */
+.greek-mat {
+  background: radial-gradient(circle, #0284c7 0%, #033a59 100%);
+  border: 1.5px solid var(--color-olive);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-premium);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.greek-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .greek-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  color: var(--color-text-light);
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--color-blue);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-blue);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">G</div>
+        <h1 class="brand-name">
+          Gus' Family
+          <span>Comfort Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="greek.html" class="active">Greek Customizer</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero-section" style="padding: 4rem 2rem; min-height: 35vh;">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Mediterranean &amp; American Comfort</span>
+        <h2 class="hero-title">Mediterranean Plate Customizer</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="margin-top: 2rem;">
+    <section class="interactive-panel" style="margin-bottom: 5.5rem; padding: 40px 30px; border-radius: 12px; border: 1px solid var(--color-border); background: var(--color-card-bg);">
+      <h2 class="section-title" style="margin-bottom: 1rem; text-align: center;">Diner Plate Planner</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your favorite Mediterranean main dish, diner side, and homemade dessert accent.</p>
+      
+      <div class="greek-grid">
+        
+        <!-- Left: Platter Visualizer -->
+        <div class="greek-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="gk-tag-display">MEDITERRANEAN COMFORT</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--font-heading); margin: 0 0 0.8rem 0;" id="gk-title-display">Traditional Greek Gyro</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: var(--color-gold); margin: 0 0 1.2rem 0;" id="gk-price-display">$11.99</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="gk-desc-display">Sliced beef and lamb gyro meat folded inside warm pita bread with lettuce, tomatoes, red onions, spread with creamy tzatziki yogurt sauce.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Choose Main Comfort Dish</label>
+            <select id="gk-main" onchange="updatePlatter()">
+              <option value="gyro" selected>Traditional Greek Gyro Pita ($11.99)</option>
+              <option value="souvlaki">Grilled Chicken Souvlaki Platter ($13.99)</option>
+              <option value="pasta">Baked Greek Spaghetti Pasta ($10.99)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">2. Select Diner Side</label>
+            <select id="gk-side" onchange="updatePlatter()">
+              <option value="tzatziki" selected>House Creamy Tzatziki Sauce (+$0.00)</option>
+              <option value="potatoes">Lemon-Herb Roasted Potatoes (+$1.50)</option>
+              <option value="salad">Crumbled Feta Greek Salad (+$2.50)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">3. Add Dessert Accent</label>
+            <select id="gk-dessert" onchange="updatePlatter()">
+              <option value="none" selected>No Dessert (+$0.00)</option>
+              <option value="baklava">Warm Honey-Drizzled Baklava (+$4.00)</option>
+              <option value="pudding">Sweet Cinnamon Rice Pudding (+$3.00)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #040609; color: var(--color-text-muted); text-align: center; padding: 2rem; border-top: 1px solid var(--color-border); font-size: 0.85rem;">
+    <p>Gus' Family Restaurant · 1627 Walkup Ave · Monroe, NC 28110 · (704) 218-2193</p>
+    <p class="disclosure" style="margin-top: 0.5rem; opacity: 0.5; font-style: italic;">Unofficial concept presentation — not operated by the restaurant</p>
+  </footer>
+
+  <script>
+    const mainData = {
+      gyro: { tag: "MEDITERRANEAN CLASSIC", name: "Greek Gyro Pita", basePrice: 11.99, label: "sliced beef and lamb gyro meat folded inside a warm pita bread with lettuce, tomatoes, and red onions" },
+      souvlaki: { tag: "CHARCOAL GRILLED", name: "Chicken Souvlaki Platter", basePrice: 13.99, label: "citrus-marinated flame-grilled chicken skewers served over a bed of fluffy rice pilaf" },
+      pasta: { tag: "GREEK PASTA SPECIAL", name: "Greek Baked Spaghetti", basePrice: 10.99, label: "baked linguine pasta tossed in meat marinara sauce, loaded with kalamata olives and melted feta" }
+    };
+
+    const sideData = {
+      tzatziki: { name: "Tzatziki", label: ", spread with our homemade garlic cucumber yogurt tzatziki sauce", charge: 0.00 },
+      potatoes: { name: "Lemon Potatoes", label: ", served with a side of crispy oven-roasted lemon-herb Greek potatoes", charge: 1.50 },
+      salad: { name: "Greek Salad", label: ", served with a side garden salad topped with crumbled feta cheese and pepperoncini", charge: 2.50 }
+    };
+
+    const dessertData = {
+      none: { label: "", charge: 0.00 },
+      baklava: { label: ", finished with a slice of warm, honey-drizzled walnut baklava pastry", charge: 4.00 },
+      pudding: { label: ", finished with a bowl of sweet cinnamon-dusted house rice pudding", charge: 3.00 }
+    };
+
+    function updatePlatter() {
+      const mainKey = document.getElementById('gk-main').value;
+      const sideKey = document.getElementById('gk-side').value;
+      const dessertKey = document.getElementById('gk-dessert').value;
+
+      const main = mainData[mainKey];
+      const side = sideData[sideKey];
+      const dessert = dessertData[dessertKey];
+
+      const totalPrice = main.basePrice + side.charge + dessert.charge;
+
+      document.getElementById('gk-tag-display').innerText = main.tag;
+      document.getElementById('gk-title-display').innerText = main.name;
+      document.getElementById('gk-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A generous comfort plate of ${main.label}${side.label}${dessert.label}.`;
+      
+      document.getElementById('gk-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updatePlatter();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

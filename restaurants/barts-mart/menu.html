@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bart's Mart - Charlotte, NC | Drafts & Bottle Shop</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Six Pack Cardboard Carrier */
+    .six-pack-carrier {
+      width: 260px;
+      background: #78350f; /* Cardboard brown */
+      border: 4px solid #451a03;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-premium);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      position: relative;
+    }
+    .six-pack-handle {
+      position: absolute;
+      top: -30px;
+      left: 70px;
+      width: 120px;
+      height: 25px;
+      background: #78350f;
+      border: 4px solid #451a03;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+    .six-pack-slot {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--color-text-muted);
+      transition: all 0.3s ease;
+    }
+    .six-pack-slot.filled {
+      border: 2.5px solid var(--color-pink);
+      background: rgba(236, 72, 153, 0.1);
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bart's Mart
+          <span>Bottle Shop & Arcade</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Tap List</a>
+        <a href="arcade.html">Arcade Lounge</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Draft Tap List & Bottle Coolers</h2>
+    <p class="page-subtitle">Grab a cold pint at the bar or build a custom six-pack to-go in our interactive carrier calculator below.</p>
+  </header>
+
+  <!-- Interactive Six Pack Builder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Mix-a-Six Pack Builder</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Six Pack Carrier Visualizer -->
+        <div class="plate-canvas" style="min-height: 320px;">
+          <div class="six-pack-carrier">
+            <div class="six-pack-handle"></div>
+            <!-- Slots -->
+            <div class="six-pack-slot" id="slot-0">1</div>
+            <div class="six-pack-slot" id="slot-1">2</div>
+            <div class="six-pack-slot" id="slot-2">3</div>
+            <div class="six-pack-slot" id="slot-3">4</div>
+            <div class="six-pack-slot" id="slot-4">5</div>
+            <div class="six-pack-slot" id="slot-5">6</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Cooler Inventory -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 800; color: var(--color-pink); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Add Cooler Cans</label>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button class="option-btn" onclick="addCan('Resident Culture Hazy IPA', 3.50, '🍺')">Resident Culture Hazy IPA ($3.50)</button>
+            <button class="option-btn" onclick="addCan('Sycamore Mountain Candy IPA', 3.00, '🍺')">Sycamore Mountain Candy ($3.00)</button>
+            <button class="option-btn" onclick="addCan('Wooden Robot Berry Sour', 4.00, '🍇')">Wooden Robot Berry Sour ($4.00)</button>
+            <button class="option-btn" onclick="addCan('Divine Barrel Stout', 4.50, '🍫')">Divine Barrel Stout ($4.50)</button>
+            <button class="option-btn" onclick="addCan('Lenny Boy Kombucha', 3.00, '🌿')">Lenny Boy Kombucha ($3.00)</button>
+            <button class="option-btn" onclick="addCan('Red Clay Cider', 3.50, '🍎')">Red Clay Cider ($3.50)</button>
+            <button class="option-btn" onclick="clearPack()" style="border-color: rgba(239,68,68,0.4); color: #ef4444; margin-top: 0.5rem;">Clear Carrier</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Carrier Summary</span>
+        <h4 class="builder-display-title" id="display-pack-name">Empty 6-Pack</h4>
+        <p id="display-pack-items" style="color: var(--color-cyan); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">0 of 6 cans added</p>
+        <div class="builder-display-price" id="display-pack-price">$0.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-pack-desc">Add up to 6 single cans to receive our 10% mix-a-six volume discount!</p>
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Drafts & Cooler Singles</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Draft Tap List</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Eastway Haze IPA<span class="menu-item-badge">Favorite</span></span>
+            <span class="menu-item-price">$7.00</span>
+          </div>
+          <p class="menu-item-desc">6.8% ABV. Double dry-hopped hazy IPA loaded with Citra. Tropical passionfruit, mango, and citrus zest profiles.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pink Laser Fruited Sour</span>
+            <span class="menu-item-price">$7.50</span>
+          </div>
+          <p class="menu-item-desc">5.2% ABV. Refreshing kettle sour brewed with fresh local raspberries. Tart, crispy fruit pucker.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Midnight Cabinet Stout</span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">9.5% ABV. Robust imperial stout aged with cocoa nibs and espresso. Velvety, dark, and warm.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Bar Munchies</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Warm Soft Pretzel</span>
+            <span class="menu-item-price">$5.00</span>
+          </div>
+          <p class="menu-item-desc">Large salted Bavarian pretzel served warm with a side of spicy local brown mustard.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Garlic Cheese Curds</span>
+            <span class="menu-item-price">$4.50</span>
+          </div>
+          <p class="menu-item-desc">Salty cheddar cheese curds tossed in garlic herb butter. The perfect beer snack.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Plaza Popcorn Bag</span>
+            <span class="menu-item-price">$3.50</span>
+          </div>
+          <p class="menu-item-desc">Freshly popped corn kernels tossed in nutritional yeast and truffle salt oil.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>3042 Eastway Dr<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Located in Eastway Crossing | Bottle Shop & Bar | Retro Arcade</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bart's Mart. Eastway Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedCans = [];
+
+    function addCan(name, price, emoji) {
+      if (selectedCans.length >= 6) {
+        alert("Your 6-pack carrier is full! Clear it or purchase to build another.");
+        return;
+      }
+
+      selectedCans.push({ name, price, emoji });
+      updateDisplay();
+    }
+
+    function clearPack() {
+      selectedCans = [];
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Clear visual slots
+      for (let i = 0; i < 6; i++) {
+        const slot = document.getElementById(`slot-${i}`);
+        slot.innerText = `${i + 1}`;
+        slot.classList.remove('filled');
+      }
+
+      // Populate filled slots
+      selectedCans.forEach((can, idx) => {
+        const slot = document.getElementById(`slot-${idx}`);
+        slot.innerText = can.emoji;
+        slot.classList.add('filled');
+      });
+
+      // Calculate costs
+      let subtotal = 0;
+      selectedCans.forEach(can => subtotal += can.price);
+
+      let discount = 0;
+      if (selectedCans.length === 6) {
+        discount = subtotal * 0.10;
+      }
+
+      const total = subtotal - discount;
+
+      document.getElementById('display-pack-price').innerText = `$${total.toFixed(2)}`;
+      
+      const countLabel = `${selectedCans.length} of 6 cans added`;
+      document.getElementById('display-pack-items').innerText = countLabel;
+
+      if (selectedCans.length === 0) {
+        document.getElementById('display-pack-name').innerText = 'Empty 6-Pack';
+        document.getElementById('display-pack-desc').innerText = 'Add up to 6 single cans to receive our 10% mix-a-six volume discount!';
+      } else if (selectedCans.length < 6) {
+        document.getElementById('display-pack-name').innerText = 'Building 6-Pack...';
+        document.getElementById('display-pack-desc').innerText = `Current subtotal is $${subtotal.toFixed(2)}. Add ${6 - selectedCans.length} more cans to activate the 10% discount.`;
+      } else {
+        document.getElementById('display-pack-name').innerText = 'Completed 6-Pack!';
+        document.getElementById('display-pack-desc').innerText = `10% mix-a-six volume discount applied! Saved $${discount.toFixed(2)} on your custom craft pack.`;
+      }
+    }
+  </script>
+</body>
+</html>

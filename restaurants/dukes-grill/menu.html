@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Duke's Grill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#b31b1b;--yellow:#e8b830;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--yellow)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--yellow)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--yellow)}
+.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cat-tab{background:rgba(255,255,255,.03);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
+.cat-tab:hover{color:var(--cream)}
+.cat-tab.active{background:rgba(232,184,48,.12);color:var(--yellow)}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.menu-cat-title{color:var(--yellow);font-size:1.1rem;margin:0 0 1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.menu-item:last-child{border-bottom:none}
+.menu-item .name{font-weight:600;font-size:.95rem}
+.menu-item .desc{font-size:.82rem;opacity:.55;line-height:1.4;margin:.15rem 0 0;max-width:75%}
+.menu-item .price{font-size:.9rem;color:var(--yellow);font-weight:600;white-space:nowrap;margin-left:1rem}
+.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(179,27,27,.15);color:var(--red);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
+footer a{color:var(--yellow);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Duke's Grill</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="shakes.html">Milkshakes</a>
+    <a href="story.html">Our Story</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Menu</h1>
+  <p>Burgers, breakfast, and Monroe classics</p>
+</header>
+<section class="section">
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-tab="burgers">Burgers</button>
+    <button class="cat-tab" data-tab="lunch">Lunch</button>
+    <button class="cat-tab" data-tab="breakfast">Breakfast</button>
+    <button class="cat-tab" data-tab="sides">Sides &amp; Drinks</button>
+  </div>
+  <div class="cat-panel active" data-panel="burgers">
+    <h3 class="menu-cat-title">Burgers</h3>
+    <div class="menu-item"><div><span class="name">Hamburger</span><span class="badge">Classic</span><p class="desc">Fresh ground chuck patty on a golden bun</p></div><span class="price">$7.76</span></div>
+    <div class="menu-item"><div><span class="name">Cheeseburger</span><span class="badge">Popular</span><p class="desc">Juicy beef patty crowned with melted cheese</p></div><span class="price">$8.23</span></div>
+    <div class="menu-item"><div><span class="name">Bacon Cheeseburger</span><p class="desc">Topped with 3 slices of crispy bacon and melted cheese</p></div><span class="price">$11.22</span></div>
+    <div class="menu-item"><div><span class="name">Double Cheeseburger</span><p class="desc">Two patties, double cheese — the real deal</p></div><span class="price">$11.35</span></div>
+    <div class="menu-item"><div><span class="name">Bacon Double Cheeseburger</span><p class="desc">Two patties, three bacon slices, melted cheese</p></div><span class="price">$14.34</span></div>
+    <div class="menu-item"><div><span class="name">Slaw Burger</span><span class="badge">Famous</span><p class="desc">Topped with our signature coleslaw — named best burger in NC</p></div><span class="price">$8.75</span></div>
+    <div class="menu-item"><div><span class="name">Hamburger Steak Plate</span><p class="desc">Smothered in gravy with choice of sides</p></div><span class="price">$12.89</span></div>
+  </div>
+  <div class="cat-panel" data-panel="lunch">
+    <h3 class="menu-cat-title">Lunch &amp; Sandwiches</h3>
+    <div class="menu-item"><div><span class="name">BLT</span><p class="desc">Crispy bacon, lettuce, tomato on toasted bread</p></div><span class="price">$7.19</span></div>
+    <div class="menu-item"><div><span class="name">Chicken Club</span><p class="desc">Grilled chicken with bacon, lettuce, tomato</p></div><span class="price">$8.50</span></div>
+    <div class="menu-item"><div><span class="name">Ham Club</span><p class="desc">Ham, lettuce, tomato, mayo on toasted bread</p></div><span class="price">$7.50</span></div>
+    <div class="menu-item"><div><span class="name">Fried Bologna Sandwich</span><p class="desc">Thick-sliced bologna, deep-fried, on a bun</p></div><span class="price">$6.20</span></div>
+    <div class="menu-item"><div><span class="name">Grilled Cheese</span><p class="desc">Golden, buttery, and melted to perfection</p></div><span class="price">$5.94</span></div>
+    <div class="menu-item"><div><span class="name">Chuckwagon</span><p class="desc">Our take on a classic cowboy sandwich</p></div><span class="price">$7.50</span></div>
+  </div>
+  <div class="cat-panel" data-panel="breakfast">
+    <h3 class="menu-cat-title">Breakfast</h3>
+    <div class="menu-item"><div><span class="name">Pancake Stack</span><span class="badge">Popular</span><p class="desc">Fluffy buttermilk pancakes — add blueberries or bananas</p></div><span class="price">$6.99</span></div>
+    <div class="menu-item"><div><span class="name">Bacon &amp; Eggs</span><p class="desc">Two eggs any style, crispy bacon, toast</p></div><span class="price">$7.99</span></div>
+    <div class="menu-item"><div><span class="name">Biscuit &amp; Gravy</span><p class="desc">House-made biscuit smothered in peppered gravy</p></div><span class="price">$5.99</span></div>
+    <div class="menu-item"><div><span class="name">Omelet</span><p class="desc">Three-egg omelet with choice of fillings</p></div><span class="price">$8.99</span></div>
+    <div class="menu-item"><div><span class="name">French Toast</span><p class="desc">Thick-cut bread, cinnamon batter, syrup</p></div><span class="price">$7.49</span></div>
+  </div>
+  <div class="cat-panel" data-panel="sides">
+    <h3 class="menu-cat-title">Sides &amp; Drinks</h3>
+    <div class="menu-item"><div><span class="name">Onion Rings</span><span class="badge">Popular</span><p class="desc">Hand-battered, golden-fried — a Duke's institution</p></div><span class="price">$5.94</span></div>
+    <div class="menu-item"><div><span class="name">French Fries</span><p class="desc">Crispy, salted, perfectly golden</p></div><span class="price">$4.49</span></div>
+    <div class="menu-item"><div><span class="name">Coleslaw</span><p class="desc">Our signature creamy slaw — also goes on the Slaw Burger</p></div><span class="price">$2.99</span></div>
+    <div class="menu-item"><div><span class="name">Milkshake</span><p class="desc">Hand-spun — chocolate, vanilla, strawberry</p></div><span class="price">$5.65</span></div>
+    <div class="menu-item"><div><span class="name">Sweet Tea</span><p class="desc">Southern sweet tea — served over ice</p></div><span class="price">$2.49</span></div>
+  </div>
+</section>
+<footer>
+  <p>Duke's Grill · 1114 Concord Ave · Monroe, NC 28110 · (704) 283-4960</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();</script>
+</body>
+</html>
