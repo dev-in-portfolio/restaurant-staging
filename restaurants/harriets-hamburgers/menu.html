@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — Harriet's Hamburgers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Harriet's</a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="menu.html" class="active">Menu</a>
+                <a href="about.html">About</a>
+                <a href="visit.html">Locations</a>
+                <a href="reserve.html">Order</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero-menu">
+            <div class="container">
+                <h1 class="page-title">The Menu</h1>
+                <p class="page-subtitle">Voted Charlotte's Best Hamburger</p>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container">
+                <div class="menu-controls">
+                    <div class="menu-filters" id="menuFilters">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="burgers">Burgers</button>
+                        <button class="filter-btn" data-category="sides">Sides</button>
+                        <button class="filter-btn" data-category="drinks">Drinks</button>
+                        <button class="filter-btn" data-category="limo">Limo Boxes</button>
+                    </div>
+                    <div class="menu-search">
+                        <input type="text" id="menuSearch" placeholder="Search the menu..." aria-label="Search menu">
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="burgers" id="menuItems">
+                    <h2 class="menu-cat-title">Burgers</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item" data-name="the og hamburger">
+                            <div class="menu-item-header">
+                                <h3>The "OG" Hamburger</h3>
+                                <span class="menu-price">$14.64</span>
+                            </div>
+                            <p>Double patty, white American, pickles, onions, Simple Sauce</p>
+                            <span class="menu-badge">Signature</span>
+                        </div>
+                        <div class="menu-item" data-name="the royale">
+                            <div class="menu-item-header">
+                                <h3>The Royale</h3>
+                                <span class="menu-price">$15.86</span>
+                            </div>
+                            <p>Double patty, yellow American, lettuce, tomato, onion, Good Good Sauce</p>
+                            <span class="menu-badge">Signature</span>
+                        </div>
+                        <div class="menu-item secret-item" data-name="jucy lucy secret">
+                            <div class="menu-item-header">
+                                <h3>"Jucy Lucy"</h3>
+                                <span class="menu-price">$14.64</span>
+                            </div>
+                            <p>5oz patty stuffed with yellow American cheese — Minnesota style. Ask for it by name.</p>
+                            <span class="menu-badge badge-secret">Secret Menu</span>
+                        </div>
+                        <div class="menu-item" data-name="kiddos happiness meal">
+                            <div class="menu-item-header">
+                                <h3>Kiddos Happiness Meal</h3>
+                                <span class="menu-price">$12.19</span>
+                            </div>
+                            <p>A little burger, a little love — just for the kiddos</p>
+                            <span class="menu-badge">Kids</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="sides">
+                    <h2 class="menu-cat-title">Sides</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item" data-name="crispy fries">
+                            <div class="menu-item-header">
+                                <h3>Crispy Fries</h3>
+                                <span class="menu-price">$6.06</span>
+                            </div>
+                            <p>Golden, crispy, perfect for dunking</p>
+                        </div>
+                        <div class="menu-item" data-name="cheese curds">
+                            <div class="menu-item-header">
+                                <h3>Cheese Curds</h3>
+                                <span class="menu-price">$8.51</span>
+                            </div>
+                            <p>Beer-battered and golden fried</p>
+                        </div>
+                        <div class="menu-item" data-name="henry's famous monster cookies">
+                            <div class="menu-item-header">
+                                <h3>Henry's Famous Monster Cookies</h3>
+                                <span class="menu-price">$7.29</span>
+                            </div>
+                            <p>Made by a kid entrepreneur — proceeds support Halfway There Rescue</p>
+                            <span class="menu-badge badge-charity">For Charity</span>
+                        </div>
+                        <div class="menu-item" data-name="apple chips">
+                            <div class="menu-item-header">
+                                <h3>Apple Chips</h3>
+                                <span class="menu-price">$3.61</span>
+                            </div>
+                            <p>Light, crunchy, and naturally sweet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="drinks">
+                    <h2 class="menu-cat-title">Drinks</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item" data-name="craft sodas">
+                            <div class="menu-item-header">
+                                <h3>Craft Sodas</h3>
+                                <span class="menu-price">$3.61</span>
+                            </div>
+                            <p>Hand-picked craft sodas to wash it all down</p>
+                        </div>
+                        <div class="menu-item" data-name="agua fresca">
+                            <div class="menu-item-header">
+                                <h3>Agua Fresca</h3>
+                                <span class="menu-price">$6.06</span>
+                            </div>
+                            <p>Fresh, refreshing, and made in-house</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" data-category="limo">
+                    <h2 class="menu-cat-title">Limo Boxes</h2>
+                    <p class="menu-cat-desc">Catering packs built for groups. Perfect for office lunches, parties, or feeding the whole crew.</p>
+                    <div class="menu-items-grid">
+                        <div class="menu-item" data-name="og limo 10-pack">
+                            <div class="menu-item-header">
+                                <h3>OG Limo</h3>
+                                <span class="menu-price">$146.94</span>
+                            </div>
+                            <p>10-pack of The OG Hamburgers</p>
+                            <span class="menu-badge">10 Pack</span>
+                        </div>
+                        <div class="menu-item" data-name="royale limo 10-pack">
+                            <div class="menu-item-header">
+                                <h3>Royale Limo</h3>
+                                <span class="menu-price">$158.64</span>
+                            </div>
+                            <p>10-pack of The Royale</p>
+                            <span class="menu-badge">10 Pack</span>
+                        </div>
+                        <div class="menu-item" data-name="fifty fifty limo">
+                            <div class="menu-item-header">
+                                <h3>Fifty Fifty</h3>
+                                <span class="menu-price">$103.51</span>
+                            </div>
+                            <p>5 OG + 5 Royale — best of both worlds</p>
+                        </div>
+                        <div class="menu-item" data-name="fry limo">
+                            <div class="menu-item-header">
+                                <h3>Fry Limo</h3>
+                                <span class="menu-price">$61.19</span>
+                            </div>
+                            <p>Big box of Crispy Fries for the crowd</p>
+                        </div>
+                        <div class="menu-item" data-name="family limo">
+                            <div class="menu-item-header">
+                                <h3>Family Limo</h3>
+                                <span class="menu-price">$95.49</span>
+                            </div>
+                            <p>Burgers, fries, and drinks for the whole family</p>
+                            <span class="menu-badge">Family</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-logo">Harriet's Hamburgers</p>
+            <p class="footer-tagline">Hamburgers &amp; Happiness</p>
+            <p class="footer-be-good">Be Good.</p>
+            <div class="footer-links">
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="visit.html">Locations</a>
+                <a href="reserve.html">Order</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Harriet's Hamburgers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>

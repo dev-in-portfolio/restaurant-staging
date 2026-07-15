@@ -1,0 +1,34 @@
+{
+  "id": "thirsty-beaver-saloon",
+  "name": "The Thirsty Beaver Saloon",
+  "slug": "thirsty-beaver-saloon",
+  "location": {
+    "city": "Charlotte",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "staging",
+  "status": "ready-for-polish",
+  "sourceRepository": "dev-in-portfolio/restaurants",
+  "sourcePath": "restaurants/thirsty-beaver-saloon",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/thirsty-beaver-saloon/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T21:10:36.599Z",
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": false,
+  "tabletReviewed": false,
+  "mobileReviewed": false,
+  "linksVerified": false,
+  "contentVerified": false,
+  "performanceReviewed": false,
+  "accessibilityReviewed": false,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": false,
+  "approvedForPresentation": false,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
+}
