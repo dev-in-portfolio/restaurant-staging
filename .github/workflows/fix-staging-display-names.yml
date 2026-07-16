@@ -1,0 +1,117 @@
+name: Temporary fix staging display names
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/fix-staging-display-names.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Correct metadata and directory names
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import html
+          import json
+          import re
+          from pathlib import Path
+
+          corrections = {
+              'alexander-michaels': "Alexander Michael's",
+              'barts-mart': "Bart’s Mart",
+              'beef-n-bottle': "Beef ’N Bottle",
+              'brooks-sandwich-house': "Brooks’ Sandwich House",
+              'gus-restaurant': "Gus’ Family Restaurant",
+              'harriets-hamburgers': "Harriet’s Hamburgers",
+              'luisas-brick-oven-pizzeria': "Luisa’s Brick Oven Pizzeria",
+              'lupies-cafe': "Lupie’s Cafe",
+              'margauxs-wine-pizza-market': "Margaux’s Wine, Pizza & Market",
+              'mckoys-smokehouse-and-saloon': "McKoy’s Smokehouse & Saloon",
+              'sir-edmond-halleys': "Sir Edmond Halley’s",
+          }
+
+          root = Path('restaurants')
+          changed_metadata = []
+          for slug, canonical_name in corrections.items():
+              path = root / slug / 'restaurant.json'
+              if not path.is_file():
+                  raise SystemExit(f'Missing metadata: {path}')
+              data = json.loads(path.read_text(encoding='utf-8'))
+              if data.get('slug') != slug:
+                  raise SystemExit(f'{path}: slug mismatch')
+              if data.get('name') != canonical_name:
+                  data['name'] = canonical_name
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+                  changed_metadata.append(slug)
+
+          index_path = root / 'index.html'
+          text = index_path.read_text(encoding='utf-8')
+          for slug, canonical_name in corrections.items():
+              escaped_name = html.escape(canonical_name, quote=False)
+              pattern = re.compile(
+                  rf'(<article><span>READY FOR POLISH</span><h2>).*?(</h2><a href="{re.escape(slug)}/index\.html">View Staging Build</a></article>)'
+              )
+              text, count = pattern.subn(rf'\1{escaped_name}\2', text, count=1)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one directory card for {slug}; found {count}')
+          index_path.write_text(text, encoding='utf-8')
+
+          # Final verification.
+          cards = re.findall(r'<article><span>READY FOR POLISH</span><h2>(.*?)</h2><a href="([^"/]+)/index\.html">View Staging Build</a></article>', text)
+          if len(cards) != 94:
+              raise SystemExit(f'Expected 94 directory cards; found {len(cards)}')
+          slugs = [slug for _, slug in cards]
+          if len(slugs) != len(set(slugs)):
+              raise SystemExit('Duplicate staging directory card slugs detected')
+          card_names = {slug: html.unescape(name) for name, slug in cards}
+          for slug, canonical_name in corrections.items():
+              if card_names.get(slug) != canonical_name:
+                  raise SystemExit(f'{slug}: directory shows {card_names.get(slug)!r}, expected {canonical_name!r}')
+              data = json.loads((root / slug / 'restaurant.json').read_text(encoding='utf-8'))
+              if data.get('name') != canonical_name:
+                  raise SystemExit(f'{slug}: metadata verification failed')
+
+          print(json.dumps({
+              'correctedMetadataRecords': len(corrections),
+              'changedMetadataRecords': len(changed_metadata),
+              'directoryCards': len(cards),
+              'correctedNames': corrections,
+          }, indent=2, ensure_ascii=False))
+          PY
+
+      - name: Run repository validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm test --if-present
+          npm run validate:all --if-present
+
+      - name: Commit and push to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add restaurants/index.html restaurants/*/restaurant.json
+          if git diff --cached --quiet; then
+            echo 'No display-name corrections were needed.'
+            exit 0
+          fi
+          git commit -m 'Correct 11 staging restaurant display names'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+          git rev-parse HEAD
