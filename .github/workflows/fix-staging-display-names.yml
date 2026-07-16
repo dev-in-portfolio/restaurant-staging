@@ -1,0 +1,88 @@
+name: Temporary fix staging display names
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/fix-staging-display-names.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Correct and verify 11 names
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import html, json, re
+          from pathlib import Path
+
+          corrections = {
+            'alexander-michaels': "Alexander Michael's",
+            'barts-mart': "Bart’s Mart",
+            'beef-n-bottle': "Beef ’N Bottle",
+            'brooks-sandwich-house': "Brooks’ Sandwich House",
+            'gus-restaurant': "Gus’ Family Restaurant",
+            'harriets-hamburgers': "Harriet’s Hamburgers",
+            'luisas-brick-oven-pizzeria': "Luisa’s Brick Oven Pizzeria",
+            'lupies-cafe': "Lupie’s Cafe",
+            'margauxs-wine-pizza-market': "Margaux’s Wine, Pizza & Market",
+            'mckoys-smokehouse-and-saloon': "McKoy’s Smokehouse & Saloon",
+            'sir-edmond-halleys': "Sir Edmond Halley’s",
+          }
+
+          root = Path('restaurants')
+          for slug, name in corrections.items():
+            path = root / slug / 'restaurant.json'
+            data = json.loads(path.read_text(encoding='utf-8'))
+            if data.get('slug') != slug:
+              raise SystemExit(f'{slug}: metadata slug mismatch')
+            data['name'] = name
+            path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          index_path = root / 'index.html'
+          text = index_path.read_text(encoding='utf-8')
+          for slug, name in corrections.items():
+            pattern = re.compile(rf'(<article><span>READY FOR POLISH</span><h2>).*?(</h2><a href="{re.escape(slug)}/index\.html">View Staging Build</a></article>)')
+            text, count = pattern.subn(rf'\1{html.escape(name, quote=False)}\2', text, count=1)
+            if count != 1:
+              raise SystemExit(f'{slug}: expected one directory card, found {count}')
+          index_path.write_text(text, encoding='utf-8')
+
+          cards = re.findall(r'<article><span>READY FOR POLISH</span><h2>(.*?)</h2><a href="([^"/]+)/index\.html">View Staging Build</a></article>', text)
+          if len(cards) != 94 or len({slug for _, slug in cards}) != 94:
+            raise SystemExit(f'Directory integrity failed: cards={len(cards)}, unique={len({slug for _, slug in cards})}')
+          names = {slug: html.unescape(name) for name, slug in cards}
+          for slug, expected in corrections.items():
+            actual_meta = json.loads((root / slug / 'restaurant.json').read_text(encoding='utf-8')).get('name')
+            if actual_meta != expected or names.get(slug) != expected:
+              raise SystemExit(f'{slug}: verification failed')
+
+          print(json.dumps({'correctedNames': corrections, 'directoryCards': 94}, indent=2, ensure_ascii=False))
+          PY
+          rm -f .github/workflows/fix-staging-display-names-clean.yml
+
+      - name: Run repository tests
+        run: npm test --if-present
+
+      - name: Commit and push to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add -A
+          git commit -m 'Correct 11 staging restaurant display names'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+          git rev-parse HEAD
