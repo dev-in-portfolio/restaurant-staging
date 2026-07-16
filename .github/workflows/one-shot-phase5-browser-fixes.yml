@@ -140,3 +140,5 @@ jobs:
           git commit -m 'Fix three Phase 5 browser QA defects'
           git push origin HEAD:main
           git rev-parse HEAD
+
+# Trigger execution after workflow registration.
