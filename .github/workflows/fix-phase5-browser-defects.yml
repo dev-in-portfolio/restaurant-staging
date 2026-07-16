@@ -158,3 +158,5 @@ jobs:
           git rebase origin/main
           git push origin HEAD:main
           git rev-parse HEAD
+
+# Retrigger after PR creation.
