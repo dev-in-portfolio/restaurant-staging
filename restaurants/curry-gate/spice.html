@@ -47,6 +47,16 @@
       transition: all 0.4s;
     }
   </style>
+  <style data-phase5-mobile-fix>
+    @media (max-width: 600px) {
+      html, body { max-width: 100%; overflow-x: clip; }
+      .interactive-panel { padding: 28px 16px !important; }
+      .catering-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; }
+      .catering-grid > * { min-width: 0; max-width: 100%; }
+      .spice-mat { padding: 2rem 1rem; }
+      select { min-width: 0; max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -72,8 +82,6 @@
   </header>
 
   <main id="main">
-    
-    <!-- Page Header -->
     <header class="page-header text-center" style="padding: 60px 0 30px;">
       <div class="wrap">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: #fff;">Our Spice Scale</h2>
@@ -81,15 +89,12 @@
       </div>
     </header>
 
-    <!-- Interactive Spice Customizer -->
     <section class="wrap" style="margin-bottom: 5rem;">
       <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
-        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Curry Spice Customizer & Heat Planner</h3>
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Curry Spice Customizer &amp; Heat Planner</h3>
         <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your curry and target spice level to check the warning details and heat pairings.</p>
-        
+
         <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
-          
-          <!-- Left Side: Spice Visualizer -->
           <div class="spice-mat" id="glass-box">
             <div class="heat-bar-graphic">
               <div class="heat-fill" id="heat-layer"></div>
@@ -98,7 +103,6 @@
             <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-p); margin: 0.5rem 0;" id="spice-display-pairing">Pairing: Sweet Mango Lassi</p>
           </div>
 
-          <!-- Right Side: Controls -->
           <div class="form-group" style="margin-bottom: 0;">
             <div style="margin-bottom: 1.5rem;">
               <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Select Signature Curry</label>
@@ -112,14 +116,13 @@
             <div>
               <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Spice Level</label>
               <select id="level-select" onchange="updateSpice()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
-                <option value="1">Level 1-2 (Mild & Creamy)</option>
+                <option value="1">Level 1-2 (Mild &amp; Creamy)</option>
                 <option value="3" selected>Level 3-4 (Medium Kick)</option>
                 <option value="5">Level 5-6 (Traditional Hot)</option>
                 <option value="10">Level 10+ (Volcanic Heat)</option>
               </select>
             </div>
           </div>
-
         </div>
 
         <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 2rem;">
@@ -129,36 +132,29 @@
       </div>
     </section>
 
-    <!-- Spice Level Information -->
     <section class="section-dark">
       <div class="wrap">
         <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Spice Level Details</h3>
         <div class="menu-preview">
-          
           <div class="menu-item">
             <h4>Level 1 - 2 <span class="price">Mild</span></h4>
             <p>Perfect for those who prefer aroma over heat. Rich coconut cream, cashew paste, and light cardamom flavors dominate the palate.</p>
           </div>
-
           <div class="menu-item">
             <h4>Level 3 - 4 <span class="price">Medium</span></h4>
             <p>A pleasant, warm kick of red chili powder and fresh ginger. Ideal for first-time guests looking to explore authentic Indian flavors.</p>
           </div>
-
           <div class="menu-item">
             <h4>Level 5 - 6 <span class="price">Indian Hot</span></h4>
             <p>The standard spice level preferred by our kitchen. A heavy dose of fresh green chilies and house garam masala.</p>
           </div>
-
           <div class="menu-item">
             <h4>Level 10+ <span class="price">Volcanic</span></h4>
             <p>Not for the faint of heart. Spiced with Ghost Pepper and Carolina Reaper chili flakes. Searing heat, proceed with caution.</p>
           </div>
-
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -206,23 +202,16 @@
     function updateSpice() {
       const curryKey = document.getElementById('curry-select').value;
       const lvlKey = document.getElementById('level-select').value;
-
       const curry = curryData[curryKey];
       const lvl = levelData[lvlKey];
-
-      // Update graphic fill
       document.getElementById('heat-layer').style.width = lvl.fillWidth;
       document.getElementById('heat-layer').style.backgroundColor = lvl.color;
-
-      // Update displays
       document.getElementById('spice-display-title').innerText = `${curry.name} (${lvlKey})`;
       document.getElementById('spice-display-pairing').innerText = `Pairing: ${lvl.pairing}`;
-
       document.getElementById('display-spice-name').innerText = `${curry.name} (${lvl.name})`;
       document.getElementById('display-spice-desc').innerText = `${curry.name} ${lvl.desc} Recommended cooling pairing: ${lvl.pairing}.`;
     }
 
-    // Trigger initial load
     window.addEventListener('load', () => {
       updateSpice();
     });
