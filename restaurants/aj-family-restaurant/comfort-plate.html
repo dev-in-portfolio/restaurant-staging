@@ -3,111 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AJ Family Restaurant interactive concept experience.">
-  <title>Build a Comfort Plate | AJ Family Restaurant</title>
-  <link rel="stylesheet" href="../site-core.css">
-  <style>
-    :root{--ink:hsl(326 45% 10%);--accent:hsl(27 68% 52%);--paper:hsl(156 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Build your comfort plate at AJ Family Restaurant in Monroe, NC.">
+  <title>Comfort Plate Builder | AJ Family Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">AJ Family Restaurant</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Find Us</a>
-        <a href="groups.html">Groups</a>
-        <a href="menu.html">Menu</a>
-      <a href="comfort-plate.html" aria-current="page">Comfort Plate</a>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-name">AJ Family Restaurant</span>
+        <span class="brand-location">Monroe, NC</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="contact.html">Visit</a></li>
+          <li><a href="comfort-plate.html" aria-current="page" class="nav-cta">Comfort Plate</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
+
   <main id="main">
-    <p class="eyebrow">FAMILIAR FAVORITES, YOUR WAY</p>
-    <h1>Build a Comfort Plate</h1>
-    <p class="lede">Choose a demonstration plate direction that connects the restaurant’s comfort-food identity with the meal you are planning.</p>
-    <section class="planner" aria-label="Build a Comfort Plate interactive planner">
-      <div class="panel controls">
-          <label>
-            <span>Meal</span>
-            <select id="choice-1">
-              <option>Breakfast</option>
-              <option>Lunch</option>
-              <option>Dinner</option>
-            </select>
-          </label>
-          <label>
-            <span>Plate mood</span>
-            <select id="choice-2">
-              <option>Classic</option>
-              <option>Lighter</option>
-              <option>Extra comforting</option>
-            </select>
-          </label>
-          <label>
-            <span>Table style</span>
-            <select id="choice-3">
-              <option>Quick stop</option>
-              <option>Family meal</option>
-              <option>Weekend gathering</option>
-            </select>
-          </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
-      </div>
-      <div class="panel result" aria-live="polite">
-        <div>
-          <div class="result-icon" aria-hidden="true">🍳</div>
-          <h2>Your Comfort Plate</h2>
-          <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
-        </div>
-        <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
+    <section class="page-header">
+      <div class="container">
+        <h1>Comfort Plate Builder</h1>
+        <p>Your meal, your style, your mood.</p>
       </div>
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-ajfamilyrestaurantcomfortplatehtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-ajfamilyrestaurantcomfortplatehtml" style="margin:.1rem 0 1rem;">Build a meal that fits the moment</h2>
-  <p>A satisfying visit to AJ Family Restaurant starts with the kind of comfort you are looking for. Think first about appetite and pace: a complete plate for one person, a lighter combination, or several familiar items shared across the table. This guide keeps the decision practical while leaving room for the personal choices that make comfort food feel familiar.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Choose the appetite level before choosing individual components.</li><li>Use contrasting sides or textures to keep the plate balanced.</li><li>For groups, include at least one widely familiar option and one flexible choice.</li></ul>
-  <p>This page is organized around family-style breakfast and comfort-food dining. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <section class="section">
+      <div class="container">
+        <div class="builder-full reveal">
+          <div class="builder-grid">
+            <div class="builder-visual-full">
+              <div class="plate-ring-lg">
+                <span class="plate-item" id="plate-meal">Breakfast</span>
+                <span class="plate-item" id="plate-style">Classic</span>
+                <span class="plate-item" id="plate-vibe">Quick Stop</span>
+              </div>
+            </div>
+            <div class="builder-controls">
+              <div class="builder-group">
+                <span class="builder-group-label">1. Meal</span>
+                <div class="builder-opts" id="meal-opts">
+                  <button class="builder-opt active" data-value="Breakfast">Breakfast</button>
+                  <button class="builder-opt" data-value="Lunch">Lunch</button>
+                  <button class="builder-opt" data-value="Dinner">Dinner</button>
+                </div>
+              </div>
+              <div class="builder-group">
+                <span class="builder-group-label">2. Style</span>
+                <div class="builder-opts" id="style-opts">
+                  <button class="builder-opt active" data-value="Classic">Classic</button>
+                  <button class="builder-opt" data-value="Lighter">Lighter</button>
+                  <button class="builder-opt" data-value="Hearty">Hearty</button>
+                </div>
+              </div>
+              <div class="builder-group">
+                <span class="builder-group-label">3. Vibe</span>
+                <div class="builder-opts" id="vibe-opts">
+                  <button class="builder-opt active" data-value="Quick Stop">Quick Stop</button>
+                  <button class="builder-opt" data-value="Family Meal">Family Meal</button>
+                  <button class="builder-opt" data-value="Weekend Gathering">Weekend Gathering</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="builder-result reveal">
+            <h3 id="builder-name">Classic Breakfast</h3>
+            <p id="builder-desc">Start your morning with eggs your way, bacon or sausage, hashbrowns, and a stack of buttermilk pancakes.</p>
+            <span class="price" id="builder-price">$9.99</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="banner">
+          <h2>Ready to eat?</h2>
+          <p>Bring your appetite. We'll take care of the rest.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Find Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>AJ Family Restaurant</h3>
+          <p>Family-owned comfort food in Monroe, NC. Breakfast served all day.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="contact.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon–Sat: 6 AM – 9 PM</p>
+          <p>Sunday: 7 AM – 8 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>1234 Main St, Monroe NC</p>
+          <p><a href="tel:+17042891234">(704) 289-1234</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AJ Family Restaurant</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="site.js"></script>
 </body>
 </html>

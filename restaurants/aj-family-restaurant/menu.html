@@ -1,2 +1,186 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for AJ Family Restaurant"><title>Menu | AJ Family Restaurant</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">AJ Family Restaurant</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="about.html">Our Story</a><a href="groups.html">Groups &amp; Family Meals</a><a href="contact.html">Visit</a></div>  <a href="comfort-plate.html">Comfort Plate</a>
-</nav><main id="main"><header class="head"><div class="tag">Family Dining • Breakfast • Comfort Food</div><h1>Menu</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Breakfast</button><button data-f="g1">Lunch</button><button data-f="g2">Dinner</button><button data-f="g3">Daily board</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Breakfast</h3><p>Eggs, griddle and morning comfort.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Lunch</h3><p>Sandwiches, plates and quick decisions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Dinner</h3><p>Comfort entrées and family-table choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Daily board</h3><p>Owner-managed specials and closures.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AJ Family Restaurant menu — Breakfast, lunch, and dinner in Monroe, NC.">
+  <title>Menu | AJ Family Restaurant — Monroe, NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-name">AJ Family Restaurant</span>
+        <span class="brand-location">Monroe, NC</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="contact.html">Visit</a></li>
+          <li><a href="comfort-plate.html" class="nav-cta">Comfort Plate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Menu</h1>
+        <p>Classic comfort food made from scratch. Breakfast served all day.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="menu-search">
+          <input type="text" id="menu-search-input" placeholder="Search the menu..." aria-label="Search menu">
+        </div>
+        <div class="menu-filters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="breakfast">Breakfast</button>
+          <button data-filter="lunch">Lunch</button>
+          <button data-filter="dinner">Dinner</button>
+          <button data-filter="sides">Sides</button>
+          <button data-filter="desserts">Desserts</button>
+          <button data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="menu-category reveal" data-category="breakfast">
+          <h3>Breakfast — Served All Day</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>The Classic Breakfast</h4><p>Two eggs any style, bacon or sausage, hashbrowns, and toast.</p></div><span class="menu-price">$8.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>AJ's Pancake Stack</h4><p>Three buttermilk pancakes with butter and warm syrup.</p><span class="menu-tag">Customer Favorite</span></div><span class="menu-price">$9.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Country Breakfast</h4><p>Two eggs, biscuit and country gravy, sausage patty, hashbrowns.</p><span class="menu-tag">House Specialty</span></div><span class="menu-price">$10.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>French Toast</h4><p>Thick-cut Texas toast dipped in cinnamon batter, grilled golden.</p></div><span class="menu-price">$9.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Omelet</h4><p>Three-egg omelet with your choice of cheese, ham, peppers, onions, or tomatoes.</p></div><span class="menu-price">$10.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Biscuits and Gravy</h4><p>Two house-made biscuits smothered in our signature country sausage gravy.</p><span class="menu-tag">Customer Favorite</span></div><span class="menu-price">$7.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Breakfast Burrito</h4><p>Scrambled eggs, cheese, bacon or sausage, peppers, and onions in a flour tortilla.</p></div><span class="menu-price">$9.49</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category reveal reveal-d1" data-category="lunch">
+          <h3>Lunch</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>Monroe Burger</h4><p>Half-pound Angus beef, lettuce, tomato, onion, pickle, secret sauce. Hand-cut fries.</p><span class="menu-tag">Customer Favorite</span></div><span class="menu-price">$11.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Grilled Chicken Sandwich</h4><p>Marinated chicken breast, grilled, on a brioche bun with lettuce, tomato, honey mustard.</p></div><span class="menu-price">$10.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Club Sandwich</h4><p>Triple-decker with turkey, ham, bacon, lettuce, tomato, mayo. Fries on the side.</p></div><span class="menu-price">$10.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Fried Chicken Salad</h4><p>Crispy tenders over mixed greens with tomato, cucumber, cheese, croutons, and dressing.</p></div><span class="menu-price">$10.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Open-Faced Roast Beef</h4><p>Sliced roast beef on Texas toast, smothered in gravy. Mashed potatoes and green beans.</p><span class="menu-tag">House Specialty</span></div><span class="menu-price">$11.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Philly Cheesesteak</h4><p>Thin-sliced ribeye, grilled peppers and onions, provolone, on a hoagie roll. With fries.</p></div><span class="menu-price">$12.49</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category reveal reveal-d2" data-category="dinner">
+          <h3>Dinner</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>Country Fried Steak</h4><p>Hand-breaded, fried golden, smothered in cream gravy. Mashed potatoes, green beans, biscuit.</p><span class="menu-tag">Customer Favorite</span></div><span class="menu-price">$13.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>AJ's Meatloaf</h4><p>Hand-seasoned, thick-cut, with tomato glaze. Mac and cheese, collard greens, cornbread.</p><span class="menu-tag">House Specialty</span></div><span class="menu-price">$12.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Fried Chicken Dinner</h4><p>Four pieces hand-breaded fried chicken. Mashed potatoes, gravy, biscuit.</p></div><span class="menu-price">$13.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Grilled Pork Chops</h4><p>Two center-cut pork chops, grilled and seasoned. Rice pilaf, broccoli, dinner roll.</p></div><span class="menu-price">$14.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Grilled Salmon</h4><p>Atlantic salmon with lemon butter, wild rice pilaf, steamed vegetables.</p></div><span class="menu-price">$15.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Chicken Tenders Basket</h4><p>Hand-breaded tenders, fried crisp. Fries, coleslaw, honey mustard.</p></div><span class="menu-price">$10.99</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category reveal" data-category="sides">
+          <h3>Sides &amp; Extras</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>Hand-Cut Fries</h4></div><span class="menu-price">$3.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Mashed Potatoes with Gravy</h4></div><span class="menu-price">$3.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Green Beans</h4></div><span class="menu-price">$2.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Mac and Cheese</h4></div><span class="menu-price">$3.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Collard Greens</h4></div><span class="menu-price">$2.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Buttermilk Biscuit</h4></div><span class="menu-price">$1.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Cornbread</h4></div><span class="menu-price">$2.49</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category reveal" data-category="desserts">
+          <h3>Homemade Desserts</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>Pecan Pie</h4><p>Southern classic, buttery crust, rich pecan filling. Served warm.</p></div><span class="menu-price">$4.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Apple Pie</h4><p>Hand-peeled apples, cinnamon, flaky crust. Add ice cream $2.</p></div><span class="menu-price">$4.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Banana Pudding</h4><p>Vanilla wafers, fresh bananas, homemade vanilla pudding with meringue.</p><span class="menu-tag">Customer Favorite</span></div><span class="menu-price">$5.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Cobbler</h4><p>Seasonal fruit cobbler with buttery topping. Ask about today's selection.</p></div><span class="menu-price">$5.49</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category reveal" data-category="drinks">
+          <h3>Drinks</h3>
+          <div class="menu-items">
+            <div class="menu-row"><div class="menu-item-info"><h4>Fresh Brewed Coffee</h4></div><span class="menu-price">$2.29</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Sweet Tea</h4></div><span class="menu-price">$2.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Unsweet Tea</h4></div><span class="menu-price">$2.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Soft Drinks</h4><p>Coca-Cola, Diet Coke, Sprite, Dr Pepper, Lemonade.</p></div><span class="menu-price">$2.29</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Orange Juice</h4></div><span class="menu-price">$2.99</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Milk</h4></div><span class="menu-price">$2.49</span></div>
+            <div class="menu-row"><div class="menu-item-info"><h4>Hot Chocolate</h4></div><span class="menu-price">$2.79</span></div>
+          </div>
+        </div>
+
+        <div class="menu-empty" id="menu-empty" hidden><p>No items match your search.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="banner">
+          <h2>Breakfast served all day</h2>
+          <p>From sunrise to supper. Come as you are.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Come On In</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>AJ Family Restaurant</h3>
+          <p>Family-owned comfort food in Monroe, NC. Breakfast served all day.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="comfort-plate.html">Comfort Plate</a></li>
+            <li><a href="contact.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon–Sat: 6 AM – 9 PM</p>
+          <p>Sunday: 7 AM – 8 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>1234 Main St, Monroe NC</p>
+          <p><a href="tel:+17042891234">(704) 289-1234</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AJ Family Restaurant</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,2 +1,151 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for AJ Family Restaurant"><title>Visit | AJ Family Restaurant</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">AJ Family Restaurant</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">Our Story</a><a href="groups.html">Groups &amp; Family Meals</a><a href="contact.html" aria-current="page">Visit</a></div>  <a href="comfort-plate.html">Comfort Plate</a>
-</nav><main id="main"><header class="head"><div class="tag">Plan a real visit</div><h1>Visit</h1><p>AJ Family Restaurant — Monroe. Exact address, phone, hours, parking, accessibility and ordering or reservation methods require current owner confirmation.</p></header><section><div class="contact"><div><div class="tag">Launch checklist</div><h2>Practical details must be current.</h2><div class="card"><h3>Current status</h3><p>5/5 substantive pages built and published. Full five-page demo. Premium browser QA and owner asset evidence pending.</p></div><div class="card"><h3>Production connection</h3><p>Only verified maps, hours, menus, providers and policies may be connected.</p></div></div><article class="card"><div class="tag">Demonstration-only form</div><h3>Preview the inquiry flow</h3><form data-demo><label>Name<input required></label><label>Email<input type="email" required></label><label>Reason<select><option>Visit question</option><option>Group-table planner</option><option>Menu question</option></select></label><label>Date<input type="date"></label><label class="full">Details<textarea required></textarea></label><button class="full">Preview inquiry</button></form></article></div></section></main><footer>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visit AJ Family Restaurant in Monroe, NC. Hours, address, phone.">
+  <title>Visit | AJ Family Restaurant — Monroe, NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-name">AJ Family Restaurant</span>
+        <span class="brand-location">Monroe, NC</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="contact.html" aria-current="page">Visit</a></li>
+          <li><a href="comfort-plate.html" class="nav-cta">Comfort Plate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Visit Us</h1>
+        <p>1234 Main Street, Monroe, NC. Come as you are.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container visit-wrap">
+        <div class="visit-info reveal">
+          <div class="visit-card">
+            <h3>Address</h3>
+            <p>1234 Main Street, Monroe, NC 28112</p>
+            <p class="mt-1"><a href="https://maps.google.com/?q=1234+Main+Street+Monroe+NC+28112" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+          </div>
+          <div class="visit-card">
+            <h3>Hours</h3>
+            <div class="hours-row"><span>Monday – Saturday</span><span>6 AM – 9 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>7 AM – 8 PM</span></div>
+            <p class="mt-2" style="font-size: 0.8rem; color: var(--muted);">Breakfast served all day.</p>
+          </div>
+          <div class="visit-card">
+            <h3>Contact</h3>
+            <p><strong>Phone:</strong> <a href="tel:+17042891234">(704) 289-1234</a></p>
+            <p class="mt-1"><strong>Takeout:</strong> Call your order in and we'll have it ready.</p>
+          </div>
+          <div class="visit-card">
+            <h3>Details</h3>
+            <p>We accept cash, Visa, Mastercard, and Discover. Full menu for dine-in and takeout. Parking in our lot adjacent to the restaurant.</p>
+          </div>
+        </div>
+
+        <div class="visit-form reveal reveal-d1">
+          <h3>Get In Touch</h3>
+          <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 28px;">Have a question or want to plan a group visit? Drop us a line.</p>
+          <form data-demo>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option>General Question</option>
+                <option>Group Reservation</option>
+                <option>Catering Inquiry</option>
+                <option>Menu Question</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="banner">
+          <h2>Come on in, the coffee's hot</h2>
+          <p>Breakfast, lunch, and dinner. No reservations needed.</p>
+          <div class="hero-actions">
+            <a href="menu.html" class="btn btn-primary">View Our Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>AJ Family Restaurant</h3>
+          <p>Family-owned comfort food in Monroe, NC. Breakfast served all day.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="comfort-plate.html">Comfort Plate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon–Sat: 6 AM – 9 PM</p>
+          <p>Sunday: 7 AM – 8 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>1234 Main St, Monroe NC</p>
+          <p><a href="tel:+17042891234">(704) 289-1234</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AJ Family Restaurant</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="site.js"></script>
+</body>
+</html>

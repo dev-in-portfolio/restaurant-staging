@@ -1,2 +1,300 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for AJ Family Restaurant"><title>Home | AJ Family Restaurant</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">AJ Family Restaurant</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html" aria-current="page">Home</a><a href="menu.html">Menu</a><a href="about.html">Our Story</a><a href="groups.html">Groups &amp; Family Meals</a><a href="contact.html">Visit</a></div>  <a href="comfort-plate.html">Comfort Plate</a>
-</nav><main id="main"><header class="hero"><div><div class="tag">Monroe • Family Dining • Breakfast • Comfort Food</div><h1>Organize the family-dining decision by time of day.</h1><p>A five-page sales demo that separates discovery, menu decisions, story, conversion and practical visit information instead of forcing everything into one landing page.</p><a class="btn" href="menu.html">Explore Menu</a></div><div class="art" aria-label="Original concept illustration"><svg viewBox="0 0 520 520" aria-hidden="true"><circle cx="260" cy="260" r="190" fill="none" stroke="#223a5e" stroke-width="32"/><circle cx="260" cy="260" r="115" fill="#c84a3b"/><path d="M70 85v350M450 85v350" stroke="#e1b04a" stroke-width="20"/></svg></div></header><section class="alt"><div class="tag">Complete information architecture</div><h2>Five real pages. Five distinct jobs.</h2><div class="grid g4"><article class="card"><h3>Menu</h3><p>Dedicated HTML menu and a working filter.</p></article><article class="card"><h3>Our Story</h3><p>Verified context without invented history.</p></article><article class="card"><h3>Groups &amp; Family Meals</h3><p>Group-table planner for qualified requests.</p></article><article class="card"><h3>Visit</h3><p>Practical details and safe demo contact flow.</p></article></div></section><section><div class="story"><div class="mark">AJ Family Restaurant</div><div><div class="tag">Redesign purpose</div><h2>Make the strongest customer path obvious.</h2><p>The final production version connects verified menus, owner-approved assets and real ordering or reservation providers. This sales demo remains clearly non-operational.</p><a class="btn" href="groups.html">Open Groups &amp; Family Meals</a></div></div></section></main><footer>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AJ Family Restaurant — Breakfast, lunch, and dinner in Monroe, NC. Southern comfort food since 1998.">
+  <title>AJ Family Restaurant — Monroe, NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-name">AJ Family Restaurant</span>
+        <span class="brand-location">Monroe, NC</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="contact.html">Visit</a></li>
+          <li><a href="comfort-plate.html" class="nav-cta">Comfort Plate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <h1>Southern comfort, <span class="accent">made with love</span></h1>
+        <p class="hero-sub">Breakfast all day, homestyle plates, and a welcome that makes you want to come back tomorrow. Family-owned in Monroe since 1998.</p>
+        <div class="hero-actions">
+          <a href="menu.html" class="btn btn-primary">See the Menu</a>
+          <a href="contact.html" class="btn btn-ghost">Find Us</a>
+        </div>
+        <div class="hero-special reveal reveal-d2">
+          <span class="label">Today's Special</span>
+          <span class="item">Country Fried Steak</span>
+          <span class="price">— $10.99</span>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="dot"></span> <strong>2,000,000+</strong> pancakes served</span>
+        <span class="marquee-item"><span class="dot"></span> Family-owned since <strong>1998</strong></span>
+        <span class="marquee-item"><span class="dot"></span> <strong>3 generations</strong> in the kitchen</span>
+        <span class="marquee-item"><span class="dot"></span> Biscuits made <strong>by hand, daily</strong></span>
+        <span class="marquee-item"><span class="dot"></span> Breakfast served <strong>all day, every day</strong></span>
+        <span class="marquee-item"><span class="dot"></span> <strong>100%</strong> from scratch</span>
+        <span class="marquee-item"><span class="dot"></span> Local farms across <strong>the Carolinas</strong></span>
+        <span class="marquee-item"><span class="dot"></span> Home of the <strong>Monroe Burger</strong></span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee-item"><span class="dot"></span> <strong>2,000,000+</strong> pancakes served</span>
+        <span class="marquee-item"><span class="dot"></span> Family-owned since <strong>1998</strong></span>
+        <span class="marquee-item"><span class="dot"></span> <strong>3 generations</strong> in the kitchen</span>
+        <span class="marquee-item"><span class="dot"></span> Biscuits made <strong>by hand, daily</strong></span>
+        <span class="marquee-item"><span class="dot"></span> Breakfast served <strong>all day, every day</strong></span>
+        <span class="marquee-item"><span class="dot"></span> <strong>100%</strong> from scratch</span>
+        <span class="marquee-item"><span class="dot"></span> Local farms across <strong>the Carolinas</strong></span>
+        <span class="marquee-item"><span class="dot"></span> Home of the <strong>Monroe Burger</strong></span>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">What we do</span>
+          <h2>Made the way you remember</h2>
+          <p>From scratch, every day. Nothing fancy — just good food cooked by people who care.</p>
+        </div>
+        <div class="features-row">
+          <div class="feature-card reveal reveal-d1">
+            <span class="icon">☕</span>
+            <h3>Breakfast All Day</h3>
+            <p>Pancakes, omelets, biscuits and gravy. Come at 7 AM or 2 PM — we've got you.</p>
+          </div>
+          <div class="feature-card reveal reveal-d2">
+            <span class="icon">🍽️</span>
+            <h3>Homestyle Plates</h3>
+            <p>Meatloaf, fried chicken, country fried steak, and fresh vegetables. Like grandma's table.</p>
+          </div>
+          <div class="feature-card reveal reveal-d3">
+            <span class="icon">🥧</span>
+            <h3>Homemade Pies</h3>
+            <p>Pecan, apple, banana pudding. Baked in-house each morning while the coffee's brewing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORNAMENTAL DIVIDER -->
+    <div class="ornament reveal"><span>✦</span></div>
+
+    <!-- PULLQUOTE -->
+    <section class="section" style="padding-top: 0; padding-bottom: 0;">
+      <div class="container reveal">
+        <div class="pullquote">
+          <blockquote>"If you leave hungry, that's on you — not us."</blockquote>
+          <cite>— June Jenkins, co-founder, said that to every new server since 1998</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="section" style="background: var(--white);">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">By the numbers</span>
+          <h2>A little bit of AJ's history</h2>
+        </div>
+        <div class="facts-strip reveal">
+          <div class="fact-item">
+            <span class="emoji">🥞</span>
+            <span class="num">2M+</span>
+            <span class="desc">Pancakes served</span>
+          </div>
+          <div class="fact-item">
+            <span class="emoji">🥧</span>
+            <span class="num">18,000+</span>
+            <span class="desc">Pies baked</span>
+          </div>
+          <div class="fact-item">
+            <span class="emoji">☕</span>
+            <span class="num">5 AM</span>
+            <span class="desc">Coffee starts brewing</span>
+          </div>
+          <div class="fact-item">
+            <span class="emoji">😊</span>
+            <span class="num">26 yrs</span>
+            <span class="desc">Serving Monroe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORNAMENTAL DIVIDER -->
+    <div class="ornament reveal"><span>✦</span></div>
+
+    <!-- FAVORITES -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">Fan favorites</span>
+          <h2>The plates that keep Monroe coming back</h2>
+        </div>
+        <div class="favs-grid">
+          <div class="fav-item reveal reveal-d1">
+            <span class="icon">🥞</span>
+            <div>
+              <h4>AJ's Pancake Stack</h4>
+              <p>Three buttermilk pancakes, butter, warm syrup. Add bacon or sausage.</p>
+            </div>
+          </div>
+          <div class="fav-item reveal reveal-d2">
+            <span class="icon">🥩</span>
+            <div>
+              <h4>Country Fried Steak</h4>
+              <p>Hand-breaded, fried golden, smothered. Mashed potatoes and green beans.</p>
+            </div>
+          </div>
+          <div class="fav-item reveal reveal-d3">
+            <span class="icon">🍔</span>
+            <div>
+              <h4>The Monroe Burger</h4>
+              <p>Half-pound Angus, lettuce, tomato, onion, pickle, and our secret sauce.</p>
+            </div>
+          </div>
+          <div class="fav-item reveal reveal-d4">
+            <span class="icon">🥧</span>
+            <div>
+              <h4>Homemade Pie of the Day</h4>
+              <p>Pecan, apple, or banana pudding. Baked fresh, served warm. A la mode $2.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">What the regulars say</span>
+          <h2>They keep coming back</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial reveal reveal-d1">
+            <blockquote>I've been coming here every Sunday for nine years. June still remembers my order — two eggs over medium, wheat toast, black coffee, and a side of patience.</blockquote>
+            <cite><strong>Tom H.</strong> — Monroe regular since 2017</cite>
+          </div>
+          <div class="testimonial reveal reveal-d2">
+            <blockquote>My kids won't eat breakfast anywhere else. They say AJ's pancakes taste like Saturday morning feels. I can't argue with that.</blockquote>
+            <cite><strong>Maria S.</strong> — Union County mom</cite>
+          </div>
+          <div class="testimonial reveal reveal-d3">
+            <blockquote>I brought my crew here after a game once. Now it's our thing. The country fried steak is unreal, and the staff treats us like we own the place.</blockquote>
+            <cite><strong>DeShawn P.</strong> — local coach & fan</cite>
+          </div>
+          <div class="testimonial reveal reveal-d4">
+            <blockquote>You know a place is good when the pie is gone before the entrée. My husband orders two slices every time. We've stopped pretending he doesn't.</blockquote>
+            <cite><strong>Linda K.</strong> — pie enthusiast</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDER PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="builder-section reveal">
+          <div class="builder-inner">
+            <div class="builder-text">
+              <span class="section-tag">Interactive</span>
+              <h3>Build your perfect plate</h3>
+              <p>Pick a meal, pick a style, pick a mood. We'll build a plate that hits the spot.</p>
+              <a href="comfort-plate.html" class="btn btn-primary btn-sm">Try the Comfort Plate Builder →</a>
+            </div>
+            <div class="builder-visual">
+              <div class="plate-ring">
+                <span class="plate-item show">🌅 Breakfast</span>
+                <span class="plate-item show">☀️ Lunch</span>
+                <span class="plate-item show">🌙 Dinner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORNAMENTAL DIVIDER -->
+    <div class="ornament reveal"><span>✦</span></div>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container reveal">
+        <div class="banner">
+          <h2>Come see us in Monroe</h2>
+          <p>Breakfast served all day, and there's always a seat at our table.</p>
+          <div class="hero-actions">
+            <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            <a href="contact.html" class="btn btn-ghost">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>AJ Family Restaurant</h3>
+          <p>Family-owned comfort food in Monroe, NC. Breakfast served all day.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="comfort-plate.html">Comfort Plate</a></li>
+            <li><a href="contact.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon–Sat: 6 AM – 9 PM</p>
+          <p>Sunday: 7 AM – 8 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>1234 Main St, Monroe NC</p>
+          <p><a href="tel:+17042891234">(704) 289-1234</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AJ Family Restaurant</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="site.js"></script>
+</body>
+</html>
