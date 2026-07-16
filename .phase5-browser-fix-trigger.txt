@@ -1,1 +1,2 @@
 Trigger the registered Phase 5 browser-fix workflow.
+PR synchronization event.
