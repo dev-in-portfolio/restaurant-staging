@@ -55,6 +55,17 @@ select:focus {
   margin-bottom: 0.4rem;
 }
 </style>
+<style data-phase5-mobile-fix>
+@media (max-width: 600px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  main.container { width: 100%; max-width: 100%; min-width: 0; padding-left: 1rem; padding-right: 1rem; }
+  .interactive-panel { padding: 28px 16px !important; max-width: 100%; min-width: 0; }
+  .greek-grid { grid-template-columns: minmax(0, 1fr); min-width: 0; max-width: 100%; gap: 20px; }
+  .greek-grid > * { min-width: 0; max-width: 100%; }
+  .greek-mat { padding: 2rem 1rem; }
+  select { min-width: 0; max-width: 100%; }
+}
+</style>
 </head>
 <body>
   <!-- Navigation Header -->
@@ -182,11 +193,9 @@ select:focus {
       document.getElementById('gk-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
       let desc = `A generous comfort plate of ${main.label}${side.label}${dessert.label}.`;
-      
       document.getElementById('gk-desc-display').innerText = desc;
     }
 
-    // Initial trigger
     window.addEventListener('load', () => {
       updatePlatter();
     });
