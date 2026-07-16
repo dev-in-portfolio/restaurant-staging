@@ -1,9 +1,7 @@
 name: One-shot Phase 5 browser fixes
 
 on:
-  push:
-    paths:
-      - '.github/workflows/one-shot-phase5-browser-fixes.yml'
+  pull_request:
 
 permissions:
   contents: write
@@ -42,18 +40,18 @@ jobs:
               raise SystemExit(f'Amina map replacement count was {count}')
           amina.write_text(updated, encoding='utf-8')
 
-          fixes = {
+          mobile_styles = {
               Path('restaurants/curry-gate/spice.html'): '''
-    <style data-phase5-mobile-fix>
-      @media (max-width: 600px) {
-        html, body { max-width: 100%; overflow-x: clip; }
-        .interactive-panel { padding: 28px 16px !important; }
-        .catering-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; }
-        .catering-grid > * { min-width: 0; max-width: 100%; }
-        .spice-mat { padding: 2rem 1rem; }
-        select { min-width: 0; max-width: 100%; }
-      }
-    </style>
+<style data-phase5-mobile-fix>
+@media (max-width: 600px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  .interactive-panel { padding: 28px 16px !important; }
+  .catering-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; }
+  .catering-grid > * { min-width: 0; max-width: 100%; }
+  .spice-mat { padding: 2rem 1rem; }
+  select { min-width: 0; max-width: 100%; }
+}
+</style>
 ''',
               Path('restaurants/gus-restaurant/greek.html'): '''
 <style data-phase5-mobile-fix>
@@ -69,7 +67,7 @@ jobs:
 </style>
 ''',
           }
-          for path, style in fixes.items():
+          for path, style in mobile_styles.items():
               text = path.read_text(encoding='utf-8')
               if 'data-phase5-mobile-fix' not in text:
                   text = text.replace('</head>', style + '</head>', 1)
@@ -85,7 +83,7 @@ jobs:
           npm run validate -- --restaurant curry-gate
           npm run validate -- --restaurant gus-restaurant
 
-      - name: Install browser QA runtime
+      - name: Install browser runtime
         shell: bash
         run: |
           set -euo pipefail
@@ -140,5 +138,3 @@ jobs:
           git commit -m 'Fix three Phase 5 browser QA defects'
           git push origin HEAD:main
           git rev-parse HEAD
-
-# Trigger execution after workflow registration.
