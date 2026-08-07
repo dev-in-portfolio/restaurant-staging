@@ -1,43 +1,439 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Comet Grill menu - Charlottean Shake wings, burgers, and live music fare."><title>Menu | Comet Grill</title><link rel="stylesheet" href="../site-core.css"><style>
-:root{--night:#07141a;--cyan:#2aa9b0;--gold:#e1aa3d;--paper:#ece4ce;--ink:#152126}body{background:var(--night);color:var(--paper);font-family:'Space Grotesk',sans-serif}.c-nav{display:flex;justify-content:space-between;padding:1rem 4vw;border-bottom:1px solid #ffffff20}.c-nav a{text-decoration:none;color:var(--paper)}.c-logo{font-weight:900;letter-spacing:.14em}main{padding:2rem 4vw}.section-header{text-align:center;margin:3rem 0 2rem}.section-header .eyebrow{color:var(--gold);font-weight:900;letter-spacing:.16em;font-size:.85rem}.section-header h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:.9;text-transform:uppercase;margin:.5rem 0}.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:3rem 0}.menu-col h2{font-size:1.3rem;color:var(--gold);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--gold)}.menu-item{padding:1rem 0;border-bottom:1px solid #ffffff20}.menu-item:last-child{border-bottom:0}.menu-item h3{font-size:1.1rem;margin:.4rem 0}.menu-item p{color:#999;font-size:.9rem;line-height:1.4}.special{border-left:4px solid var(--cyan);padding-left:1rem}.pairing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}.pairing-card{background:rgba(255,255,255,.05);border-radius:1rem;padding:1.5rem;border:1px solid #ffffff10}.pairing-card h3{color:var(--cyan);margin-bottom:.5rem}. pairings{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:3rem 0}.return-link{display:inline-block;background:var(--cyan);color:var(--night);padding:.8rem 1.5rem;text-decoration:none;font-weight:900;margin:2rem 0}@media(max-width:800px){.menu-grid,.pairing-grid{grid-template-columns:1fr}.c-nav div a:not(:last-child){display:none}}
-</style></head><body><a class="skip-link" href="#main">Skip to content</a><div class="concept-bar">Comet Grill menu</div>
-<nav class="c-nav"><a class="c-logo" href="index.html">COMET GRILL</a><div><a href="index.html">Home</a> · <a href="menu.html">Menu</a> · <a href="live-music.html">Live Music</a> · <a href="wings.html">Wings</a> · <a href="contact.html">Contact</a></div></nav><main id="main"><header class="section-header"><div class="eyebrow">CHARLOTTE'S FAVORITE</div><h1>Menu</h1></header>
-<div class="menu-grid">
-<div class="menu-col">
-<h2>Charlottean Shake Wings</h2>
-<div class="menu-item special"><h3>Original Dry Rub</h3><p>Our signature blend, tossing since the start. Served with house ranch and celery.</p><p><strong>10 pieces $14 • 20 pieces $24</strong></p></div>
-<div class="menu-item"><h3>Honey Gold</h3><p>Sweet heat glaze with local honey and cayenne finish.</p><p><strong>10 pieces $15 • 20 pieces $26</strong></p></div>
-<div class="menu-item"><h3>Nashville Hot</h3><p>Spicy oil basted with cayenne and brown sugar. Served with pickles.</p><p><strong>10 pieces $15 • 20 pieces $26</strong></p></div>
-<div class="menu-item"><h3>Garlic Parmesan</h3><p>Classic combination with fresh grated parmesan.</p><p><strong>10 pieces $15 • 20 pieces $26</strong></p></div>
-</div>
-<div class="menu-col">
-<h2>Burgers & Sandwiches</h2>
-<div class="menu-item"><h3>Comet Classic</h3><p>1/2 lb beef patty, American cheese, lettuce, tomato, onion, pickles, comet sauce.</p><p><strong>$12</strong></p></div>
-<div class="menu-item"><h3>Double Star</h3><p>Two 1/4 lb patties, cheddar, bacon, caramelized onions, BBQ sauce.</p><p><strong>$15</strong></p></div>
-<div class="menu-item"><h3>Grilled Chicken Club</h3><p>Grilled chicken, bacon, Swiss, lettuce, tomato, mayo on sourdough.</p><p><strong>$13</strong></p></div>
-<div class="menu-item"><h3>Veggie Black Bean</h3><p>Black bean patty, pepper jack, avocado, chipotle mayo, cilantro.</p><p><strong>$11</strong></p></div>
-</div>
-</div>
-<div class="pairing-grid">
-<div class="pairing-card">
-<h3>Kids Menu</h3>
-<p>Chicken tenders, mini burgers, mac & cheese. All served with fries and choice of drink.</p>
-</div>
-<div class="pairing-card">
-<h3>Sides</h3>
-<p>Hand-cut fries, onion rings, sweet potato fries, coleslaw, mac & cheese.</p>
-</div>
-</div>
-<div class="pairing-grid">
-<div class="pairing-card">
-<h3>Drinks</h3>
-<p>Local craft beers on tap, domestics, imports, fountain drinks, iced tea, lemonade.</p>
-</div>
-<div class="pairing-card">
-<h3>Desserts</h3>
-<p>Homemade peach cobbler, chocolate chip cookie skillet.</p>
-</div>
-</div>
-<a href="index.html" class="return-link">← Back to Home</a>
-</main><footer class="concept-bar">Comet Grill | Neighborhood grill, wings, live music | Charlotte, NC</footer>
-<script src="../site-core.js"></script><script></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu & Daily Specials | Comet Grill Charlotte NC</title>
+  <meta name="description" content="Explore verified food offerings at Comet Grill: award-winning burgers, hand-cut fries, Charlottean Shake wings, daily specials (Meatloaf, Patty Melt, Philly, Fish Samich), and sammies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Comet Grill Home">
+        <img src="https://images.squarespace-cdn.com/content/v1/6525925365d72a60f25b292d/1696961135703-V6607F55V3NUEEC60DA5/comet-black.png" alt="Comet Grill Logo" width="120" height="44">
+        <div>
+          COMET GRILL
+          <span class="brand-tag">Park Rd • Dilworth • Est. 1996</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link active">Food &amp; Specials</a></li>
+          <li><a href="live-music.html" class="nav-link">Live Music</a></li>
+          <li><a href="story.html" class="nav-link">Our Story</a></li>
+          <li><a href="events.html" class="nav-link">Events &amp; Community</a></li>
+          <li><a href="visit.html" class="nav-link">Visit &amp; Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:7043714300" class="btn btn-primary btn-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          (704) 371-4300
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Banner -->
+    <section class="section-padding" style="background: radial-gradient(circle at 50% 20%, rgba(139, 30, 36, 0.3) 0%, rgba(10, 12, 15, 1) 70%); border-bottom: 1px solid var(--border-color); text-align: center;">
+      <div class="container">
+        <span class="badge badge-amber">Unpretentious Bar Fare</span>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 0.5rem 0 1rem;">FOOD MENU &amp; DAILY SPECIALS</h1>
+        <p style="max-width: 650px; margin: 0 auto; font-size: 1.15rem; color: var(--text-secondary);">Griddled burgers, hand-cut fries, signature wings with Charlottean Shake, hearty sandwiches, and daily comfort specials.</p>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section-padding">
+      <div class="container">
+        <!-- Interactive Category Filter -->
+        <div class="menu-filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all">All Items</button>
+          <button class="filter-btn" data-filter="specials">Daily Specials</button>
+          <button class="filter-btn" data-filter="burgers">Burgers</button>
+          <button class="filter-btn" data-filter="wings">Wings</button>
+          <button class="filter-btn" data-filter="sammies">Sammies &amp; Mains</button>
+          <button class="filter-btn" data-filter="starters">Starters &amp; Salads</button>
+        </div>
+
+        <!-- Daily Specials Board -->
+        <div class="menu-cat-group" data-category="specials">
+          <div class="menu-section-title">
+            <span>Daily Food Specials</span>
+            <span class="badge badge-red">Check Day Of</span>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Monday: Homemade Meatloaf</h3>
+                <span class="badge badge-amber">Mon Special</span>
+              </div>
+              <p class="item-desc">Savory house-baked meatloaf served with savory brown gravy and classic comfort sides.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Tuesday: Patty Melt</h3>
+                <span class="badge badge-amber">Tue Special</span>
+              </div>
+              <p class="item-desc">Fresh beef patty with grilled caramelized onions and melted cheese on toasted rye bread.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Wednesday: Philly Cheesesteak</h3>
+                <span class="badge badge-amber">Wed Special</span>
+              </div>
+              <p class="item-desc">Choice of tender shaved steak or grilled chicken with sautéed peppers, onions, and melted cheese on a hoagie roll.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Thursday: Chicken Sammies</h3>
+                <span class="badge badge-amber">Thu Special</span>
+              </div>
+              <p class="item-desc">Featured chicken sandwich creations available crispy fried or flame-grilled with signature toppings.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Friday: Big Fish Samich</h3>
+                <span class="badge badge-amber">Fri Special</span>
+              </div>
+              <p class="item-desc">Crispy golden-fried whitefish fillet served on a toasted bun with house tartar sauce and shredded lettuce.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Saturday: $10 All American Burger</h3>
+                <span class="badge badge-red">Sat Special</span>
+              </div>
+              <p class="item-desc">Our classic All American Burger special available every Saturday (*dine-in only feature).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Award-Winning Burgers -->
+        <div class="menu-cat-group" data-category="burgers">
+          <div class="menu-section-title">
+            <span>Award-Winning Burgers</span>
+            <span class="badge badge-amber">Served with Side</span>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">All American Burger</h3>
+                <span class="badge badge-blue">Classic</span>
+              </div>
+              <p class="item-desc">Fresh ground beef patty griddled to order with American cheese, lettuce, tomato, pickles, and onion on a toasted bun.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Comet Classic Burger</h3>
+                <span class="badge badge-red">House Favorite</span>
+              </div>
+              <p class="item-desc">Signature burger topped with creamy house pimento cheese, smoky crispy bacon, and sweet grilled onions.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Steakhouse Burger</h3>
+              </div>
+              <p class="item-desc">Topped with melted Swiss cheese, sautéed mushrooms, grilled onions, and savory steakhouse sauce.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Smokehouse Burger</h3>
+              </div>
+              <p class="item-desc">Loaded with crispy bacon, melted cheddar cheese, onion rings, and tangy BBQ sauce.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Carolina Burger</h3>
+              </div>
+              <p class="item-desc">Southern style with house chili, fresh coleslaw, yellow mustard, and diced onions.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Veggie Burger</h3>
+              </div>
+              <p class="item-desc">Seasoned black bean &amp; veggie patty served with lettuce, tomato, red onion, and house mayo.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">The Biggz</h3>
+                <span class="badge badge-red">Double Patty</span>
+              </div>
+              <p class="item-desc">Hungry regular favorite: double beef patties stacked high with double cheese and choice of toppings.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signature Wings -->
+        <div class="menu-cat-group" data-category="wings">
+          <div class="menu-section-title">
+            <span>Signature Wings</span>
+            <span class="badge badge-blue">Half-Dozen • Dozen • Two-Dozen</span>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Charlottean Shake (Dry Rub)</h3>
+                <span class="badge badge-amber">House Signature</span>
+              </div>
+              <p class="item-desc">Our proprietary spice blend dry rub, perfected over years on Park Road. Crispy and full of savory flavor.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Classic Buffalo</h3>
+              </div>
+              <p class="item-desc">Traditional medium-spicy buffalo wing sauce served with celery and house ranch or bleu cheese.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Barbalo</h3>
+              </div>
+              <p class="item-desc">The perfect fusion of sweet smoky barbecue sauce and fiery buffalo heat.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Honey Chipotle</h3>
+              </div>
+              <p class="item-desc">Sweet clover honey blended with smoky chipotle pepper glaze.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Parmesan Garlic</h3>
+              </div>
+              <p class="item-desc">Garlic butter glaze topped with aged shredded parmesan cheese and herbs.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Lemon Pepper</h3>
+              </div>
+              <p class="item-desc">Zesty cracked black pepper tossed in tangy lemon citrus rub.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sammies & Comfort Plates -->
+        <div class="menu-cat-group" data-category="sammies">
+          <div class="menu-section-title">
+            <span>Sammies &amp; Comfort Plates</span>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Charlottean Chicken Club Wrap</h3>
+              </div>
+              <p class="item-desc">Grilled chicken breast, crispy bacon, shredded lettuce, tomato, and house ranch folded in a warm flour tortilla.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Smokehouse Chicken Sandwich</h3>
+              </div>
+              <p class="item-desc">Grilled chicken breast topped with barbecue sauce, melted cheddar cheese, and bacon on a toasted brioche bun.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Buffalo Chicken Sandwich</h3>
+              </div>
+              <p class="item-desc">Crispy fried chicken breast tossed in buffalo sauce with lettuce, tomato, and bleu cheese dressing.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Chicken Salad Sandwich / Melt</h3>
+              </div>
+              <p class="item-desc">House-made chicken salad served cold with lettuce &amp; tomato or served warm as a melted sandwich.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Carolina Dogs</h3>
+              </div>
+              <p class="item-desc">All-beef grilled hot dogs topped with Southern meat chili, fresh coleslaw, mustard, and diced onions.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Grilled Pimento Cheese</h3>
+              </div>
+              <p class="item-desc">Southern house pimento cheese melted on thick-sliced grilled white bread with optional bacon or tomato.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Fish &amp; Chips Plate</h3>
+              </div>
+              <p class="item-desc">Golden-fried whitefish fillets served with hand-cut fries, fresh coleslaw, and tartar sauce.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Chicken Tender Plate</h3>
+              </div>
+              <p class="item-desc">Hand-breaded crispy chicken tenders served with hand-cut fries and honey mustard dipping sauce.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Starters & Salads -->
+        <div class="menu-cat-group" data-category="starters">
+          <div class="menu-section-title">
+            <span>Starters, Sides &amp; Fresh Salads</span>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Award-Winning Hand-Cut Fries</h3>
+                <span class="badge badge-amber">Must Try</span>
+              </div>
+              <p class="item-desc">Freshly cut potatoes double-fried to golden perfection and seasoned with house sea salt blend.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Fried Pickles</h3>
+              </div>
+              <p class="item-desc">Crispy battered dill pickle chips served hot with a side of house-made buttermilk ranch.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Comet Queso &amp; Chips</h3>
+              </div>
+              <p class="item-desc">Warm melted cheese dip spiked with peppers and spices, served with fresh crispy tortilla chips.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Nachos Supreme</h3>
+              </div>
+              <p class="item-desc">Tortilla chips piled high with warm queso, chili or chicken, jalapenos, pico, and sour cream.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">House Salad</h3>
+              </div>
+              <p class="item-desc">Fresh mixed greens, cucumber, tomato, shredded cheese, red onion, and croutons with choice of dressing.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Blackened Shrimp Salad</h3>
+              </div>
+              <p class="item-desc">Spicy Cajun-blackened shrimp over crisp romaine, roasted corn, black beans, and lime vinaigrette.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Cobb Salad</h3>
+              </div>
+              <p class="item-desc">Grilled chicken, hard-boiled egg, bacon, avocado, tomato, and bleu cheese crumbles over fresh greens.</p>
+            </div>
+            <div class="menu-item-card">
+              <div class="item-header">
+                <h3 class="item-name">Steakhouse Salad</h3>
+              </div>
+              <p class="item-desc">Tender grilled steak strips over mixed greens with red onion, tomato, bleu cheese, and balsamic dressing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Quick Dock -->
+  <div class="quick-dock" aria-label="Mobile quick actions">
+    <a href="tel:7043714300" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call
+    </a>
+    <a href="visit.html" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Visit
+    </a>
+    <a href="menu.html" class="dock-item active">
+      <svg viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83-6.36-6.36c-.78-.78-2.05-.78-2.83 0s-.78 2.05 0 2.83l6.36 6.36zm11.31-7.07c-1.56-1.56-4.1-1.56-5.66 0l-7.07 7.07 2.83 2.83 7.07-7.07c.78-.78.78-2.05 0-2.83z"/></svg>
+      Menu
+    </a>
+    <a href="live-music.html" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      Music
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 style="color: var(--neon-red);">COMET GRILL</h4>
+        <p style="margin-bottom: 1rem;">Charlotte's favorite neighborhood bar and live music venue since 1996. Serving Park Road &amp; Dilworth with burgers, wings, fries, and zero-cover live shows.</p>
+        <p><strong>2224 Park Rd, Charlotte, NC 28203</strong><br>Phone: <a href="tel:7043714300" style="color: #ffffff;">(704) 371-4300</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Food &amp; Daily Specials</a></li>
+          <li><a href="live-music.html">Live Music Schedule</a></li>
+          <li><a href="story.html">Our History</a></li>
+          <li><a href="events.html">Events &amp; Community</a></li>
+          <li><a href="visit.html">Hours &amp; Directions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="footer-links" style="font-size: 0.95rem;">
+          <li><strong>Mon - Sat:</strong> 11:30 AM - 2:00 AM</li>
+          <li><strong>Sunday:</strong> 12:00 PM - 2:00 AM</li>
+          <li><strong>Live Music:</strong> Nightly ~8:30 PM</li>
+          <li><strong>Cover Charge:</strong> $0 Always</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p style="margin-bottom: 1rem;">Follow our social channels for daily specials, band announcements, and patio updates.</p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="https://facebook.com/cometgrillclt" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Facebook</a>
+          <a href="https://instagram.com/cometgrill" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Comet Grill. All rights reserved. 2224 Park Rd, Charlotte, NC 28203.</div>
+      <div>Official Site: <a href="https://www.cometgrillcharlotte.com" target="_blank" rel="noopener noreferrer" style="color: var(--amber-gold);">cometgrillcharlotte.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('is-open');
+    });
+
+    // Category Filter JS
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const catGroups = document.querySelectorAll('.menu-cat-group');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        catGroups.forEach(group => {
+          if (filter === 'all' || group.getAttribute('data-category') === filter) {
+            group.style.display = 'block';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+</body>
+</html>

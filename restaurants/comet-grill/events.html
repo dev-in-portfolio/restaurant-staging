@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Events &amp; Band Booking | Comet Grill Charlotte</title>
+  <meta name="description" content="Discover community events, local artist t-shirt collaborations, neighborhood fundraisers, and band booking inquiry paths at Comet Grill in Dilworth Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Comet Grill Home">
+        <img src="https://images.squarespace-cdn.com/content/v1/6525925365d72a60f25b292d/1696961135703-V6607F55V3NUEEC60DA5/comet-black.png" alt="Comet Grill Logo" width="120" height="44">
+        <div>
+          COMET GRILL
+          <span class="brand-tag">Park Rd • Dilworth • Est. 1996</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Food &amp; Specials</a></li>
+          <li><a href="live-music.html" class="nav-link">Live Music</a></li>
+          <li><a href="story.html" class="nav-link">Our Story</a></li>
+          <li><a href="events.html" class="nav-link active">Events &amp; Community</a></li>
+          <li><a href="visit.html" class="nav-link">Visit &amp; Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:7043714300" class="btn btn-primary btn-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          (704) 371-4300
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Banner -->
+    <section class="section-padding" style="background: radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.25) 0%, rgba(10, 12, 15, 1) 70%); border-bottom: 1px solid var(--border-color); text-align: center;">
+      <div class="container">
+        <span class="badge badge-red">Dilworth Community Hub</span>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 0.5rem 0 1rem;">EVENTS &amp; BAND BOOKING</h1>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--text-secondary);">From neighborhood fundraisers and local t-shirt collaborations to booking your band on our nightly live music stage.</p>
+      </div>
+    </section>
+
+    <!-- Community Initiatives -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+          <span class="badge badge-amber">Local Connections</span>
+          <h2 style="font-size: 2.5rem; margin-top: 0.5rem;">COMMUNITY &amp; CREATIVE COLLABS</h2>
+        </div>
+
+        <div class="cards-grid" style="margin-bottom: 4rem;">
+          <div class="card">
+            <div class="card-icon">👕</div>
+            <h3 class="card-title">Local Merch Collabs</h3>
+            <p class="card-desc">We partner with local designers like Evergreen Creative Projects for soft, vintage-feel Comet Grill t-shirts and hoodies celebrating our Park Road heritage.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🎗️</div>
+            <h3 class="card-title">Neighborhood Fundraisers</h3>
+            <p class="card-desc">Comet Grill frequently hosts give-back nights and charity events supporting Dilworth community causes, local artists, and neighborhood families.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🎸</div>
+            <h3 class="card-title">Artist &amp; Band Night</h3>
+            <p class="card-desc">Every single night of the week features live music with 100% free admission for guests, giving regional musicians a stage to build their audience.</p>
+          </div>
+        </div>
+
+        <!-- Safe Demo Booking Form -->
+        <div class="inquiry-form-card">
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="badge badge-blue">Inquiry Preview</span>
+            <h2 style="font-size: 2rem; margin-top: 0.5rem;">BAND BOOKING &amp; EVENT INQUIRY</h2>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">Fill out this form to test our concept event inquiry flow.</p>
+          </div>
+
+          <form id="inquiryForm" onsubmit="event.preventDefault(); handleInquirySubmit();">
+            <div class="form-group">
+              <label for="inquiryType" class="form-label">Inquiry Type *</label>
+              <select id="inquiryType" class="form-select" required>
+                <option value="band">Band / Live Music Booking</option>
+                <option value="fundraiser">Neighborhood Fundraiser / Charity Event</option>
+                <option value="group">Large Group / Patio Gathering</option>
+                <option value="other">General Community Question</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="fullName" class="form-label">Contact Name *</label>
+                <input type="text" id="fullName" class="form-input" placeholder="e.g. Alex Morgan" required>
+              </div>
+              <div class="form-group">
+                <label for="emailAddr" class="form-label">Email Address *</label>
+                <input type="email" id="emailAddr" class="form-input" placeholder="e.g. alex@example.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="phoneNum" class="form-label">Phone Number</label>
+                <input type="tel" id="phoneNum" class="form-input" placeholder="(704) 555-0199">
+              </div>
+              <div class="form-group">
+                <label for="prefDate" class="form-label">Target Date</label>
+                <input type="date" id="prefDate" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="details" class="form-label">Event or Performance Details *</label>
+              <textarea id="details" class="form-textarea" rows="4" placeholder="Tell us about your band, music genre, sample links, or group event details..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Concept Inquiry</button>
+            <p class="demo-notice">Note: This is a presentation demo form. Clicking submit will trigger a local preview response without sending data to Comet Grill.</p>
+          </form>
+
+          <div id="formSuccess" style="display: none; background: rgba(59, 130, 246, 0.15); border: 1px solid var(--stage-blue); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; margin-top: 1.5rem;">
+            <h3 style="color: var(--stage-blue); margin-bottom: 0.5rem;">Demo Inquiry Previewed</h3>
+            <p style="font-size: 0.95rem;">Thank you! Your preview inquiry has been formatted. In a live production integration, this request would route directly to Comet Grill management.</p>
+            <button onclick="resetInquiryForm()" class="btn btn-outline" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.85rem;">Submit Another Preview</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Quick Dock -->
+  <div class="quick-dock" aria-label="Mobile quick actions">
+    <a href="tel:7043714300" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call
+    </a>
+    <a href="visit.html" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Visit
+    </a>
+    <a href="menu.html" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83-6.36-6.36c-.78-.78-2.05-.78-2.83 0s-.78 2.05 0 2.83l6.36 6.36zm11.31-7.07c-1.56-1.56-4.1-1.56-5.66 0l-7.07 7.07 2.83 2.83 7.07-7.07c.78-.78.78-2.05 0-2.83z"/></svg>
+      Menu
+    </a>
+    <a href="live-music.html" class="dock-item">
+      <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      Music
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 style="color: var(--neon-red);">COMET GRILL</h4>
+        <p style="margin-bottom: 1rem;">Charlotte's favorite neighborhood bar and live music venue since 1996. Serving Park Road &amp; Dilworth with burgers, wings, fries, and zero-cover live shows.</p>
+        <p><strong>2224 Park Rd, Charlotte, NC 28203</strong><br>Phone: <a href="tel:7043714300" style="color: #ffffff;">(704) 371-4300</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Food &amp; Daily Specials</a></li>
+          <li><a href="live-music.html">Live Music Schedule</a></li>
+          <li><a href="story.html">Our History</a></li>
+          <li><a href="events.html">Events &amp; Community</a></li>
+          <li><a href="visit.html">Hours &amp; Directions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="footer-links" style="font-size: 0.95rem;">
+          <li><strong>Mon - Sat:</strong> 11:30 AM - 2:00 AM</li>
+          <li><strong>Sunday:</strong> 12:00 PM - 2:00 AM</li>
+          <li><strong>Live Music:</strong> Nightly ~8:30 PM</li>
+          <li><strong>Cover Charge:</strong> $0 Always</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p style="margin-bottom: 1rem;">Follow our social channels for daily specials, band announcements, and patio updates.</p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="https://facebook.com/cometgrillclt" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Facebook</a>
+          <a href="https://instagram.com/cometgrill" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Comet Grill. All rights reserved. 2224 Park Rd, Charlotte, NC 28203.</div>
+      <div>Official Site: <a href="https://www.cometgrillcharlotte.com" target="_blank" rel="noopener noreferrer" style="color: var(--amber-gold);">cometgrillcharlotte.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('is-open');
+    });
+
+    function handleInquirySubmit() {
+      document.getElementById('inquiryForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    function resetInquiryForm() {
+      document.getElementById('inquiryForm').reset();
+      document.getElementById('inquiryForm').style.display = 'block';
+      document.getElementById('formSuccess').style.display = 'none';
+    }
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+</body>
+</html>
